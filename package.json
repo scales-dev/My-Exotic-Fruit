@@ -1,0 +1,15 @@
+{
+  "name": "my-exotic-fruit",
+  "version": "1.0.0",
+  "description": "a website for the my exotic fruit business",
+  "main": "build.js",
+  "dependencies": {
+    "ws": "^8.21.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node build.js"
+  },
+  "author": "Jack Scales",
+  "license": "ISC"
+}
