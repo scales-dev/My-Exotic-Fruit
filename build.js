@@ -9,7 +9,6 @@ const HEAD = fs.readFileSync("./components/head.html");
 const SCRIPTS = fs.readdirSync("./scripts")
     .filter(file => file.endsWith(".js"))
     .map(file => ({
-        name: file,
         module: require("./scripts/" + file)
     }));
 
@@ -18,9 +17,7 @@ function getAllFiles(dir) {
     for (const file of fs.readdirSync(dir)) {
         const filePath = path.join(dir, file);
 
-        if (fs.statSync(filePath).isDirectory()) {
-            files.push(...getAllFiles(filePath));
-        }
+        if (fs.statSync(filePath).isDirectory()) files.push(...getAllFiles(filePath));
         else files.push(filePath);
     }
 
@@ -40,7 +37,7 @@ function recompileFile(file) {
 
     // add all the head text first
     for (const script of SCRIPTS) {
-        if (typeof script.module.applyHead === "function") {
+        if (script.module.applyHead) {
             headText += script.module.applyHead(fileContent, file);
         }
     }
@@ -50,7 +47,7 @@ function recompileFile(file) {
 
     // then fix the body
     for (const script of SCRIPTS) {
-        if (typeof script.module.fixBody === "function") {
+        if (script.module.fixBody) {
             fileContent = script.module.fixBody(fileContent, file);
         }
     }
@@ -58,14 +55,6 @@ function recompileFile(file) {
     const OUTPUT_PATH = file.replace("src", "build");
     fs.mkdirSync(path.dirname(OUTPUT_PATH), { recursive: true });
     fs.writeFileSync(OUTPUT_PATH, headText + fileContent + "\n</body>\n</html>");
-}
-
-function applyHead(fileContent, filePath) {
-    return "";
-}
-
-function fixBody(fileContent, filePath) {
-    return fileContent;
 }
 
 if (!changedFile) {

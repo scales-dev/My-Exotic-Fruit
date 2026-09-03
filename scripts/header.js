@@ -1,5 +1,3 @@
-function fixBody(fileContent, currentFile) {
+export function fixBody(fileContent, filePath) {
     return fileContent;
 }
-
-module.exports = { fixBody };
