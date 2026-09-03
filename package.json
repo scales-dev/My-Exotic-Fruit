@@ -7,9 +7,6 @@
     "ws": "^8.21.3"
   },
   "devDependencies": {},
-  "scripts": {
-    "test": "node build.js"
-  },
   "author": "Jack Scales",
   "license": "ISC"
 }
