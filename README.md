@@ -28,5 +28,6 @@
      - Adding in huge chunks of generated code, eg. products from a csv file
      - Adding a footer to every file
      - Adding JS scripts to every file
+  5. Output the head.html, with all applyHead's added + the content of the file after $end-head.
 - Non HTML files are output as is
 - The output goes in the "build" folder, which you can open in your browser to see live changes

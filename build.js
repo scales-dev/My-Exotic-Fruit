@@ -5,12 +5,11 @@ const changedFile = process.argv[2];
 const FILES = getAllFiles("src");
 
 const HEAD = fs.readFileSync("./components/head.html");
+const HEADER_TERMINATOR = "$end-head"
 
 const SCRIPTS = fs.readdirSync("./scripts")
     .filter(file => file.endsWith(".js"))
-    .map(file => ({
-        module: require("./scripts/" + file)
-    }));
+    .map(file => (require("./scripts/" + file)));
 
 function getAllFiles(dir) {
     const files = [];
@@ -32,13 +31,15 @@ function recompileProject() {
 
 function recompileFile(file) {
     let fileContent = fs.readFileSync(file);
+    const split = fileContent.indexOf(HEADER_TERMINATOR);
+    if (split !== -1) fileContent = fileContent.toString().substring(split + 1 + HEADER_TERMINATOR.length);
 
     let headText = HEAD;
 
     // add all the head text first
     for (const script of SCRIPTS) {
-        if (script.module.applyHead) {
-            headText += script.module.applyHead(fileContent, file);
+        if (script.applyHead) {
+            headText += script.applyHead(fileContent, file);
         }
     }
 
@@ -47,8 +48,8 @@ function recompileFile(file) {
 
     // then fix the body
     for (const script of SCRIPTS) {
-        if (script.module.fixBody) {
-            fileContent = script.module.fixBody(fileContent, file);
+        if (script.fixBody) {
+            fileContent = script.fixBody(fileContent, file);
         }
     }
 
