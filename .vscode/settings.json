@@ -1,0 +1,10 @@
+{
+    "filewatcher.commands": [
+        {
+            "match": "src//*",
+            "cmd": "cd \"${workspaceRoot}\" && node build.js \"${fileRelative}\"",
+            "event": "onFileChange",
+            "isAsync": false
+        }
+    ]
+}

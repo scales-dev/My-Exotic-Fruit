@@ -5,13 +5,20 @@
 ## Setup in WebStorm:
 
 ### Create new file watcher:
+
 - File type: `any`
 - scope: create `new`, with pattern `file:src//*`
 - program: `node`
 - arguments: `build.js "$FilePathRelativeToProjectRoot$"`
 - working directory: `Project root`
 
+## Setup in VS Code
+
+Press ctrl+p and enter `ext install appulate.filewatcher`
+Enable the plugin.
+
 ## Build pipeline
+
 - When updating a file build.js is called with the changed file passed
 - If the file is HTML we compile the edited file, to recompile the whole project run `node build.js`
 - Compiling each HTML file is done in stages:
