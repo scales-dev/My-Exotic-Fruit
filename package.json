@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "a website for the my exotic fruit business",
   "main": "build.js",
+  "type": "commonjs",
   "dependencies": {
     "ws": "^8.21.3"
   },
