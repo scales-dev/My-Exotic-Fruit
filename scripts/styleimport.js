@@ -1,12 +1,12 @@
-function applyHead(fileContent, filePath, pathCount, component, files) {
-    const matches = fileContent.matchAll(/class="[^"]*?(\$[\w-]+)/g);
+function applyHead(file, component, files) {
+    const matches = file.body.matchAll(/class="[^"]*?(\$[\w-]+)/g);
 
     let styles = "";
 
-    styles += getStyleLink("base", pathCount);
+    styles += getStyleLink("base", file.pathCount);
 
     for (const match of matches) {
-        styles += getStyleLink(match[1], pathCount);
+        styles += getStyleLink(match[1], file.pathCount);
     }
 
     return styles ;
