@@ -50,7 +50,7 @@ I was informed about svelte, but I'm sure I didn't overcomplicate this too much.
     - Apply SEO tags
     - Import style sheets
     - Give the page an embed
-    - ETC. anything you would put in a <head> tag
+    - ETC. anything you would put in a `<head>` tag
   5. Write the head.html and headContent, close the head tag and open the body tag, and write the edited fileContent to the file
 - Non-HTML files are output as is
 - The output goes in the "build" folder, which you can open in your browser to see live 
@@ -59,7 +59,7 @@ I was informed about svelte, but I'm sure I didn't overcomplicate this too much.
 - Scripts are put in the "scripts" folder and can use both `function applyHead(file, component, files)` and `function fixBody(file, component, files)`
 - The script should then export these functions with `module.exports = {fixBody};`
 
-Example script which adds a <header> block to every file with a picture and links to other files tagged as categories
+Example script which adds a `<header>` block to every file with a picture and links to other files tagged as categories
 ```javascript
 function fixBody(file, component, files) {
     /* component is read from "components/header.html", it contains:
