@@ -1,7 +1,5 @@
 # My Exotic Fruit
 
----
-
 ## Developing
 Edit the src files and open the matching file in your build folder in your browser to see live changes.
 
