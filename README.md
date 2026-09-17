@@ -104,10 +104,24 @@ module.exports = {
 Example `header.js` script which adds a `<header>` block to every file with a picture and links to other files tagged as categories.
 ```javascript
 function fixBody(file, component, files) {
+    /* component is read from "components/header.html", it contains:
+    <header>
+        <div>
+            <a href="">
+                <img loading="lazy" src="$logo^" alt="My Exotic Fruit logo">
+            </a>
+        </div>
+        <div>
+            $nav-bar
+        </div>
+    </header>
+    */
     return component
     // different pages have a different relative path to the logo
     .replace("$logo^", getLogo(file))
-    .replace("$nav-bar", getNavBar(file, files));
+    .replace("$nav-bar", getNavBar(file, files))
+    // we want the header before the body
+    + file.body;
 }
 
 function getNavBar(currentFile, files) {

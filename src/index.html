@@ -1,4 +1,15 @@
 $is-category^
 
 $end-head^
-<p>home page!</p>
+<p>home page??!</p>
+
+<object id="map" data="images/world.svg" type="image/svg+xml"></object>
+
+<script>
+document.getElementById("map").addEventListener("load", function () {
+    const svgDocument = this.contentDocument;
+    const country = svgDocument.getElementById("AU");
+
+    country.style.fill = "green";
+});
+</script>
