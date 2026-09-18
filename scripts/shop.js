@@ -19,7 +19,7 @@ function getShopItems(script) {
 
         output += script.component
             .replaceAll("$NAME^", escapeHTML(product.NAME))
-            .replaceAll("$CATEGORY_PATH^", product.CATEGORY_PATH)
+            .replaceAll("$IMAGE_PATH^", safePath(`${product.CATEGORY_PATH}/${product.NAME}/${product.NAME}0.webp`))
             .replaceAll("$ID^", product.ID);
     }
 
@@ -31,6 +31,30 @@ function escapeHTML(value) {
         .replace(/&/g, "&amp;")
         .replace(/</g, "&lt;")
         .replace(/>/g, "&gt;");
+}
+
+function safePathName(value) {
+
+    return String(value)
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/&/g, " and ")
+        .replace(/'/g, "")
+        .replace(/æ/g, "ae")
+        .replace(/ß/g, "ss")
+        .replace(/[^A-Za-z0-9._-]+/g, "-")
+        .toLowerCase()
+        .replace(/-+/g, "-")
+        .replace(/^-+|-+$/g, "");
+}
+
+
+function safePath(value) {
+
+    return String(value)
+        .split("/")
+        .map(safePathName)
+        .join("/");
 }
 
 module.exports = {fixBody};
