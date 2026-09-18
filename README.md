@@ -65,15 +65,15 @@ I was informed about svelte, but I'm sure I didn't overcomplicate this too much.
   }
   ```
 
-2. The component for the script is fetched from `components/[name].html` if it exists.
-3. Call "fixBody#file, component, files" from all scripts. file.body is set to the return value. This should be used for:
+2. The component for the script is fetched from `components/[name].html` if it exists, ditto for data in `data/[name].any`
+3. Call "fixBody#file, script, files" from all scripts. file.body is set to the return value. This should be used for:
     - Adding a header to every file
     - Replacing placeholder text, e.g. "company-name" with a variable
     - Adding in huge chunks of generated code, e.g., products from a csv file
     - Adding a footer to every file
     - Adding JS scripts to every file
 
-4. Call "applyHead#file, component, files" from all scripts. The return text is appended to file.head; This should be used for:
+4. Call "applyHead#file, script, files" from all scripts. The return text is appended to file.head; This should be used for:
     - Apply SEO tags
     - Import style sheets
     - Give the page an embed
@@ -87,11 +87,11 @@ I was informed about svelte, but I'm sure I didn't overcomplicate this too much.
 
 A script can export either or both of:
 ```javascript
-function fixBody(file, component, files) {
+function fixBody(file, script, files) {
     // modify the body
 }
 
-function applyHead(file, component, files) {
+function applyHead(file, script, files) {
     // modify the head
 }
 
@@ -103,8 +103,8 @@ module.exports = {
 
 Example `header.js` script which adds a `<header>` block to every file with a picture and links to other files tagged as categories.
 ```javascript
-function fixBody(file, component, files) {
-    /* component is read from "components/header.html", it contains:
+function fixBody(file, script, files) {
+    /* script.component is read from "components/header.html", it contains:
     <header>
         <div>
             <a href="">
@@ -116,7 +116,7 @@ function fixBody(file, component, files) {
         </div>
     </header>
     */
-    return component
+    return script.component
     // different pages have a different relative path to the logo
     .replace("$logo^", getLogo(file))
     .replace("$nav-bar", getNavBar(file, files))

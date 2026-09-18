@@ -5,9 +5,9 @@
   "main": "build.js",
   "type": "commonjs",
   "dependencies": {
+    "papaparse": "^5.7.0",
     "ws": "^8.21.3"
   },
-  "devDependencies": {},
   "author": "Jack Scales",
   "license": "ISC"
 }

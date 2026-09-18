@@ -1,5 +1,5 @@
-function fixBody(file, component, files) {
-    /* component is read from "components/header.html", it contains:
+function fixBody(file, script, files) {
+    /* script.component is read from "components/header.html", it contains:
     <header>
         <div>
             <a href="">
@@ -11,7 +11,7 @@ function fixBody(file, component, files) {
         </div>
     </header>
     */
-    return component
+    return script.component
     // different pages have a different relative path to the logo
     .replace("$logo^", getLogo(file))
     .replace("$nav-bar", getNavBar(file, files))

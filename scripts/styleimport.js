@@ -1,4 +1,4 @@
-function applyHead(file, component, files) {
+function applyHead(file, script, files) {
     const matches = file.body.matchAll(/class="[^"]*?(\$[\w-]+)/g);
 
     let styles = "";

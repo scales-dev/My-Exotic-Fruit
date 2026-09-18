@@ -10,13 +10,16 @@ const HEAD = fs.readFileSync("./components/head.html");
 const SCRIPTS = fs.readdirSync("./scripts")
     .filter(file => file.endsWith(".js"))
     .map(file => {
-        const componentPath = "./components/" + file.replace(".js", ".html");
+        const name = path.basename(file, ".js");
+        const componentPath = `./components/${name}.html`;
+
+        const dataFile = fs.readdirSync("./data").find(dataFile => path.parse(dataFile).name === name);
+        const dataPath = dataFile ? "./data/" + dataFile : null;
 
         return {
             script: require("./scripts/" + file),
-            component: fs.existsSync(componentPath)
-                ? fs.readFileSync(componentPath).toString()
-                : ""
+            component: fs.existsSync(componentPath) ? fs.readFileSync(componentPath).toString() : "",
+            data: dataPath ? fs.readFileSync(dataPath).toString() : ""
         };
     });
 
@@ -83,14 +86,14 @@ function recompileFile(file) {
     // fix the body
     for (const scriptFile of SCRIPTS) {
         if (scriptFile.script.fixBody) {
-            file.body = scriptFile.script.fixBody(file, scriptFile.component, FILES);
+            file.body = scriptFile.script.fixBody(file, scriptFile, FILES);
         }
     }
 
     // and apply the head text after, as it can be affected by the body
     for (const scriptFile of SCRIPTS) {
         if (scriptFile.script.applyHead) {
-            head += scriptFile.script.applyHead(file, scriptFile.component, FILES) + "\n";
+            head += scriptFile.script.applyHead(file, scriptFile, FILES) + "\n";
         }
     }
 
