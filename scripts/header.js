@@ -41,7 +41,7 @@ function getNavBar(currentFile, files) {
 
 function getLogo(currentFile) {
     // all images are stored in the images folder, because I think that makes them easier to find.
-    return "../".repeat(currentFile.pathCount) + "images/logo.jpg"
+    return "../".repeat(currentFile.pathCount) + "images/logo.svg"
 }
 
 module.exports = {fixBody};
