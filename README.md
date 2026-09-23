@@ -66,22 +66,26 @@ I was informed about svelte, but I'm sure I didn't overcomplicate this too much.
   ```
 
 2. The component for the script is fetched from `components/[name].html` if it exists, ditto for data in `data/[name].any`
-3. Call "fixBody#file, script, files" from all scripts. file.body is set to the return value. This should be used for:
+3. Call `fixBody#file, script, files` from all scripts. file.body is set to the return value. This should be used for:
     - Adding a header to every file
     - Replacing placeholder text, e.g. "company-name" with a variable
     - Adding in huge chunks of generated code, e.g., products from a csv file
     - Adding a footer to every file
     - Adding JS scripts to every file
 
-4. Call "applyHead#file, script, files" from all scripts. The return text is appended to file.head; This should be used for:
+4. Call `applyHead#file, script, files` from all scripts. The return text is appended to file.head; This should be used for:
     - Apply SEO tags
     - Import style sheets
     - Give the page an embed
     - ETC. anything you would put in a `<head>` tag
 
-5. Write the head.html and headContent, close the head tag and open the body tag, and write the edited fileContent to the file
+5. Write the `head.html` and `headContent`, close the head tag and open the body tag, and write the edited `fileContent` to the file
     - Non-HTML files are output as is
     - The output goes in the "build" folder, which you can open in your browser to see live
+
+- In a full recompile we call `createFiles#files, script, fs, path` from every script. This can be used for:
+    - Create individual pages for every blog
+    - Create individual pages for every item in a shop
 
 ### How to use
 
