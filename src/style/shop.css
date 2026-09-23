@@ -1,0 +1,15 @@
+.\$shop {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+
+    .shop-item {
+        width: 100%;
+    }
+
+    .shop-item img {
+        width: 100%;
+        aspect-ratio: 1;
+        object-fit: contain;
+    }
+}

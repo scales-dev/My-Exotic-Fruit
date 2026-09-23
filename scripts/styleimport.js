@@ -1,15 +1,14 @@
 function applyHead(file, script, files) {
     const matches = file.body.matchAll(/class="[^"]*?(\$[\w-]+)/g);
 
-    let styles = "";
-
-    styles += getStyleLink("base", file.pathCount);
+    const styles = new Set();
+    styles.add(getStyleLink("base", file.pathCount));
 
     for (const match of matches) {
-        styles += getStyleLink(match[1], file.pathCount);
+        styles.add(getStyleLink(match[1], file.pathCount));
     }
 
-    return styles ;
+    return [...styles].join("");
 }
 
 function getStyleLink(name, pathCount) {
@@ -18,4 +17,4 @@ function getStyleLink(name, pathCount) {
     return `\n<link rel="stylesheet" href="${className}.css">`;
 }
 
-module.exports = {applyHead};
+module.exports = { applyHead };
