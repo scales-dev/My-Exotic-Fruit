@@ -14,7 +14,8 @@ function fixBody(file, script, files) {
     return script.component
     // different pages have a different relative path to the logo
     .replace("$logo^", getLogo(file))
-    .replace("$nav-bar", getNavBar(file, files))
+    .replace("$nav-bar^", getNavBar(file, files))
+    .replace("$home^", "../".repeat(file.pathCount))
     // we want the header before the body
     + file.body;
 }
