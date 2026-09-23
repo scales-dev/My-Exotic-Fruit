@@ -2,23 +2,23 @@ function createFiles(files, script, fs, path) {
     for (const folder of fs.readdirSync("./blogs")) {
         const blogPath = path.join("blogs", folder);
         const sourcePath = path.join("./blogs", folder);
-        const svgFile = fs.readdirSync(sourcePath).find(file => file.endsWith(".svg"));
 
         const htmlPath = path.join(blogPath, "index.html");
-
         const htmlOutputPath = path.join("build", htmlPath);
-        const html = script.component.replaceAll("$blog^", path.join(folder, svgFile));
-        const svg = fs.readFileSync(path.join(sourcePath, svgFile));
+
+        const html = script.component.replaceAll("$blog^", path.join(folder, "blog.svg"));
+
+        const svgPath = path.join(blogPath, "blog.svg");
+
+        const svg = fs.readFileSync(path.join(sourcePath, "blog.svg"));
 
         fs.mkdirSync(path.dirname(htmlOutputPath), { recursive: true });
         fs.cpSync(sourcePath, path.join("build", blogPath), { recursive: true });
         fs.writeFileSync(htmlOutputPath, html);
-
-        const svgPath = path.join(blogPath, svgFile);
         const pathCount = (svgPath.match(/\//g) || []).length - 1;
 
         files.push({
-            name: svgFile,
+            name: "blog.svg",
             path: svgPath,
             outputPath: path.join("build", svgPath),
             pathCount: pathCount,
@@ -36,9 +36,7 @@ function createFiles(files, script, fs, path) {
             head: "",
             body: html
         });
-
     }
-
 }
 
 module.exports = { createFiles };

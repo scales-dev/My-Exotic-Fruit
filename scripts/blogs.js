@@ -10,16 +10,16 @@ function getBlogs(script) {
     let blogs = "";
 
     for (const folder of fs.readdirSync("./blogs")) {
-        const folderPath = path.join("./blogs", folder);
-        const blogSvg = fs.readdirSync(folderPath).find(file => file.endsWith(".svg"));
-
-        const fileName = path.basename(blogSvg, ".svg");
+        const info = JSON.parse(fs.readFileSync(path.join(path.join("./blogs", folder), "info.json"), "utf8"));
 
         blogs += script.component
-            .replaceAll("$blog-name^", fileName.split("$")[0])
-            .replaceAll("$blog-description^", fileName.split("$")[1])
-            .replaceAll("$blog-link^", path.basename(folder))
-            .replaceAll("$blog-svg^", blogSvg);
+            .replaceAll("$blog-name^", info.name)
+            .replaceAll("$blog-description^", info.description)
+            .replaceAll("$blog-day^", info.day)
+            .replaceAll("$blog-author^", info.author)
+            .replaceAll("$blog-category^", info.category)
+            .replaceAll("$blog-link^", folder);
+
     }
 
     return blogs;
