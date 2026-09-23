@@ -1,3 +1,8 @@
 .highlight-country {
   fill: orange;
 }
+
+.selected-header {
+  color: green;
+  text-decoration: none;
+}

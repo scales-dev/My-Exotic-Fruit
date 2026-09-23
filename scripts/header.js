@@ -27,7 +27,7 @@ function getNavBar(currentFile, files) {
         if (!otherFile.head.includes("$is-category^")) continue;
 
         // check if the file is the file we are in, and give a special class to be rendered differently if needed
-        const selectedHeader = otherFile == currentFile ? ` class="selected-header"`:"";
+        const selectedHeader = otherFile.path.split("/")[0] === currentFile.path.split("/")[0] ? ` class="selected-header"`:"";
         // get the relative path to the file
         const href = otherFile == currentFile ? "":` href="${"../".repeat(currentFile.pathCount) + otherFile.path}"`;
 
