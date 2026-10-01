@@ -8,6 +8,10 @@ Edit the files in `src/`.
 
 The corresponding files are automatically compiled into `build/`. Open the matching file in `build/` in your browser to see the changes.
 
+Throughout this project I define variables with $name^ so that I always match a full string.
+- Regex does ^name$ to match whole strings
+- I use them backwards because I think `/^\$string\^$/` looks nicer than `/^\^string\$$/`
+
 ### Setup in WebStorm
 
 Create a new File Watcher:
@@ -64,10 +68,6 @@ I was informed about svelte, but I'm sure I didn't overcomplicate this too much.
       body: "text after $end-head^"
   }
   ```
-  
-  > Yes the $ and ^ are backwards, this is on purpose, 
-  > so matching an exact string in regex becomes `/^\$string\^$/` 
-  > which I think looks nicer that `/^\^string\$$/`
 
 2. The component for the script is fetched from `components/[name].html` if it exists, ditto for data in `data/[name].any`
 3. Call `fixBody#file, script, files` from all scripts. file.body is set to the return value. This should be used for:
