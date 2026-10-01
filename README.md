@@ -1,3 +1,47 @@
+# TODO:
+- Make the following pages:
+    - Japanese Fruits
+    - Luxury Fruits for Gifting
+    - Seasonal Offers (maybe)
+    - Working with Brands
+    - Bespoke Sourcing
+    - About Us
+- Update the EKM site:
+    - Banner pictures for:
+        - Bananas
+        - Caribbean island favourites
+        - Citrus
+        - Dates
+        - Dragon Fruit
+        - Dried Fruits
+        - Drinks
+        - Durian
+        - Frozen Fruits
+        - Selection Boxes / Gift Baskets
+        - Guava
+        - Ingrediants & Aromatics
+        - Jackfruit
+        - Luxury Fruit for Gifting
+        - Mangoes
+        - Melons
+        - Alkaline Fruits
+        - Passionfruits
+        - Potatoes & Yams
+        - Sour Fruits
+        - Sweet Fruits
+        - Soursop
+    - Home page sections
+        - Shop by category is not actually showing real categories
+        - "The finest fruits direct to your door" has placeholders
+        - Fill in "your weekly seasonal update"
+        - Banner video for footer
+    - Fill in seasonality + origin map for EVERY product
+    - Stop each product having a second description box
+    - Pick 2 promos for the footer
+    - Fill in footer text
+    - Make payment work on site
+    - Negotiate cost of higher tier
+
 # My Exotic Fruit
 
 A static website with a custom build pipeline for shared components, generated content, SEO, and other reusable functionality.
