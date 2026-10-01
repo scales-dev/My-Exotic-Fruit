@@ -1,5 +1,8 @@
 # Issues with EKM
 
+An email to convince my boss to switch off EKM in the near future.
+As in, the very near future, before ever even launching the site.
+
 ### Cost
 
 - EKM does not have set in stone pricing, they charge on a per case basis. With earning limits based on tiers.
@@ -9,6 +12,18 @@
 - Time I spend contacting EKM is time that can be spent creating the website on my own.
 - Despite having spent £10,000 on them already, there has been very little progress on the site.
   - Continuing to invest in EKM will be more costly even in the short term.
+- After a week of waiting EKM decided the extra pages we'd want made would cost £4,000 + VAT
+  - This price came a sentence after saying it is 30-34 hours of work for the 5 missing pages, implying:
+    - They work for £130/hour
+    - It takes more 30 hours to design 5 web pages? They're breakdown is below:
+      - 4 hours for About Us
+      - 12 hours for Japanese Fruits...?
+      - 4 hours for Shop In Person (I asked them to iframe our current website)
+      - 2 hours for trade and wholesale
+      - 4 hours for FAQ
+    - Other than that not adding up to 30, why would it take 12 hours to design a page talking about Japanese Fruits
+      - I assume they have designed more than enough sites to just copy paste the css
+      - It didn't even take me 12 hours to design a [page on the same subject ](https://thegreengrocerbymef.com/japanese-fruits/) (I work for £8/hour not £130)
 
 ### Developing
 
