@@ -64,6 +64,10 @@ I was informed about svelte, but I'm sure I didn't overcomplicate this too much.
       body: "text after $end-head^"
   }
   ```
+  
+  > Yes the $ and ^ are backwards, this is on purpose, 
+  > so matching an exact string in regex becomes `/^\$string\^$/` 
+  > which I think looks nicer that `/^\^string\$$/`
 
 2. The component for the script is fetched from `components/[name].html` if it exists, ditto for data in `data/[name].any`
 3. Call `fixBody#file, script, files` from all scripts. file.body is set to the return value. This should be used for:

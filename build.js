@@ -1,5 +1,3 @@
-const HEADER_TERMINATOR = "$end-head^"
-
 const fs = require("fs");
 const path = require("path");
 

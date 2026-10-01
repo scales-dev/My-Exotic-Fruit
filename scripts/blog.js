@@ -2,11 +2,8 @@ const fileUtil = require("../fileUtil");
 
 function createFiles(files, script, fs, path) {
     for (const folder of fs.readdirSync("./blogs")) {
-        const blogPath = path.join("blogs", folder);
-        const sourcePath = path.join("./blogs", folder);
-
-        const htmlPath = path.join(blogPath, "index.html");
-        const htmlOutputPath = path.join("build", htmlPath);
+        const htmlPath = `blogs/${folder}/index.html`;
+        const htmlOutputPath = `build/${htmlPath}`
 
         const html = script.component.replaceAll("$blog^", "blog.svg");
 

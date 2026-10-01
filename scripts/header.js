@@ -27,15 +27,20 @@ function getNavBar(currentFile, files) {
         // allows us to choose which index.html files are included in the navbar, by putting $is-category^ before the header.
         if (!otherFile.head.includes("$is-category^")) continue;
 
+        const redirect = otherFile.head.match(/\$redirect="([^"]*)"\^/);
+
         // check if the file is the file we are in, and give a special class to be rendered differently if needed
         const selectedHeader = otherFile.path.split("/")[0] === currentFile.path.split("/")[0] ? ` class="selected-header"`:"";
 
         const path = otherFile.path.includes("/") ? otherFile.path.split("/").at(-2) + "/" : "";
         // get the relative path to the file
-        const href = otherFile == currentFile ? "":` href="${"../".repeat(currentFile.pathCount) + path}"`;
+        const href = otherFile == currentFile ? "":
+        ` href="${redirect ? redirect[1] : "../".repeat(currentFile.pathCount) + path}"`;
+
+        const displayName = otherFile.name.replaceAll("-", " ");
 
         // create an `a` tag with the name of the folder containing the index.html
-        navElements += `<a${selectedHeader}${href}>${otherFile.name}</a>\n`
+        navElements += `<a${selectedHeader}${href}>${displayName}</a>\n`
 
     }
 
