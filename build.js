@@ -6,7 +6,6 @@ const fileUtil = require("./fileUtil");
 const changedFile = process.argv[2];
 
 const FILES = fileUtil.getAllFiles("src");
-const HEAD = fs.readFileSync("./components/head.html");
 
 const SCRIPTS = fs.readdirSync("./scripts")
     .filter(file => file.endsWith(".js"))
@@ -44,7 +43,7 @@ function recompileFile(file) {
         return;
     }
 
-    let head = HEAD;
+    let head = "";
 
     // fix the body
     for (const scriptFile of SCRIPTS) {
