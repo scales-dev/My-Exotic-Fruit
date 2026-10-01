@@ -1,3 +1,5 @@
+const fileUtil = require("../fileUtil");
+
 function createFiles(files, script, fs, path) {
     for (const folder of fs.readdirSync("./blogs")) {
         const blogPath = path.join("blogs", folder);
@@ -8,34 +10,12 @@ function createFiles(files, script, fs, path) {
 
         const html = script.component.replaceAll("$blog^", "blog.svg");
 
-        const svgPath = path.join(blogPath, "blog.svg");
-
-        const svg = fs.readFileSync(path.join(sourcePath, "blog.svg"));
-
         fs.mkdirSync(path.dirname(htmlOutputPath), { recursive: true });
-        fs.cpSync(sourcePath, path.join("build", blogPath), { recursive: true });
-        fs.writeFileSync(htmlOutputPath, html);
-        const pathCount = (svgPath.match(/\//g) || []).length - 1;
+        fs.writeFileSync(htmlPath, html);
 
-        files.push({
-            name: "blog.svg",
-            path: svgPath,
-            outputPath: path.join("build", svgPath),
-            pathCount: pathCount,
-            content: svg,
-            head: "",
-            body: svg.toString()
-        });
-
-        files.push({
-            name: "index.html",
-            path: htmlPath,
-            outputPath: htmlOutputPath,
-            pathCount: pathCount,
-            content: Buffer.from(html),
-            head: "",
-            body: html
-        });
+        files.push(fileUtil.getFile(`./blogs/${folder}/index.html`));
+        files.push(fileUtil.getFile(`./blogs/${folder}/blog.svg`));
+        files.push(fileUtil.getFile(`./blogs/${folder}/icon.jpg`));
     }
 }
 

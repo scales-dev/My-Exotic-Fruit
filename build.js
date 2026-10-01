@@ -2,9 +2,12 @@ const HEADER_TERMINATOR = "$end-head^"
 
 const fs = require("fs");
 const path = require("path");
+
+const fileUtil = require("./fileUtil");
+
 const changedFile = process.argv[2];
 
-const FILES = getAllFiles("src");
+const FILES = fileUtil.getAllFiles("src");
 const HEAD = fs.readFileSync("./components/head.html");
 
 const SCRIPTS = fs.readdirSync("./scripts")
@@ -22,49 +25,6 @@ const SCRIPTS = fs.readdirSync("./scripts")
             data: dataPath ? fs.readFileSync(dataPath).toString() : ""
         };
     });
-
-function getAllFiles(dir) {
-    const files = [];
-
-    for (const file of fs.readdirSync(dir)) {
-        const filePath = path.join(dir, file);
-
-        if (fs.statSync(filePath).isDirectory()) {
-            files.push(...getAllFiles(filePath));
-        } else {
-            files.push(getFile(filePath));
-        }
-    }
-
-    return files;
-}
-
-function getFile(path) {
-    const content = fs.readFileSync(path);
-    
-    let body = content.toString();
-    const split = body.indexOf(HEADER_TERMINATOR);
-    let head = "";
-    if (split !== -1) {
-        head = body.substring(0, split);
-        body = body.substring(split + 1 + HEADER_TERMINATOR.length);
-    }
-
-    const pathCount = (path.match(/\//g) || []).length;
-
-    let name = pathCount == 0 ? "home" : path.split("/").at(-2);
-    path = path.replace("src/", "");
-
-    return {
-        name: name,
-        path: path,
-        outputPath: "build/"+path,
-        pathCount: pathCount,
-        content: content,
-        head: head,
-        body: body
-    }
-}
 
 function recompileProject() {
     fs.rmSync("build", { recursive: true, force: true });
@@ -113,9 +73,5 @@ if (!changedFile) {
     recompileProject();
 }
 else {
-    recompileFile(getFile(changedFile));
+    recompileFile(fileUtil.getFile(changedFile));
 }
-
-module.exports = {
-    FILES
-};

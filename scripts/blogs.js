@@ -10,7 +10,7 @@ function getBlogs(script) {
     let blogs = "";
 
     for (const folder of fs.readdirSync("./blogs")) {
-        const info = JSON.parse(fs.readFileSync(path.join(path.join("./blogs", folder), "info.json"), "utf8"));
+        const info = JSON.parse(fs.readFileSync(`./blogs/${folder}/info.json`));
 
         blogs += script.component
             .replaceAll("$blog-name^", info.name)
