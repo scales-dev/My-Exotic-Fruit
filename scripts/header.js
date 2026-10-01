@@ -30,7 +30,7 @@ function getNavBar(currentFile, files) {
         // check if the file is the file we are in, and give a special class to be rendered differently if needed
         const selectedHeader = otherFile.path.split("/")[0] === currentFile.path.split("/")[0] ? ` class="selected-header"`:"";
         // get the relative path to the file
-        const href = otherFile == currentFile ? "":` href="${"../".repeat(currentFile.pathCount) + otherFile.path}"`;
+        const href = otherFile == currentFile ? "":` href="${"../".repeat(currentFile.pathCount) + otherFile.path}/"`;
 
         // create an `a` tag with the name of the folder containing the index.html
         navElements += `<a${selectedHeader}${href}>${otherFile.name}</a>\n`
