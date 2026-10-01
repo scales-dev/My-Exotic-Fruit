@@ -13,7 +13,8 @@ function getFile(path) {
         body = body.substring(split + 1 + HEADER_TERMINATOR.length);
     }
 
-    const pathCount = (path.match(/\//g) || []).length - 1;
+    const pathNoSrc = path.replace("src/", "");
+    const pathCount = (pathNoSrc.match(/\//g) || []).length;
 
     let name = pathCount == 0 ? "home" : path.split("/").at(-2);
     path = path.replace("src/", "");

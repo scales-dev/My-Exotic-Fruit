@@ -13,9 +13,9 @@ function createFiles(files, script, fs, path) {
         fs.mkdirSync(path.dirname(htmlOutputPath), { recursive: true });
         fs.writeFileSync(htmlPath, html);
 
-        files.push(fileUtil.getFile(`./blogs/${folder}/index.html`));
-        files.push(fileUtil.getFile(`./blogs/${folder}/blog.svg`));
-        files.push(fileUtil.getFile(`./blogs/${folder}/icon.jpg`));
+        files.push(fileUtil.getFile(`blogs/${folder}/index.html`));
+        files.push(fileUtil.getFile(`blogs/${folder}/blog.svg`));
+        files.push(fileUtil.getFile(`blogs/${folder}/icon.jpg`));
     }
 }
 
