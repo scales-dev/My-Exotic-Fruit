@@ -6,7 +6,7 @@ function createFiles(files, script, fs, path) {
         const htmlPath = path.join(blogPath, "index.html");
         const htmlOutputPath = path.join("build", htmlPath);
 
-        const html = script.component.replaceAll("$blog^", path.join(folder, "blog.svg"));
+        const html = script.component.replaceAll("$blog^", "blog.svg");
 
         const svgPath = path.join(blogPath, "blog.svg");
 
