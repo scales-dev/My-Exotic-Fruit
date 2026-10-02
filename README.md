@@ -6,6 +6,7 @@
     - Working with Brands
     - Bespoke Sourcing
     - About Us
+        - Get employee introduction PDF's
 - Update the EKM site:
     - Banner pictures for:
         - Bananas
