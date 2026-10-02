@@ -13,7 +13,9 @@ const SCRIPTS = fs.readdirSync("./scripts")
         const name = path.basename(file, ".js");
         const componentPath = `./components/${name}.html`;
 
-        const dataFile = fs.readdirSync("./data").find(dataFile => path.parse(dataFile).name === name);
+        const dataFile = fs.existsSync("./data") 
+            ? fs.readdirSync("./data").find(dataFile => path.parse(dataFile).name === name)
+            : null;
         const dataPath = dataFile ? "./data/" + dataFile : null;
 
         return {
