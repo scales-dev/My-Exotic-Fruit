@@ -1,5 +1,4 @@
 const fs = require("fs");
-const path = require("path");
 
 function fixBody(file, script, files) {
     if (!file.body.includes("$blogs^")) return file.body;
