@@ -18,12 +18,12 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.4);
+    background: var(--grey-tint);
     z-index: -1;
   }
 
   .title-content {
-    padding-left: 7rem;
+    padding-left: var(--title-padding);
 
     :last-child {
       padding-bottom: 3rem;
@@ -35,6 +35,6 @@
   }
 
   p {
-    max-width: 30%;
+    max-width: var(--side-block-width);
   }
 }

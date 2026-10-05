@@ -19,6 +19,34 @@
   font-display: swap;
 }
 
+:root {
+  --light-green: rgb(214, 248, 208);
+  --light-green-tint: rgba(214, 248, 208, 0.4);
+  --green: #142f07;
+
+  --grey-tint: rgba(0, 0, 0, 0.4);
+
+  --side-block-width: 90%;
+  --hero-block-width: 90%;
+
+  --split-width: 98%;
+
+  --margin: calc((100% - var(--hero-block-width)) / 2);
+
+  --flex: block;
+
+  --title-padding: 2rem;
+
+  @media (min-width: 1000px) {
+    --split-width: 48%;
+    --side-block-width: 30%;
+    --hero-block-width: 55%;
+    --margin: 0;
+    --flex: flex;
+  --title-padding: 7rem;
+  }
+}
+
 body {
   inset: 0;
   margin: 0;
@@ -48,27 +76,30 @@ h2 {
 }
 
 .flex {
-  display: flex;
+  display: var(--flex);
   align-items: center;
 }
 
 .side-block {
-  max-width: 30%;
+  max-width: var(--side-block-width);
   padding-left: 5%;
   padding-right: 5%;
+
+  margin: var(--margin);
 }
 
 .hero-block {
-  max-width: 55%;
+  margin: var(--margin);
+  max-width: var(--hero-block-width);
   margin-right: 5%;
 }
 
 .green-text {
-  color: rgb(214, 248, 208);
+  color: var(--light-green);
 }
 
 .green-bg {
-  background-color: rgb(214, 248, 208);
+  background-color: var(--light-green);
 }
 
 .logos {
@@ -76,5 +107,45 @@ h2 {
 
   img {
     width: 3rem;
+  }
+}
+
+.grey-tint {
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--grey-tint);
+    z-index: -1;
+  }
+}
+
+.green-tint {
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--light-green-tint);
+    z-index: -1;
+  }
+}
+
+.icon {
+  width: var(--split-width);
+  height: auto;
+  object-fit: contain;
+
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  z-index: -2;
+
+  @media (min-width: 1000px) {
+    position: inherit;
+    transform: translate(0);
+    top: 0;
+    left: 0;
+    z-index: inherit;
   }
 }

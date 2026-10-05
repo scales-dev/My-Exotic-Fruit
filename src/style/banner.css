@@ -1,5 +1,5 @@
 .\$banner {
-  background-color: #142f07;
+  background-color: var(--green);
 
   padding-block: 2rem;
 }

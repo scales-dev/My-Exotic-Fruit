@@ -1,5 +1,6 @@
 .\$instagram {
-  width: 70%;
+  width: var(--hero-block-width);
+
   div {
     border-radius: 10px;
   }
