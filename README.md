@@ -53,6 +53,8 @@ Edit the files in `src/`.
 
 The corresponding files are automatically compiled into `build/`. Open the matching file in `build/` in your browser to see the changes.
 
+I've sadly grown to prefer tab's being 2 space characters, I'm sure you can figure out how to make your IDE do that.
+
 Throughout this project I define variables with $name^ so that I always match a full string.
 - Regex does ^name$ to match whole strings
 - I use them backwards because I think `/^\$string\^$/` looks nicer than `/^\^string\$$/`
