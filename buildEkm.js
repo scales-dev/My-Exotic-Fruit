@@ -1,6 +1,8 @@
 // For EKM pages its easiest to be able to copy paste in a full single html file which has no other dependencies.
 // so this script make all the links link to our cloudflare site which hosts the style sheets/images
 // because I thought this was easier and cleaner than embedding the images/css into the file.
+
+// todo: handle css/js
 const fs = require("fs");
 const path = require("path");
 const { execSync } = require("child_process");

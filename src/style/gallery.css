@@ -1,0 +1,8 @@
+.\$gallery {
+  overflow: auto;
+  white-space: nowrap;
+  
+  img {
+    width: 20%;
+  }
+}

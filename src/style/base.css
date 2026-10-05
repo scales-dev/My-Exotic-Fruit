@@ -1,12 +1,53 @@
-.highlight-country {
-  fill: orange;
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("../fonts/HelveticaNeue-Medium.otf") format("opentype");
+  font-style: normal;
+  font-display: swap;
 }
 
-.selected-header {
-  color: green;
-  text-decoration: none;
+@font-face {
+  font-family: "Helvetica Neue Light";
+  src: url("../fonts/HelveticaNeue-Light.otf") format("opentype");
+  font-style: normal;
+  font-display: swap;
 }
 
 body {
+  inset: 0;
   margin: 0;
+
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: 5rem;
+  font-family: "Helvetica Neue Light", sans-serif;
+  font-weight: normal;
+
+  text-transform: capitalize;
+}
+
+h2 {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+}
+
+.invert {
+  filter: invert(1);
+}
+
+.flex {
+  display: flex;
+}
+
+.side-block {
+  max-width: 30%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.hero-block {
+  max-width: 60%;
 }
