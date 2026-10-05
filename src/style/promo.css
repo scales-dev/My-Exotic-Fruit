@@ -1,0 +1,23 @@
+.\$promo {
+  margin-block: 50px;
+  margin-inline: 2%;
+
+  > div {
+    max-width: 48%;
+    margin-inline: auto;
+    padding-block: 1rem;
+
+    display: flex;
+
+    > div {
+      padding: 0 3%;
+      max-width: 50%;
+    }
+
+    img {
+      width: 50%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+}
