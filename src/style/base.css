@@ -25,6 +25,7 @@
   --green: #142f07;
 
   --grey-tint: rgba(0, 0, 0, 0.4);
+  --light-grey-tint: rgba(230, 230, 230, 0.4);
 
   --side-block-width: 90%;
   --hero-block-width: 90%;
@@ -112,25 +113,25 @@ h2 {
   }
 }
 
-.grey-tint {
+.tint {
   &::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: var(--grey-tint);
     z-index: -1;
+    backdrop-filter: blur(2px);
+    background: var(--light-grey-tint);
   }
+
+  overflow: hidden;
 }
 
-.green-tint {
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: var(--light-green-tint);
-    backdrop-filter: blur(2px);
-    z-index: -1;
-  }
+.grey-tint::before {
+  background: var(--grey-tint);
+}
+
+.green-tint::before {
+  background: var(--light-green-tint);
 }
 
 .icon {
