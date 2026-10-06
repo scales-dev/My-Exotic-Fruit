@@ -16,7 +16,7 @@
     display: var(--flex);
 
     >div {
-      padding: 0 3%;
+      padding: 0 2rem;
       max-width: var(--split-width);
     }
   }

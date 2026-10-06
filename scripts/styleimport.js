@@ -1,3 +1,4 @@
+// todo: move to body instead of head for buildEkm
 function applyHead(file, script, files) {
   const matches = file.body.matchAll(/class="[^"]*?(\$[\w-]+)/g);
 

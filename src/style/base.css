@@ -37,13 +37,15 @@
 
   --title-padding: 2rem;
 
+  --font-size: 1rem;
+
   @media (min-width: 1000px) {
     --split-width: 48%;
     --side-block-width: 30%;
     --hero-block-width: 55%;
     --margin: 0;
     --flex: flex;
-  --title-padding: 7rem;
+    --title-padding: 7rem;
   }
 }
 
@@ -52,7 +54,7 @@ body {
   margin: 0;
 
   font-family: "Helvetica Neue", sans-serif;
-  font-size: 1rem;
+  font-size: var(--font-size);
 }
 
 h1 {
@@ -126,6 +128,7 @@ h2 {
     position: absolute;
     inset: 0;
     background: var(--light-green-tint);
+    backdrop-filter: blur(2px);
     z-index: -1;
   }
 }
@@ -148,4 +151,31 @@ h2 {
     left: 0;
     z-index: inherit;
   }
+}
+
+a {
+  text-decoration: none;
+}
+
+.button {
+  border-radius: 30px;
+  background-color: var(--green);
+  color: white;
+
+  padding-inline: 30px;
+  padding-block: 10px;
+
+  display: inline-flex;
+  align-items: center;
+}
+
+.clear-bg {
+  background: none;
+  color: black;
+  border: 2px solid black;
+}
+
+.button::after {
+  content: "🡲";
+  margin-left: 10px;
 }
