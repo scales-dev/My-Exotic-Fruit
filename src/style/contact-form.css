@@ -1,0 +1,39 @@
+.\$contact-form {
+  .star {
+    color: red;
+  }
+
+  .contact-form-row {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .contact-form-row label {
+    font-weight: bold;
+    font-size: 13px;
+  }
+
+  input,
+  textarea {
+    padding: 10px;
+
+    border: 1px solid var(--grey-tint);
+    border-radius: 5px;
+  }
+
+  textarea {
+    min-height: 100px;
+    resize: vertical;
+  }
+
+  .g-recaptcha {
+    grid-column: 2;
+  }
+
+  #contact-form-submit>button {
+    grid-column: 2;
+    justify-self: start;
+  }
+}

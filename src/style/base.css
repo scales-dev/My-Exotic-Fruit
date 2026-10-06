@@ -115,6 +115,8 @@ h2 {
 
   column-gap: 2rem;
 
+  margin-bottom: 1rem;
+
   img {
     height: 3rem;
   }
@@ -174,7 +176,8 @@ a {
   text-decoration: none;
 }
 
-.button {
+.button,
+button {
   border-radius: 30px;
   background-color: var(--green);
   color: white;
@@ -184,22 +187,21 @@ a {
 
   display: inline-flex;
   align-items: center;
+
+  border: none;
+  font: inherit;
+
+  margin-top: 1rem;
+}
+
+button::after,
+.button::after {
+  content: "🡲";
+  margin-left: 10px;
 }
 
 .clear-bg {
   background: none;
   color: black;
   border: 2px solid black;
-}
-
-.button::after {
-  content: "🡲";
-  margin-left: 10px;
-}
-
-button {
-  background: none;
-  border: none;
-  color: inherit;
-  font: inherit;
 }

@@ -149,7 +149,7 @@ $end-head^
     <h1>Contact us</h1>
 
     <!-- contact form from ekm themselves, how kind! -->
-    <form action="index.asp?function=FORMMAIL" method="POST" class="contact-form">
+    <form action="index.asp?function=FORMMAIL" method="POST" class="$contact-form contact-form">
 
       <div class="contact-form-row">
         <label for="name">Name: <span class="star">*</span></label><input name="Name" type="text" value="">
@@ -165,8 +165,8 @@ $end-head^
         <!-- sitekey stolen from EKM, im sure thats fine... -->
         <div class="g-recaptcha" data-sitekey="6Lc4A80sAAAAABRi3dMVxbGyjyQEPZnhjlum6r4r"></div>
       </div>
-      <div class="contact-form-row button" id="contact-form-submit">
-        <button type="submit">Send</button>
+      <div class="contact-form-row" id="contact-form-submit">
+        <button type="submit">Send message</button>
       </div>
 
       <!-- HIDDEN -->
