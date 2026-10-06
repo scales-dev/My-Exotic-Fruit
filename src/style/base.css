@@ -41,7 +41,7 @@
 
   --font-size: 1rem;
 
-  --gallery-image-width: 80%;
+  --gallery-image-width: 80rem;
 
   --split-left: none;
   --split-top: 1px solid var(--grey-tint);
@@ -54,7 +54,7 @@
     --flex: flex;
     --grid: grid;
     --title-padding: 7rem;
-    --gallery-image-width: 20%;
+    --gallery-image-width: 15rem;
 
     --split-left: 1px solid var(--grey-tint);
     --split-top: none;

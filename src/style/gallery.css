@@ -1,8 +1,27 @@
 .\$gallery {
-  overflow: auto;
-  white-space: nowrap;
-  
-  img {
-    width: var(--gallery-image-width);
+  overflow: hidden;
+
+    mask-image: linear-gradient(to right,
+        transparent 0%,
+        black 6%,
+        black 94%,
+        transparent 100%);
+
+    .track {
+      display: flex;
+      width: max-content;
+      animation: scroll 30s linear infinite;
+
+      gap: 2rem;
+
+      img {
+        width: var(--gallery-image-width);
+      }
+    }
+}
+
+@keyframes scroll {
+  100% {
+    transform: translateX(-50%);
   }
 }
