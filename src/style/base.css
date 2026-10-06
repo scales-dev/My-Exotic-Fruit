@@ -35,6 +35,7 @@
   --margin: calc((100% - var(--hero-block-width)) / 2);
 
   --flex: block;
+  --grid: block;
 
   --title-padding: 2rem;
 
@@ -46,6 +47,7 @@
     --hero-block-width: 55%;
     --margin: 0;
     --flex: flex;
+    --grid: grid;
     --title-padding: 7rem;
   }
 }
@@ -106,10 +108,24 @@ h2 {
 }
 
 .logos {
-  gap: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  column-gap: 2rem;
 
   img {
-    width: 3rem;
+    height: 3rem;
+  }
+
+  .wide {
+    height: 5rem;
+  }
+
+  .tall {
+    width: 5rem;
+    height: auto;
   }
 }
 
@@ -179,4 +195,11 @@ a {
 .button::after {
   content: "🡲";
   margin-left: 10px;
+}
+
+button {
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
 }

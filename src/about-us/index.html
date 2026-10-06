@@ -2,6 +2,8 @@ $is-category^
 
 $end-head^
 
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 <section class="$title">
   <img src="../images/about-us-banner.jpg" alt="">
 
@@ -98,5 +100,95 @@ $end-head^
     <!-- Elfsight Instagram Feed | My Exotic Fruit Instagram Feed Copy -->
     <script src="https://elfsightcdn.com/platform.js" async></script>
     <div class="elfsight-app-81a76b21-490e-4720-9007-56ce6007b124" data-elfsight-app-lazy></div>
+  </div>
+</section>
+
+<section class="$split">
+  <div>
+    <h2>Quick answers</h2>
+    <h1>FAQ</h1>
+
+    <details>
+      <summary>What is Lorem Ipsum?</summary>
+      <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+        standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride
+        Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset's
+        Body Type sheets. It has survived not only many decades, but also the leap into electronic typesetting,
+        remaining essentially unchanged. It was popularised thanks to these sheets and more recently with desktop
+        publishing software like Aldus PageMaker and Microsoft Word including versions of Lorem Ipsum.
+      </p>
+    </details>
+
+    <details>
+      <summary>What is Lorem Ipsum?</summary>
+      <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+        standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride
+        Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset's
+        Body Type sheets. It has survived not only many decades, but also the leap into electronic typesetting,
+        remaining essentially unchanged. It was popularised thanks to these sheets and more recently with desktop
+        publishing software like Aldus PageMaker and Microsoft Word including versions of Lorem Ipsum.
+      </p>
+    </details>
+
+    <details>
+      <summary>What is Lorem Ipsum?</summary>
+      <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+        standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride
+        Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset's
+        Body Type sheets. It has survived not only many decades, but also the leap into electronic typesetting,
+        remaining essentially unchanged. It was popularised thanks to these sheets and more recently with desktop
+        publishing software like Aldus PageMaker and Microsoft Word including versions of Lorem Ipsum.
+      </p>
+    </details>
+  </div>
+  <div>
+    <h2>Get in touch</h2>
+    <h1>Contact us</h1>
+
+    <!-- contact form from ekm themselves, how kind! -->
+    <form action="index.asp?function=FORMMAIL" method="POST" class="contact-form">
+
+      <div class="contact-form-row">
+        <label for="name">Name: <span class="star">*</span></label><input name="Name" type="text" value="">
+      </div>
+      <div class="contact-form-row">
+        <label for="email">Email Address: <span class="star">*</span></label><input name="EmailAddress" type="email"
+          value="">
+      </div>
+      <div class="contact-form-row">
+        <label for="message">Message:</label><textarea name="Message" type="text" value=""></textarea>
+      </div>
+      <div class="contact-form-row">
+        <!-- sitekey stolen from EKM, im sure thats fine... -->
+        <div class="g-recaptcha" data-sitekey="6Lc4A80sAAAAABRi3dMVxbGyjyQEPZnhjlum6r4r"></div>
+      </div>
+      <div class="contact-form-row button" id="contact-form-submit">
+        <button type="submit">Send</button>
+      </div>
+
+      <!-- HIDDEN -->
+      <input name="fieldorder" type="hidden" value="[Name],[EmailAddress],[Message]">
+      <input name="requiredfields" type="hidden" value="[Name],[EmailAddress]"> <input name="subject" type="hidden"
+        value="Email enquiry from your website">
+    </form>
+  </div>
+  <div>
+    <h2>Trusted by the best</h2>
+    <h1>Suppliers for</h1>
+
+    <p>We have the honour of supplying some of the worlds most important companies and people.</p>
+
+    <div class="logos">
+      <img class="wide" src="../images/businesses/harrods.svg" alt="harrods">
+      <img class="wide" src="../images/businesses/harrods.svg" alt="harrods">
+      <img class="tall" src="../images/businesses/dreamfruit.webp" alt="dreamfruit">
+      <img class="tall" src="../images/businesses/dreamfruit.webp" alt="dreamfruit">
+      <img class="tall" src="../images/businesses/dreamfruit.webp" alt="dreamfruit">
+    </div>
+
+    <a class="button clear-bg">See our work with brands</a>
   </div>
 </section>

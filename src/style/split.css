@@ -1,0 +1,13 @@
+.\$split {
+  margin: 1rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+
+  > div {
+    padding-inline: 5%;
+  }
+
+  > div + div {
+    border-left: 1px solid var(--grey-tint);
+  }
+}
