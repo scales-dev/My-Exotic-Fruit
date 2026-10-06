@@ -3,6 +3,6 @@
   white-space: nowrap;
   
   img {
-    width: 20%;
+    width: var(--gallery-image-width);
   }
 }

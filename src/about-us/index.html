@@ -152,14 +152,18 @@ $end-head^
     <form action="index.asp?function=FORMMAIL" method="POST" class="$contact-form contact-form">
 
       <div class="contact-form-row">
-        <label for="name">Name: <span class="star">*</span></label><input name="Name" type="text" value="">
+        <label for="name">Name: <span class="star">*</span></label><input name="Name" type="text" value="" 
+        placeholder="Name">
       </div>
       <div class="contact-form-row">
-        <label for="email">Email Address: <span class="star">*</span></label><input name="EmailAddress" type="email"
-          value="">
+        <label for="email">Email address: <span class="star">*</span></label><input name="EmailAddress" type="email"
+          value="" 
+          placeholder="Email Address">
       </div>
       <div class="contact-form-row">
-        <label for="message">Message:</label><textarea name="Message" type="text" value=""></textarea>
+        <label for="message">Message:</label><textarea name="Message" type="text" value=""
+        placeholder="Message">
+        </textarea>
       </div>
       <div class="contact-form-row">
         <!-- sitekey stolen from EKM, im sure thats fine... -->

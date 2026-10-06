@@ -3,21 +3,17 @@
     color: red;
   }
 
-  .contact-form-row {
-    display: grid;
-    grid-template-columns: 100px 1fr;
-    gap: 10px;
-    margin-bottom: 10px;
-  }
-
   .contact-form-row label {
-    font-weight: bold;
-    font-size: 13px;
+    display: none;
   }
 
   input,
   textarea {
+    display: block;
+    box-sizing: border-box;
+    
     padding: 10px;
+    margin-bottom: 10px;
 
     border: 1px solid var(--grey-tint);
     border-radius: 5px;
@@ -28,12 +24,11 @@
     resize: vertical;
   }
 
+  input,
+  textarea,
+  #contact-form-submit,
   .g-recaptcha {
-    grid-column: 2;
-  }
-
-  #contact-form-submit>button {
-    grid-column: 2;
-    justify-self: start;
+    width: 100%;
+    margin-inline: auto;
   }
 }

@@ -41,6 +41,11 @@
 
   --font-size: 1rem;
 
+  --gallery-image-width: 80%;
+
+  --split-left: none;
+  --split-top: 1px solid var(--grey-tint);
+
   @media (min-width: 1000px) {
     --split-width: 48%;
     --side-block-width: 30%;
@@ -49,6 +54,10 @@
     --flex: flex;
     --grid: grid;
     --title-padding: 7rem;
+    --gallery-image-width: 20%;
+
+    --split-left: 1px solid var(--grey-tint);
+    --split-top: none;
   }
 }
 
@@ -74,6 +83,8 @@ h2 {
   font-family: "Helvetica Neue Light", sans-serif;
   text-transform: uppercase;
   letter-spacing: 10px;
+
+  margin-bottom: 0;
 }
 
 .invert {
