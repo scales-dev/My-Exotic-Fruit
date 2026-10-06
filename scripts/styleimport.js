@@ -1,5 +1,4 @@
-// todo: move to body instead of head for buildEkm
-function applyHead(file, script, files) {
+function fixBody(file, script, files) {
   const matches = file.body.matchAll(/class="[^"]*?(\$[\w-]+)/g);
 
   const styles = new Set();
@@ -9,7 +8,7 @@ function applyHead(file, script, files) {
     styles.add(getStyleLink(match[1], file.pathCount));
   }
 
-  return [...styles].join("");
+  return [...styles].join("") + file.body;
 }
 
 function getStyleLink(name, pathCount) {
@@ -18,4 +17,4 @@ function getStyleLink(name, pathCount) {
   return `\n<link rel="stylesheet" href="${className}.css">`;
 }
 
-module.exports = { applyHead };
+module.exports = { fixBody };
