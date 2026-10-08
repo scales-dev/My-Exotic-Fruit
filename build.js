@@ -63,6 +63,14 @@ function recompileFile(file) {
     head += scriptFile.script.applyHead(file, scriptFile, FILES) + "\n";
   }
 
+  // todo: gross.
+  // fix the body AGAIN
+  for (const scriptFile of SCRIPTS) {
+    if (!scriptFile.script.fixBodyPOST) continue;
+
+    file.body = scriptFile.script.fixBodyPOST(file, scriptFile, FILES);
+  }
+
   head += "\n</head>\n<body>\n"
   file.body += "\n</body>\n</html>"
 
