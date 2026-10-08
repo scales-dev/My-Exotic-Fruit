@@ -1,5 +1,7 @@
-.\$banner {
-  background-color: var(--green);
+#mef {
+  .\$banner {
+    background-color: var(--green);
 
-  padding-block: 2rem;
+    padding-block: 2rem;
+  }
 }

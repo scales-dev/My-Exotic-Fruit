@@ -54,6 +54,8 @@ function recompileFile(file) {
     file.body = scriptFile.script.fixBody(file, scriptFile, FILES);
   }
 
+  file.body = `<div id="mef">\n${file.body}\n</div>`
+
   // and apply the head text after, as it can be affected by the body
   for (const scriptFile of SCRIPTS) {
     if (!scriptFile.script.applyHead) continue;

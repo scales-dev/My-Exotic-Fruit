@@ -1,15 +1,17 @@
-.\$split {
-  margin-inline: 2rem;
-  display: var(--grid);
-  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+#mef {
+  .\$split {
+    margin-inline: 2rem;
+    display: var(--grid);
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
 
-  >div {
-    padding-inline: 5%;
-    margin-block: 2rem;
-  }
+    >div {
+      padding-inline: 5%;
+      margin-block: 2rem;
+    }
 
-  >div+div {
-    border-left: var(--split-left);
-    border-top: var(--split-top);
+    >div+div {
+      border-left: var(--split-left);
+      border-top: var(--split-top);
+    }
   }
 }

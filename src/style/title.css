@@ -1,40 +1,42 @@
-.\$title {
-  position: relative;
+#mef {
+  .\$title {
+    position: relative;
 
-  img {
-    position: absolute;
+    img {
+      position: absolute;
 
-    width: 100%;
-    height: 100%;
+      width: 100%;
+      height: 100%;
 
-    object-fit: cover;
-    object-position: center;
+      object-fit: cover;
+      object-position: center;
 
-    overflow-y: hidden;
-    z-index: -2;
-  }
-
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: var(--grey-tint);
-    z-index: -1;
-  }
-
-  .title-content {
-    padding-left: var(--title-padding);
-
-    :last-child {
-      padding-bottom: 3rem;
+      overflow-y: hidden;
+      z-index: -2;
     }
-  }
 
-  h1 {
-    padding-top: 3rem;
-  }
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: var(--grey-tint);
+      z-index: -1;
+    }
 
-  p {
-    max-width: var(--side-block-width);
+    .title-content {
+      padding-left: var(--title-padding);
+
+      :last-child {
+        padding-bottom: 3rem;
+      }
+    }
+
+    h1 {
+      padding-top: 3rem;
+    }
+
+    p {
+      max-width: var(--side-block-width);
+    }
   }
 }

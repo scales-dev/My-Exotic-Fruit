@@ -1,5 +1,6 @@
-.\$gallery {
-  overflow: hidden;
+#mef {
+  .\$gallery {
+    overflow: hidden;
 
     mask-image: linear-gradient(to right,
         transparent 0%,
@@ -10,7 +11,7 @@
     .track {
       display: flex;
       width: max-content;
-      animation: scroll 30s linear infinite;
+      animation: gallery-scroll 30s linear infinite;
 
       gap: 2rem;
 
@@ -18,9 +19,10 @@
         width: var(--gallery-image-width);
       }
     }
+  }
 }
 
-@keyframes scroll {
+@keyframes gallery-scroll {
   100% {
     transform: translateX(-50%);
   }
