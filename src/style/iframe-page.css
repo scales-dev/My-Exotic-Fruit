@@ -1,10 +1,8 @@
-#mef {
-  .\$iframe-page {
+.\$iframe-page {
     iframe {
-      width: 100vw;
-      height: 100vh;
+        width: 100vw;
+        height: 100vh;
 
-      border: none;
+        border: none;
     }
-  }
 }

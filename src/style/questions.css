@@ -1,32 +1,30 @@
-#mef {
-  .\$questions {
-    margin-top: 1rem;
+.\$questions {
+  margin-top: 1rem;
 
-    details {
-      padding-block: 1rem;
+  details {
+    padding-block: 1rem;
 
-      border-bottom: 1px solid var(--grey-tint);
+    border-bottom: 1px solid var(--grey-tint);
 
-      &:first-of-type {
-        border-top: 1px solid var(--grey-tint);
+    &:first-of-type {
+      border-top: 1px solid var(--grey-tint);
+    }
+
+    summary {
+      user-select: none;
+      display: flex;
+      justify-content: space-between;
+
+      margin-right: 1rem;
+
+      &::after {
+        content: "+";
       }
+    }
 
-      summary {
-        user-select: none;
-        display: flex;
-        justify-content: space-between;
-
-        margin-right: 1rem;
-
-        &::after {
-          content: "+";
-        }
-      }
-
-      &[open] summary::after {
-        /* EMDASH!!! (looks nicer than - sadly) */
-        content: "−";
-      }
+    &[open] summary::after {
+      /* EMDASH!!! (looks nicer than - sadly) */
+      content: "−";
     }
   }
 }

@@ -54,21 +54,11 @@ function recompileFile(file) {
     file.body = scriptFile.script.fixBody(file, scriptFile, FILES);
   }
 
-  file.body = `<div id="mef">\n${file.body}\n</div>`
-
   // and apply the head text after, as it can be affected by the body
   for (const scriptFile of SCRIPTS) {
     if (!scriptFile.script.applyHead) continue;
 
     head += scriptFile.script.applyHead(file, scriptFile, FILES) + "\n";
-  }
-
-  // todo: gross.
-  // fix the body AGAIN
-  for (const scriptFile of SCRIPTS) {
-    if (!scriptFile.script.fixBodyPOST) continue;
-
-    file.body = scriptFile.script.fixBodyPOST(file, scriptFile, FILES);
   }
 
   head += "\n</head>\n<body>\n"

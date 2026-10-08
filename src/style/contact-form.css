@@ -1,35 +1,33 @@
-#mef {
-  .\$contact-form {
-    .star {
-      color: red;
-    }
+.\$contact-form {
+  .star {
+    color: red;
+  }
 
-    .contact-form-row label {
-      display: none;
-    }
+  .contact-form-row label {
+    display: none;
+  }
 
-    input,
-    textarea {
-      display: block;
+  input,
+  textarea {
+    display: block;
 
-      padding: 10px;
-      margin-block: 1rem;
+    padding: 10px;
+    margin-block: 1rem;
 
-      border: 1px solid var(--grey-tint);
-      border-radius: 5px;
-    }
+    border: 1px solid var(--grey-tint);
+    border-radius: 5px;
+  }
 
-    textarea {
-      min-height: 100px;
-      resize: vertical;
-    }
+  textarea {
+    min-height: 100px;
+    resize: vertical;
+  }
 
-    input,
-    textarea,
-    #contact-form-submit,
-    .g-recaptcha {
-      width: 100%;
-      margin-inline: auto;
-    }
+  input,
+  textarea,
+  #contact-form-submit,
+  .g-recaptcha {
+    width: 100%;
+    margin-inline: auto;
   }
 }

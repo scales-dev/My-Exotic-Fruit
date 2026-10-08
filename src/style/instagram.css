@@ -1,9 +1,7 @@
-#mef {
-  .\$instagram {
-    width: var(--hero-block-width);
+.\$instagram {
+  width: var(--hero-block-width);
 
-    div {
-      border-radius: 10px;
-    }
+  div {
+    border-radius: 10px;
   }
 }
