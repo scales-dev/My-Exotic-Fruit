@@ -1,6 +1,8 @@
 const fs = require("fs");
 const path = require("path");
 
+const postcss = require("postcss");
+
 const fileUtil = require("./fileUtil");
 
 const changedFile = process.argv[2];
@@ -38,6 +40,12 @@ function recompileProject() {
 }
 
 function recompileFile(file) {
+  if (file.path.endsWith(".css")) {
+    fs.mkdirSync(path.dirname(file.outputPath), { recursive: true });
+    fs.writeFileSync(file.outputPath, important(file.content.toString()));
+
+    return;
+  }
   if (!file.path.endsWith(".html")) {
     fs.mkdirSync(path.dirname(file.outputPath), { recursive: true });
     fs.writeFileSync(file.outputPath, file.content);
@@ -73,4 +81,15 @@ if (!changedFile) {
 }
 else {
   recompileFile(fileUtil.getFile(changedFile));
+}
+
+function important(css) {
+    return postcss([
+        root => {
+            root.walkDecls(decl => {
+                if (!decl.important)
+                    decl.important = true;
+            });
+        }
+    ]).process(css, { from: undefined }).css;
 }

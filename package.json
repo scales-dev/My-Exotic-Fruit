@@ -6,6 +6,7 @@
   "type": "commonjs",
   "dependencies": {
     "papaparse": "^5.7.0",
+    "postcss": "^8.5.29",
     "ws": "^8.21.3"
   },
   "author": "Jack Scales",
