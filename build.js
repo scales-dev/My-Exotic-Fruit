@@ -115,13 +115,8 @@ function important(css) {
 
   function addImportant(root) {
     root.walkDecls(decl => {
-      if (isKeyframeDecl(decl)) {
-        return;
-      }
-
-      if (!decl.important) {
-        decl.important = true;
-      }
+      if (isKeyframeDecl(decl)) return;
+      if (!decl.important) decl.important = true;
     });
   }
 
@@ -132,6 +127,7 @@ function important(css) {
       const global = postcss.root();
 
       root.each(node => {
+
         if (
           node.type === "atrule" &&
           node.name === "font-face"
@@ -162,12 +158,6 @@ function important(css) {
           node.type === "rule" &&
           node.selector === "body"
         ) {
-          const bodyClone = node.clone();
-
-          addImportant(bodyClone);
-
-          global.append(bodyClone);
-
           node.each(child => {
             custom.append(child.clone());
           });
