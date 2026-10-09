@@ -1,3 +1,5 @@
+// todo: make this a buildEKM script maybe?
+
 function applyPost(file, script, files) {
   const widgetsTag = file.scripts.match(/\$widgets\s*=\s*[^\^]*?\^/g)?.[0];
 

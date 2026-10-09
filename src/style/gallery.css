@@ -12,7 +12,7 @@
       width: max-content;
       animation: scroll 30s linear infinite;
 
-      gap: 2rem;
+      gap: 32px;
 
       img {
         width: var(--gallery-image-width);

@@ -1,8 +1,8 @@
 .\$questions {
-  margin-top: 1rem;
+  margin-top: 16px;
 
   details {
-    padding-block: 1rem;
+    padding-block: 16px;
 
     border-bottom: 1px solid var(--grey-tint);
 
@@ -15,7 +15,7 @@
       display: flex;
       justify-content: space-between;
 
-      margin-right: 1rem;
+      margin-right: 16px;
 
       &::after {
         content: "+";
