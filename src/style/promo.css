@@ -8,7 +8,7 @@
     margin-inline: auto;
     margin-block: 50px;
 
-    padding-block: 16px;
+    padding-block: 1rem;
 
     border-radius: 10px;
     box-shadow: 10px 10px 25px black;
@@ -16,7 +16,7 @@
     display: var(--flex);
 
     >div {
-      padding: 0 32px;
+      padding: 0 2rem;
       max-width: var(--split-width);
     }
   }

@@ -26,12 +26,12 @@
     padding-left: var(--title-padding);
 
     :last-child {
-      padding-bottom: 48px;
+      padding-bottom: 3rem;
     }
   }
 
   h1 {
-    padding-top: 48px;
+    padding-top: 3rem;
   }
 
   p {

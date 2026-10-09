@@ -37,9 +37,9 @@
   --flex: block;
   --grid: block;
 
-  --title-padding: 32px;
+  --title-padding: 2rem;
 
-  --font-size: 16px;
+  --font-size: 1rem;
 
   --gallery-image-width: 80vw;
 
@@ -53,8 +53,8 @@
     --margin: 0;
     --flex: flex;
     --grid: grid;
-    --title-padding: 112px;
-    --gallery-image-width: 240px;
+    --title-padding: 7rem;
+    --gallery-image-width: 15rem;
 
     --split-left: 1px solid var(--grey-tint);
     --split-top: none;
@@ -71,7 +71,7 @@ body {
 
 h1 {
   margin: 0;
-  font-size: 64px;
+  font-size: 4rem;
   font-family: "Cormorant Garamond", sans-serif;
   font-weight: 400;
 
@@ -79,7 +79,7 @@ h1 {
 }
 
 h2 {
-  font-size: 22px;
+  font-size: 1.4rem;
   font-family: "Helvetica Neue Light", sans-serif;
   text-transform: uppercase;
   letter-spacing: 10px;
@@ -124,20 +124,20 @@ h2 {
   align-items: center;
   flex-wrap: wrap;
 
-  column-gap: 32px;
+  column-gap: 2rem;
 
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
 
   img {
-    height: 48px;
+    height: 3rem;
   }
 
   .wide {
-    height: 80px;
+    height: 5rem;
   }
 
   .tall {
-    width: 80px;
+    width: 5rem;
     height: auto;
   }
 }
@@ -202,7 +202,7 @@ button {
   border: none;
   font: inherit;
 
-  margin-top: 16px;
+  margin-top: 1rem;
 }
 
 button::after,
