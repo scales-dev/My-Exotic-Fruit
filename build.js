@@ -61,11 +61,19 @@ function recompileFile(file) {
     head += scriptFile.script.applyHead(file, scriptFile, FILES) + "\n";
   }
 
-  head += "\n</head>\n<body>\n"
-  file.body += "\n</body>\n</html>"
+  // lastly, we might want to do other stuff, go do that.
+  for (const scriptFile of SCRIPTS) {
+    if (!scriptFile.script.applyPost) continue;
+
+    scriptFile.script.applyPost(file, scriptFile, FILES);
+  }
+
+  // todo: automate opening/closing these tags in head.html component
+  head += "\n</head>\n<body>\n<style-blocker>"
+  file.body += "</style-blocker>\n</body>\n</html>"
 
   fs.mkdirSync(path.dirname(file.outputPath), { recursive: true });
-  fs.writeFileSync(file.outputPath, head + file.body);
+  fs.writeFileSync(file.outputPath, head + file.body + file.scripts);
 }
 
 if (!changedFile) {
