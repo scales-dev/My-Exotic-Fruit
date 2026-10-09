@@ -19,6 +19,29 @@
   font-display: swap;
 }
 
+/* https://unused-css.com/blog/css-shake-animation/ */
+@keyframes shake {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(5deg);
+  }
+
+  50% {
+    transform: rotate(0eg);
+  }
+
+  75% {
+    transform: rotate(-5deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
 body {
   inset: 0;
   margin: 0;
@@ -91,6 +114,43 @@ body {
     text-decoration: none;
   }
 
+  details:hover {
+    cursor: pointer;
+  }
+
+  .button,
+  button {
+    border-radius: 30px;
+    background-color: var(--green);
+    color: white;
+
+    padding-inline: 30px;
+    padding-block: 10px;
+
+    display: inline-flex;
+    align-items: center;
+
+    border: none;
+    font: inherit;
+
+    margin-top: 16px;
+
+    &::after {
+      content: "🡲";
+      margin-left: 10px;
+
+      transition: margin-left 0.3s;
+    }
+
+    &:hover::after {
+      margin-left: 15px;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
   .invert {
     filter: invert(1);
   }
@@ -134,6 +194,10 @@ body {
 
     img {
       height: 48px;
+
+      &:hover {
+        animation: shake 0.4s;
+      }
     }
 
     .wide {
@@ -185,30 +249,6 @@ body {
       left: 0;
       z-index: inherit;
     }
-  }
-
-  .button,
-  button {
-    border-radius: 30px;
-    background-color: var(--green);
-    color: white;
-
-    padding-inline: 30px;
-    padding-block: 10px;
-
-    display: inline-flex;
-    align-items: center;
-
-    border: none;
-    font: inherit;
-
-    margin-top: 16px;
-  }
-
-  button::after,
-  .button::after {
-    content: "🡲";
-    margin-left: 10px;
   }
 
   .clear-bg {

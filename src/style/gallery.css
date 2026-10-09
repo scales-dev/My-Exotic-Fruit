@@ -1,23 +1,29 @@
 .\$gallery {
-  overflow: hidden;
+  padding-block: 25px;
 
-    mask-image: linear-gradient(to right,
-        transparent 0%,
-        black 6%,
-        black 94%,
-        transparent 100%);
+  mask-image: linear-gradient(to right,
+      transparent 0%,
+      black 6%,
+      black 94%,
+      transparent 100%);
 
-    .track {
-      display: flex;
-      width: max-content;
-      animation: scroll 30s linear infinite;
+  .track {
+    display: flex;
+    width: max-content;
+    animation: scroll 30s linear infinite;
 
-      gap: 32px;
+    gap: 32px;
 
-      img {
-        width: var(--gallery-image-width);
+    img {
+      width: var(--gallery-image-width);
+
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: scale(1.1);
       }
     }
+  }
 }
 
 @keyframes scroll {
