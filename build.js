@@ -69,11 +69,14 @@ function recompileFile(file) {
   }
 
   // todo: automate opening/closing these tags in head.html component
-  head += "\n</head>\n<body>\n<style-blocker>"
-  file.body += "</style-blocker>\n</body>\n</html>"
+  head += "\n</head>\n<body>\n"
+  file.body += "\n</body>\n</html>"
+
+  const fileContent = (head + file.body + file.scripts)
+    .replaceAll(/^\$[^^]*\^$/gm, "")
 
   fs.mkdirSync(path.dirname(file.outputPath), { recursive: true });
-  fs.writeFileSync(file.outputPath, head + file.body + file.scripts);
+  fs.writeFileSync(file.outputPath, fileContent);
 }
 
 if (!changedFile) {
