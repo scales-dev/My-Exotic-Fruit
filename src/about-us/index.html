@@ -215,4 +215,59 @@ $end-body^
 <script src="https://elfsightcdn.com/platform.js" async></script>
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
+<!-- very silly script, copies the result of captcha into the form when submitted -->
+<script>
+(() => {
+  const RESPONSE_NAME = "g-recaptcha-response";
+  let form;
+  let hiddenInput;
+
+  function initialise() {
+    const blocker = document.querySelector("style-blocker");
+
+    form = blocker?.shadowRoot?.querySelector("form.contact-form");
+
+    if (!form) return false;
+
+    // Create the input inside the actual form.
+    hiddenInput = form.querySelector(
+      `input[type="hidden"][name="${RESPONSE_NAME}"]`
+    );
+
+    if (!hiddenInput) {
+      hiddenInput = document.createElement("input");
+      hiddenInput.type = "hidden";
+      hiddenInput.name = RESPONSE_NAME;
+      form.appendChild(hiddenInput);
+    }
+
+    function syncCaptchaToken() {
+      const response = document.querySelector(
+        `textarea[name="${RESPONSE_NAME}"]`
+      );
+
+      if (response && hiddenInput.value !== response.value) {
+        hiddenInput.value = response.value;
+      }
+    }
+
+    form.addEventListener("submit", syncCaptchaToken, true);
+
+    syncCaptchaToken();
+    setInterval(syncCaptchaToken, 200);
+
+    console.log("EKM CAPTCHA integration initialised.");
+    return true;
+  }
+
+  if (!initialise()) {
+    const initTimer = setInterval(() => {
+      if (initialise()) {
+        clearInterval(initTimer);
+      }
+    }, 250);
+  }
+})();
+</script>
+
 $widgets=elfsight-app-81a76b21-490e-4720-9007-56ce6007b124,g-recaptcha^
