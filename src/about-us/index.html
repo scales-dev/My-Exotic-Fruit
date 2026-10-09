@@ -16,27 +16,47 @@ $end-head^
     </div>
     <div class="$gallery hero-block">
       <div class="track">
-        <img src="../images/meet-the-team/Meet the team-page-1.svg" alt="">
-        <img src="../images/meet-the-team/Meet the team-page-2.svg" alt="">
-        <img src="../images/meet-the-team/Meet the team-page-3.svg" alt="">
-        <img src="../images/meet-the-team/Meet the team-page-4.svg" alt="">
-        <img src="../images/meet-the-team/Meet the team-page-5.svg" alt="">
-        <img src="../images/meet-the-team/Meet the team-page-6.svg" alt="">
-        <img src="../images/meet-the-team/Meet the team-page-7.svg" alt="">
-        <img src="../images/meet-the-team/Meet the team-page-8.svg" alt="">
-        <img src="../images/meet-the-team/Meet the team-page-9.svg" alt="">
-        <img src="../images/meet-the-team/Meet the team-page-10.svg" alt="">
-
-        <img src="../images/meet-the-team/Meet the team-page-1.svg" alt="">
-        <img src="../images/meet-the-team/Meet the team-page-2.svg" alt="">
-        <img src="../images/meet-the-team/Meet the team-page-3.svg" alt="">
-        <img src="../images/meet-the-team/Meet the team-page-4.svg" alt="">
-        <img src="../images/meet-the-team/Meet the team-page-5.svg" alt="">
-        <img src="../images/meet-the-team/Meet the team-page-6.svg" alt="">
-        <img src="../images/meet-the-team/Meet the team-page-7.svg" alt="">
-        <img src="../images/meet-the-team/Meet the team-page-8.svg" alt="">
-        <img src="../images/meet-the-team/Meet the team-page-9.svg" alt="">
-        <img src="../images/meet-the-team/Meet the team-page-10.svg" alt="">
+        <!--
+        ../images/meet-the-team/Chris Rennett.webp
+        ../images/meet-the-team/Emma Rogers.webp
+        ../images/meet-the-team/Jack Scales.webp
+        ../images/meet-the-team/Karen Scales.webp
+        ../images/meet-the-team/Kirsty Rice.webp
+        ../images/meet-the-team/Luke Saville.webp
+        ../images/meet-the-team/Mandy Smith.webp
+        ../images/meet-the-team/Megan Shellard.webp
+        ../images/meet-the-team/Melody de Mello.webp
+        -->
+        <div>
+          <h2>Jack Scales</h2>
+          <img src="../images/meet-the-team/Jack Scales.webp" alt="">
+          <p>Always give 100%, unless you're donating blood, maybe not then...</p>
+        </div>
+        <div>
+          <h2>Jack Scales</h2>
+          <img src="../images/meet-the-team/Jack Scales.webp" alt="">
+          <p>Always give 100%, unless you're donating blood, maybe not then...</p>
+        </div>
+        <div>
+          <h2>Jack Scales</h2>
+          <img src="../images/meet-the-team/Jack Scales.webp" alt="">
+          <p>Always give 100%, unless you're donating blood, maybe not then...</p>
+        </div>
+        <div>
+          <h2>Jack Scales</h2>
+          <img src="../images/meet-the-team/Jack Scales.webp" alt="">
+          <p>Always give 100%, unless you're donating blood, maybe not then...</p>
+        </div>
+        <div>
+          <h2>Jack Scales</h2>
+          <img src="../images/meet-the-team/Jack Scales.webp" alt="">
+          <p>Always give 100%, unless you're donating blood, maybe not then...</p>
+        </div>
+        <div>
+          <h2>Jack Scales</h2>
+          <img src="../images/meet-the-team/Jack Scales.webp" alt="">
+          <p>Always give 100%, unless you're donating blood, maybe not then...</p>
+        </div>
       </div>
     </div>
   </section>
@@ -174,7 +194,8 @@ $end-head^
             value="" placeholder="Email Address">
         </div>
         <div class="contact-form-row">
-          <label for="message">Message:</label><textarea name="Message" type="text" value="" placeholder="Message"></textarea>
+          <label for="message">Message:</label><textarea name="Message" type="text" value=""
+            placeholder="Message"></textarea>
         </div>
         <div class="contact-form-row">
           <!-- sitekey stolen from EKM, im sure thats fine... -->
@@ -216,57 +237,57 @@ $end-body^
 
 <!-- very silly script, copies the result of captcha into the form when submitted -->
 <script>
-(() => {
-  const RESPONSE_NAME = "g-recaptcha-response";
-  let form;
-  let hiddenInput;
+  (() => {
+    const RESPONSE_NAME = "g-recaptcha-response";
+    let form;
+    let hiddenInput;
 
-  function initialise() {
-    const blocker = document.querySelector("style-blocker");
+    function initialise() {
+      const blocker = document.querySelector("style-blocker");
 
-    form = blocker?.shadowRoot?.querySelector("form.contact-form");
+      form = blocker?.shadowRoot?.querySelector("form.contact-form");
 
-    if (!form) return false;
+      if (!form) return false;
 
-    // Create the input inside the actual form.
-    hiddenInput = form.querySelector(
-      `input[type="hidden"][name="${RESPONSE_NAME}"]`
-    );
-
-    if (!hiddenInput) {
-      hiddenInput = document.createElement("input");
-      hiddenInput.type = "hidden";
-      hiddenInput.name = RESPONSE_NAME;
-      form.appendChild(hiddenInput);
-    }
-
-    function syncCaptchaToken() {
-      const response = document.querySelector(
-        `textarea[name="${RESPONSE_NAME}"]`
+      // Create the input inside the actual form.
+      hiddenInput = form.querySelector(
+        `input[type="hidden"][name="${RESPONSE_NAME}"]`
       );
 
-      if (response && hiddenInput.value !== response.value) {
-        hiddenInput.value = response.value;
+      if (!hiddenInput) {
+        hiddenInput = document.createElement("input");
+        hiddenInput.type = "hidden";
+        hiddenInput.name = RESPONSE_NAME;
+        form.appendChild(hiddenInput);
       }
+
+      function syncCaptchaToken() {
+        const response = document.querySelector(
+          `textarea[name="${RESPONSE_NAME}"]`
+        );
+
+        if (response && hiddenInput.value !== response.value) {
+          hiddenInput.value = response.value;
+        }
+      }
+
+      form.addEventListener("submit", syncCaptchaToken, true);
+
+      syncCaptchaToken();
+      setInterval(syncCaptchaToken, 200);
+
+      console.log("EKM CAPTCHA integration initialised.");
+      return true;
     }
 
-    form.addEventListener("submit", syncCaptchaToken, true);
-
-    syncCaptchaToken();
-    setInterval(syncCaptchaToken, 200);
-
-    console.log("EKM CAPTCHA integration initialised.");
-    return true;
-  }
-
-  if (!initialise()) {
-    const initTimer = setInterval(() => {
-      if (initialise()) {
-        clearInterval(initTimer);
-      }
-    }, 250);
-  }
-})();
+    if (!initialise()) {
+      const initTimer = setInterval(() => {
+        if (initialise()) {
+          clearInterval(initTimer);
+        }
+      }, 250);
+    }
+  })();
 </script>
 
 $widgets=elfsight-app-81a76b21-490e-4720-9007-56ce6007b124,g-recaptcha^

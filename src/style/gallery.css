@@ -12,10 +12,14 @@
     width: max-content;
     animation: scroll 30s linear infinite;
 
-    gap: 32px;
+    gap: 16px;
 
-    img {
-      width: var(--gallery-image-width);
+    div {
+      text-align: center;
+      max-width: var(--gallery-image-width);
+      img {
+        width: var(--gallery-image-width);
+      }
 
       transition: transform 0.3s;
 
@@ -23,6 +27,7 @@
         transform: scale(1.1);
       }
     }
+
   }
 }
 
