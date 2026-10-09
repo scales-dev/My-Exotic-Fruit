@@ -56,7 +56,7 @@ const shadowScript =
   customElements.define("style-blocker", StyleBlocker);
 </script>`
 
-fs.rmSync("ekmBuild", { recursive: true, force: true })
+fs.rmSync("embed-build", { recursive: true, force: true })
 execSync("node build");
 
 for (const file of fileUtil.getAllFiles("./build")) {
@@ -83,7 +83,7 @@ function stripFile(builtFile, srcFile) {
     return match.replace(captured, fixLocalLink(captured, builtFile.path))
   });
 
-  const output = builtFile.path.replace("build", "ekmBuild");
+  const output = builtFile.path.replace("build", "embed-build");
   fs.mkdirSync(path.dirname(output), { recursive: true })
   fs.writeFileSync(output, applyShadow(builtFileBody, srcFile.scripts));
 }
