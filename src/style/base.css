@@ -115,6 +115,9 @@ body {
   a {
     text-decoration: none;
   }
+  img {
+    max-width: 100%;
+  }
 
   details:hover {
     cursor: pointer;
@@ -165,13 +168,13 @@ body {
   .side-block {
     max-width: var(--side-block-width);
     padding-left: 5%;
-    padding-right: 5%;
+    padding-right: 2%;
 
     margin: var(--margin);
   }
 
   .hero-block {
-    margin: var(--margin);
+    padding-left: 3%;
     max-width: var(--hero-block-width);
     margin-right: 5%;
   }
