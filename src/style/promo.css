@@ -1,13 +1,12 @@
 .\$promo {
   margin-inline: 2%;
-  margin-top: 10px;
 
   >div {
     position: relative;
 
     max-width: var(--split-width);
     margin-inline: auto;
-    margin-bottom: 50px;
+    margin-block: 25px;
 
     padding-block: 16px;
 
