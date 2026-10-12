@@ -1,6 +1,4 @@
 .\$gallery {
-  padding-block: 25px;
-
   mask-image: linear-gradient(to right,
       transparent 0%,
       black 6%,
@@ -10,7 +8,7 @@
   .track {
     display: flex;
     width: max-content;
-    animation: scroll 30s linear infinite;
+    animation: scroll 25s linear infinite;
 
     gap: 16px;
 
