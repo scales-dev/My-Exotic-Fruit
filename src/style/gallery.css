@@ -1,4 +1,6 @@
 .\$gallery {
+  padding-block: 10px;
+
   mask-image: linear-gradient(to right,
       transparent 0%,
       black 6%,

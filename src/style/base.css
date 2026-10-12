@@ -49,7 +49,6 @@ body {
 
 .mef {
   overflow-x: hidden;
-  padding-block: 25px;
 
   font-family: "Helvetica Neue", sans-serif;
   font-size: var(--font-size);
