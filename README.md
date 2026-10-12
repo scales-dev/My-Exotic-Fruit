@@ -6,7 +6,9 @@
     - Working with Brands
     - Bespoke Sourcing
     - About Us
-        - Get employee introduction PDF's
+        - Get partner logo's
+        - Write real words, not lorem ipsum...
+        - Still missing some pictures.
 - Update the EKM site:
     - Banner pictures for:
         - Bananas
