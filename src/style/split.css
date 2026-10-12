@@ -1,5 +1,5 @@
 .\$split {
-  margin-inline: 32px;
+  margin: 16px;
   display: var(--grid);
   grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
 

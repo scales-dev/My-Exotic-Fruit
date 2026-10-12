@@ -60,7 +60,7 @@ body {
   --grey-tint: rgba(0, 0, 0, 0.4);
   --light-grey-tint: rgba(230, 230, 230, 0.4);
 
-  --side-block-width: 90%;
+  --side-block-width: 100%;
   --hero-block-width: 90%;
 
   --split-width: 98%;
@@ -115,6 +115,7 @@ body {
   a {
     text-decoration: none;
   }
+
   img {
     max-width: 100%;
   }
@@ -167,16 +168,12 @@ body {
 
   .side-block {
     max-width: var(--side-block-width);
-    padding-left: 5%;
-    padding-right: 2%;
-
-    margin: var(--margin);
+    margin-inline: auto;
   }
 
   .hero-block {
-    padding-left: 3%;
+    margin-inline: auto;
     max-width: var(--hero-block-width);
-    margin-right: 5%;
   }
 
   .green-text {
