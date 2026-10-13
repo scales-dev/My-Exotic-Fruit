@@ -5,6 +5,7 @@
 
   >div {
     padding-inline: 5%;
+    padding-block: var(--split-padding);
   }
 
   >div+div {

@@ -78,6 +78,7 @@ body {
 
   --split-left: none;
   --split-top: 1px solid var(--grey-tint);
+  --split-padding: 32px;
 
   --promo-icon-z: -2;
 
@@ -93,6 +94,7 @@ body {
 
     --split-left: 1px solid var(--grey-tint);
     --split-top: none;
+    --split-padding: 0;
 
     --promo-icon-z: inherit;
   }
