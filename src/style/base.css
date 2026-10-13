@@ -79,6 +79,8 @@ body {
   --split-left: none;
   --split-top: 1px solid var(--grey-tint);
 
+  --promo-icon-z: -2;
+
   @media (min-width: 1300px) {
     --split-width: 48%;
     --side-block-width: 35%;
@@ -91,6 +93,8 @@ body {
 
     --split-left: 1px solid var(--grey-tint);
     --split-top: none;
+
+    --promo-icon-z: inherit;
   }
 
 
@@ -228,26 +232,6 @@ body {
 
   .green-tint::before {
     background: var(--light-green-tint);
-  }
-
-  .icon {
-    width: var(--split-width);
-    height: auto;
-    object-fit: contain;
-
-    position: absolute;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
-    z-index: -2;
-
-    @media (min-width: 1300px) {
-      position: inherit;
-      transform: translate(0);
-      top: 0;
-      left: 0;
-      z-index: inherit;
-    }
   }
 
   .clear-bg {

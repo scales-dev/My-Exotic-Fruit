@@ -1,8 +1,13 @@
 .\$promo {
   margin-inline: 2%;
+  align-items: stretch;
+  display: var(--flex);
 
   >div {
     position: relative;
+
+    display: flex;
+    align-items: center;
 
     max-width: var(--split-width);
     margin-inline: auto;
@@ -13,11 +18,21 @@
     border-radius: 10px;
     box-shadow: 10px 10px 25px black;
 
-    display: var(--flex);
-
     >div {
       padding: 0 32px;
       max-width: var(--split-width);
+    }
+
+    .icon {
+      max-width: var(--split-width);
+      object-fit: contain;
+
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+
+      z-index: var(--promo-icon-z);
     }
   }
 }
