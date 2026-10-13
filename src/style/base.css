@@ -81,7 +81,7 @@ body {
 
   @media (min-width: 1300px) {
     --split-width: 48%;
-    --side-block-width: 30%;
+    --side-block-width: 35%;
     --hero-block-width: 55%;
     --margin: 0;
     --flex: flex;
@@ -164,16 +164,6 @@ body {
   .flex {
     display: var(--flex);
     align-items: center;
-  }
-
-  .side-block {
-    max-width: var(--side-block-width);
-    margin-inline: auto;
-  }
-
-  .hero-block {
-    margin-inline: auto;
-    max-width: var(--hero-block-width);
   }
 
   .green-text {

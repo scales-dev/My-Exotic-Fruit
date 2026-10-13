@@ -1,0 +1,16 @@
+  .\$blocks {
+    display: var(--flex);
+    align-items: center;
+    justify-content: center;
+    gap: 2%;
+
+    .side-block {
+      margin-inline: var(--margin);
+      width: var(--side-block-width);
+    }
+
+    .hero-block {
+      margin-inline: var(--margin);
+      width: var(--hero-block-width);
+    }
+  }

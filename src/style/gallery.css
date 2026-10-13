@@ -3,8 +3,8 @@
 
   mask-image: linear-gradient(to right,
       transparent 0%,
-      black 6%,
-      black 94%,
+      black 0%,
+      black 100%,
       transparent 100%);
 
   .track {
@@ -14,12 +14,10 @@
 
     gap: 16px;
 
-    div {
+    > * {
       text-align: center;
       max-width: var(--gallery-image-width);
-      img {
-        width: var(--gallery-image-width);
-      }
+      width: var(--gallery-image-width);
 
       transition: transform 0.3s;
 
@@ -27,7 +25,6 @@
         transform: scale(1.1);
       }
     }
-
   }
 }
 
