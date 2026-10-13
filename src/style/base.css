@@ -60,12 +60,10 @@ body {
   --grey-tint: rgba(0, 0, 0, 0.4);
   --light-grey-tint: rgba(230, 230, 230, 0.4);
 
-  --side-block-width: 100%;
-  --hero-block-width: 90%;
+  --side-block-width: 95%;
+  --hero-block-width: 95%;
 
   --split-width: 98%;
-
-  --margin: calc((100% - var(--hero-block-width)) / 2);
 
   --flex: block;
   --grid: block;
@@ -86,7 +84,6 @@ body {
     --split-width: 48%;
     --side-block-width: 35%;
     --hero-block-width: 55%;
-    --margin: 0;
     --flex: flex;
     --grid: grid;
     --title-padding: 112px;

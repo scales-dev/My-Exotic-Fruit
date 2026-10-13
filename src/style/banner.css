@@ -1,4 +1,4 @@
 .\$banner {
   background-color: var(--green);
-  padding: 32px;
+  padding-block: 16px;
 }

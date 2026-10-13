@@ -5,12 +5,12 @@
     gap: 2%;
 
     .side-block {
-      margin-inline: var(--margin);
+      margin-inline: auto;
       width: var(--side-block-width);
     }
 
     .hero-block {
-      margin-inline: var(--margin);
+      margin-inline: auto;
       width: var(--hero-block-width);
     }
   }
