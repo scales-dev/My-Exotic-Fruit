@@ -83,7 +83,7 @@ body {
   @media (min-width: 1300px) {
     --split-width: 48%;
     --side-block-width: 35%;
-    --hero-block-width: 55%;
+    --hero-block-width: 50%;
     --flex: flex;
     --grid: grid;
     --title-padding: 112px;

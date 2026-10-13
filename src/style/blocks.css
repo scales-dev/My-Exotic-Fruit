@@ -1,8 +1,7 @@
   .\$blocks {
     display: var(--flex);
     align-items: center;
-    justify-content: center;
-    gap: 2%;
+    justify-content: space-around;
 
     .side-block {
       margin-inline: auto;

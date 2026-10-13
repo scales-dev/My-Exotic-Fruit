@@ -1,5 +1,7 @@
 const links = {
-  "$ekm-blog^": "https://my-exotic-fruit.28.ekm.shop/blogs"
+  "$ekm-blog^": "https://my-exotic-fruit.28.ekm.shop/blogs",
+  "$ekm-contact-us^": "https://my-exotic-fruit.28.ekm.shop/about-us-134-c.asp#contact-us",
+  "$ekm-bespoke-sourcing^" : "https://my-exotic-fruit.28.ekm.shop/bespoke-sourcing-132-c.asp"
 };
 
 function fixBody(file, script, files) {
