@@ -145,7 +145,7 @@ body {
     margin-top: 16px;
 
     &::after {
-      content: "🡲";
+      content: "→";
       margin-left: 10px;
 
       transition: margin-left 0.3s;
