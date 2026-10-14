@@ -111,19 +111,22 @@ body {
     font-family: "Helvetica Neue Light", sans-serif;
     text-transform: uppercase;
     letter-spacing: 5px;
+    font-weight: normal;
 
     margin-bottom: 0;
   }
 
   a {
     text-decoration: none;
+
+    color: var(--green);
   }
 
   img {
     max-width: 100%;
   }
 
-  details:hover {
+  summary:hover {
     cursor: pointer;
   }
 

@@ -1,4 +1,5 @@
   .\$blocks {
+    margin-block: 16px;
     display: var(--flex);
     align-items: center;
     justify-content: space-around;
