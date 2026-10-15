@@ -1,48 +1,39 @@
 # TODO:
 - Make the following pages:
-    - Japanese Fruits
-    - Luxury Fruits for Gifting
-    - Seasonal Offers (maybe)
-    - Working with Brands
-    - Bespoke Sourcing
-    - About Us
-        - Get partner logo's
-        - Write real words, not lorem ipsum...
-        - Still missing some pictures.
+  - Japanese Fruits
+  - Working with Brands
+  - Trade buyers
+  - Guest amenity
+  - Seasonal products page?
+  - About Us
+    - Get partner logo's
+    - Write real words, not lorem ipsum...
+    - Still missing people on meet the team
+- Fix css not loading for people...?
 - Update the EKM site:
-    - Banner pictures for:
-        - Bananas
-        - Caribbean island favourites
-        - Citrus
-        - Dates
-        - Dragon Fruit
-        - Dried Fruits
-        - Drinks
-        - Durian
-        - Frozen Fruits
-        - Selection Boxes / Gift Baskets
-        - Guava
-        - Ingrediants & Aromatics
-        - Jackfruit
-        - Luxury Fruit for Gifting
-        - Mangoes
-        - Melons
-        - Alkaline Fruits
-        - Passionfruits
-        - Potatoes & Yams
-        - Sour Fruits
-        - Sweet Fruits
-        - Soursop
-    - Home page sections
-        - Shop by category is not actually showing real categories
-        - "The finest fruits direct to your door" has placeholders
-        - Fill in "your weekly seasonal update"
-        - Banner video for footer
-    - Stop each product having a second description box
-    - Fix origin maps from stacking...
-    - Pick 2 promos for the footer
-    - Make payment work on site
-    - Negotiate cost of higher tier
+  - Decide best categories
+  - Redesign home page
+    - Start by advertising best categories
+    - Fill in "your weekly seasonal update"
+    - Banner video for footer
+  - Redesign category pages
+    - 8 best sellers, 2 promos, then rest
+  - Redesign "shop online" tab
+    - Less categories, perhaps 12
+    - Each category should have sub-categories
+    - Promo on right of shop online dropdown
+  - Update product display
+    - Give each product USPs... (ollama save me)
+    - Make product maps allow several continents
+    - Make descriptions allow new lines...?
+  - Make each tab not actually a category, instead redirect to a non category page
+  - Make product summaries shorter (120 characters)
+  - Figure out why style doesn't load for some people
+  - Banner pictures for all categories
+  - Pick 2 promos for the footer
+  - Make payment work on site
+  - Negotiate cost of higher tier
+  - Decide on footer tabs
 
 # My Exotic Fruit
 
