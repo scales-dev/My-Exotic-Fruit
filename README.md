@@ -1,8 +1,3 @@
-MANDARIN HOTEL
-KOOX
-RESTARAUNT STORY
-STAR SPICE
-
 # TODO:
 - Make the following pages:
     - Japanese Fruits
