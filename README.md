@@ -1,3 +1,8 @@
+MANDARIN HOTEL
+KOOX
+RESTARAUNT STORY
+STAR SPICE
+
 # TODO:
 - Make the following pages:
     - Japanese Fruits
@@ -38,10 +43,9 @@
         - "The finest fruits direct to your door" has placeholders
         - Fill in "your weekly seasonal update"
         - Banner video for footer
-    - Fill in seasonality + origin map for EVERY product
     - Stop each product having a second description box
+    - Fix origin maps from stacking...
     - Pick 2 promos for the footer
-    - Fill in footer text
     - Make payment work on site
     - Negotiate cost of higher tier
 
@@ -82,6 +86,14 @@ Install the File Watcher extension:
 The watcher should run `node build.js <changed file>`
 
 ## Build pipeline
+
+### Todo:
+- applyPost isnt documented
+- createFiles isnt documented (or even used)
+- Finish build-embed
+  - It isnt mentioned yet in the readme
+  - Entire site embed in a frame, like iframe, but not scrolling separately
+  - Make build embed not require external requests to style sheets/images
 
 I like static websites, but I do NOT enjoy updating headers/footers for every file,
 so I thought this would be a simple way around.
