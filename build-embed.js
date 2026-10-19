@@ -34,6 +34,18 @@ const shadowScript =
           this.shadowRoot.appendChild(node);
         }
       });
+
+      // we still want SOME swag
+      const cssFiles = this.getAttribute('css-files');
+      if (cssFiles) {
+          const arrCssFiles = cssFiles.split(',');
+          for(let i = 0; i < arrCssFiles.length; i++){
+              let link = document.createElement('link');
+              link.setAttribute('rel', 'stylesheet');
+              link.setAttribute('href', arrCssFiles[i]);
+              this.shadowRoot.appendChild(link);
+          }
+      }
     }
 
     embedWidget(className) {
@@ -85,7 +97,7 @@ function stripFile(builtFile, srcFile) {
 
   const output = builtFile.path.replace("build", "embed-build");
   fs.mkdirSync(path.dirname(output), { recursive: true })
-  fs.writeFileSync(output, applyShadow(builtFileBody, srcFile.scripts));
+  fs.writeFileSync(output, applyShadow(builtFile, builtFileBody, srcFile.scripts));
 }
 
 // local link will be in the form "../images/logo.jpg"
@@ -106,8 +118,22 @@ function fixLocalLink(localLink, file) {
   return BASE_URL + localLink + filePath;
 }
 
-function applyShadow(body, scripts) {
-  return `<style-blocker>
+function applyShadow(builtFile, body, scripts) {
+  let cssFiles = [];
+
+  // matches <link rel="stylesheet" href="../style/base.css">
+  const styles = builtFile.content.toString()
+    .matchAll(/<\s*link\s*rel\s*=\s*"stylesheet"\s*href\s*=\s*"([^"]*)"\s*>/g)
+  for (const match of styles) {
+    const style = fixLocalLink(match[1], builtFile.path);
+    cssFiles.push(style);
+  }
+
+  const cssFileData = cssFiles.length > 0
+    ? ` css-files="${cssFiles.join(",")}"`
+    : ""
+
+  return `<style-blocker${cssFileData}>
 ${body}
 </style-blocker>
 ${addScripts(scripts)}`

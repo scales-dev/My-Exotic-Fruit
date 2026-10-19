@@ -1,4 +1,4 @@
-function fixBody(file, script, files) {
+function applyHead(file, script, files) {
   const matches = file.body.matchAll(/class="[^"]*?(\$[\w-]+)/g);
 
   const styles = new Set();
@@ -8,7 +8,7 @@ function fixBody(file, script, files) {
     styles.add(getStyleLink(match[1], file.pathCount));
   }
 
-  return [...styles].join("") + file.body;
+  return [...styles].join("");
 }
 
 function getStyleLink(name, pathCount) {
@@ -17,4 +17,4 @@ function getStyleLink(name, pathCount) {
   return `\n<link rel="stylesheet" href="${className}.css">`;
 }
 
-module.exports = { fixBody };
+module.exports = { applyHead };

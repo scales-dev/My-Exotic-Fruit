@@ -57,6 +57,8 @@ body {
   --grey-tint: rgba(0, 0, 0, 0.4);
   --light-grey-tint: rgba(230, 230, 230, 0.4);
 
+  --title-content-margin: 10%;
+
   --side-block-width: 95%;
   --hero-block-width: 95%;
 
@@ -78,6 +80,8 @@ body {
   --promo-icon-z: -2;
 
   @media (min-width: 1300px) {
+    --title-content-margin: 30%;
+
     --split-width: 48%;
     --side-block-width: 35%;
     --hero-block-width: 50%;
