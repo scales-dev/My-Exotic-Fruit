@@ -2,14 +2,14 @@
 // It makes the page ignore external styling
 // however it requires the images/css to be hosted somewhere
 // divs that can be altered by js should be tagged with !WIDGET! in a comment above
+// and js that alters stuff, should be after the </html> tag! <3
 // todo: just embed css, no point redirecting it
 
 const fs = require("fs");
 const path = require("path");
 
-const BASE_URL = "https://thegreengrocerbymef.com/";
+const BASE_URL = "https://my-exotic-fruit.myexoticfruit.workers.dev/";
 const SRC_DIR = "build";
-
 
 const shadowScript =
   `<script>
@@ -150,6 +150,6 @@ function addScripts(content) {
     /<!--\s*!WIDGET!\s*-->\s*<[^>]*class\s*=\s*"([^"\s]*)[^"]*"/g
   )].map(match => match[1]);
 
-  return content.split("</body>")[1].split("</html>")[0]
+  return content.split("</html>")[1]
     + shadowScript.replace("$widgets^", JSON.stringify(widgets));
 }
