@@ -1,15 +1,14 @@
-// For EKM pages its easiest to be able to copy paste in a full single html file which has no other dependencies.
-// so this script make all the links link to our cloudflare site which hosts the style sheets/images
-// because I thought this was easier and cleaner than embedding the images/css into the file.
+// A short script that converts each page into an embeddable page
+// It makes the page ignore external styling
+// however it requires the images/css to be hosted somewhere
+// divs that can be altered by js should be tagged with !WIDGET! in a comment above
+// todo: just embed css, no point redirecting it
 
-// todo: handle css/js
 const fs = require("fs");
 const path = require("path");
-const { execSync } = require("child_process");
 
-const fileUtil = require("./fileUtil");
-
-const BASE_URL = "https://my-exotic-fruit.myexoticfruit.workers.dev/";
+const BASE_URL = "https://thegreengrocerbymef.com/";
+const SRC_DIR = "build";
 
 
 const shadowScript =
@@ -69,88 +68,88 @@ const shadowScript =
 </script>`
 
 fs.rmSync("embed-build", { recursive: true, force: true })
-execSync("node build");
 
-for (const file of fileUtil.getAllFiles("./build")) {
-  const srcFile = fileUtil.getFile(file.path.replace("build", "src"))
-  stripFile(file, srcFile);
+function embedAllFiles(dir) {
+  for (const file of fs.readdirSync(dir)) {
+    const filePath = path.join(dir, file);
+
+    if (fs.statSync(filePath).isDirectory()) {
+      embedAllFiles(filePath)
+    } else {
+      stripFile(filePath);
+    }
+  }
 }
 
-function stripFile(builtFile, srcFile) {
-  if (!srcFile || path.basename(builtFile.path) !== "index.html") return;
+embedAllFiles(`./${SRC_DIR}`);
 
-  let builtFileBody = builtFile.content.toString();
+function stripFile(filePath) {
+  if (path.basename(filePath) !== "index.html") return;
 
-  builtFileBody = builtFileBody.split("<body>")[1];
-  builtFileBody = builtFileBody.split("</body>")[0];
+  let content = fs.readFileSync(filePath).toString();
 
   // matches src="name/" but not src="any:" 
   // if there is a : before the first / its likely a link alr
-  builtFileBody = builtFileBody.replaceAll(/src\s*=\s*"([^":]*)"/g, (match, captured) => {
-    return match.replace(captured, fixLocalLink(captured, builtFile.path))
+  content = content.replaceAll(/src\s*=\s*"([^":]*)"/g, (match, captured) => {
+    return match.replace(captured, fixLocalLink(captured, filePath))
   });
 
   // ditto but for href
-  builtFileBody = builtFileBody.replaceAll(/href\s*=\s*"([^":]*)"/g, (match, captured) => {
-    return match.replace(captured, fixLocalLink(captured, builtFile.path))
+  content = content.replaceAll(/href\s*=\s*"([^":]*)"/g, (match, captured) => {
+    return match.replace(captured, fixLocalLink(captured, filePath))
   });
 
-  const output = builtFile.path.replace("build", "embed-build");
+  const output = filePath.replace(SRC_DIR, "embed-build");
   fs.mkdirSync(path.dirname(output), { recursive: true })
-  fs.writeFileSync(output, applyShadow(builtFile, builtFileBody, srcFile.scripts));
+  fs.writeFileSync(output, applyShadow(content));
 }
 
 // local link will be in the form "../images/logo.jpg"
-// file will be in the form "build/about-us/x/y/index.html"
+// file will be in the form "SRC_DIR/about-us/x/y/index.html"
 // we only care about the path, eg. "about-us/x/y"
 // if a ref has a "../" then we make the link "about-us/x"
 // we can then append the localLink after, making it "about-us/x/images/logo.jpg"
 function fixLocalLink(localLink, file) {
-  let filePath = "/" + file.toString()
-    .replace("build", "")
-    .replace("/index.html", "")
-    .replace("index.html", "");
-  while (localLink.includes("../")) {
-    localLink = localLink.replace("../", "");
-    filePath = filePath.split("/").at(-2);
-  }
+    if (!localLink) return "";
 
-  return BASE_URL + localLink + filePath;
+    const pagePath = path.dirname(path.relative(SRC_DIR, file));
+    const resolvedPath = path.posix.normalize(path.posix.join(pagePath, localLink));
+
+    return new URL(resolvedPath, BASE_URL).href;
 }
 
-function applyShadow(builtFile, body, scripts) {
+function applyShadow(content) {
   let cssFiles = [];
 
   // matches <link rel="stylesheet" href="../style/base.css">
-  const styles = builtFile.content.toString()
+  const styles = content
     .matchAll(/<\s*link\s*rel\s*=\s*"stylesheet"\s*href\s*=\s*"([^"]*)"\s*>/g)
   for (const match of styles) {
-    const style = fixLocalLink(match[1], builtFile.path);
-    cssFiles.push(style);
+    cssFiles.push(match[1]);
   }
 
   const cssFileData = cssFiles.length > 0
     ? ` css-files="${cssFiles.join(",")}"`
-    : ""
+    : "";
+
+  const body = content
+    .split("<body>")[1]
+    .split("</body>")[0];
 
   return `<style-blocker${cssFileData}>
 ${body}
 </style-blocker>
-${addScripts(scripts)}`
+${addScripts(content)}`
 }
 
-function addScripts(scripts) {
-  const widgetsTag = scripts.match(/\$widgets\s*=\s*[^\^]*?\^/g)?.[0];
+function addScripts(content) {
+  const widgets = [...content.matchAll(
+    /* magical regex, matches:
+    <!-- !WIDGET! -->
+    <[anything except >]class="widget_name"*/
+    /<!--\s*!WIDGET!\s*-->\s*<[^>]*class\s*=\s*"([^"\s]*)[^"]*"/g
+  )].map(match => match[1]);
 
-  scripts = scripts.replace(widgetsTag, "");
-
-  const widgets = widgetsTag ? widgetsTag
-    .split("=")[1]
-    .replace("^", "")
-    .trim()
-    .split(",")
-    .map(widget => `"${widget}"`)
-    : [];
-
-  return scripts + shadowScript.replace("$widgets^", `[${widgets.join(",")}]`);
+  return content.split("</body>")[1].split("</html>")[0]
+    + shadowScript.replace("$widgets^", JSON.stringify(widgets));
 }

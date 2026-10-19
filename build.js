@@ -1,6 +1,8 @@
 const fs = require("fs");
 const path = require("path");
 
+const { execSync } = require("child_process");
+
 const fileUtil = require("./fileUtil");
 
 const changedFile = process.argv[2];
@@ -85,3 +87,5 @@ if (!changedFile) {
 else {
   recompileFile(fileUtil.getFile(changedFile));
 }
+
+execSync("node build-embed");
