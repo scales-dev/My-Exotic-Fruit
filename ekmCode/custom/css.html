@@ -5,7 +5,7 @@
     max-width: unset;
   }
 
-  .prod-item-wrapper > .short-desc {
+  .prod-item-wrapper>.short-desc {
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -104,7 +104,7 @@
   }
 
   .quickview-btn,
-  .qv-btn > a {
+  .qv-btn>a {
     margin-bottom: 1px;
     border-radius: var(--btn-border-radius);
     font-size: 1.4rem;
@@ -443,8 +443,8 @@
     padding: 8rem;
   }
 
-  .i-Food-and-Drink .nav-active > a,
-  .i-Lingerie .nav-active > a {
+  .i-Food-and-Drink .nav-active>a,
+  .i-Lingerie .nav-active>a {
     color: #333;
   }
 
@@ -485,7 +485,7 @@
       border-bottom: 1px solid #b8b8b8;
     }
 
-    .nav-d > ul > li > a {
+    .nav-d>ul>li>a {
       display: block;
       line-height: 0.8;
       font-weight: 600;
@@ -503,8 +503,8 @@
       padding-bottom: 1rem;
     }
 
-    .i-Food-and-Drink .nav-d > ul > li > a:hover,
-    .i-Lingerie .nav-d > ul > li > a:hover {
+    .i-Food-and-Drink .nav-d>ul>li>a:hover,
+    .i-Lingerie .nav-d>ul>li>a:hover {
       color: #222;
       opacity: 0.7;
     }
@@ -740,11 +740,11 @@
       margin-right: auto;
     }
 
-    .nav-d > ul > li > a:hover {
+    .nav-d>ul>li>a:hover {
       color: #f3f3f3;
     }
 
-    .nav-active > a {
+    .nav-active>a {
       color: #fff;
     }
 
@@ -833,6 +833,7 @@
   }
 
   @media only screen and (max-width: 768px) {
+
     .desktop-searchbar,
     .header-icon-text,
     .info-bar-currency {
@@ -982,8 +983,8 @@
       font-weight: var(--font-weight-semi-bold);
     }
 
-    .menu > li > a.active .has-next:after,
-    .submenu > li > a.active .has-next:after {
+    .menu>li>a.active .has-next:after,
+    .submenu>li>a.active .has-next:after {
       content: "\f106";
     }
 
@@ -1046,7 +1047,7 @@
       transition: opacity 0.3s ease;
     }
 
-    .mob-nav.navactive + .overlay {
+    .mob-nav.navactive+.overlay {
       display: block;
       opacity: 1;
       pointer-events: auto;
@@ -1272,7 +1273,7 @@
     background: #f8f6f4;
   }
 
-  .qv-btn > a {
+  .qv-btn>a {
     background: none;
     border-radius: 0;
   }
@@ -2463,7 +2464,7 @@
       display: none;
     }
 
-    .nav-wrapper-m > ul > li > a {
+    .nav-wrapper-m>ul>li>a {
       display: block;
       font-size: 1.8rem;
       position: relative;
@@ -2609,5 +2610,44 @@
   span#_EKM_PRODUCTATRRIBUTE_1_NOV_WRAPPER,
   span#_EKM_PRODUCTATRRIBUTE_1_DEC_WRAPPER {
     display: none;
+  }
+
+  .product-origin-section {
+    width: 100%;
+  }
+
+  .origin-info-section {
+    width: 100%;
+  }
+
+  .origin-info-section .section-title {
+    margin-bottom: 1rem;
+  }
+
+  .origin-map {
+    width: 100%;
+    max-width: 1000px;
+    margin: 1.5rem auto 0;
+  }
+
+  .origin-map svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+  }
+
+  .origin-map svg path {
+    fill: #000;
+    stroke: #393939;
+    stroke-width: 0.6;
+    transition: fill 0.2s ease;
+  }
+
+  .origin-map svg path.highlighted {
+    fill: #32cd32 !important;
+    stroke: #fff !important;
+    stroke-width: 1.5 !important;
+    paint-order: stroke fill;
   }
 </style>

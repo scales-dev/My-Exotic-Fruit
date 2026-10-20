@@ -2593,119 +2593,59 @@
     <!-- JavaScript that checks for custom attributes assigned to each month -->
 
     <script>
+      window.addEventListener('load', async () => {
+        const map = document.querySelector('.origin-map');
+        const label = [...document.querySelectorAll('.tab-header-wrapper label')]
+          .find(el => el.querySelector('span')?.textContent.trim() === 'Origin');
 
-      document.addEventListener('DOMContentLoaded', function () {
-
-        var origins = ['northamerica', 'europe', 'asia', 'southamerica', 'africa', 'australia'];
-
-        for (const origin of origins) {
-
-          var element = document.querySelector('.' + origin);
-
-          var productAttribute = document.querySelector('#_EKM_PRODUCTATRRIBUTE_' + origin.toUpperCase() + '_NAME');
-
-          if (productAttribute) {
-
-            element.style.display = 'block';
-            // todo: allow multiple origins (rewrite this)
-            return;
-          }
+        if (!map || !label) {
+          console.error('Origin map: elements not found.');
+          return;
         }
 
-        var originInfoSection = document.querySelector('.origin-info-section');
-        if (!originInfoSection) return;
+        try {
+          const response = await fetch(
+            'https://files.ekmcdn.com/b940b1/resources/design/world.svg'
+          );
 
-        // hide origin map if the product has no origin (gift cards/variety boxes)
-        originInfoSection.style.display = 'none';
+          if (!response.ok) throw new Error('Failed to load SVG');
 
+          const svg = new DOMParser()
+            .parseFromString(await response.text(), 'image/svg+xml')
+            .documentElement;
+
+          const origin = label.nextElementSibling.textContent.toLowerCase();
+
+          svg.querySelectorAll('path[title]').forEach(path => {
+            if (origin.includes(path.getAttribute('title').toLowerCase())) {
+              path.classList.add('highlighted');
+            }
+          });
+
+          svg.setAttribute('viewBox', '0 0 1009.6727 665.96301');
+          svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+          svg.style.width = '100%';
+          svg.style.height = 'auto';
+
+          map.replaceChildren(document.importNode(svg, true));
+
+          document.querySelector('origin-info-section').style.display = '';
+        } catch (error) {
+          console.error('Origin map error:', error);
+        }
       });
-
     </script>
 
-    <div class="origin-info-section">
+    <div class="origin-info-section" display="none">
+      <div class="section-title figtree">Originated From</div>
 
-      [ekm:element]
-
-      element_reference='origin-description-heading';
-
-      edit_button='yes';
-
-      output_start='<div class="section-title figtree">';
-
-        output_end='</div>';
-
-      element_name_default='';
-
-      output_default='Originated From...';
-
-      allowed_types="text,html";
-
-      [/ekm:element]
-
-
-
-      <div class="asia" style="display: none;">
-
-        <img
-          src="https://files.ekmcdn.com/b940b1/resources/design/origin-map-asia.webp?v=8F052CE4-9504-4FA2-8FB7-2ED202695D2A"
-          alt="Origin Asia">
-
+      <div class="origin-map">
+        <object id="origin-world-map" type="image/svg+xml"
+          data="https://files.ekmcdn.com/b940b1/resources/design/world.svg"
+          aria-label="World map showing countries of origin">
+        </object>
       </div>
-
-
-
-      <div class="europe" style="display: none;">
-
-        <img
-          src="https://files.ekmcdn.com/b940b1/resources/design/origin-map-europe.webp?v=8F052CE4-9504-4FA2-8FB7-2ED202695D2A"
-          alt="Origin Europe">
-
-      </div>
-
-
-
-      <div class="africa" style="display: none;">
-
-        <img
-          src="https://files.ekmcdn.com/b940b1/resources/design/origin-map-africa.webp?v=8F052CE4-9504-4FA2-8FB7-2ED202695D2A"
-          alt="Origin Africa">
-
-      </div>
-
-
-
-      <div class="northamerica" style="display: none;">
-
-        <img
-          src="https://files.ekmcdn.com/b940b1/resources/design/origin-map-northamerica.webp?v=8F052CE4-9504-4FA2-8FB7-2ED202695D2A"
-          alt="Origin North America">
-
-      </div>
-
-
-
-      <div class="southamerica" style="display: none;">
-
-        <img
-          src="https://files.ekmcdn.com/b940b1/resources/design/origin-map-southamerica.webp?v=8F052CE4-9504-4FA2-8FB7-2ED202695D2A"
-          alt="Origin South America">
-
-      </div>
-
-
-
-      <div class="australia" style="display: none;">
-
-        <img
-          src="https://files.ekmcdn.com/b940b1/resources/design/origin-map-australia.webp?v=8F052CE4-9504-4FA2-8FB7-2ED202695D2A"
-          alt="Origin Australia">
-
-      </div>
-
-
-
     </div>
-
   </div>
 
 
