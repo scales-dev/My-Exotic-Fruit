@@ -89,19 +89,181 @@
     });
   </script>
 
-  <section class="flex-display flex-align-start category-prod-section">
+
+  [ekm:element]
+  show='yes';
+  allowed_types='html';
+  element_reference='[ekm:categoryid][/ekm:categoryid]_top-10';
+  edit_button='YES';
+  output_start='';
+  output_end='';
+  element_name_default='';
+  output_default='';
+  [/ekm:element]
+
+
+  <section class="filter-section-m l-margin-top-m container">
+    <div class="flex-grid flex-justify-center filter-sortby-wrapper-m">
+      [ekm:if]
+      iftype='EQUALS';
+      ifvalue='[ekm:filter_by][/ekm:filter_by]';
+      ifvalue2='';
+      ifthen='';
+      ifelse='
+      <div class="flex-col filter-m">
+        <div class="filter-section-btn-m filter-btn-m">
+          <span>Filter</span>
+        </div><!-- /.filter-section-btn-m .filter-btn-m -->
+
+        <div class="filter-content-m container">
+          [ekm:filter_by]
+          target_tag_id='category-products';
+          output_start='<div class="flex-grid flex-wrap-wrap filter-sidebar">';
+            output_attribute_start='
+            <div class="flex-col m-col-6 filter-content filter-item-m">
+              <h3 class="filter-item-heading l-padding-top-m l-padding-btm-m filter-plus">
+                [name]
+              </h3><!-- /.filter-item-heading .l-padding-top-m .l-padding-btm-m .filter-plus -->
+
+              <ul class="filter-item-list ul-reset l-padding-btm-m">
+                ';
+                output_attribute_item='
+                <li class="filter-item-check s-padding-btm-d s-padding-btm-m">
+                  <input type="checkbox" name="[input-name]" value="[input-value]" id="_[input-name]-[input-value]">
+                  <label for="_[input-name]-[input-value]"
+                    class="filter-content-attribute-item-value">[name]</label><!-- /.filter-content-attribute-item-value -->
+                </li><!-- /.filter-item-check .s-padding-btm-d .s-padding-btm-m -->
+                ';
+                output_attribute_end='
+              </ul><!-- /.filter-item-list .ul-reset .l-padding-btm-m -->
+            </div><!-- /.flex-col .m-col-6 .filter-content .filter-item -->
+            ';
+            output_price='
+            <div class="flex-col m-col-6 filter-content filter-item-price-m">
+              <h3 class="filter-item-heading l-padding-top-m l-padding-btm-m filter-plus">
+                Price
+              </h3><!-- /.filter-item-heading .l-padding-top-m .l-padding-btm-m .filter-plus -->
+
+              <ul class="filter-item-list ul-reset l-padding-btm-m">
+                <li class="filter-item-attribute filter-price-slider">
+                  [min-input][max-input]
+                </li><!-- /.filter-item-attribute .filter-price-slider -->
+              </ul><!-- /.filter-item-list .ul-reset .l-padding-btm-m -->
+            </div><!-- /.flex-col .m-col-6 .filter-content -->
+            ';
+            output_end='[clear-button]
+          </div><!-- /.flex-grid .flex-wrap-wrap .filter-sidebar -->';
+          [/ekm:filter_by]
+        </div><!-- /.filter-content-m .container -->
+      </div><!-- /.flex-col .filter-m -->
+      ';
+      [/ekm:if]
+
+      <div class="flex-col sortby-m">
+        <div class="filter-section-btn-m sortby-btn-m">
+          <span>Sort</span>
+        </div><!-- /.filter-section-btn-m .sortby-btn-m -->
+
+        <div class="sortby-content-m container l-padding-top-m l-padding-btm-m">
+          <div class="sortby-dd-m">
+            [ekm:sort_by]target_tag_id='category-products';[/ekm:sort_by]
+          </div><!-- /.sortby-dd-m -->
+        </div><!-- /.sortby-content-m .container .l-padding-top-m .l-padding-btm-m -->
+      </div><!-- /.flex-col .sortby-m -->
+    </div><!-- /.flex-grid .flex-justify-center .filter-sortby-wrapper-m -->
+  </section><!-- /.filter-section-m .xxl-margin-top-m .container -->
+
+
+  <section class="flex-display flex-align-start category-prod-section l-margin-top-d">
+    [ekm:filter_by]
+    target_tag_id='category-products';
+    output_start='<aside class="filter-sidebar filter-sidebar-d xl-padding-right-d">';
+      output_attribute_start='
+      <div class="filter-content filter-item-d l-padding-btm-d">
+        <h3 class="filter-item-heading filter-plus">
+          [name]
+        </h3><!-- /.filter-item-heading .filter-plus -->
+
+        <ul class="ul-reset filter-item-list m-padding-top-d">
+          ';
+          output_attribute_item='
+          <li class="filter-item-check s-padding-btm-d">
+            <input type="checkbox" name="[input-name]" value="[input-value]" id="[input-name]-[input-value]">
+            <label for="[input-name]-[input-value]"
+              class="filter-content-attribute-item-value">[name]</label><!-- /.filter-content-attribute-item-value -->
+          </li><!-- /.filter-item-check .s-padding-btm-d -->
+          ';
+          output_attribute_end='
+        </ul><!-- /.ul-reset .filter-item-list .m-padding-top-d -->
+      </div><!-- /.filter-content .filter-item-d .l-padding-btm-d -->
+      ';
+      output_price='
+      <div class="filter-content filter-price-d l-padding-btm-d">
+        <h3 class="filter-item-heading filter-plus">
+          Price
+        </h3><!-- /.filter-item-heading .filter-plus -->
+
+        <ul class="ul-reset filter-item-list m-padding-top-d">
+          <li class="filter-item-attribute filter-price-slider">
+            [min-input][max-input]
+          </li><!-- /.filter-item-attribute .filter-price-slider -->
+        </ul><!-- /.ul-reset .filter-item-list .m-padding-top-d -->
+      </div><!-- /.filter-content .filter-price-d .l-padding-btm-d -->
+      ';
+      output_end='[clear-button]
+    </aside><!-- /.filter-sidebar .filter-sidebar-d .xl-padding-right-d -->';
+    [/ekm:filter_by]
+
+    <section class="category-prod-heading-m m-col-12 l-margin-top-m">
+      <div class="container">
+        <div class="flex-grid flex-align-center m-padding-top-m m-padding-btm-m m-padding-top-d m-padding-btm-d">
+          [ekm:showdata]
+          tag_hide_toggle='yes';
+          data='products';
+          location='auto';
+
+          cols='1';
+          rows='8';
+          page_navigation='no';
+          counterreset='1';
+
+          editbuttons='YES';
+
+          font_formatting='no';
+
+          output_start='
+          <div class="flex-col category-prod-results-m">
+            <span>Showing <strong>[result-count]</strong> of <strong>[result-count]</strong> Products</span>
+          </div><!-- /.flex-col .category-prod-results-m -->
+          ';
+          output_item='';
+          output_end='';
+          show_hover_thumbnail='yes';
+          hover_thumbnail_fade='no';
+          [/ekm:showdata]
+
+          <div class="flex-col category-name-m">
+            <span class="flex-display flex-justify-end">
+              [ekm:categorypagename]categorypageid='[ekm:categoryid][/ekm:categoryid]';[/ekm:categorypagename]
+            </span><!-- /.flex-display .flex-justify-end -->
+          </div><!-- /.flex-col .category-name-m -->
+        </div>
+        <!-- /.flex-grid .flex-align-center .m-padding-top-m .m-padding-btm-m .m-padding-top-d .m-padding-btm-d -->
+      </div><!-- /.container -->
+    </section><!-- /.category-prod-heading-m .m-col-12 .l-margin-top-m -->
+
     [ekm:showdata]
     tag_hide_toggle='yes';
     data='products';
-    id='popular-products';
+    id='category-products';
     location='auto';
 
     cols='1';
     rows='8';
     page_navigation='no';
-    counterreset='';
+    counterreset='0';
 
-    orderby='name';
+    orderby='orderlocation, name';
     skiprecords='0';
     excludelist='';
     includelist='';
@@ -115,9 +277,20 @@
     font_formatting='no';
 
     output_start='
-    <div>
+    <div class="category-products">
+      <div class="flex-display flex-align-start sortby-d l-margin-btm-d l-margin-top-m xl-margin-btm-m">
+        <div class="sortby-results d-col-7">
+          Showing products <strong>[results-start]</strong> to <strong>[results-end]</strong> of
+          <strong>[result-count]</strong>
+        </div><!-- /.sortby-results .d-col-7 -->
+
+        <div class="sortby-dd-d d-col-5">
+          [ekm:sort_by]target_tag_id='category-products';[/ekm:sort_by]
+        </div><!-- /.sortby-dd-d d-col-5-->
+      </div><!-- /.flex-display .flex-align-start .sortby .l-margin-btm-d .l-margin-top-m .xl-margin-btm-m -->
+
       <div
-        class="flex-grid prod-list flex-align-start flex-wrap-wrap l-padding-top-d l-padding-top-m">
+        class="flex-grid prod-list flex-align-start flex-wrap-wrap category-prod-list l-padding-top-d l-padding-top-m">
         ';
         output_item='
         <div
@@ -254,7 +427,7 @@
 
       </div>
       <!-- /.flex-grid .prod-list .flex-align-start .flex-wrap-wrap .category-prod-list .l-margin-top-d .l-margin-top-m -->
-    </div><!-- /.category-products .container #popular-products -->
+    </div><!-- /.category-products .container #category-products -->
     ';
     output_options_start='
     <div class="shopui-product-variant-preview">
@@ -430,84 +603,8 @@
 
   </section>
 
-  <section class="flex-display flex-align-start category-prod-section">
-    [ekm:filter_by]
-    target_tag_id='category-products';
-    output_start='<aside class="filter-sidebar filter-sidebar-d xl-padding-right-d">';
-      output_attribute_start='
-      <div class="filter-content filter-item-d l-padding-btm-d">
-        <h3 class="filter-item-heading filter-plus">
-          [name]
-        </h3><!-- /.filter-item-heading .filter-plus -->
 
-        <ul class="ul-reset filter-item-list m-padding-top-d">
-          ';
-          output_attribute_item='
-          <li class="filter-item-check s-padding-btm-d">
-            <input type="checkbox" name="[input-name]" value="[input-value]" id="[input-name]-[input-value]">
-            <label for="[input-name]-[input-value]"
-              class="filter-content-attribute-item-value">[name]</label><!-- /.filter-content-attribute-item-value -->
-          </li><!-- /.filter-item-check .s-padding-btm-d -->
-          ';
-          output_attribute_end='
-        </ul><!-- /.ul-reset .filter-item-list .m-padding-top-d -->
-      </div><!-- /.filter-content .filter-item-d .l-padding-btm-d -->
-      ';
-      output_price='
-      <div class="filter-content filter-price-d l-padding-btm-d">
-        <h3 class="filter-item-heading filter-plus">
-          Price
-        </h3><!-- /.filter-item-heading .filter-plus -->
-
-        <ul class="ul-reset filter-item-list m-padding-top-d">
-          <li class="filter-item-attribute filter-price-slider">
-            [min-input][max-input]
-          </li><!-- /.filter-item-attribute .filter-price-slider -->
-        </ul><!-- /.ul-reset .filter-item-list .m-padding-top-d -->
-      </div><!-- /.filter-content .filter-price-d .l-padding-btm-d -->
-      ';
-      output_end='[clear-button]
-    </aside><!-- /.filter-sidebar .filter-sidebar-d .xl-padding-right-d -->';
-    [/ekm:filter_by]
-
-    <section class="category-prod-heading-m m-col-12 l-margin-top-m">
-      <div class="container">
-        <div class="flex-grid flex-align-center m-padding-top-m m-padding-btm-m m-padding-top-d m-padding-btm-d">
-          [ekm:showdata]
-          tag_hide_toggle='yes';
-          data='products';
-          location='auto';
-
-          cols='1';
-          rows='20';
-          page_navigation='yes';
-          counterreset='1';
-
-          editbuttons='YES';
-
-          font_formatting='no';
-
-          output_start='
-          <div class="flex-col category-prod-results-m">
-            <span>Showing <strong>[result-count]</strong> of <strong>[result-count]</strong> Products</span>
-          </div><!-- /.flex-col .category-prod-results-m -->
-          ';
-          output_item='';
-          output_end='';
-          show_hover_thumbnail='yes';
-          hover_thumbnail_fade='no';
-          [/ekm:showdata]
-
-          <div class="flex-col category-name-m">
-            <span class="flex-display flex-justify-end">
-              [ekm:categorypagename]categorypageid='[ekm:categoryid][/ekm:categoryid]';[/ekm:categorypagename]
-            </span><!-- /.flex-display .flex-justify-end -->
-          </div><!-- /.flex-col .category-name-m -->
-        </div>
-        <!-- /.flex-grid .flex-align-center .m-padding-top-m .m-padding-btm-m .m-padding-top-d .m-padding-btm-d -->
-      </div><!-- /.container -->
-    </section><!-- /.category-prod-heading-m .m-col-12 .l-margin-top-m -->
-
+  <section class="flex-display flex-align-start category-prod-section l-margin-top-d">
     [ekm:showdata]
     tag_hide_toggle='yes';
     data='products';
@@ -517,10 +614,10 @@
     cols='1';
     rows='100';
     page_navigation='yes';
-    counterreset='1';
+    counterreset='0';
 
     orderby='orderlocation, name';
-    skiprecords='0';
+    skiprecords='8';
     excludelist='';
     includelist='';
 
@@ -534,19 +631,8 @@
 
     output_start='
     <div class="category-products" id="category-products">
-      <div class="flex-display flex-align-start sortby-d l-margin-top-m">
-        <div class="sortby-results d-col-7">
-          Showing products <strong>[results-start]</strong> to <strong>[results-end]</strong> of
-          <strong>[result-count]</strong>
-        </div><!-- /.sortby-results .d-col-7 -->
-
-        <div class="sortby-dd-d d-col-5">
-          [ekm:sort_by]target_tag_id='category-products';[/ekm:sort_by]
-        </div><!-- /.sortby-dd-d d-col-5-->
-      </div><!-- /.flex-display .flex-align-start .sortby .l-margin-btm-d .l-margin-top-m .xl-margin-btm-m -->
-
       <div
-        class="flex-grid prod-list flex-align-start flex-wrap-wrap category-prod-list l-padding-top-m">
+        class="flex-grid prod-list flex-align-start flex-wrap-wrap category-prod-list l-padding-top-d l-padding-top-m">
         ';
         output_item='
         <div
