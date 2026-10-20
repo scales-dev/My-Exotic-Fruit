@@ -1,0 +1,3846 @@
+<article class="main-content">
+
+
+
+    [ekm:location]
+
+    output_start='
+
+    <section class="category-heading">
+
+        <div class="breadcrumbs-bg">
+
+            <div
+                class="breadcrumbs flex-display flex-wrap-wrap container m-padding-top-d m-padding-top-m m-padding-btm-d m-padding-btm-m">
+
+                ';
+
+                output_item='<a href="[url]">[name]</a>';
+
+                output_separator='&nbsp;/&nbsp;';
+
+                output_end='
+
+                &nbsp;/&nbsp;
+
+                [ekm:productname]font_formatting='no'; name_only='no';[/ekm:productname]
+
+            </div>
+
+            <!-- /.flex-display .flex-wrap-wrap .flex-justify-center .breadcrumbs .m-col-12 .l-padding-top-m .m-padding-top-d -->
+
+        </div><!-- /.breadcrumbs -->
+
+    </section><!-- /.category-heading -->
+
+    ';
+
+    [/ekm:location]
+
+
+
+    <section class="product-page-upper">
+
+
+
+        [ekm:productstart][/ekm:productstart]
+
+
+
+        <div class="product-page-wrapper container flex-display flex-wrap-wrap xxl-padding-top-d xl-padding-top-m">
+
+
+
+            <div class="product-column-left d-col-6 m-col-12">
+
+
+
+                <div class="product-image-section flex-display">
+
+                    [ekm:productimage]
+
+                    width='1050';
+
+                    height='auto';
+
+                    constrain_proportions='';
+
+                    output_extra_image_item_start='<div class="prod-20-more-images-block more-images-block">';
+
+                        output_extra_image_item_end='</div>';
+
+                    output_extra_image_item='{extra_image}<div>[extra_image]</div>{/extra_image}';
+
+                    extra_images_offset='4';
+
+                    images_layout='
+
+                    <div class="prod-20-parent product-images">
+
+                        <div class="product-images flex-display">
+
+                            <div class="secondary-images-wrapper flex-display d-col-2">
+
+                                <div class="secondary-image">
+
+                                    [image_2]
+
+                                </div><!-- /.secondary-image -->
+
+                                <div class="secondary-image">
+
+                                    [image_3]
+
+                                </div><!-- /.secondary-image -->
+
+                                <div class="secondary-image">
+
+                                    [image_4]
+
+                                </div><!-- /.secondary-image -->
+
+                                <div class="secondary-image">
+
+                                    [image_5]
+
+                                </div><!-- /.secondary-image -->
+
+                            </div><!-- /.secondary-images-wrapper flex-display d-col-2 -->
+
+                            <div class="primary-image">
+
+                                [image_1]
+
+                            </div>
+
+                        </div>
+
+                        [ekm:nested_if]
+
+                        iftype="GREATERTHAN";
+
+                        ifvalue="[total_image_count]";
+
+                        ifvalue2="5";
+
+                        ifthen="
+
+                        <div class="more-images-wrapper">
+
+                            [ekm:nested_element]
+
+                            element_reference="example";
+
+                            output_start="<div class="more-images-trigger">";
+
+                                output_end="
+
+                                <?xml version="1.0" encoding="iso-8859-1"?>
+
+                                <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+                                <svg version="1.1" id="Layer_1" xmlns="https://www.w3.org/2000/svg"
+                                    xmlns:xlink="https://www.w3.org/1999/xlink" x="0px" y="0px"
+                                    viewBox="0 0 407.437 407.437" style="enable-background:new 0 0 407.437 407.437;"
+                                    xml:space="preserve">
+
+                                    <polygon
+                                        points="386.258,91.567 203.718,273.512 21.179,91.567 0,112.815 203.718,315.87 407.437,112.815 " />
+
+                                    <g> </g>
+
+                                    <g> </g>
+
+                                    <g> </g>
+
+                                    <g> </g>
+
+                                    <g> </g>
+
+                                    <g> </g>
+
+                                    <g> </g>
+
+                                    <g> </g>
+
+                                    <g> </g>
+
+                                    <g> </g>
+
+                                    <g> </g>
+
+                                    <g> </g>
+
+                                    <g> </g>
+
+                                    <g> </g>
+
+                                    <g> </g>
+
+                                </svg>
+
+                            </div>";
+
+                            output_default="View more images";
+
+                            [/ekm:nested_element]
+
+
+
+                            [extra_images]
+
+
+
+                        </div>
+
+                        <!--end of more-images-wrapper-->
+
+                        ";
+
+                        ifelse="
+
+                        <!--IF THERE IS LESS THAN 5 EXTRA IMAGES THE EXTRA TAB WONT SHOW-->
+
+                        ";
+
+                        [/ekm:nested_if]
+
+                    </div>
+
+                    ';
+
+                    extra_images_width='180';
+
+                    extra_images_height='180';
+
+                    [/ekm:productimage]
+
+                </div>
+
+
+
+            </div><!-- product-column-left d-col-6 m-col-12 -->
+
+
+
+            <div class="product-column-right d-col-6 m-col-12 l-margin-top-m">
+
+
+
+                <div class="product-information-section">
+
+                    [ekm:showdata]
+
+                    tag_editable='no';
+
+                    data='products';
+
+                    location='[ekm:nested_categoryid][/ekm:nested_categoryid]';
+
+                    includelist='[ekm:nested_pageid]idonly="yes";[/ekm:nested_pageid]';
+
+                    output_start='';
+
+                    output_item='
+
+                    [ekm:nested_if]
+
+                    iftype="EQUALS";
+
+                    ifvalue="[customer_reviews_total]";
+
+                    ifvalue2="";
+
+                    ifthen="";
+
+                    ifelse="
+
+                    <div
+                        class="main-prod-title-stars prod-review-stars prod-review-stars-[customer_reviews_average_star_value] s-margin-btm-d s-margin-top-m m-margin-btm-d m-margin-btm-m">
+
+                        <i class="fa fa-star" aria-hidden="true"></i><!-- /.fa .fa-star -->
+
+                        <i class="fa fa-star" aria-hidden="true"></i><!-- /.fa .fa-star -->
+
+                        <i class="fa fa-star" aria-hidden="true"></i><!-- /.fa .fa-star -->
+
+                        <i class="fa fa-star" aria-hidden="true"></i><!-- /.fa .fa-star -->
+
+                        <i class="fa fa-star" aria-hidden="true"></i><!-- /.fa .fa-star -->
+
+                        <span class="customer-review-count">([customer_reviews_total]
+
+                            Reviews)</span><!-- /.product-item-count -->
+
+                    </div>
+
+                    <!-- /.main-prod-title-stars .prod-review-stars .prod-review-stars-[customer_reviews_average_star_value] .s-margin-btm-d -->
+
+                    ";
+
+                    [/ekm:nested_if]
+
+                    ';
+
+                    output_end='';
+
+                    [/ekm:showdata]
+
+
+
+                    <h1 class="main-prod-title l-margin-top-m m-margin-btm-d">
+
+                        [ekm:productname] font_formatting='no'; name_only='no';[/ekm:productname]
+
+                    </h1><!-- /.main-prod-title .m-margin-top-m .s-margin-btm-d -->
+
+
+                    [ekm:productshortdescription]
+
+                    font_formatting='no';
+
+                    output_start='<div class="main-short-desc main-short-desc-d m-margin-btm-d">';
+
+                        output_end='</div><!-- /.main-short-desc .main-short-desc-d .m-margin-btm-d -->';
+
+                    [/ekm:productshortdescription]
+
+                    [ekm:if]
+
+                    iftype='EQUALS';
+
+                    ifvalue='[ekm:productcode][/ekm:productcode]';
+
+                    ifvalue2='';
+
+                    ifthen='';
+
+                    ifelse='
+
+                    <div class="main-prod-code main-prod-code-d m-margin-btm-d">
+
+                        <strong>Product Code:</strong> <span>[ekm:productcode][/ekm:productcode]</span>
+
+                    </div><!-- /.main-prod-code .main-prod-code-d .m-margin-btm-d -->
+
+                    ';
+
+                    [/ekm:if]
+
+
+
+                    <div class="main-prod-stock main-prod-stock-d m-margin-btm-d">
+
+                        [ekm:productstock]
+
+                        font_formatting='no';
+
+                        instock='<strong>Stock Status: </strong>&nbsp;<span class="in-stock">In
+
+                            Stock</span><!-- /.in-stock -->';
+
+                        outstock='<strong>Stock Status: </strong>&nbsp;<span class="oo-stock">Sold
+
+                            Out</span><!-- /.oo-stock -->';
+
+                        [/ekm:productstock]
+
+                    </div><!-- /.main-prod-stock .main-prod-stock-d m-margin-btm-d -->
+
+                    [ekm:product_bulk_discounts]
+
+                    output_start='
+
+                    <div class="ekm-flex-table trade-login-hide">
+
+                        <div class="ekm-flex-table-row ekm-flex-table-row--header">
+
+                            <p>Quantity Range</p>
+
+                            <p>Unit Price</p>
+
+                            <p>Unit Saving</p>
+
+                        </div>
+
+                        ';
+
+                        output_item='
+
+                        <div class="ekm-flex-table-row">
+
+                            <p>[range]</p>
+
+                            <p>[unit_price]</p>
+
+                            <p>[unit_saving]</p>
+
+                        </div>
+
+                        ';
+
+                        output_end='
+
+                    </div>
+
+                    <div class="blkd-footer trade-login-hide">
+
+                        <div class="blkd-qty">
+
+                            <div class="blkd-qty-btn blkd-qty-minus">
+
+                                <svg version="1.1" id="Capa_1" xmlns="https://www.w3.org/2000/svg"
+                                    xmlns:xlink="https://www.w3.org/1999/xlink" x="0px" y="0px" width="121.805px"
+                                    height="121.804px" viewBox="0 0 121.805 121.804"
+                                    style="enable-background:new 0 0 121.805 121.804;" xml:space="preserve">
+
+                                    <g>
+
+                                        <g>
+
+                                            <path
+                                                d="M7.308,68.211h107.188c4.037,0,7.309-3.272,7.309-7.31c0-4.037-3.271-7.309-7.309-7.309H7.308 C3.272,53.593,0,56.865,0,60.902C0,64.939,3.272,68.211,7.308,68.211z" />
+
+                                        </g>
+
+                                    </g>
+
+                                    <g> </g>
+
+                                    <g> </g>
+
+                                    <g> </g>
+
+                                    <g> </g>
+
+                                    <g> </g>
+
+                                    <g> </g>
+
+                                    <g> </g>
+
+                                    <g> </g>
+
+                                    <g> </g>
+
+                                    <g> </g>
+
+                                    <g> </g>
+
+                                    <g> </g>
+
+                                    <g> </g>
+
+                                    <g> </g>
+
+                                    <g> </g>
+
+                                </svg>
+
+                            </div>
+
+                            [ekm:nested_productqty][/ekm:nested_productqty]
+
+                            <div class="blkd-qty-btn blkd-qty-plus">
+
+                                <svg height="426.66667pt" viewBox="0 0 426.66667 426.66667" width="426.66667pt"
+                                    xmlns="https://www.w3.org/2000/svg">
+
+                                    <path
+                                        d="m405.332031 192h-170.664062v-170.667969c0-11.773437-9.558594-21.332031-21.335938-21.332031-11.773437 0-21.332031 9.558594-21.332031 21.332031v170.667969h-170.667969c-11.773437 0-21.332031 9.558594-21.332031 21.332031 0 11.777344 9.558594 21.335938 21.332031 21.335938h170.667969v170.664062c0 11.777344 9.558594 21.335938 21.332031 21.335938 11.777344 0 21.335938-9.558594 21.335938-21.335938v-170.664062h170.664062c11.777344 0 21.335938-9.558594 21.335938-21.335938 0-11.773437-9.558594-21.332031-21.335938-21.332031zm0 0" />
+
+                                </svg>
+
+                            </div>
+
+                        </div>
+
+                        <div class="blkd-price-wrapper">
+
+                            <div class="blkd-price-block blkd-total">Total Price:<br>[total_price]</div>
+
+                            <div class="blkd-price-block">Total Saving:<br>[total_saving]</div>
+
+                        </div>
+
+
+
+                    </div>
+
+                    ';
+
+                    [/ekm:product_bulk_discounts]
+
+                    [ekm:bundled_products]
+
+                    image_width='200';
+
+                    image_height='200';
+
+                    output_start='
+
+                    ';
+
+                    output_product='
+
+
+
+                    <div class="product-bundle-grid col_2 trade-login-hide">
+
+                        [image]
+
+                        <div class="product-bundle-details product-bundle-details__top ">
+
+                            [ekm:nested_product_reviews]
+
+                            output_start="
+
+                            {nested_average_rating}
+
+                            <div class="rating-wrapper">
+
+                                <div class="bottom-layer">
+
+                                    <svg id="svg_star" height="511pt" viewBox="0 -10 511.98685 511" width="511pt"
+                                        xmlns="https://www.w3.org/2000/svg">
+
+                                        <path
+                                            d="m510.652344 185.902344c-3.351563-10.367188-12.546875-17.730469-23.425782-18.710938l-147.773437-13.417968-58.433594-136.769532c-4.308593-10.023437-14.121093-16.511718-25.023437-16.511718s-20.714844 6.488281-25.023438 16.535156l-58.433594 136.746094-147.796874 13.417968c-10.859376 1.003906-20.03125 8.34375-23.402344 18.710938-3.371094 10.367187-.257813 21.738281 7.957031 28.90625l111.699219 97.960937-32.9375 145.089844c-2.410156 10.667969 1.730468 21.695313 10.582031 28.09375 4.757813 3.4375 10.324219 5.1875 15.9375 5.1875 4.839844 0 9.640625-1.304687 13.949219-3.882813l127.46875-76.183593 127.421875 76.183593c9.324219 5.609376 21.078125 5.097657 29.910156-1.304687 8.855469-6.417969 12.992187-17.449219 10.582031-28.09375l-32.9375-145.089844 111.699219-97.941406c8.214844-7.1875 11.351563-18.539063 7.980469-28.925781zm0 0" />
+
+                                    </svg>
+
+                                    <svg height="511pt" viewBox="0 -10 511.98685 511" width="511pt"
+                                        xmlns="https://www.w3.org/2000/svg">
+
+                                        <path
+                                            d="m510.652344 185.902344c-3.351563-10.367188-12.546875-17.730469-23.425782-18.710938l-147.773437-13.417968-58.433594-136.769532c-4.308593-10.023437-14.121093-16.511718-25.023437-16.511718s-20.714844 6.488281-25.023438 16.535156l-58.433594 136.746094-147.796874 13.417968c-10.859376 1.003906-20.03125 8.34375-23.402344 18.710938-3.371094 10.367187-.257813 21.738281 7.957031 28.90625l111.699219 97.960937-32.9375 145.089844c-2.410156 10.667969 1.730468 21.695313 10.582031 28.09375 4.757813 3.4375 10.324219 5.1875 15.9375 5.1875 4.839844 0 9.640625-1.304687 13.949219-3.882813l127.46875-76.183593 127.421875 76.183593c9.324219 5.609376 21.078125 5.097657 29.910156-1.304687 8.855469-6.417969 12.992187-17.449219 10.582031-28.09375l-32.9375-145.089844 111.699219-97.941406c8.214844-7.1875 11.351563-18.539063 7.980469-28.925781zm0 0" />
+
+                                    </svg>
+
+                                    <svg height="511pt" viewBox="0 -10 511.98685 511" width="511pt"
+                                        xmlns="https://www.w3.org/2000/svg">
+
+                                        <path
+                                            d="m510.652344 185.902344c-3.351563-10.367188-12.546875-17.730469-23.425782-18.710938l-147.773437-13.417968-58.433594-136.769532c-4.308593-10.023437-14.121093-16.511718-25.023437-16.511718s-20.714844 6.488281-25.023438 16.535156l-58.433594 136.746094-147.796874 13.417968c-10.859376 1.003906-20.03125 8.34375-23.402344 18.710938-3.371094 10.367187-.257813 21.738281 7.957031 28.90625l111.699219 97.960937-32.9375 145.089844c-2.410156 10.667969 1.730468 21.695313 10.582031 28.09375 4.757813 3.4375 10.324219 5.1875 15.9375 5.1875 4.839844 0 9.640625-1.304687 13.949219-3.882813l127.46875-76.183593 127.421875 76.183593c9.324219 5.609376 21.078125 5.097657 29.910156-1.304687 8.855469-6.417969 12.992187-17.449219 10.582031-28.09375l-32.9375-145.089844 111.699219-97.941406c8.214844-7.1875 11.351563-18.539063 7.980469-28.925781zm0 0" />
+
+                                    </svg>
+
+                                    <svg height="511pt" viewBox="0 -10 511.98685 511" width="511pt"
+                                        xmlns="https://www.w3.org/2000/svg">
+
+                                        <path
+                                            d="m510.652344 185.902344c-3.351563-10.367188-12.546875-17.730469-23.425782-18.710938l-147.773437-13.417968-58.433594-136.769532c-4.308593-10.023437-14.121093-16.511718-25.023437-16.511718s-20.714844 6.488281-25.023438 16.535156l-58.433594 136.746094-147.796874 13.417968c-10.859376 1.003906-20.03125 8.34375-23.402344 18.710938-3.371094 10.367187-.257813 21.738281 7.957031 28.90625l111.699219 97.960937-32.9375 145.089844c-2.410156 10.667969 1.730468 21.695313 10.582031 28.09375 4.757813 3.4375 10.324219 5.1875 15.9375 5.1875 4.839844 0 9.640625-1.304687 13.949219-3.882813l127.46875-76.183593 127.421875 76.183593c9.324219 5.609376 21.078125 5.097657 29.910156-1.304687 8.855469-6.417969 12.992187-17.449219 10.582031-28.09375l-32.9375-145.089844 111.699219-97.941406c8.214844-7.1875 11.351563-18.539063 7.980469-28.925781zm0 0" />
+
+                                    </svg>
+
+                                    <svg height="511pt" viewBox="0 -10 511.98685 511" width="511pt"
+                                        xmlns="https://www.w3.org/2000/svg">
+
+                                        <path
+                                            d="m510.652344 185.902344c-3.351563-10.367188-12.546875-17.730469-23.425782-18.710938l-147.773437-13.417968-58.433594-136.769532c-4.308593-10.023437-14.121093-16.511718-25.023437-16.511718s-20.714844 6.488281-25.023438 16.535156l-58.433594 136.746094-147.796874 13.417968c-10.859376 1.003906-20.03125 8.34375-23.402344 18.710938-3.371094 10.367187-.257813 21.738281 7.957031 28.90625l111.699219 97.960937-32.9375 145.089844c-2.410156 10.667969 1.730468 21.695313 10.582031 28.09375 4.757813 3.4375 10.324219 5.1875 15.9375 5.1875 4.839844 0 9.640625-1.304687 13.949219-3.882813l127.46875-76.183593 127.421875 76.183593c9.324219 5.609376 21.078125 5.097657 29.910156-1.304687 8.855469-6.417969 12.992187-17.449219 10.582031-28.09375l-32.9375-145.089844 111.699219-97.941406c8.214844-7.1875 11.351563-18.539063 7.980469-28.925781zm0 0" />
+
+                                    </svg>
+
+                                </div>
+
+                                <div class="top-layer" data-rating="[nested_average_rating]">
+
+                                    <svg height="511pt" viewBox="0 -10 511.98685 511" width="511pt"
+                                        xmlns="https://www.w3.org/2000/svg">
+
+                                        <path
+                                            d="m510.652344 185.902344c-3.351563-10.367188-12.546875-17.730469-23.425782-18.710938l-147.773437-13.417968-58.433594-136.769532c-4.308593-10.023437-14.121093-16.511718-25.023437-16.511718s-20.714844 6.488281-25.023438 16.535156l-58.433594 136.746094-147.796874 13.417968c-10.859376 1.003906-20.03125 8.34375-23.402344 18.710938-3.371094 10.367187-.257813 21.738281 7.957031 28.90625l111.699219 97.960937-32.9375 145.089844c-2.410156 10.667969 1.730468 21.695313 10.582031 28.09375 4.757813 3.4375 10.324219 5.1875 15.9375 5.1875 4.839844 0 9.640625-1.304687 13.949219-3.882813l127.46875-76.183593 127.421875 76.183593c9.324219 5.609376 21.078125 5.097657 29.910156-1.304687 8.855469-6.417969 12.992187-17.449219 10.582031-28.09375l-32.9375-145.089844 111.699219-97.941406c8.214844-7.1875 11.351563-18.539063 7.980469-28.925781zm0 0" />
+
+                                    </svg>
+
+                                    <svg height="511pt" viewBox="0 -10 511.98685 511" width="511pt"
+                                        xmlns="https://www.w3.org/2000/svg">
+
+                                        <path
+                                            d="m510.652344 185.902344c-3.351563-10.367188-12.546875-17.730469-23.425782-18.710938l-147.773437-13.417968-58.433594-136.769532c-4.308593-10.023437-14.121093-16.511718-25.023437-16.511718s-20.714844 6.488281-25.023438 16.535156l-58.433594 136.746094-147.796874 13.417968c-10.859376 1.003906-20.03125 8.34375-23.402344 18.710938-3.371094 10.367187-.257813 21.738281 7.957031 28.90625l111.699219 97.960937-32.9375 145.089844c-2.410156 10.667969 1.730468 21.695313 10.582031 28.09375 4.757813 3.4375 10.324219 5.1875 15.9375 5.1875 4.839844 0 9.640625-1.304687 13.949219-3.882813l127.46875-76.183593 127.421875 76.183593c9.324219 5.609376 21.078125 5.097657 29.910156-1.304687 8.855469-6.417969 12.992187-17.449219 10.582031-28.09375l-32.9375-145.089844 111.699219-97.941406c8.214844-7.1875 11.351563-18.539063 7.980469-28.925781zm0 0" />
+
+                                    </svg>
+
+                                    <svg height="511pt" viewBox="0 -10 511.98685 511" width="511pt"
+                                        xmlns="https://www.w3.org/2000/svg">
+
+                                        <path
+                                            d="m510.652344 185.902344c-3.351563-10.367188-12.546875-17.730469-23.425782-18.710938l-147.773437-13.417968-58.433594-136.769532c-4.308593-10.023437-14.121093-16.511718-25.023437-16.511718s-20.714844 6.488281-25.023438 16.535156l-58.433594 136.746094-147.796874 13.417968c-10.859376 1.003906-20.03125 8.34375-23.402344 18.710938-3.371094 10.367187-.257813 21.738281 7.957031 28.90625l111.699219 97.960937-32.9375 145.089844c-2.410156 10.667969 1.730468 21.695313 10.582031 28.09375 4.757813 3.4375 10.324219 5.1875 15.9375 5.1875 4.839844 0 9.640625-1.304687 13.949219-3.882813l127.46875-76.183593 127.421875 76.183593c9.324219 5.609376 21.078125 5.097657 29.910156-1.304687 8.855469-6.417969 12.992187-17.449219 10.582031-28.09375l-32.9375-145.089844 111.699219-97.941406c8.214844-7.1875 11.351563-18.539063 7.980469-28.925781zm0 0" />
+
+                                    </svg>
+
+                                    <svg height="511pt" viewBox="0 -10 511.98685 511" width="511pt"
+                                        xmlns="https://www.w3.org/2000/svg">
+
+                                        <path
+                                            d="m510.652344 185.902344c-3.351563-10.367188-12.546875-17.730469-23.425782-18.710938l-147.773437-13.417968-58.433594-136.769532c-4.308593-10.023437-14.121093-16.511718-25.023437-16.511718s-20.714844 6.488281-25.023438 16.535156l-58.433594 136.746094-147.796874 13.417968c-10.859376 1.003906-20.03125 8.34375-23.402344 18.710938-3.371094 10.367187-.257813 21.738281 7.957031 28.90625l111.699219 97.960937-32.9375 145.089844c-2.410156 10.667969 1.730468 21.695313 10.582031 28.09375 4.757813 3.4375 10.324219 5.1875 15.9375 5.1875 4.839844 0 9.640625-1.304687 13.949219-3.882813l127.46875-76.183593 127.421875 76.183593c9.324219 5.609376 21.078125 5.097657 29.910156-1.304687 8.855469-6.417969 12.992187-17.449219 10.582031-28.09375l-32.9375-145.089844 111.699219-97.941406c8.214844-7.1875 11.351563-18.539063 7.980469-28.925781zm0 0" />
+
+                                    </svg>
+
+                                    <svg height="511pt" viewBox="0 -10 511.98685 511" width="511pt"
+                                        xmlns="https://www.w3.org/2000/svg">
+
+                                        <path
+                                            d="m510.652344 185.902344c-3.351563-10.367188-12.546875-17.730469-23.425782-18.710938l-147.773437-13.417968-58.433594-136.769532c-4.308593-10.023437-14.121093-16.511718-25.023437-16.511718s-20.714844 6.488281-25.023438 16.535156l-58.433594 136.746094-147.796874 13.417968c-10.859376 1.003906-20.03125 8.34375-23.402344 18.710938-3.371094 10.367187-.257813 21.738281 7.957031 28.90625l111.699219 97.960937-32.9375 145.089844c-2.410156 10.667969 1.730468 21.695313 10.582031 28.09375 4.757813 3.4375 10.324219 5.1875 15.9375 5.1875 4.839844 0 9.640625-1.304687 13.949219-3.882813l127.46875-76.183593 127.421875 76.183593c9.324219 5.609376 21.078125 5.097657 29.910156-1.304687 8.855469-6.417969 12.992187-17.449219 10.582031-28.09375l-32.9375-145.089844 111.699219-97.941406c8.214844-7.1875 11.351563-18.539063 7.980469-28.925781zm0 0" />
+
+                                    </svg>
+
+                                </div>
+
+                                <span>
+
+                            </div>
+
+                            {/nested_average_rating}
+
+                            ";
+
+                            product_id="[parent_product_id]{!parent_product_id}[id]{/!parent_product_id}";
+
+                            output_no_reviews="";
+
+                            output_review="";
+
+                            pagination="";
+
+                            [/ekm:nested_product_reviews]
+
+                            <h3>[name]</h3>
+
+                            <p class="bundle-stock-msg"></p>
+
+                            <!--This message gets update from a JS function in ShopUI-->
+
+                            [stock]
+
+                            <!--This stock tag is currently hidden but is been used in JS-->
+
+                        </div>
+
+                        <div class="product-bundle-details bundle-price">
+
+                            <p>[price]</p>
+
+                            [ekm:nested_if]
+
+                            iftype="EQUALS";
+
+                            ifvalue="[options]";
+
+                            ifvalue2="";
+
+                            ifthen="";
+
+                            ifelse="
+
+                            <a class="options-open">Choose Your Quantity
+
+                                <svg xmlns="https://www.w3.org/2000/svg" width="8" height="5.167" viewBox="0 0 8 5.167">
+
+                                    <path class="a"
+                                        d="M3.527,157.74l-3.4-3.4a.6.6,0,0,1,0-.848l.565-.565a.6.6,0,0,1,.848,0l2.411,2.411,2.411-2.411a.6.6,0,0,1,.848,0l.565.565a.6.6,0,0,1,0,.848l-3.4,3.4a.6.6,0,0,1-.845,0Z"
+                                        transform="translate(0.05 -152.75)"></path>
+
+                                </svg>
+
+                            </a>
+
+                            ";
+
+                            [/ekm:nested_if]
+
+
+
+                        </div>
+
+                        <div class="product-bundle-options">
+
+                            [options]
+
+                        </div>
+
+                    </div>
+
+
+
+                    ';
+
+                    output_product_option_start=' ';
+
+                    output_product_option_item='
+
+                    <div class="bundled-product-option trade-login-hide">
+
+                        <div class="bundled-product-option-name">[option_title]</div>
+
+                        <div class="bundled-product-option-value">[option_item]</div>
+
+                    </div>
+
+                    ';
+
+                    output_product_option_end='
+
+                    ';
+
+                    output_end='
+
+                    <div class="bundled-products-total trade-login-hide">
+
+                        <span class="bundled-products-total-label">Bundle Price </span>
+
+                        <span class="bundled-products-total-value">[bundle_price]</span>
+
+                    </div>
+
+                    ';
+
+                    [/ekm:bundled_products]
+
+                    [ekm:product_calculator]
+
+                    output_measurement='
+
+                    <p class="calc_title">[title]</p>
+
+                    [radios]
+
+                    ';
+
+                    output_start='
+
+                    <p class="ekm-calc-trigger">
+
+                        <svg viewBox="0 0 18 20" fill="none" xmlns="https://www.w3.org/2000/svg" aria-hidden="true"
+                            focusable="false" role="img">
+
+                            <path
+                                d="M15.875 0H2.125C1.125 0 0.25 0.875 0.25 1.875V18.125C0.25 19.125 1.125 20 2.125 20H15.875C16.875 20 17.75 19.125 17.75 18.125V1.875C17.75 0.875 16.875 0 15.875 0ZM5.25 17C5.25 17.25 5 17.5 4.75 17.5H3.25C3 17.5 2.75 17.25 2.75 17V15.5C2.75 15.25 3 15 3.25 15H4.75C5 15 5.25 15.25 5.25 15.5V17ZM5.25 12C5.25 12.25 5 12.5 4.75 12.5H3.25C3 12.5 2.75 12.25 2.75 12V10.5C2.75 10.25 3 10 3.25 10H4.75C5 10 5.25 10.25 5.25 10.5V12ZM10.25 17C10.25 17.25 10 17.5 9.75 17.5H8.25C8 17.5 7.75 17.25 7.75 17V15.5C7.75 15.25 8 15 8.25 15H9.75C10 15 10.25 15.25 10.25 15.5V17ZM10.25 12C10.25 12.25 10 12.5 9.75 12.5H8.25C8 12.5 7.75 12.25 7.75 12V10.5C7.75 10.25 8 10 8.25 10H9.75C10 10 10.25 10.25 10.25 10.5V12ZM15.25 17C15.25 17.25 15 17.5 14.75 17.5H13.25C13 17.5 12.75 17.25 12.75 17V10.5C12.75 10.25 13 10 13.25 10H14.75C15 10 15.25 10.25 15.25 10.5V17ZM15.25 7C15.25 7.25 15 7.5 14.75 7.5H3.25C3 7.5 2.75 7.25 2.75 7V3C2.75 2.75 3 2.5 3.25 2.5H14.75C15 2.5 15.25 2.75 15.25 3V7Z" />
+
+                        </svg>
+
+                        How much will I need?
+
+                        <svg aria-hidden="true" focusable="false" role="img" xmlns="https://www.w3.org/2000/svg"
+                            viewBox="0 0 448 512" class="calc_down_arrow">
+
+                            <path fill="currentColor"
+                                d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z">
+
+                            </path>
+
+                        </svg>
+
+                    </p>
+
+                    <div class="ekm-calc-wrapper">
+
+                        [measurement]
+
+                        ';
+
+                        output_item='
+
+                        <p class="calc_title">[title]</p>
+
+                        <div class="calc_input_box_wrapper">
+
+                            <div class="calc_single_input_box_wrapper">
+
+                                [labelx]
+
+                                [inputx]
+
+                            </div>
+
+                            <div class="calc_single_input_box_wrapper">
+
+                                [labely]
+
+                                [inputy]
+
+                            </div>
+
+                        </div>
+
+                        [remove_button]
+
+                        ';
+
+                        output_end='
+
+                        [add_button]
+
+                        <p class="wastage-wrapper">[wastage]</p>
+
+                        [you_will_need]
+
+                        <div class="calc-live-price trade-login-hide">
+
+                            <small>Total price</small>
+
+                            [total_price]
+
+                        </div>
+
+                    </div>
+
+                    <!-- end of ekm-calc-wrapper -->
+
+                    ';
+
+                    output_remove_button='
+
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="https://www.w3.org/2000/svg">
+
+                        <path
+                            d="M6.89545 5L9.73835 2.1571C10.0872 1.80824 10.0872 1.24261 9.73835 0.893466L9.10653 0.261648C8.75767 -0.0872159 8.19205 -0.0872159 7.8429 0.261648L5 3.10455L2.1571 0.261648C1.80824 -0.0872159 1.24261 -0.0872159 0.893466 0.261648L0.261648 0.893466C-0.0872159 1.24233 -0.0872159 1.80795 0.261648 2.1571L3.10455 5L0.261648 7.8429C-0.0872159 8.19176 -0.0872159 8.75739 0.261648 9.10653L0.893466 9.73835C1.24233 10.0872 1.80824 10.0872 2.1571 9.73835L5 6.89545L7.8429 9.73835C8.19176 10.0872 8.75767 10.0872 9.10653 9.73835L9.73835 9.10653C10.0872 8.75767 10.0872 8.19205 9.73835 7.8429L6.89545 5Z"
+                            fill="#999999" fill-opacity="0.65" />
+
+                    </svg>
+
+                    ';
+
+                    output_add_button='
+
+                    <div class="calc_add_button">
+
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="https://www.w3.org/2000/svg">
+
+                            <path
+                                d="M10 0C4.47581 0 0 4.47581 0 10C0 15.5242 4.47581 20 10 20C15.5242 20 20 15.5242 20 10C20 4.47581 15.5242 0 10 0ZM15.8065 11.129C15.8065 11.3952 15.5887 11.6129 15.3226 11.6129H11.6129V15.3226C11.6129 15.5887 11.3952 15.8065 11.129 15.8065H8.87097C8.60484 15.8065 8.3871 15.5887 8.3871 15.3226V11.6129H4.67742C4.41129 11.6129 4.19355 11.3952 4.19355 11.129V8.87097C4.19355 8.60484 4.41129 8.3871 4.67742 8.3871H8.3871V4.67742C8.3871 4.41129 8.60484 4.19355 8.87097 4.19355H11.129C11.3952 4.19355 11.6129 4.41129 11.6129 4.67742V8.3871H15.3226C15.5887 8.3871 15.8065 8.60484 15.8065 8.87097V11.129Z" />
+
+                        </svg>
+
+                        Add another area
+
+                    </div>
+
+                    ';
+
+
+
+                    [/ekm:product_calculator]
+
+                    [ekm:product_subscription]
+
+                    containing_div='true';
+
+                    output='
+
+
+
+                    <div class="ekm-subscription-selector-wrapper trade-login-hide">
+
+                        <span>[radio_one_time] [label_one_time]</span> [fixed-price]
+
+                    </div>
+
+                    <hr>
+
+                    <div class="ekm-subscription-selector-wrapper ekm-subscribe trade-login-hide">
+
+                        <span>[radio_subscribe] [label_subscribe]</span> [price]
+
+
+
+                    </div>
+
+                    <p>[save_percent_text]</p>
+
+                    <p>[no_minimum_text]</p>
+
+                    <div class="ekm-subscription-selector-wrapper trade-login-hide">
+
+                        [plan_selector_label]
+
+                    </div>
+
+                    [plan_selector]
+
+                    <br>
+
+                    ';
+
+                    [/ekm:product_subscription]
+
+
+
+
+
+
+                    [ekm:product_urgency_countdown_timer]
+
+                    output_start='<div class="urgency_countdown_timer m-margin-btm-d">';
+
+                        output_end='</div>
+
+                    <style>
+                        .urgency_countdown_timer .shopui {
+
+                            display: flex;
+
+                            justify-content: left;
+
+                            padding-left: 0;
+
+                            padding-top: 0;
+
+                        }
+
+
+
+                        .shopui-countdown {
+
+                            text-align: left;
+
+                        }
+                    </style>
+
+                    ';
+
+                    [/ekm:product_urgency_countdown_timer]
+
+
+
+                    [ekm:social]
+
+                    name='product page';
+
+                    output_start='<div class="main-prod-social-d m-margin-btm-d">';
+
+                        output_widget_start='<span>';
+
+                            output_widget_end='</span>';
+
+                        output_end='</div><!-- /.main-prod-social-d .m-margin-btm-d -->';
+
+                    [/ekm:social]
+
+
+
+                    <div class="m-col-12 d-col-12 main-prod-atc-wrapper">
+
+                        [ekm:if]
+
+                        iftype='EQUALS';
+
+                        ifvalue='[ekm:productcode][/ekm:productcode]';
+
+                        ifvalue2='';
+
+                        ifthen='';
+
+                        ifelse='
+
+                        <div class="main-prod-code main-prod-code-m l-margin-top-m">
+
+                            <strong>Product Code:</strong> <span>[ekm:productcode][/ekm:productcode]</span>
+
+                        </div><!-- /.main-prod-code .main-prod-code-m .l-margin-top-m -->
+
+                        ';
+
+                        [/ekm:if]
+
+
+
+                        <div class="main-prod-stock main-prod-stock-m l-margin-top-m">
+
+                            [ekm:productstock]
+
+                            font_formatting='no';
+
+                            instock='<strong>Stock Status:</strong>&nbsp;<span class="in-stock">In
+
+                                Stock</span><!-- /.in-stock -->';
+
+                            outstock='<strong>Stock Status:</strong>&nbsp;<span class="oo-stock">Sold
+
+                                Out</span><!-- /.oo-stock -->';
+
+                            [/ekm:productstock]
+
+                        </div><!-- /.main-prod-stock .main-prod-stock-m .l-margin-top-m -->
+
+
+
+                        [ekm:productshortdescription]
+
+                        font_formatting='no';
+
+                        output_start='<div class="main-short-desc main-short-desc-m l-margin-top-m">';
+
+                            output_end='</div><!-- /.main-short-desc .main-short-desc-m .l-margin-top-m -->';
+
+                        [/ekm:productshortdescription]
+
+
+
+                        <div class="prod-atc-section">
+
+                            [ekm:productoptions]
+
+                            font_formatting='no';
+
+                            remove_formatting='yes';
+
+                            orderby='auto';
+
+                            template_start='';
+
+                            textfield_content='
+
+                            <div class="main-prod-options textfield-option l-margin-top-m l-margin-btm-d"
+                                id="textfield-[option_counter]">
+
+                                <label class="options-label" for="options_[option_counter]">
+
+                                    <strong>[option_title]:</strong>
+
+                                </label><!-- /.options-label -->
+
+
+
+                                <div class="options-textfield">
+
+                                    [option_item]
+
+                                </div><!-- /.options-textfield -->
+
+                            </div><!-- /.main-prod-options .textfield-option .l-margin-top-m .l-margin-btm-d -->
+
+                            ';
+
+                            textarea_content='
+
+                            <div class="main-prod-options textarea-option l-margin-top-m l-margin-btm-d"
+                                id="textarea-[option_counter]">
+
+                                <label class="options-label-textarea" for="options_[option_counter]">
+
+                                    <strong>[option_title]:</strong>
+
+                                </label><!-- /.options-label-textarea -->
+
+
+
+                                <div class="options-textarea">
+
+                                    [option_item]
+
+                                </div><!-- /.options-textarea -->
+
+                            </div><!-- /.main-prod-options .textarea-option .l-margin-top-m .l-margin-btm-d -->
+
+                            ';
+
+                            colour_content='
+
+                            <div class="main-prod-options select-dropdown l-margin-top-m l-margin-btm-d"
+                                id="select-[option_counter]">
+
+                                <label class="options-label select-label" for="options_[option_counter]">
+
+                                    <strong>[option_title]:</strong>
+
+                                </label><!-- .options-label .select-label -->
+
+
+
+                                <div class="options-select">
+
+                                    [option_item]
+
+                                </div><!-- /.options-select -->
+
+                            </div><!-- /.main-prod-options .select-dropdown .l-margin-top-m .l-margin-btm-d -->
+
+                            ';
+
+                            dropdown_content='
+
+                            <div class="main-prod-options select-dropdown l-margin-top-m l-margin-btm-d"
+                                id="select-[option_counter]">
+
+                                <label class="options-label select-label" for="options_[option_counter]">
+
+                                    <strong>[option_title]:</strong>
+
+                                </label><!-- .options-label .select-label -->
+
+
+
+                                <div class="options-select">
+
+                                    [option_item]
+
+                                </div><!-- /.options-select -->
+
+                            </div><!-- /.main-prod-options .select-dropdown .l-margin-top-m .l-margin-btm-d -->
+
+                            ';
+
+                            image_content='
+
+                            <div class="main-prod-options image-upload l-margin-top-m l-margin-btm-d"
+                                id="image-[option_counter]">
+
+                                <label class="options-label" for="options_[option_counter]">
+
+                                    <strong>[option_title]:</strong>
+
+                                </label><!-- /.options-label -->
+
+
+
+                                <div class="image-uploader">
+
+                                    [option_item]
+
+                                </div><!-- /.image-uploader -->
+
+                            </div><!-- /.main-prod-options .image-upload .l-margin-top-m .l-margin-btm-d -->
+
+                            ';
+
+                            datefield_content='
+
+                            <div class="main-prod-options l-margin-top-m l-margin-btm-d" id="date-[option_counter]">
+
+                                <label class="options-label" for="options_[option_counter]">
+
+                                    <strong>[option_title]:</strong>
+
+                                </label><!-- /.options-label -->
+
+
+
+                                <div>
+
+                                    [option_item]
+
+                                </div><!-- /.image-uploader -->
+
+                            </div><!-- /.main-prod-options .image-upload .l-margin-top-m .l-margin-btm-d -->
+
+                            ';
+
+                            template_end='';
+
+                            change_callback='changeEventHandler';
+
+                            [/ekm:productoptions]
+
+
+
+                            [ekm:product_urgency_low_stock_bar]
+
+                            output_start='<div class="low_stock_bar m-margin-top-d xl-margin-top-m">';
+
+                                output_item='[bar]<p>Only <strong>[stock]</strong> left in Stock</p>';
+
+                                output_end='</div>
+
+                            <style>
+                                .low_stock_bar .shopui-low-stock-bar-container {
+
+                                    margin-left: 0;
+
+                                }
+                            </style>
+
+                            ';
+
+                            [/ekm:product_urgency_low_stock_bar]
+
+
+
+                            [ekm:product_urgency_get_it_by_timer]
+
+                            output_start='<div class="gib-timer m-margin-top-d l-margin-top-m">';
+
+                                output_item='Order within [countdown] to get it by [estimate].';
+
+                                output_end='</div>
+
+                            <style>
+                                .gib-timer {
+
+                                    display: flex;
+
+                                    justify-content: left;
+
+                                }
+
+
+
+                                .shopui-timer {
+
+                                    text-align: left;
+
+                                }
+                            </style>
+
+                            ';
+
+                            [/ekm:product_urgency_get_it_by_timer]
+
+
+
+                            [ekm:productprice]
+
+                            display_type='nobulkdiscount';
+
+                            font_formatting='no';
+
+                            price_text_layout='
+
+                            <div
+                                class="flex-display flex-align-baseline main-price-wrapper xl-margin-top-m l-margin-top-d l-margin-btm-d trade-login-hide">
+
+                                <div class="main-price">
+
+                                    [price] {vat_price}<small>([vat_price])</small>{/vat_price}
+
+                                </div><!-- /.main-price -->
+
+
+
+                                [ekm:productrrp]
+
+                                font_formatting='no';
+
+                                line='no';
+
+                                rrp_text_layout='
+
+                                <div class="main-rrp s-margin-left-m s-margin-left-d">
+
+                                    [rrp]
+
+                                </div><!-- /.main-rrp .s-margin-left-m .s-margin-left-d -->';
+
+                                rrp_symbol_layout='auto';
+
+                                [/ekm:productrrp]
+
+                            </div>
+
+                            <!-- /.flex-display .flex-align-baseline .main-price-wrapper .m-margin-top-m .m-margin-btm-d -->
+
+                            ';
+
+                            price_symbol_layout='auto';
+
+                            [/ekm:productprice]
+
+
+
+
+
+                            <div
+                                class="quantity-atc-wrapper flex-display trade-login-hide l-margin-top-d s-margin-top-m">
+
+
+
+                                <div class="prod-page-qty flex-display s-margin-right-d l-margin-top-m">
+
+
+
+                                    <div class="prod-page-qty-down-btn"></div><!-- /.prod-page-qty-down-btn -->
+
+
+
+                                    <input id="_EKM_PRODUCTQTY" class="ekmps-product-qty" type="number" step="1" min="0"
+                                        value="1" name="p_qty"><!-- /.ekmps-product-qty -->
+
+
+
+                                    <div class="prod-page-qty-up-btn"></div><!-- /.prod-page-qty-up-btn -->
+
+                                </div><!-- /.prod-page-qty -->
+
+
+
+                                <div class="prod-page-atc-button-wrapper d-col-12 m-col-12 l-margin-top-m">
+
+                                    [ekm:if]
+
+                                    iftype='EQUALS';
+
+                                    ifvalue='[ekm:addtocart][/ekm:addtocart]';
+
+                                    ifvalue2='';
+
+                                    ifthen='<div class="main-add-to-cart trade-login-hide"></div>
+
+                                    <!-- /.main-add-to-cart -->';
+
+                                    ifelse='[ekm:addtocart][/ekm:addtocart]';
+
+                                    [/ekm:if]
+
+                                </div>
+
+
+
+                            </div>
+
+
+
+
+
+                            [ekm:if]
+
+                            iftype='PRICES_HIDDEN';
+
+                            ifthen='
+
+                            <div class="ekm-trade-discount-wrapper">
+
+                                <p class="trade-account"><a href="/account/login">Login</a> to view prices</p>
+
+                            </div>
+
+                            ';
+
+                            ifelse='';
+
+                            [/ekm:if]
+
+
+
+                            [ekm:add_to_wishlist]
+
+                            output_start='<div id="[id]"
+                                class="wishlist-wrapper flex-display s-padding-top-d s-padding-btm-d trade-login-hide">
+
+                                ';
+
+                                output_item='
+
+                                <button class="wishlist-btn flex-display flex-align-center" formaction="[url]"
+                                    onclick="[onclick]">
+
+                                    <span class="wishlist-heart flex-display">
+
+                                        <svg class="wishlist-heart-icon" xmlns="https://www.w3.org/2000/svg"
+                                            width="20px" height="18px">
+
+
+
+                                            <path class="wishlist-heart-outer-color"
+                                                d="M10,18c-0.3,0-0.6-0.1-0.9-0.4L1.6,9.8c-2.1-2.2-2.1-5.9,0-8.1C2.6,0.6,4,0,5.5,0s2.9,0.6,3.9,1.7L10,2.2l0.5-0.5
+
+					                        C11.6,0.6,13,0,14.5,0s2.9,0.6,3.9,1.7c2.1,2.2,2.1,5.9,0,8.1l-7.6,7.9C10.6,17.9,10.3,18,10,18L10,18z" />
+
+                                            <!-- /.wishlist-heart-outer-color -->
+
+
+
+                                            <path class="wishlist-heart-inner-color"
+                                                d="M5.5,2.4c-0.8,0-1.6,0.3-2.2,1c-1.2,1.3-1.2,3.4,0,4.7l6.6,7l6.6-7c1.2-1.3,1.2-3.4,0-4.7c-0.6-0.6-1.4-1-2.2-1
+
+					                        s-1.6,0.3-2.2,1l-1.4,1.5l0,0c-0.2,0.2-0.5,0.3-0.8,0.3c-0.3,0-0.6-0.1-0.9-0.4L7.7,3.4C7.1,2.7,6.4,2.4,5.5,2.4z" />
+
+                                            <!-- /.wishlist-heart-inner-color -->
+
+                                        </svg><!-- /.wishlist-heart-icon -->
+
+                                    </span><!-- /.wishlist-heart -->
+
+
+
+                                    <span class="wishlist-text">
+
+                                        Add to your <strong>Wish List</strong>
+
+                                    </span><!-- /.wishlist-text .flex-display -->
+
+                                </button><!-- /.wishlist-btn .flex-display .flex-align-center -->
+
+                                ';
+
+                                output_item_added='
+
+                                <button class="wishlist-btn flex-display flex-align-center" formaction="[url]"
+                                    onclick="[onclick]">
+
+                                    <span class="wishlist-heart flex-display">
+
+                                        <svg class="wishlist-heart-icon wishlist-heart-icon-added"
+                                            xmlns="https://www.w3.org/2000/svg" width="20px" height="18px">
+
+
+
+                                            <path class="wishlist-heart-outer-color-added"
+                                                d="M10,18c-0.3,0-0.6-0.1-0.9-0.4L1.6,9.8c-2.1-2.2-2.1-5.9,0-8.1C2.6,0.6,4,0,5.5,0s2.9,0.6,3.9,1.7L10,2.2l0.5-0.5
+
+					                        C11.6,0.6,13,0,14.5,0s2.9,0.6,3.9,1.7c2.1,2.2,2.1,5.9,0,8.1l-7.6,7.9C10.6,17.9,10.3,18,10,18L10,18z" />
+
+                                            <!-- /.wishlist-heart-outer-color-added -->
+
+
+
+                                            <path class="wishlist-heart-inner-color-added"
+                                                d="M5.5,2.4c-0.8,0-1.6,0.3-2.2,1c-1.2,1.3-1.2,3.4,0,4.7l6.6,7l6.6-7c1.2-1.3,1.2-3.4,0-4.7c-0.6-0.6-1.4-1-2.2-1
+
+					                        s-1.6,0.3-2.2,1l-1.4,1.5l0,0c-0.2,0.2-0.5,0.3-0.8,0.3c-0.3,0-0.6-0.1-0.9-0.4L7.7,3.4C7.1,2.7,6.4,2.4,5.5,2.4z" />
+
+                                            <!-- /.wishlist-heart-inner-color-added -->
+
+                                        </svg><!-- /.wishlist-heart-icon .wishlist-heart-icon-added -->
+
+                                    </span><!-- /.wishlist-heart .flex-display -->
+
+
+
+                                    <span class="wishlist-text">
+
+                                        Added to <strong>Wish List</strong>
+
+                                    </span><!-- /.wishlist-text -->
+
+                                </button><!-- /.wishlist-btn .flex-display .flex-align-center -->
+
+                                ';
+
+                                output_end='
+
+                            </div><!-- /.wishlist-wrapper .flex-display .l-margin-btm-m .m-margin-btm-d -->';
+
+                            [/ekm:add_to_wishlist]
+
+
+
+                            [ekm:instalment_plans]
+
+                            output_start='<div class="trade-login-hide">';
+
+                                output_item='[promotion]';
+
+                                output_end='</div>';
+
+                            [/ekm:instalment_plans]
+
+
+
+                            [ekm:backinstock]
+
+                            output_start='<div class="prod-email-when-instock s-margin-top-d">';
+
+                                instock='<style>
+                                    .prod-email-when-instock {
+
+                                        display: none
+                                    }
+                                </style>';
+
+                                outstock='<i class="fa fa-envelope-o" aria-hidden="true"></i>Email Me When Back In
+
+                                Stock';
+
+                                requestmade='You will be emailed when this product is back in stock';
+
+                                textbox_attribute='class="bis-box" placeholder="Example: example@email.com"';
+
+                                button_attribute='';
+
+                                link_text_attribute='';
+
+                                output_end='</div><!-- /.prod-email-when-instock .s-margin-top-d --> ';
+
+                            [/ekm:backinstock]
+
+
+
+                            [ekm:product_urgency_free_delivery]
+
+                            output_start='<div class="free-del m-margin-top-d l-margin-top-m">';
+
+                                output_end='</div>';
+
+                            [/ekm:product_urgency_free_delivery]
+
+
+
+                            [ekm:loyaltypoints]
+
+                            output_start='<div class="loyalty-points m-margin-top-m m-margin-top-d trade-login-hide">';
+
+                                output_item='You will earn <strong>[loyaltypoints]</strong> points with this purchase';
+
+                                output_end='</div><!-- /.loyalty-points .l-margin-top-m .l-margin-top-d --> ';
+
+                            [/ekm:loyaltypoints]
+
+
+
+                            [ekm:social]
+
+                            name='product page';
+
+                            output_start='<div
+                                class="flex-display flex-justify-center main-prod-social-m l-margin-top-m">';
+
+                                output_widget_start='<span>';
+
+                                    output_widget_end='</span>';
+
+                                output_end='</div>
+
+                            <!-- /.flex-display .flex-justify-center .main-prod-social-m .l-margin-top-m -->';
+
+                            [/ekm:social]
+
+
+
+                            <div
+                                class="prod-page-usp-area flex-display flex-direction-column l-margin-top-d xl-margin-top-m">
+
+
+
+                                <div class="prod-page-usp-item flex-display">
+
+
+
+                                    [ekm:element]
+
+                                    show='yes';
+
+                                    allowed_types='html,image';
+
+                                    image_recommended_width='24';
+
+                                    image_recommended_height='24';
+
+                                    element_reference='prod-page-usp-icon-1';
+
+                                    edit_button='yes';
+
+                                    output_start='<div class="prod-page-usp-icon">';
+
+                                        output_end='</div>';
+
+                                    element_name_default='Product Page USP Icon';
+
+                                    output_default='<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                        fill="#000000" viewBox="0 0 448 512">
+
+                                        <path
+                                            d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z" />
+
+                                    </svg>';
+
+                                    [/ekm:element]
+
+
+
+                                    [ekm:element]
+
+                                    show='yes';
+
+                                    allowed_types='text,html';
+
+                                    element_reference='prod-page-usp-text-1';
+
+                                    edit_button='yes';
+
+                                    output_start='<p class="prod-page-usp-item-text">';
+
+                                        output_end='</p>';
+
+                                    element_name_default='prod-page-usp-item';
+
+                                    output_default='Unique Selling Point';
+
+                                    [/ekm:element]
+
+
+
+                                </div>
+
+
+
+                                <div class="prod-page-usp-item flex-display">
+
+
+
+                                    [ekm:element]
+
+                                    show='yes';
+
+                                    allowed_types='html,image';
+
+                                    image_recommended_width='24';
+
+                                    image_recommended_height='24';
+
+                                    element_reference='prod-page-usp-icon-2';
+
+                                    edit_button='yes';
+
+                                    output_start='<div class="prod-page-usp-icon">';
+
+                                        output_end='</div>';
+
+                                    element_name_default='Product Page USP Icon';
+
+                                    output_default='<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                        fill="#000000" viewBox="0 0 448 512">
+
+                                        <path
+                                            d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z" />
+
+                                    </svg>';
+
+                                    [/ekm:element]
+
+
+
+                                    [ekm:element]
+
+                                    show='yes';
+
+                                    allowed_types='text,html';
+
+                                    element_reference='prod-page-usp-text-2';
+
+                                    edit_button='yes';
+
+                                    output_start='<p class="prod-page-usp-item-text">';
+
+                                        output_end='</p>';
+
+                                    element_name_default='prod-page-usp-item';
+
+                                    output_default='Unique Selling Point';
+
+                                    [/ekm:element]
+
+
+
+                                </div>
+
+
+
+                                <div class="prod-page-usp-item flex-display">
+
+
+
+                                    [ekm:element]
+
+                                    show='yes';
+
+                                    allowed_types='html,image';
+
+                                    image_recommended_width='24';
+
+                                    image_recommended_height='24';
+
+                                    element_reference='prod-page-usp-icon-3';
+
+                                    edit_button='yes';
+
+                                    output_start='<div class="prod-page-usp-icon">';
+
+                                        output_end='</div>';
+
+                                    element_name_default='Product Page USP Icon';
+
+                                    output_default='<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                        fill="#000000" viewBox="0 0 448 512">
+
+                                        <path
+                                            d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z" />
+
+                                    </svg>';
+
+                                    [/ekm:element]
+
+
+
+                                    [ekm:element]
+
+                                    show='yes';
+
+                                    allowed_types='text,html';
+
+                                    element_reference='prod-page-usp-text-3';
+
+                                    edit_button='yes';
+
+                                    output_start='<p class="prod-page-usp-item-text">';
+
+                                        output_end='</p>';
+
+                                    element_name_default='prod-page-usp-item';
+
+                                    output_default='Unique Selling Point';
+
+                                    [/ekm:element]
+
+
+
+                                </div>
+
+
+
+                                <div class="prod-page-usp-item flex-display">
+
+
+
+                                    [ekm:element]
+
+                                    show='yes';
+
+                                    allowed_types='html,image';
+
+                                    image_recommended_width='24';
+
+                                    image_recommended_height='24';
+
+                                    element_reference='prod-page-usp-icon-4';
+
+                                    edit_button='yes';
+
+                                    output_start='<div class="prod-page-usp-icon">';
+
+                                        output_end='</div>';
+
+                                    element_name_default='Product Page USP Icon';
+
+                                    output_default='<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                        fill="#000000" viewBox="0 0 448 512">
+
+                                        <path
+                                            d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z" />
+
+                                    </svg>';
+
+                                    [/ekm:element]
+
+
+
+                                    [ekm:element]
+
+                                    show='yes';
+
+                                    allowed_types='text,html';
+
+                                    element_reference='prod-page-usp-text-4';
+
+                                    edit_button='yes';
+
+                                    output_start='<p class="prod-page-usp-item-text">';
+
+                                        output_end='</p>';
+
+                                    element_name_default='prod-page-usp-item';
+
+                                    output_default='Unique Selling Point';
+
+                                    [/ekm:element]
+
+
+
+                                </div>
+
+
+
+                            </div><!-- /.prod-page-usp-area -->
+
+
+
+                        </div><!-- /.prod-atc-section -->
+
+                    </div><!-- /.flex-col .m-col-12 .d-col-4 .main-prod-atc-wrapper -->
+
+
+
+                </div>
+
+
+
+            </div> <!-- product-column-right d-col-6 m-col-12 xl-padding-left-d xl-margin-top-m -->
+
+
+
+        </div><!-- /.product-page-wrapper container flex-display flex-wrap-wrap xxl-padding-btm-d xxl-padding-btm-m -->
+
+    </section><!-- /.product-page-upper -->
+
+
+
+    <div
+        class="tabs-info-section container flex-display xl-padding-top-d xl-padding-top-m xl-padding-btm-d xl-padding-btm-m">
+        <div class="product-season-section d-col-6 m-col-12">
+
+            <!-- JavaScript that checks for custom attributes assigned to each month -->
+
+            <script>
+
+                document.addEventListener('DOMContentLoaded', function () {
+
+                    var months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
+                    let found = false;
+
+                    months.forEach(function (month) {
+
+                        var element = document.querySelector('.' + month);
+
+                        var productAttribute = document.querySelector('#_EKM_PRODUCTATRRIBUTE_' + month.toUpperCase() + '_NAME');
+
+                        if (productAttribute) {
+
+                            element.style.display = 'block';
+                            found = true;
+                        }
+
+                    });
+                    
+                    if (found) return;
+                    
+                    var seasonSection = document.querySelector(".season-image")
+                    if (!seasonSection) return;
+                    
+                    // it makes more sense to have it hidden by default but wtv.
+                    seasonSection.style.display = 'none';
+
+                });
+
+            </script>
+
+            <div class="season-info-section">
+
+                [ekm:element]
+
+                element_reference='product-description-heading';
+
+                edit_button='yes';
+
+                output_start='<div class="prod-extra-description-title">';
+
+                    output_end='</div>';
+
+                element_name_default='';
+
+                output_default='Description';
+
+                allowed_types="text,html";
+
+                [/ekm:element]
+
+                [ekm:productdescription]
+
+                font_formatting='no';
+
+                [/ekm:productdescription]
+
+            </div>
+
+            <div class="season-info-section">
+
+                [ekm:element]
+
+                element_reference='season-description-heading[ekm:pageid][/ekm:pageid]';
+
+                edit_button='yes';
+
+                output_start='<div class="prod-extra-description-title">';
+
+                    output_end='</div>';
+
+                element_name_default='';
+
+                output_default='Product Season';
+
+                allowed_types="text,html";
+
+                [/ekm:element]
+
+                <ul class="season-image">
+
+                    <li>
+
+                        <div>Jan</div>
+
+                        <div class="outer">
+
+                            <div class="inner jan" style="display: none;"></div>
+
+                        </div>
+
+                    </li>
+
+                    <li>
+
+                        <div>Feb</div>
+
+                        <div class="outer">
+
+                            <div class="inner feb" style="display: none;"></div>
+
+                        </div>
+
+                    </li>
+
+                    <li>
+
+                        <div>Mar</div>
+
+                        <div class="outer">
+
+                            <div class="inner mar" style="display: none;"></div>
+
+                        </div>
+
+                    </li>
+
+                    <li>
+
+                        <div>Apr</div>
+
+                        <div class="outer">
+
+                            <div class="inner apr" style="display: none;"></div>
+
+                        </div>
+
+                    </li>
+
+                    <li>
+
+                        <div>May</div>
+
+                        <div class="outer">
+
+                            <div class="inner may" style="display: none;"></div>
+
+                        </div>
+
+                    </li>
+
+                    <li>
+
+                        <div>Jun</div>
+
+                        <div class="outer">
+
+                            <div class="inner jun" style="display: none;"></div>
+
+                        </div>
+
+                    </li>
+
+                    <li>
+
+                        <div>Jul</div>
+
+                        <div class="outer">
+
+                            <div class="inner jul" style="display: none;"></div>
+
+                        </div>
+
+                    </li>
+
+                    <li>
+
+                        <div>Aug</div>
+
+                        <div class="outer">
+
+                            <div class="inner aug" style="display: none;"></div>
+
+                        </div>
+
+                    </li>
+
+                    <li>
+
+                        <div>Sep</div>
+
+                        <div class="outer">
+
+                            <div class="inner sep" style="display: none;"></div>
+
+                        </div>
+
+                    </li>
+
+                    <li>
+
+                        <div>Oct</div>
+
+                        <div class="outer">
+
+                            <div class="inner oct" style="display: none;"></div>
+
+                        </div>
+
+                    </li>
+
+                    <li>
+
+                        <div>Nov</div>
+
+                        <div class="outer">
+
+                            <div class="inner nov" style="display: none;"></div>
+
+                        </div>
+
+                    </li>
+
+                    <li>
+
+                        <div>Dec</div>
+
+                        <div class="outer">
+
+                            <div class="inner dec" style="display: none;"></div>
+
+                        </div>
+
+                    </li>
+
+                </ul>
+
+                <!-- This is only required once per page -->
+
+                <div class="check-attributes" style="display:none">
+
+                    [ekm:productattributes][/ekm:productattributes]
+
+                </div>
+
+            </div>
+
+            
+
+            
+
+        </div><!--product-season-section d-col-6 m-col-12 xl-margin-top-d xl-margin-top-m -->
+        <div
+            class="product-tabs-section d-col-6 m-col-12 flex-display flex-justify-center m-col-12 xl-padding-btm-d xl-padding-btm-m">
+
+            <div class="product-tabs-wrapper container m-col-12">
+
+                [ekm:product_tabs]
+
+                output_type='accordian';
+
+                output_start='<div class="tab-wrapper mtb-3">';
+
+                    output_end='</div>';
+
+                description_content='';
+
+                
+
+                reviews_content='
+
+                [ekm:product_reviews]
+
+                items_per_page='5';
+
+                review_image_width='200';
+
+                review_image_height='200';
+
+
+
+                output_review_image_start='<div class="ekm-pr-img-gallery">';
+
+                    output_review_image_item='[image]';
+
+                    output_review_image_end='</div>';
+
+                output_no_reviews='No reviews have been left for this product, be the first to <a
+                    href="[write_review_url]">leave a review</a>';
+
+                output_reply_start='
+
+                <div class="review-reply-wrapper">
+
+                    ';
+
+                    output_reply_item='
+
+                    <p class="review-reply-header">
+
+                        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+                            <path
+                                d="M1.45285 5.88467L5.74983 2.17409C6.12595 1.84927 6.71875 2.11296 6.71875 2.61755V4.57197C10.6404 4.61687 13.75 5.40283 13.75 9.11929C13.75 10.6193 12.7837 12.1053 11.7155 12.8823C11.3822 13.1247 10.9071 12.8204 11.03 12.4274C12.1371 8.88708 10.505 7.94719 6.71875 7.8927V10.0391C6.71875 10.5444 6.12549 10.807 5.74983 10.4825L1.45285 6.77158C1.18257 6.53813 1.1822 6.11843 1.45285 5.88467Z"
+                                fill="#666666" />
+
+                        </svg>
+
+                        <strong>
+
+                            [author]
+
+                        </strong>
+
+                        <span>[created_date-day-leading_zero]/[created_date-month-leading_zero]/[created_date-year]</span>
+
+
+
+                    </p>
+
+                    <div class="reply-content">
+
+                        <p class="reply-body">[body]</p>
+
+                    </div>
+
+                    ';
+
+                    output_reply_end='
+
+                </div>
+
+                ';
+
+
+
+                output_start='
+
+                <div class="product-review-image-overlay-wrapper">
+
+                    <div class="product-review-image-overlay">
+
+                        <div class="close-review">
+
+                            <div>
+
+                                <span></span>
+
+                                <span></span>
+
+                            </div>
+
+                        </div>
+
+                        <img src="/" alt="product review overlay image">
+
+                        <div class="all-review-images"></div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="ekm-product-reviews-wrapper">
+
+                    <div class="ekm-pr-header">
+
+                        <div>
+
+                            <h4>Customer reviews</h4>
+
+                            <div class="ekm-pr-rating">
+
+                                {average_rating}
+
+                                <div class="rating-wrapper">
+
+                                    <div class="bottom-layer">
+
+                                        <svg height="511pt" viewBox="0 -10 511.98685 511" width="511pt"
+                                            xmlns="http://www.w3.org/2000/svg">
+
+                                            <path
+                                                d="m510.652344 185.902344c-3.351563-10.367188-12.546875-17.730469-23.425782-18.710938l-147.773437-13.417968-58.433594-136.769532c-4.308593-10.023437-14.121093-16.511718-25.023437-16.511718s-20.714844 6.488281-25.023438 16.535156l-58.433594 136.746094-147.796874 13.417968c-10.859376 1.003906-20.03125 8.34375-23.402344 18.710938-3.371094 10.367187-.257813 21.738281 7.957031 28.90625l111.699219 97.960937-32.9375 145.089844c-2.410156 10.667969 1.730468 21.695313 10.582031 28.09375 4.757813 3.4375 10.324219 5.1875 15.9375 5.1875 4.839844 0 9.640625-1.304687 13.949219-3.882813l127.46875-76.183593 127.421875 76.183593c9.324219 5.609376 21.078125 5.097657 29.910156-1.304687 8.855469-6.417969 12.992187-17.449219 10.582031-28.09375l-32.9375-145.089844 111.699219-97.941406c8.214844-7.1875 11.351563-18.539063 7.980469-28.925781zm0 0" />
+
+                                        </svg>
+
+                                        <svg height="511pt" viewBox="0 -10 511.98685 511" width="511pt"
+                                            xmlns="http://www.w3.org/2000/svg">
+
+                                            <path
+                                                d="m510.652344 185.902344c-3.351563-10.367188-12.546875-17.730469-23.425782-18.710938l-147.773437-13.417968-58.433594-136.769532c-4.308593-10.023437-14.121093-16.511718-25.023437-16.511718s-20.714844 6.488281-25.023438 16.535156l-58.433594 136.746094-147.796874 13.417968c-10.859376 1.003906-20.03125 8.34375-23.402344 18.710938-3.371094 10.367187-.257813 21.738281 7.957031 28.90625l111.699219 97.960937-32.9375 145.089844c-2.410156 10.667969 1.730468 21.695313 10.582031 28.09375 4.757813 3.4375 10.324219 5.1875 15.9375 5.1875 4.839844 0 9.640625-1.304687 13.949219-3.882813l127.46875-76.183593 127.421875 76.183593c9.324219 5.609376 21.078125 5.097657 29.910156-1.304687 8.855469-6.417969 12.992187-17.449219 10.582031-28.09375l-32.9375-145.089844 111.699219-97.941406c8.214844-7.1875 11.351563-18.539063 7.980469-28.925781zm0 0" />
+
+                                        </svg>
+
+                                        <svg height="511pt" viewBox="0 -10 511.98685 511" width="511pt"
+                                            xmlns="http://www.w3.org/2000/svg">
+
+                                            <path
+                                                d="m510.652344 185.902344c-3.351563-10.367188-12.546875-17.730469-23.425782-18.710938l-147.773437-13.417968-58.433594-136.769532c-4.308593-10.023437-14.121093-16.511718-25.023437-16.511718s-20.714844 6.488281-25.023438 16.535156l-58.433594 136.746094-147.796874 13.417968c-10.859376 1.003906-20.03125 8.34375-23.402344 18.710938-3.371094 10.367187-.257813 21.738281 7.957031 28.90625l111.699219 97.960937-32.9375 145.089844c-2.410156 10.667969 1.730468 21.695313 10.582031 28.09375 4.757813 3.4375 10.324219 5.1875 15.9375 5.1875 4.839844 0 9.640625-1.304687 13.949219-3.882813l127.46875-76.183593 127.421875 76.183593c9.324219 5.609376 21.078125 5.097657 29.910156-1.304687 8.855469-6.417969 12.992187-17.449219 10.582031-28.09375l-32.9375-145.089844 111.699219-97.941406c8.214844-7.1875 11.351563-18.539063 7.980469-28.925781zm0 0" />
+
+                                        </svg>
+
+                                        <svg height="511pt" viewBox="0 -10 511.98685 511" width="511pt"
+                                            xmlns="http://www.w3.org/2000/svg">
+
+                                            <path
+                                                d="m510.652344 185.902344c-3.351563-10.367188-12.546875-17.730469-23.425782-18.710938l-147.773437-13.417968-58.433594-136.769532c-4.308593-10.023437-14.121093-16.511718-25.023437-16.511718s-20.714844 6.488281-25.023438 16.535156l-58.433594 136.746094-147.796874 13.417968c-10.859376 1.003906-20.03125 8.34375-23.402344 18.710938-3.371094 10.367187-.257813 21.738281 7.957031 28.90625l111.699219 97.960937-32.9375 145.089844c-2.410156 10.667969 1.730468 21.695313 10.582031 28.09375 4.757813 3.4375 10.324219 5.1875 15.9375 5.1875 4.839844 0 9.640625-1.304687 13.949219-3.882813l127.46875-76.183593 127.421875 76.183593c9.324219 5.609376 21.078125 5.097657 29.910156-1.304687 8.855469-6.417969 12.992187-17.449219 10.582031-28.09375l-32.9375-145.089844 111.699219-97.941406c8.214844-7.1875 11.351563-18.539063 7.980469-28.925781zm0 0" />
+
+                                        </svg>
+
+                                        <svg height="511pt" viewBox="0 -10 511.98685 511" width="511pt"
+                                            xmlns="http://www.w3.org/2000/svg">
+
+                                            <path
+                                                d="m510.652344 185.902344c-3.351563-10.367188-12.546875-17.730469-23.425782-18.710938l-147.773437-13.417968-58.433594-136.769532c-4.308593-10.023437-14.121093-16.511718-25.023437-16.511718s-20.714844 6.488281-25.023438 16.535156l-58.433594 136.746094-147.796874 13.417968c-10.859376 1.003906-20.03125 8.34375-23.402344 18.710938-3.371094 10.367187-.257813 21.738281 7.957031 28.90625l111.699219 97.960937-32.9375 145.089844c-2.410156 10.667969 1.730468 21.695313 10.582031 28.09375 4.757813 3.4375 10.324219 5.1875 15.9375 5.1875 4.839844 0 9.640625-1.304687 13.949219-3.882813l127.46875-76.183593 127.421875 76.183593c9.324219 5.609376 21.078125 5.097657 29.910156-1.304687 8.855469-6.417969 12.992187-17.449219 10.582031-28.09375l-32.9375-145.089844 111.699219-97.941406c8.214844-7.1875 11.351563-18.539063 7.980469-28.925781zm0 0" />
+
+                                        </svg>
+
+                                    </div>
+
+                                    <div class="top-layer" data-rating="[average_rating]">
+
+                                        <svg height="511pt" viewBox="0 -10 511.98685 511" width="511pt"
+                                            xmlns="http://www.w3.org/2000/svg">
+
+                                            <path
+                                                d="m510.652344 185.902344c-3.351563-10.367188-12.546875-17.730469-23.425782-18.710938l-147.773437-13.417968-58.433594-136.769532c-4.308593-10.023437-14.121093-16.511718-25.023437-16.511718s-20.714844 6.488281-25.023438 16.535156l-58.433594 136.746094-147.796874 13.417968c-10.859376 1.003906-20.03125 8.34375-23.402344 18.710938-3.371094 10.367187-.257813 21.738281 7.957031 28.90625l111.699219 97.960937-32.9375 145.089844c-2.410156 10.667969 1.730468 21.695313 10.582031 28.09375 4.757813 3.4375 10.324219 5.1875 15.9375 5.1875 4.839844 0 9.640625-1.304687 13.949219-3.882813l127.46875-76.183593 127.421875 76.183593c9.324219 5.609376 21.078125 5.097657 29.910156-1.304687 8.855469-6.417969 12.992187-17.449219 10.582031-28.09375l-32.9375-145.089844 111.699219-97.941406c8.214844-7.1875 11.351563-18.539063 7.980469-28.925781zm0 0" />
+
+                                        </svg>
+
+                                        <svg height="511pt" viewBox="0 -10 511.98685 511" width="511pt"
+                                            xmlns="http://www.w3.org/2000/svg">
+
+                                            <path
+                                                d="m510.652344 185.902344c-3.351563-10.367188-12.546875-17.730469-23.425782-18.710938l-147.773437-13.417968-58.433594-136.769532c-4.308593-10.023437-14.121093-16.511718-25.023437-16.511718s-20.714844 6.488281-25.023438 16.535156l-58.433594 136.746094-147.796874 13.417968c-10.859376 1.003906-20.03125 8.34375-23.402344 18.710938-3.371094 10.367187-.257813 21.738281 7.957031 28.90625l111.699219 97.960937-32.9375 145.089844c-2.410156 10.667969 1.730468 21.695313 10.582031 28.09375 4.757813 3.4375 10.324219 5.1875 15.9375 5.1875 4.839844 0 9.640625-1.304687 13.949219-3.882813l127.46875-76.183593 127.421875 76.183593c9.324219 5.609376 21.078125 5.097657 29.910156-1.304687 8.855469-6.417969 12.992187-17.449219 10.582031-28.09375l-32.9375-145.089844 111.699219-97.941406c8.214844-7.1875 11.351563-18.539063 7.980469-28.925781zm0 0" />
+
+                                        </svg>
+
+                                        <svg height="511pt" viewBox="0 -10 511.98685 511" width="511pt"
+                                            xmlns="http://www.w3.org/2000/svg">
+
+                                            <path
+                                                d="m510.652344 185.902344c-3.351563-10.367188-12.546875-17.730469-23.425782-18.710938l-147.773437-13.417968-58.433594-136.769532c-4.308593-10.023437-14.121093-16.511718-25.023437-16.511718s-20.714844 6.488281-25.023438 16.535156l-58.433594 136.746094-147.796874 13.417968c-10.859376 1.003906-20.03125 8.34375-23.402344 18.710938-3.371094 10.367187-.257813 21.738281 7.957031 28.90625l111.699219 97.960937-32.9375 145.089844c-2.410156 10.667969 1.730468 21.695313 10.582031 28.09375 4.757813 3.4375 10.324219 5.1875 15.9375 5.1875 4.839844 0 9.640625-1.304687 13.949219-3.882813l127.46875-76.183593 127.421875 76.183593c9.324219 5.609376 21.078125 5.097657 29.910156-1.304687 8.855469-6.417969 12.992187-17.449219 10.582031-28.09375l-32.9375-145.089844 111.699219-97.941406c8.214844-7.1875 11.351563-18.539063 7.980469-28.925781zm0 0" />
+
+                                        </svg>
+
+                                        <svg height="511pt" viewBox="0 -10 511.98685 511" width="511pt"
+                                            xmlns="http://www.w3.org/2000/svg">
+
+                                            <path
+                                                d="m510.652344 185.902344c-3.351563-10.367188-12.546875-17.730469-23.425782-18.710938l-147.773437-13.417968-58.433594-136.769532c-4.308593-10.023437-14.121093-16.511718-25.023437-16.511718s-20.714844 6.488281-25.023438 16.535156l-58.433594 136.746094-147.796874 13.417968c-10.859376 1.003906-20.03125 8.34375-23.402344 18.710938-3.371094 10.367187-.257813 21.738281 7.957031 28.90625l111.699219 97.960937-32.9375 145.089844c-2.410156 10.667969 1.730468 21.695313 10.582031 28.09375 4.757813 3.4375 10.324219 5.1875 15.9375 5.1875 4.839844 0 9.640625-1.304687 13.949219-3.882813l127.46875-76.183593 127.421875 76.183593c9.324219 5.609376 21.078125 5.097657 29.910156-1.304687 8.855469-6.417969 12.992187-17.449219 10.582031-28.09375l-32.9375-145.089844 111.699219-97.941406c8.214844-7.1875 11.351563-18.539063 7.980469-28.925781zm0 0" />
+
+                                        </svg>
+
+                                        <svg height="511pt" viewBox="0 -10 511.98685 511" width="511pt"
+                                            xmlns="http://www.w3.org/2000/svg">
+
+                                            <path
+                                                d="m510.652344 185.902344c-3.351563-10.367188-12.546875-17.730469-23.425782-18.710938l-147.773437-13.417968-58.433594-136.769532c-4.308593-10.023437-14.121093-16.511718-25.023437-16.511718s-20.714844 6.488281-25.023438 16.535156l-58.433594 136.746094-147.796874 13.417968c-10.859376 1.003906-20.03125 8.34375-23.402344 18.710938-3.371094 10.367187-.257813 21.738281 7.957031 28.90625l111.699219 97.960937-32.9375 145.089844c-2.410156 10.667969 1.730468 21.695313 10.582031 28.09375 4.757813 3.4375 10.324219 5.1875 15.9375 5.1875 4.839844 0 9.640625-1.304687 13.949219-3.882813l127.46875-76.183593 127.421875 76.183593c9.324219 5.609376 21.078125 5.097657 29.910156-1.304687 8.855469-6.417969 12.992187-17.449219 10.582031-28.09375l-32.9375-145.089844 111.699219-97.941406c8.214844-7.1875 11.351563-18.539063 7.980469-28.925781zm0 0" />
+
+                                        </svg>
+
+                                    </div>
+
+                                </div>
+
+                                {/average_rating}
+
+
+
+                                [ekm:nested_if]
+
+                                iftype="GREATERTHAN";
+
+                                ifvalue="[total_reviews]";
+
+                                ifvalue2="0";
+
+                                ifthen="([total_reviews] Customer reviews)";
+
+                                ifelse="No reviews left yet";
+
+                                [/ekm:nested_if]
+
+
+
+
+
+                            </div>
+
+                            <!--end of rating-->
+
+
+
+                        </div>
+
+                        <a class="ekm-pr-cta" href="[write_review_url]">Write a review</a>
+
+                    </div>
+
+                    [ekm:nested_product_review_summary]
+
+                    output_start="
+
+                    <style>
+
+
+
+                    </style>
+
+
+
+                    <div>
+
+                        ";
+
+
+
+                        output_item="
+
+                        <div class="s-rows">
+
+                            <div class="s-row__name">5 Stars</div>
+
+                            <div class="s-row__bar" style="--row-bar-width: [nested_five_star_percentage]%"></div>
+
+                            <div class="s-row__value" title="[nested_five_star_count]/[nested_review_count]">
+
+                                [nested_five_star_percentage]%</div>
+
+
+
+                            <div class="s-row__name">4 Stars</div>
+
+                            <div class="s-row__bar" style="--row-bar-width: [nested_four_star_percentage]%"></div>
+
+                            <div class="s-row__value" title="[nested_four_star_count]/[nested_review_count]">
+
+                                [nested_four_star_percentage]%</div>
+
+
+
+                            <div class="s-row__name">3 Stars</div>
+
+                            <div class="s-row__bar" style="--row-bar-width: [nested_three_star_percentage]%"></div>
+
+                            <div class="s-row__value" title="[nested_three_star_count]/[nested_review_count]">
+
+                                [nested_three_star_percentage]%</div>
+
+
+
+                            <div class="s-row__name">2 Stars</div>
+
+                            <div class="s-row__bar" style="--row-bar-width: [nested_two_star_percentage]%"></div>
+
+                            <div class="s-row__value" title="[nested_two_star_count]/[nested_review_count]">
+
+                                [nested_two_star_percentage]%</div>
+
+
+
+                            <div class="s-row__name">1 Stars</div>
+
+                            <div class="s-row__bar" style="--row-bar-width: [nested_one_star_percentage]%"></div>
+
+                            <div class="s-row__value" title="[nested_one_star_count]/[nested_review_count]">
+
+                                [nested_one_star_percentage]%</div>
+
+                        </div>
+
+                        ";
+
+
+
+                        output_end="
+
+                    </div>
+
+                    ";
+
+                    [/ekm:nested_product_review_summary]
+
+
+
+                    <div class="ekm-pr-menu">
+
+                        [ekm:nested_if]
+
+                        iftype="LESSTHAN";
+
+                        ifvalue="[result_count]";
+
+                        ifvalue2="5";
+
+                        ifthen="<p></p>";
+
+                        ifelse="<p>Showing [result_start] to [result_end] ([result_count]).</p>
+
+                        ";
+
+                        [/ekm:nested_if]
+
+                        [sort_dropdown]
+
+                    </div>
+
+                    ';
+
+
+
+
+
+                    output_review='
+
+                    <div class="ekm-single-review-block">
+
+                        {rating}
+
+                        <div class="rating-wrapper">
+
+                            <div class="bottom-layer">
+
+                                <svg height="511pt" viewBox="0 -10 511.98685 511" width="511pt"
+                                    xmlns="http://www.w3.org/2000/svg">
+
+                                    <path
+                                        d="m510.652344 185.902344c-3.351563-10.367188-12.546875-17.730469-23.425782-18.710938l-147.773437-13.417968-58.433594-136.769532c-4.308593-10.023437-14.121093-16.511718-25.023437-16.511718s-20.714844 6.488281-25.023438 16.535156l-58.433594 136.746094-147.796874 13.417968c-10.859376 1.003906-20.03125 8.34375-23.402344 18.710938-3.371094 10.367187-.257813 21.738281 7.957031 28.90625l111.699219 97.960937-32.9375 145.089844c-2.410156 10.667969 1.730468 21.695313 10.582031 28.09375 4.757813 3.4375 10.324219 5.1875 15.9375 5.1875 4.839844 0 9.640625-1.304687 13.949219-3.882813l127.46875-76.183593 127.421875 76.183593c9.324219 5.609376 21.078125 5.097657 29.910156-1.304687 8.855469-6.417969 12.992187-17.449219 10.582031-28.09375l-32.9375-145.089844 111.699219-97.941406c8.214844-7.1875 11.351563-18.539063 7.980469-28.925781zm0 0" />
+
+                                </svg>
+
+                                <svg height="511pt" viewBox="0 -10 511.98685 511" width="511pt"
+                                    xmlns="http://www.w3.org/2000/svg">
+
+                                    <path
+                                        d="m510.652344 185.902344c-3.351563-10.367188-12.546875-17.730469-23.425782-18.710938l-147.773437-13.417968-58.433594-136.769532c-4.308593-10.023437-14.121093-16.511718-25.023437-16.511718s-20.714844 6.488281-25.023438 16.535156l-58.433594 136.746094-147.796874 13.417968c-10.859376 1.003906-20.03125 8.34375-23.402344 18.710938-3.371094 10.367187-.257813 21.738281 7.957031 28.90625l111.699219 97.960937-32.9375 145.089844c-2.410156 10.667969 1.730468 21.695313 10.582031 28.09375 4.757813 3.4375 10.324219 5.1875 15.9375 5.1875 4.839844 0 9.640625-1.304687 13.949219-3.882813l127.46875-76.183593 127.421875 76.183593c9.324219 5.609376 21.078125 5.097657 29.910156-1.304687 8.855469-6.417969 12.992187-17.449219 10.582031-28.09375l-32.9375-145.089844 111.699219-97.941406c8.214844-7.1875 11.351563-18.539063 7.980469-28.925781zm0 0" />
+
+                                </svg>
+
+                                <svg height="511pt" viewBox="0 -10 511.98685 511" width="511pt"
+                                    xmlns="http://www.w3.org/2000/svg">
+
+                                    <path
+                                        d="m510.652344 185.902344c-3.351563-10.367188-12.546875-17.730469-23.425782-18.710938l-147.773437-13.417968-58.433594-136.769532c-4.308593-10.023437-14.121093-16.511718-25.023437-16.511718s-20.714844 6.488281-25.023438 16.535156l-58.433594 136.746094-147.796874 13.417968c-10.859376 1.003906-20.03125 8.34375-23.402344 18.710938-3.371094 10.367187-.257813 21.738281 7.957031 28.90625l111.699219 97.960937-32.9375 145.089844c-2.410156 10.667969 1.730468 21.695313 10.582031 28.09375 4.757813 3.4375 10.324219 5.1875 15.9375 5.1875 4.839844 0 9.640625-1.304687 13.949219-3.882813l127.46875-76.183593 127.421875 76.183593c9.324219 5.609376 21.078125 5.097657 29.910156-1.304687 8.855469-6.417969 12.992187-17.449219 10.582031-28.09375l-32.9375-145.089844 111.699219-97.941406c8.214844-7.1875 11.351563-18.539063 7.980469-28.925781zm0 0" />
+
+                                </svg>
+
+                                <svg height="511pt" viewBox="0 -10 511.98685 511" width="511pt"
+                                    xmlns="http://www.w3.org/2000/svg">
+
+                                    <path
+                                        d="m510.652344 185.902344c-3.351563-10.367188-12.546875-17.730469-23.425782-18.710938l-147.773437-13.417968-58.433594-136.769532c-4.308593-10.023437-14.121093-16.511718-25.023437-16.511718s-20.714844 6.488281-25.023438 16.535156l-58.433594 136.746094-147.796874 13.417968c-10.859376 1.003906-20.03125 8.34375-23.402344 18.710938-3.371094 10.367187-.257813 21.738281 7.957031 28.90625l111.699219 97.960937-32.9375 145.089844c-2.410156 10.667969 1.730468 21.695313 10.582031 28.09375 4.757813 3.4375 10.324219 5.1875 15.9375 5.1875 4.839844 0 9.640625-1.304687 13.949219-3.882813l127.46875-76.183593 127.421875 76.183593c9.324219 5.609376 21.078125 5.097657 29.910156-1.304687 8.855469-6.417969 12.992187-17.449219 10.582031-28.09375l-32.9375-145.089844 111.699219-97.941406c8.214844-7.1875 11.351563-18.539063 7.980469-28.925781zm0 0" />
+
+                                </svg>
+
+                                <svg height="511pt" viewBox="0 -10 511.98685 511" width="511pt"
+                                    xmlns="http://www.w3.org/2000/svg">
+
+                                    <path
+                                        d="m510.652344 185.902344c-3.351563-10.367188-12.546875-17.730469-23.425782-18.710938l-147.773437-13.417968-58.433594-136.769532c-4.308593-10.023437-14.121093-16.511718-25.023437-16.511718s-20.714844 6.488281-25.023438 16.535156l-58.433594 136.746094-147.796874 13.417968c-10.859376 1.003906-20.03125 8.34375-23.402344 18.710938-3.371094 10.367187-.257813 21.738281 7.957031 28.90625l111.699219 97.960937-32.9375 145.089844c-2.410156 10.667969 1.730468 21.695313 10.582031 28.09375 4.757813 3.4375 10.324219 5.1875 15.9375 5.1875 4.839844 0 9.640625-1.304687 13.949219-3.882813l127.46875-76.183593 127.421875 76.183593c9.324219 5.609376 21.078125 5.097657 29.910156-1.304687 8.855469-6.417969 12.992187-17.449219 10.582031-28.09375l-32.9375-145.089844 111.699219-97.941406c8.214844-7.1875 11.351563-18.539063 7.980469-28.925781zm0 0" />
+
+                                </svg>
+
+                            </div>
+
+                            <div class="top-layer" data-rating="[rating]">
+
+                                <svg height="511pt" viewBox="0 -10 511.98685 511" width="511pt"
+                                    xmlns="http://www.w3.org/2000/svg">
+
+                                    <path
+                                        d="m510.652344 185.902344c-3.351563-10.367188-12.546875-17.730469-23.425782-18.710938l-147.773437-13.417968-58.433594-136.769532c-4.308593-10.023437-14.121093-16.511718-25.023437-16.511718s-20.714844 6.488281-25.023438 16.535156l-58.433594 136.746094-147.796874 13.417968c-10.859376 1.003906-20.03125 8.34375-23.402344 18.710938-3.371094 10.367187-.257813 21.738281 7.957031 28.90625l111.699219 97.960937-32.9375 145.089844c-2.410156 10.667969 1.730468 21.695313 10.582031 28.09375 4.757813 3.4375 10.324219 5.1875 15.9375 5.1875 4.839844 0 9.640625-1.304687 13.949219-3.882813l127.46875-76.183593 127.421875 76.183593c9.324219 5.609376 21.078125 5.097657 29.910156-1.304687 8.855469-6.417969 12.992187-17.449219 10.582031-28.09375l-32.9375-145.089844 111.699219-97.941406c8.214844-7.1875 11.351563-18.539063 7.980469-28.925781zm0 0" />
+
+                                </svg>
+
+                                <svg height="511pt" viewBox="0 -10 511.98685 511" width="511pt"
+                                    xmlns="http://www.w3.org/2000/svg">
+
+                                    <path
+                                        d="m510.652344 185.902344c-3.351563-10.367188-12.546875-17.730469-23.425782-18.710938l-147.773437-13.417968-58.433594-136.769532c-4.308593-10.023437-14.121093-16.511718-25.023437-16.511718s-20.714844 6.488281-25.023438 16.535156l-58.433594 136.746094-147.796874 13.417968c-10.859376 1.003906-20.03125 8.34375-23.402344 18.710938-3.371094 10.367187-.257813 21.738281 7.957031 28.90625l111.699219 97.960937-32.9375 145.089844c-2.410156 10.667969 1.730468 21.695313 10.582031 28.09375 4.757813 3.4375 10.324219 5.1875 15.9375 5.1875 4.839844 0 9.640625-1.304687 13.949219-3.882813l127.46875-76.183593 127.421875 76.183593c9.324219 5.609376 21.078125 5.097657 29.910156-1.304687 8.855469-6.417969 12.992187-17.449219 10.582031-28.09375l-32.9375-145.089844 111.699219-97.941406c8.214844-7.1875 11.351563-18.539063 7.980469-28.925781zm0 0" />
+
+                                </svg>
+
+                                <svg height="511pt" viewBox="0 -10 511.98685 511" width="511pt"
+                                    xmlns="http://www.w3.org/2000/svg">
+
+                                    <path
+                                        d="m510.652344 185.902344c-3.351563-10.367188-12.546875-17.730469-23.425782-18.710938l-147.773437-13.417968-58.433594-136.769532c-4.308593-10.023437-14.121093-16.511718-25.023437-16.511718s-20.714844 6.488281-25.023438 16.535156l-58.433594 136.746094-147.796874 13.417968c-10.859376 1.003906-20.03125 8.34375-23.402344 18.710938-3.371094 10.367187-.257813 21.738281 7.957031 28.90625l111.699219 97.960937-32.9375 145.089844c-2.410156 10.667969 1.730468 21.695313 10.582031 28.09375 4.757813 3.4375 10.324219 5.1875 15.9375 5.1875 4.839844 0 9.640625-1.304687 13.949219-3.882813l127.46875-76.183593 127.421875 76.183593c9.324219 5.609376 21.078125 5.097657 29.910156-1.304687 8.855469-6.417969 12.992187-17.449219 10.582031-28.09375l-32.9375-145.089844 111.699219-97.941406c8.214844-7.1875 11.351563-18.539063 7.980469-28.925781zm0 0" />
+
+                                </svg>
+
+                                <svg height="511pt" viewBox="0 -10 511.98685 511" width="511pt"
+                                    xmlns="http://www.w3.org/2000/svg">
+
+                                    <path
+                                        d="m510.652344 185.902344c-3.351563-10.367188-12.546875-17.730469-23.425782-18.710938l-147.773437-13.417968-58.433594-136.769532c-4.308593-10.023437-14.121093-16.511718-25.023437-16.511718s-20.714844 6.488281-25.023438 16.535156l-58.433594 136.746094-147.796874 13.417968c-10.859376 1.003906-20.03125 8.34375-23.402344 18.710938-3.371094 10.367187-.257813 21.738281 7.957031 28.90625l111.699219 97.960937-32.9375 145.089844c-2.410156 10.667969 1.730468 21.695313 10.582031 28.09375 4.757813 3.4375 10.324219 5.1875 15.9375 5.1875 4.839844 0 9.640625-1.304687 13.949219-3.882813l127.46875-76.183593 127.421875 76.183593c9.324219 5.609376 21.078125 5.097657 29.910156-1.304687 8.855469-6.417969 12.992187-17.449219 10.582031-28.09375l-32.9375-145.089844 111.699219-97.941406c8.214844-7.1875 11.351563-18.539063 7.980469-28.925781zm0 0" />
+
+                                </svg>
+
+                                <svg height="511pt" viewBox="0 -10 511.98685 511" width="511pt"
+                                    xmlns="http://www.w3.org/2000/svg">
+
+                                    <path
+                                        d="m510.652344 185.902344c-3.351563-10.367188-12.546875-17.730469-23.425782-18.710938l-147.773437-13.417968-58.433594-136.769532c-4.308593-10.023437-14.121093-16.511718-25.023437-16.511718s-20.714844 6.488281-25.023438 16.535156l-58.433594 136.746094-147.796874 13.417968c-10.859376 1.003906-20.03125 8.34375-23.402344 18.710938-3.371094 10.367187-.257813 21.738281 7.957031 28.90625l111.699219 97.960937-32.9375 145.089844c-2.410156 10.667969 1.730468 21.695313 10.582031 28.09375 4.757813 3.4375 10.324219 5.1875 15.9375 5.1875 4.839844 0 9.640625-1.304687 13.949219-3.882813l127.46875-76.183593 127.421875 76.183593c9.324219 5.609376 21.078125 5.097657 29.910156-1.304687 8.855469-6.417969 12.992187-17.449219 10.582031-28.09375l-32.9375-145.089844 111.699219-97.941406c8.214844-7.1875 11.351563-18.539063 7.980469-28.925781zm0 0" />
+
+                                </svg>
+
+                            </div>
+
+                        </div>
+
+                        {/rating}
+
+                        <h5>
+
+                            [title]
+
+                            {is_verified_purchase}
+
+                            <span>
+
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+
+                                    <path
+                                        d="M6.58231 10.8832L6.22879 10.5296L6.58234 10.8832L11.5286 5.93694C11.8918 5.57372 11.8918 4.9848 11.5286 4.62158L10.9204 4.01335C10.5571 3.65005 9.96817 3.65009 9.60494 4.01333L5.92465 7.69359L4.3949 6.16384C4.03166 5.8006 3.44276 5.80064 3.07954 6.16381L3.07951 6.16384L2.47126 6.77209C2.10804 7.13531 2.10804 7.72423 2.47126 8.08745L5.26696 10.8831C5.6302 11.2464 6.21907 11.2464 6.58231 10.8832ZM13.1666 6.99967C13.1666 10.4054 10.4057 13.1663 6.99992 13.1663C3.59415 13.1663 0.833252 10.4054 0.833252 6.99967C0.833252 3.59391 3.59415 0.833008 6.99992 0.833008C10.4057 0.833008 13.1666 3.59391 13.1666 6.99967Z"
+                                        fill="#3A76FF" stroke="#3A76FF" />
+
+                                </svg>
+
+                                Verified Purchase
+
+                            </span>
+
+                            {/is_verified_purchase}
+
+                        </h5>
+
+                        <p>[formated_body]</p>
+
+                        <p class="pr-date">[author_name] | [author_location] | [created_date-month_name]
+
+                            [created_date-year]</p>
+
+                        [images]
+
+                        {replies}
+
+                        <div class="show-review-reply">
+
+                            View Reply
+
+                            <svg width="10" height="6" viewBox="0 0 10 6" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+
+                                <path
+                                    d="M4.9892 6C4.90281 6 4.81642 5.98127 4.73002 5.94382C4.64363 5.90637 4.55724 5.85019 4.47084 5.77528L0.215983 1.34831C0.0719942 1.1985 0 1.01124 0 0.786517C0 0.561798 0.0719942 0.374532 0.215983 0.224719C0.359971 0.0749064 0.532757 0 0.734341 0C0.935925 0 1.10871 0.0749064 1.2527 0.224719L4.9892 4.11236L8.7257 0.224719C8.86969 0.0749064 9.04608 0 9.25486 0C9.46364 0 9.64003 0.0749064 9.78402 0.224719C9.92801 0.374532 10 0.558053 10 0.775281C10 0.992509 9.92801 1.17603 9.78402 1.32584L5.50756 5.77528C5.42117 5.85019 5.33837 5.90637 5.25918 5.94382C5.17999 5.98127 5.08999 6 4.9892 6Z">
+
+                                </path>
+
+                            </svg>
+
+                        </div>
+
+                        {/replies}
+
+                        <!-- THIS IS WHERE THE REPLY GOES -->
+
+                        [replies]
+
+                    </div>
+
+                    ';
+
+
+
+                    pagination='
+
+                    <div class="product-review-pagination">
+
+                        <p>
+
+                            <span class="product-review-pagination-showing">
+
+                                Showing [result_start] to [result_end] ([result_count]).
+
+                            </span>
+
+
+
+                            <span class="product-review-pagination-pages">
+
+                                Page [page] of [pages].
+
+                            </span>
+
+                        </p>
+
+
+
+                        <div class="product-review-pagination-links">
+
+
+
+                            [previous]<div class="product-review-page-numbers">[page_numbers]</div>[next]
+
+                        </div>
+
+                    </div>
+
+                    ';
+
+
+
+                    pagination_page_number='<a [page] [href]>[number]</a>';
+
+
+
+                    pagination_current_page=' class="current"';
+
+                    pagination_seperator='';
+
+                    pagination_other_page='';
+
+
+
+                    output_end='[pagination]
+
+                </div>';
+
+
+
+
+
+
+
+                [/ekm:product_reviews]
+
+                ';
+
+                custom_content='[content]';
+
+                [/ekm:product_tabs]
+
+
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+
+
+    <div class="product-origin-section d-col-12 m-col-12">
+
+        <!-- JavaScript that checks for custom attributes assigned to each month -->
+
+        <script>
+
+            document.addEventListener('DOMContentLoaded', function () {
+
+                var origins = ['northamerica', 'europe', 'asia', 'southamerica', 'africa', 'australia'];
+                
+                for (const origin of origins) {
+                
+                    var element = document.querySelector('.' + origin);
+
+                    var productAttribute = document.querySelector('#_EKM_PRODUCTATRRIBUTE_' + origin.toUpperCase() + '_NAME');
+
+                    if (productAttribute) {
+
+                        element.style.display = 'block';
+                        // todo: allow multiple origins (rewrite this)
+                        return;
+                    }	
+                }
+                
+                var originInfoSection = document.querySelector('.origin-info-section');
+    			if (!originInfoSection) return;
+
+				// hide origin map if the product has no origin (gift cards/variety boxes)
+    			originInfoSection.style.display = 'none';
+
+            });
+
+        </script>
+
+        <div class="origin-info-section">
+
+            [ekm:element]
+
+            element_reference='origin-description-heading';
+
+            edit_button='yes';
+
+            output_start='<div class="section-title figtree">';
+
+                output_end='</div>';
+
+            element_name_default='';
+
+            output_default='Originated From...';
+
+            allowed_types="text,html";
+
+            [/ekm:element]
+
+
+
+            <div class="asia" style="display: none;">
+
+                <img src="https://files.ekmcdn.com/b940b1/resources/design/origin-map-asia.webp?v=8F052CE4-9504-4FA2-8FB7-2ED202695D2A"
+                    alt="Origin Asia">
+
+            </div>
+
+
+
+            <div class="europe" style="display: none;">
+
+                <img src="https://files.ekmcdn.com/b940b1/resources/design/origin-map-europe.webp?v=8F052CE4-9504-4FA2-8FB7-2ED202695D2A"
+                    alt="Origin Europe">
+
+            </div>
+
+
+
+            <div class="africa" style="display: none;">
+
+                <img src="https://files.ekmcdn.com/b940b1/resources/design/origin-map-africa.webp?v=8F052CE4-9504-4FA2-8FB7-2ED202695D2A"
+                    alt="Origin Africa">
+
+            </div>
+
+
+
+            <div class="northamerica" style="display: none;">
+
+                <img src="https://files.ekmcdn.com/b940b1/resources/design/origin-map-northamerica.webp?v=8F052CE4-9504-4FA2-8FB7-2ED202695D2A"
+                    alt="Origin North America">
+
+            </div>
+
+
+
+            <div class="southamerica" style="display: none;">
+
+                <img src="https://files.ekmcdn.com/b940b1/resources/design/origin-map-southamerica.webp?v=8F052CE4-9504-4FA2-8FB7-2ED202695D2A"
+                    alt="Origin South America">
+
+            </div>
+
+
+
+            <div class="australia" style="display: none;">
+
+                <img src="https://files.ekmcdn.com/b940b1/resources/design/origin-map-australia.webp?v=8F052CE4-9504-4FA2-8FB7-2ED202695D2A"
+                    alt="Origin Australia">
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+
+                    [ekm:element]
+					    show='yes';
+					    allowed_types='image';
+					    image_recommended_width='700';
+					    image_recommended_height='394';
+					    
+					    element_reference='promo-banner-trade';
+					    edit_button='YES';
+					    output_start='<div class="promo-banner-trade d-col-12 m-col-12">';
+					    output_end='
+					    
+					        <div class="promo-text-overlay-wrapper">
+					            [ekm:nested_element]
+					                element_reference="promo-header-2-trade";
+					                output_start="
+					                    <div class="main-title s-padding-btm-d s-padding-btm-m light-text">
+					                ";
+					                output_end="
+					                    </div>
+					                "; 
+					                output_default="Promo Title 2-trade";
+					            [/ekm:nested_element]
+					            
+					            [ekm:nested_element]
+					                element_reference="promo-cta-2-trade";
+					                output_start="
+					                    <div class="btn light">
+					                ";
+					                output_end="
+					                    </div>
+					                "; 
+					                output_default="Learn more";
+					            [/ekm:nested_element]
+					        </div>  
+                            ';
+					    element_name_default='Promo Banner Two';
+					    output_default='';
+					[/ekm:element]
+
+
+
+
+    <div class="container">
+
+        [ekm:product_reviews] items_per_page='5'; review_image_width='200';
+
+        review_image_height='200'; output_review_image_start='
+
+        <div class="ekm-pr-img-gallery">
+
+            '; output_review_image_item='[image]'; output_review_image_end='
+
+        </div>
+
+        '; output_no_reviews='No reviews have been left for this product, be the first
+
+        to <a href="[write_review_url]">leave a review</a>'; output_reply_start='
+
+        <div class="review-reply-wrapper">
+
+            '; output_reply_item='
+
+            <p class="review-reply-header">
+
+                <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="https://www.w3.org/2000/svg">
+
+                    <path
+                        d="M1.45285 5.88467L5.74983 2.17409C6.12595 1.84927 6.71875 2.11296 6.71875 2.61755V4.57197C10.6404 4.61687 13.75 5.40283 13.75 9.11929C13.75 10.6193 12.7837 12.1053 11.7155 12.8823C11.3822 13.1247 10.9071 12.8204 11.03 12.4274C12.1371 8.88708 10.505 7.94719 6.71875 7.8927V10.0391C6.71875 10.5444 6.12549 10.807 5.74983 10.4825L1.45285 6.77158C1.18257 6.53813 1.1822 6.11843 1.45285 5.88467Z"
+                        fill="#666666" />
+
+                </svg>
+
+                <strong> [author] </strong>
+
+                <span>[created_date-day-leading_zero]/[created_date-month-leading_zero]/[created_date-year]</span>
+
+            </p>
+
+            <div class="reply-content">
+
+                <p class="reply-body">[body]</p>
+
+            </div>
+
+            '; output_reply_end='
+
+        </div>
+
+        '; output_start='
+
+        <div class="product-review-image-overlay-wrapper">
+
+            <div class="product-review-image-overlay">
+
+                <div class="close-review">
+
+                    <div>
+
+                        <span></span>
+
+                        <span></span>
+
+                    </div>
+
+                </div>
+
+                <img src="" alt="product review overlay image" />
+
+                <div class="all-review-images"></div>
+
+            </div>
+
+        </div>
+
+
+
+        <div
+            class="ekm-product-reviews-wrapper xxl-padding-top-d xxl-padding-btm-d xxl-padding-top-m xxl-padding-btm-m">
+
+            <div class="ekm-pr-header">
+
+                <div>
+
+                    <h4>Customer reviews</h4>
+
+                    <div class="ekm-pr-rating">
+
+                        {average_rating}
+
+                        <div class="rating-wrapper">
+
+                            <div class="bottom-layer">
+
+                                <svg height="511pt" viewBox="0 -10 511.98685 511" width="511pt"
+                                    xmlns="https://www.w3.org/2000/svg">
+
+                                    <path
+                                        d="m510.652344 185.902344c-3.351563-10.367188-12.546875-17.730469-23.425782-18.710938l-147.773437-13.417968-58.433594-136.769532c-4.308593-10.023437-14.121093-16.511718-25.023437-16.511718s-20.714844 6.488281-25.023438 16.535156l-58.433594 136.746094-147.796874 13.417968c-10.859376 1.003906-20.03125 8.34375-23.402344 18.710938-3.371094 10.367187-.257813 21.738281 7.957031 28.90625l111.699219 97.960937-32.9375 145.089844c-2.410156 10.667969 1.730468 21.695313 10.582031 28.09375 4.757813 3.4375 10.324219 5.1875 15.9375 5.1875 4.839844 0 9.640625-1.304687 13.949219-3.882813l127.46875-76.183593 127.421875 76.183593c9.324219 5.609376 21.078125 5.097657 29.910156-1.304687 8.855469-6.417969 12.992187-17.449219 10.582031-28.09375l-32.9375-145.089844 111.699219-97.941406c8.214844-7.1875 11.351563-18.539063 7.980469-28.925781zm0 0" />
+
+                                </svg>
+
+                                <svg height="511pt" viewBox="0 -10 511.98685 511" width="511pt"
+                                    xmlns="https://www.w3.org/2000/svg">
+
+                                    <path
+                                        d="m510.652344 185.902344c-3.351563-10.367188-12.546875-17.730469-23.425782-18.710938l-147.773437-13.417968-58.433594-136.769532c-4.308593-10.023437-14.121093-16.511718-25.023437-16.511718s-20.714844 6.488281-25.023438 16.535156l-58.433594 136.746094-147.796874 13.417968c-10.859376 1.003906-20.03125 8.34375-23.402344 18.710938-3.371094 10.367187-.257813 21.738281 7.957031 28.90625l111.699219 97.960937-32.9375 145.089844c-2.410156 10.667969 1.730468 21.695313 10.582031 28.09375 4.757813 3.4375 10.324219 5.1875 15.9375 5.1875 4.839844 0 9.640625-1.304687 13.949219-3.882813l127.46875-76.183593 127.421875 76.183593c9.324219 5.609376 21.078125 5.097657 29.910156-1.304687 8.855469-6.417969 12.992187-17.449219 10.582031-28.09375l-32.9375-145.089844 111.699219-97.941406c8.214844-7.1875 11.351563-18.539063 7.980469-28.925781zm0 0" />
+
+                                </svg>
+
+                                <svg height="511pt" viewBox="0 -10 511.98685 511" width="511pt"
+                                    xmlns="https://www.w3.org/2000/svg">
+
+                                    <path
+                                        d="m510.652344 185.902344c-3.351563-10.367188-12.546875-17.730469-23.425782-18.710938l-147.773437-13.417968-58.433594-136.769532c-4.308593-10.023437-14.121093-16.511718-25.023437-16.511718s-20.714844 6.488281-25.023438 16.535156l-58.433594 136.746094-147.796874 13.417968c-10.859376 1.003906-20.03125 8.34375-23.402344 18.710938-3.371094 10.367187-.257813 21.738281 7.957031 28.90625l111.699219 97.960937-32.9375 145.089844c-2.410156 10.667969 1.730468 21.695313 10.582031 28.09375 4.757813 3.4375 10.324219 5.1875 15.9375 5.1875 4.839844 0 9.640625-1.304687 13.949219-3.882813l127.46875-76.183593 127.421875 76.183593c9.324219 5.609376 21.078125 5.097657 29.910156-1.304687 8.855469-6.417969 12.992187-17.449219 10.582031-28.09375l-32.9375-145.089844 111.699219-97.941406c8.214844-7.1875 11.351563-18.539063 7.980469-28.925781zm0 0" />
+
+                                </svg>
+
+                                <svg height="511pt" viewBox="0 -10 511.98685 511" width="511pt"
+                                    xmlns="https://www.w3.org/2000/svg">
+
+                                    <path
+                                        d="m510.652344 185.902344c-3.351563-10.367188-12.546875-17.730469-23.425782-18.710938l-147.773437-13.417968-58.433594-136.769532c-4.308593-10.023437-14.121093-16.511718-25.023437-16.511718s-20.714844 6.488281-25.023438 16.535156l-58.433594 136.746094-147.796874 13.417968c-10.859376 1.003906-20.03125 8.34375-23.402344 18.710938-3.371094 10.367187-.257813 21.738281 7.957031 28.90625l111.699219 97.960937-32.9375 145.089844c-2.410156 10.667969 1.730468 21.695313 10.582031 28.09375 4.757813 3.4375 10.324219 5.1875 15.9375 5.1875 4.839844 0 9.640625-1.304687 13.949219-3.882813l127.46875-76.183593 127.421875 76.183593c9.324219 5.609376 21.078125 5.097657 29.910156-1.304687 8.855469-6.417969 12.992187-17.449219 10.582031-28.09375l-32.9375-145.089844 111.699219-97.941406c8.214844-7.1875 11.351563-18.539063 7.980469-28.925781zm0 0" />
+
+                                </svg>
+
+                                <svg height="511pt" viewBox="0 -10 511.98685 511" width="511pt"
+                                    xmlns="https://www.w3.org/2000/svg">
+
+                                    <path
+                                        d="m510.652344 185.902344c-3.351563-10.367188-12.546875-17.730469-23.425782-18.710938l-147.773437-13.417968-58.433594-136.769532c-4.308593-10.023437-14.121093-16.511718-25.023437-16.511718s-20.714844 6.488281-25.023438 16.535156l-58.433594 136.746094-147.796874 13.417968c-10.859376 1.003906-20.03125 8.34375-23.402344 18.710938-3.371094 10.367187-.257813 21.738281 7.957031 28.90625l111.699219 97.960937-32.9375 145.089844c-2.410156 10.667969 1.730468 21.695313 10.582031 28.09375 4.757813 3.4375 10.324219 5.1875 15.9375 5.1875 4.839844 0 9.640625-1.304687 13.949219-3.882813l127.46875-76.183593 127.421875 76.183593c9.324219 5.609376 21.078125 5.097657 29.910156-1.304687 8.855469-6.417969 12.992187-17.449219 10.582031-28.09375l-32.9375-145.089844 111.699219-97.941406c8.214844-7.1875 11.351563-18.539063 7.980469-28.925781zm0 0" />
+
+                                </svg>
+
+                            </div>
+
+                            <div class="top-layer" data-rating="[average_rating]">
+
+                                <svg height="511pt" viewBox="0 -10 511.98685 511" width="511pt"
+                                    xmlns="https://www.w3.org/2000/svg">
+
+                                    <path
+                                        d="m510.652344 185.902344c-3.351563-10.367188-12.546875-17.730469-23.425782-18.710938l-147.773437-13.417968-58.433594-136.769532c-4.308593-10.023437-14.121093-16.511718-25.023437-16.511718s-20.714844 6.488281-25.023438 16.535156l-58.433594 136.746094-147.796874 13.417968c-10.859376 1.003906-20.03125 8.34375-23.402344 18.710938-3.371094 10.367187-.257813 21.738281 7.957031 28.90625l111.699219 97.960937-32.9375 145.089844c-2.410156 10.667969 1.730468 21.695313 10.582031 28.09375 4.757813 3.4375 10.324219 5.1875 15.9375 5.1875 4.839844 0 9.640625-1.304687 13.949219-3.882813l127.46875-76.183593 127.421875 76.183593c9.324219 5.609376 21.078125 5.097657 29.910156-1.304687 8.855469-6.417969 12.992187-17.449219 10.582031-28.09375l-32.9375-145.089844 111.699219-97.941406c8.214844-7.1875 11.351563-18.539063 7.980469-28.925781zm0 0" />
+
+                                </svg>
+
+                                <svg height="511pt" viewBox="0 -10 511.98685 511" width="511pt"
+                                    xmlns="https://www.w3.org/2000/svg">
+
+                                    <path
+                                        d="m510.652344 185.902344c-3.351563-10.367188-12.546875-17.730469-23.425782-18.710938l-147.773437-13.417968-58.433594-136.769532c-4.308593-10.023437-14.121093-16.511718-25.023437-16.511718s-20.714844 6.488281-25.023438 16.535156l-58.433594 136.746094-147.796874 13.417968c-10.859376 1.003906-20.03125 8.34375-23.402344 18.710938-3.371094 10.367187-.257813 21.738281 7.957031 28.90625l111.699219 97.960937-32.9375 145.089844c-2.410156 10.667969 1.730468 21.695313 10.582031 28.09375 4.757813 3.4375 10.324219 5.1875 15.9375 5.1875 4.839844 0 9.640625-1.304687 13.949219-3.882813l127.46875-76.183593 127.421875 76.183593c9.324219 5.609376 21.078125 5.097657 29.910156-1.304687 8.855469-6.417969 12.992187-17.449219 10.582031-28.09375l-32.9375-145.089844 111.699219-97.941406c8.214844-7.1875 11.351563-18.539063 7.980469-28.925781zm0 0" />
+
+                                </svg>
+
+                                <svg height="511pt" viewBox="0 -10 511.98685 511" width="511pt"
+                                    xmlns="https://www.w3.org/2000/svg">
+
+                                    <path
+                                        d="m510.652344 185.902344c-3.351563-10.367188-12.546875-17.730469-23.425782-18.710938l-147.773437-13.417968-58.433594-136.769532c-4.308593-10.023437-14.121093-16.511718-25.023437-16.511718s-20.714844 6.488281-25.023438 16.535156l-58.433594 136.746094-147.796874 13.417968c-10.859376 1.003906-20.03125 8.34375-23.402344 18.710938-3.371094 10.367187-.257813 21.738281 7.957031 28.90625l111.699219 97.960937-32.9375 145.089844c-2.410156 10.667969 1.730468 21.695313 10.582031 28.09375 4.757813 3.4375 10.324219 5.1875 15.9375 5.1875 4.839844 0 9.640625-1.304687 13.949219-3.882813l127.46875-76.183593 127.421875 76.183593c9.324219 5.609376 21.078125 5.097657 29.910156-1.304687 8.855469-6.417969 12.992187-17.449219 10.582031-28.09375l-32.9375-145.089844 111.699219-97.941406c8.214844-7.1875 11.351563-18.539063 7.980469-28.925781zm0 0" />
+
+                                </svg>
+
+                                <svg height="511pt" viewBox="0 -10 511.98685 511" width="511pt"
+                                    xmlns="https://www.w3.org/2000/svg">
+
+                                    <path
+                                        d="m510.652344 185.902344c-3.351563-10.367188-12.546875-17.730469-23.425782-18.710938l-147.773437-13.417968-58.433594-136.769532c-4.308593-10.023437-14.121093-16.511718-25.023437-16.511718s-20.714844 6.488281-25.023438 16.535156l-58.433594 136.746094-147.796874 13.417968c-10.859376 1.003906-20.03125 8.34375-23.402344 18.710938-3.371094 10.367187-.257813 21.738281 7.957031 28.90625l111.699219 97.960937-32.9375 145.089844c-2.410156 10.667969 1.730468 21.695313 10.582031 28.09375 4.757813 3.4375 10.324219 5.1875 15.9375 5.1875 4.839844 0 9.640625-1.304687 13.949219-3.882813l127.46875-76.183593 127.421875 76.183593c9.324219 5.609376 21.078125 5.097657 29.910156-1.304687 8.855469-6.417969 12.992187-17.449219 10.582031-28.09375l-32.9375-145.089844 111.699219-97.941406c8.214844-7.1875 11.351563-18.539063 7.980469-28.925781zm0 0" />
+
+                                </svg>
+
+                                <svg height="511pt" viewBox="0 -10 511.98685 511" width="511pt"
+                                    xmlns="https://www.w3.org/2000/svg">
+
+                                    <path
+                                        d="m510.652344 185.902344c-3.351563-10.367188-12.546875-17.730469-23.425782-18.710938l-147.773437-13.417968-58.433594-136.769532c-4.308593-10.023437-14.121093-16.511718-25.023437-16.511718s-20.714844 6.488281-25.023438 16.535156l-58.433594 136.746094-147.796874 13.417968c-10.859376 1.003906-20.03125 8.34375-23.402344 18.710938-3.371094 10.367187-.257813 21.738281 7.957031 28.90625l111.699219 97.960937-32.9375 145.089844c-2.410156 10.667969 1.730468 21.695313 10.582031 28.09375 4.757813 3.4375 10.324219 5.1875 15.9375 5.1875 4.839844 0 9.640625-1.304687 13.949219-3.882813l127.46875-76.183593 127.421875 76.183593c9.324219 5.609376 21.078125 5.097657 29.910156-1.304687 8.855469-6.417969 12.992187-17.449219 10.582031-28.09375l-32.9375-145.089844 111.699219-97.941406c8.214844-7.1875 11.351563-18.539063 7.980469-28.925781zm0 0" />
+
+                                </svg>
+
+                            </div>
+
+                        </div>
+
+                        {/average_rating} [ekm:nested_if] iftype="GREATERTHAN";
+
+                        ifvalue="[total_reviews]"; ifvalue2="0"; ifthen="([total_reviews]
+
+                        Customer reviews)"; ifelse="No reviews left yet"; [/ekm:nested_if]
+
+                    </div>
+
+                    <!--end of rating-->
+
+                </div>
+
+                <a class="ekm-pr-cta"
+                    href="[write_review_url]">[ekm:language_element]elementreference='LE_WRITE_A_REVIEW';html_escape='yes';[/ekm:language_element]</a>
+
+            </div>
+
+
+
+            [ekm:nested_product_review_summary] output_start="
+
+            <style></style>
+
+
+
+            <div>
+
+                "; output_item="
+
+                <div class="s-rows">
+
+                    <div class="s-row__name">5 Stars</div>
+
+                    <div class="s-row__bar" style="--row-bar-width: [nested_five_star_percentage]%"></div>
+
+                    <div class="s-row__value" title="[nested_five_star_count]/[nested_review_count]">
+
+                        [nested_five_star_percentage]%
+
+                    </div>
+
+
+
+                    <div class="s-row__name">4 Stars</div>
+
+                    <div class="s-row__bar" style="--row-bar-width: [nested_four_star_percentage]%"></div>
+
+                    <div class="s-row__value" title="[nested_four_star_count]/[nested_review_count]">
+
+                        [nested_four_star_percentage]%
+
+                    </div>
+
+
+
+                    <div class="s-row__name">3 Stars</div>
+
+                    <div class="s-row__bar" style="--row-bar-width: [nested_three_star_percentage]%"></div>
+
+                    <div class="s-row__value" title="[nested_three_star_count]/[nested_review_count]">
+
+                        [nested_three_star_percentage]%
+
+                    </div>
+
+
+
+                    <div class="s-row__name">2 Stars</div>
+
+                    <div class="s-row__bar" style="--row-bar-width: [nested_two_star_percentage]%"></div>
+
+                    <div class="s-row__value" title="[nested_two_star_count]/[nested_review_count]">
+
+                        [nested_two_star_percentage]%
+
+                    </div>
+
+
+
+                    <div class="s-row__name">1 Stars</div>
+
+                    <div class="s-row__bar" style="--row-bar-width: [nested_one_star_percentage]%"></div>
+
+                    <div class="s-row__value" title="[nested_one_star_count]/[nested_review_count]">
+
+                        [nested_one_star_percentage]%
+
+                    </div>
+
+                </div>
+
+                "; output_end="
+
+            </div>
+
+            "; [/ekm:nested_product_review_summary]
+
+
+
+            <div class="ekm-pr-menu">
+
+                [ekm:nested_if] iftype="LESSTHAN"; ifvalue="[result_count]"; ifvalue2="5";
+
+                ifthen="
+
+                <p></p>
+
+                "; ifelse="
+
+                <p>Showing [result_start] to [result_end] ([result_count]).</p>
+
+                "; [/ekm:nested_if] [sort_dropdown]
+
+            </div>
+
+            '; output_review='
+
+            <div class="ekm-single-review-block">
+
+                <div class="rating-wrapper">
+
+                    <div class="bottom-layer">
+
+                        <svg height="511pt" viewBox="0 -10 511.98685 511" width="511pt"
+                            xmlns="https://www.w3.org/2000/svg">
+
+                            <path
+                                d="m510.652344 185.902344c-3.351563-10.367188-12.546875-17.730469-23.425782-18.710938l-147.773437-13.417968-58.433594-136.769532c-4.308593-10.023437-14.121093-16.511718-25.023437-16.511718s-20.714844 6.488281-25.023438 16.535156l-58.433594 136.746094-147.796874 13.417968c-10.859376 1.003906-20.03125 8.34375-23.402344 18.710938-3.371094 10.367187-.257813 21.738281 7.957031 28.90625l111.699219 97.960937-32.9375 145.089844c-2.410156 10.667969 1.730468 21.695313 10.582031 28.09375 4.757813 3.4375 10.324219 5.1875 15.9375 5.1875 4.839844 0 9.640625-1.304687 13.949219-3.882813l127.46875-76.183593 127.421875 76.183593c9.324219 5.609376 21.078125 5.097657 29.910156-1.304687 8.855469-6.417969 12.992187-17.449219 10.582031-28.09375l-32.9375-145.089844 111.699219-97.941406c8.214844-7.1875 11.351563-18.539063 7.980469-28.925781zm0 0" />
+
+                        </svg>
+
+                        <svg height="511pt" viewBox="0 -10 511.98685 511" width="511pt"
+                            xmlns="https://www.w3.org/2000/svg">
+
+                            <path
+                                d="m510.652344 185.902344c-3.351563-10.367188-12.546875-17.730469-23.425782-18.710938l-147.773437-13.417968-58.433594-136.769532c-4.308593-10.023437-14.121093-16.511718-25.023437-16.511718s-20.714844 6.488281-25.023438 16.535156l-58.433594 136.746094-147.796874 13.417968c-10.859376 1.003906-20.03125 8.34375-23.402344 18.710938-3.371094 10.367187-.257813 21.738281 7.957031 28.90625l111.699219 97.960937-32.9375 145.089844c-2.410156 10.667969 1.730468 21.695313 10.582031 28.09375 4.757813 3.4375 10.324219 5.1875 15.9375 5.1875 4.839844 0 9.640625-1.304687 13.949219-3.882813l127.46875-76.183593 127.421875 76.183593c9.324219 5.609376 21.078125 5.097657 29.910156-1.304687 8.855469-6.417969 12.992187-17.449219 10.582031-28.09375l-32.9375-145.089844 111.699219-97.941406c8.214844-7.1875 11.351563-18.539063 7.980469-28.925781zm0 0" />
+
+                        </svg>
+
+                        <svg height="511pt" viewBox="0 -10 511.98685 511" width="511pt"
+                            xmlns="https://www.w3.org/2000/svg">
+
+                            <path
+                                d="m510.652344 185.902344c-3.351563-10.367188-12.546875-17.730469-23.425782-18.710938l-147.773437-13.417968-58.433594-136.769532c-4.308593-10.023437-14.121093-16.511718-25.023437-16.511718s-20.714844 6.488281-25.023438 16.535156l-58.433594 136.746094-147.796874 13.417968c-10.859376 1.003906-20.03125 8.34375-23.402344 18.710938-3.371094 10.367187-.257813 21.738281 7.957031 28.90625l111.699219 97.960937-32.9375 145.089844c-2.410156 10.667969 1.730468 21.695313 10.582031 28.09375 4.757813 3.4375 10.324219 5.1875 15.9375 5.1875 4.839844 0 9.640625-1.304687 13.949219-3.882813l127.46875-76.183593 127.421875 76.183593c9.324219 5.609376 21.078125 5.097657 29.910156-1.304687 8.855469-6.417969 12.992187-17.449219 10.582031-28.09375l-32.9375-145.089844 111.699219-97.941406c8.214844-7.1875 11.351563-18.539063 7.980469-28.925781zm0 0" />
+
+                        </svg>
+
+                        <svg height="511pt" viewBox="0 -10 511.98685 511" width="511pt"
+                            xmlns="https://www.w3.org/2000/svg">
+
+                            <path
+                                d="m510.652344 185.902344c-3.351563-10.367188-12.546875-17.730469-23.425782-18.710938l-147.773437-13.417968-58.433594-136.769532c-4.308593-10.023437-14.121093-16.511718-25.023437-16.511718s-20.714844 6.488281-25.023438 16.535156l-58.433594 136.746094-147.796874 13.417968c-10.859376 1.003906-20.03125 8.34375-23.402344 18.710938-3.371094 10.367187-.257813 21.738281 7.957031 28.90625l111.699219 97.960937-32.9375 145.089844c-2.410156 10.667969 1.730468 21.695313 10.582031 28.09375 4.757813 3.4375 10.324219 5.1875 15.9375 5.1875 4.839844 0 9.640625-1.304687 13.949219-3.882813l127.46875-76.183593 127.421875 76.183593c9.324219 5.609376 21.078125 5.097657 29.910156-1.304687 8.855469-6.417969 12.992187-17.449219 10.582031-28.09375l-32.9375-145.089844 111.699219-97.941406c8.214844-7.1875 11.351563-18.539063 7.980469-28.925781zm0 0" />
+
+                        </svg>
+
+                        <svg height="511pt" viewBox="0 -10 511.98685 511" width="511pt"
+                            xmlns="https://www.w3.org/2000/svg">
+
+                            <path
+                                d="m510.652344 185.902344c-3.351563-10.367188-12.546875-17.730469-23.425782-18.710938l-147.773437-13.417968-58.433594-136.769532c-4.308593-10.023437-14.121093-16.511718-25.023437-16.511718s-20.714844 6.488281-25.023438 16.535156l-58.433594 136.746094-147.796874 13.417968c-10.859376 1.003906-20.03125 8.34375-23.402344 18.710938-3.371094 10.367187-.257813 21.738281 7.957031 28.90625l111.699219 97.960937-32.9375 145.089844c-2.410156 10.667969 1.730468 21.695313 10.582031 28.09375 4.757813 3.4375 10.324219 5.1875 15.9375 5.1875 4.839844 0 9.640625-1.304687 13.949219-3.882813l127.46875-76.183593 127.421875 76.183593c9.324219 5.609376 21.078125 5.097657 29.910156-1.304687 8.855469-6.417969 12.992187-17.449219 10.582031-28.09375l-32.9375-145.089844 111.699219-97.941406c8.214844-7.1875 11.351563-18.539063 7.980469-28.925781zm0 0" />
+
+                        </svg>
+
+                    </div>
+
+                    <div class="top-layer" data-rating="[rating]">
+
+                        <svg height="511pt" viewBox="0 -10 511.98685 511" width="511pt"
+                            xmlns="https://www.w3.org/2000/svg">
+
+                            <path
+                                d="m510.652344 185.902344c-3.351563-10.367188-12.546875-17.730469-23.425782-18.710938l-147.773437-13.417968-58.433594-136.769532c-4.308593-10.023437-14.121093-16.511718-25.023437-16.511718s-20.714844 6.488281-25.023438 16.535156l-58.433594 136.746094-147.796874 13.417968c-10.859376 1.003906-20.03125 8.34375-23.402344 18.710938-3.371094 10.367187-.257813 21.738281 7.957031 28.90625l111.699219 97.960937-32.9375 145.089844c-2.410156 10.667969 1.730468 21.695313 10.582031 28.09375 4.757813 3.4375 10.324219 5.1875 15.9375 5.1875 4.839844 0 9.640625-1.304687 13.949219-3.882813l127.46875-76.183593 127.421875 76.183593c9.324219 5.609376 21.078125 5.097657 29.910156-1.304687 8.855469-6.417969 12.992187-17.449219 10.582031-28.09375l-32.9375-145.089844 111.699219-97.941406c8.214844-7.1875 11.351563-18.539063 7.980469-28.925781zm0 0" />
+
+                        </svg>
+
+                        <svg height="511pt" viewBox="0 -10 511.98685 511" width="511pt"
+                            xmlns="https://www.w3.org/2000/svg">
+
+                            <path
+                                d="m510.652344 185.902344c-3.351563-10.367188-12.546875-17.730469-23.425782-18.710938l-147.773437-13.417968-58.433594-136.769532c-4.308593-10.023437-14.121093-16.511718-25.023437-16.511718s-20.714844 6.488281-25.023438 16.535156l-58.433594 136.746094-147.796874 13.417968c-10.859376 1.003906-20.03125 8.34375-23.402344 18.710938-3.371094 10.367187-.257813 21.738281 7.957031 28.90625l111.699219 97.960937-32.9375 145.089844c-2.410156 10.667969 1.730468 21.695313 10.582031 28.09375 4.757813 3.4375 10.324219 5.1875 15.9375 5.1875 4.839844 0 9.640625-1.304687 13.949219-3.882813l127.46875-76.183593 127.421875 76.183593c9.324219 5.609376 21.078125 5.097657 29.910156-1.304687 8.855469-6.417969 12.992187-17.449219 10.582031-28.09375l-32.9375-145.089844 111.699219-97.941406c8.214844-7.1875 11.351563-18.539063 7.980469-28.925781zm0 0" />
+
+                        </svg>
+
+                        <svg height="511pt" viewBox="0 -10 511.98685 511" width="511pt"
+                            xmlns="https://www.w3.org/2000/svg">
+
+                            <path
+                                d="m510.652344 185.902344c-3.351563-10.367188-12.546875-17.730469-23.425782-18.710938l-147.773437-13.417968-58.433594-136.769532c-4.308593-10.023437-14.121093-16.511718-25.023437-16.511718s-20.714844 6.488281-25.023438 16.535156l-58.433594 136.746094-147.796874 13.417968c-10.859376 1.003906-20.03125 8.34375-23.402344 18.710938-3.371094 10.367187-.257813 21.738281 7.957031 28.90625l111.699219 97.960937-32.9375 145.089844c-2.410156 10.667969 1.730468 21.695313 10.582031 28.09375 4.757813 3.4375 10.324219 5.1875 15.9375 5.1875 4.839844 0 9.640625-1.304687 13.949219-3.882813l127.46875-76.183593 127.421875 76.183593c9.324219 5.609376 21.078125 5.097657 29.910156-1.304687 8.855469-6.417969 12.992187-17.449219 10.582031-28.09375l-32.9375-145.089844 111.699219-97.941406c8.214844-7.1875 11.351563-18.539063 7.980469-28.925781zm0 0" />
+
+                        </svg>
+
+                        <svg height="511pt" viewBox="0 -10 511.98685 511" width="511pt"
+                            xmlns="https://www.w3.org/2000/svg">
+
+                            <path
+                                d="m510.652344 185.902344c-3.351563-10.367188-12.546875-17.730469-23.425782-18.710938l-147.773437-13.417968-58.433594-136.769532c-4.308593-10.023437-14.121093-16.511718-25.023437-16.511718s-20.714844 6.488281-25.023438 16.535156l-58.433594 136.746094-147.796874 13.417968c-10.859376 1.003906-20.03125 8.34375-23.402344 18.710938-3.371094 10.367187-.257813 21.738281 7.957031 28.90625l111.699219 97.960937-32.9375 145.089844c-2.410156 10.667969 1.730468 21.695313 10.582031 28.09375 4.757813 3.4375 10.324219 5.1875 15.9375 5.1875 4.839844 0 9.640625-1.304687 13.949219-3.882813l127.46875-76.183593 127.421875 76.183593c9.324219 5.609376 21.078125 5.097657 29.910156-1.304687 8.855469-6.417969 12.992187-17.449219 10.582031-28.09375l-32.9375-145.089844 111.699219-97.941406c8.214844-7.1875 11.351563-18.539063 7.980469-28.925781zm0 0" />
+
+                        </svg>
+
+                        <svg height="511pt" viewBox="0 -10 511.98685 511" width="511pt"
+                            xmlns="https://www.w3.org/2000/svg">
+
+                            <path
+                                d="m510.652344 185.902344c-3.351563-10.367188-12.546875-17.730469-23.425782-18.710938l-147.773437-13.417968-58.433594-136.769532c-4.308593-10.023437-14.121093-16.511718-25.023437-16.511718s-20.714844 6.488281-25.023438 16.535156l-58.433594 136.746094-147.796874 13.417968c-10.859376 1.003906-20.03125 8.34375-23.402344 18.710938-3.371094 10.367187-.257813 21.738281 7.957031 28.90625l111.699219 97.960937-32.9375 145.089844c-2.410156 10.667969 1.730468 21.695313 10.582031 28.09375 4.757813 3.4375 10.324219 5.1875 15.9375 5.1875 4.839844 0 9.640625-1.304687 13.949219-3.882813l127.46875-76.183593 127.421875 76.183593c9.324219 5.609376 21.078125 5.097657 29.910156-1.304687 8.855469-6.417969 12.992187-17.449219 10.582031-28.09375l-32.9375-145.089844 111.699219-97.941406c8.214844-7.1875 11.351563-18.539063 7.980469-28.925781zm0 0" />
+
+                        </svg>
+
+                    </div>
+
+                </div>
+
+                <h5>
+
+                    [title] {is_verified_purchase}
+
+                    <span>
+
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="https://www.w3.org/2000/svg">
+
+                            <path
+                                d="M6.58231 10.8832L6.22879 10.5296L6.58234 10.8832L11.5286 5.93694C11.8918 5.57372 11.8918 4.9848 11.5286 4.62158L10.9204 4.01335C10.5571 3.65005 9.96817 3.65009 9.60494 4.01333L5.92465 7.69359L4.3949 6.16384C4.03166 5.8006 3.44276 5.80064 3.07954 6.16381L3.07951 6.16384L2.47126 6.77209C2.10804 7.13531 2.10804 7.72423 2.47126 8.08745L5.26696 10.8831C5.6302 11.2464 6.21907 11.2464 6.58231 10.8832ZM13.1666 6.99967C13.1666 10.4054 10.4057 13.1663 6.99992 13.1663C3.59415 13.1663 0.833252 10.4054 0.833252 6.99967C0.833252 3.59391 3.59415 0.833008 6.99992 0.833008C10.4057 0.833008 13.1666 3.59391 13.1666 6.99967Z"
+                                fill="#3A76FF" stroke="#3A76FF" />
+
+                        </svg>
+
+                        Verified Purchase
+
+                    </span>
+
+                    {/is_verified_purchase}
+
+                </h5>
+
+                <p>[formated_body]</p>
+
+                <p class="pr-date">
+
+                    [author_name] | [author_location] | [created_date-month_name]
+
+                    [created_date-year]
+
+                </p>
+
+                [images] {replies}
+
+                <div class="show-review-reply">
+
+                    View Reply
+
+                    <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="https://www.w3.org/2000/svg">
+
+                        <path
+                            d="M4.9892 6C4.90281 6 4.81642 5.98127 4.73002 5.94382C4.64363 5.90637 4.55724 5.85019 4.47084 5.77528L0.215983 1.34831C0.0719942 1.1985 0 1.01124 0 0.786517C0 0.561798 0.0719942 0.374532 0.215983 0.224719C0.359971 0.0749064 0.532757 0 0.734341 0C0.935925 0 1.10871 0.0749064 1.2527 0.224719L4.9892 4.11236L8.7257 0.224719C8.86969 0.0749064 9.04608 0 9.25486 0C9.46364 0 9.64003 0.0749064 9.78402 0.224719C9.92801 0.374532 10 0.558053 10 0.775281C10 0.992509 9.92801 1.17603 9.78402 1.32584L5.50756 5.77528C5.42117 5.85019 5.33837 5.90637 5.25918 5.94382C5.17999 5.98127 5.08999 6 4.9892 6Z">
+
+                        </path>
+
+                    </svg>
+
+                </div>
+
+                {/replies}
+
+                <!-- THIS IS WHERE THE REPLY GOES -->
+
+                [replies]
+
+            </div>
+
+            '; pagination='
+
+            <div class="product-review-pagination">
+
+                <p>
+
+                    <span class="product-review-pagination-showing">
+
+                        Showing [result_start] to [result_end] ([result_count]).
+
+                    </span>
+
+
+
+                    <span class="product-review-pagination-pages">
+
+                        Page [page] of [pages].
+
+                    </span>
+
+                </p>
+
+
+
+                <div class="product-review-pagination-links">
+
+                    [previous]
+
+                    <div class="product-review-page-numbers">[page_numbers]</div>
+
+                    [next]
+
+                </div>
+
+            </div>
+
+            '; pagination_page_number='<a [page] [href]>[number]</a>';
+
+            pagination_current_page=' class="current"'; pagination_seperator='';
+
+            pagination_other_page=''; output_end='[pagination]
+
+        </div>
+
+        '; [/ekm:product_reviews]
+
+    </div>
+
+    </div>
+
+
+
+    [ekm:showdata]
+
+    data='relatedproducts';
+
+    location='auto';
+
+
+
+    cols='1';
+
+    rows='96';
+
+    page_navigation='no';
+
+
+
+    orderby='orderlocation, name';
+
+    skiprecords='0';
+
+    excludelist='';
+
+    includelist='';
+
+
+
+    editbuttons='YES';
+
+
+
+    image_ratio='500';
+
+    image_width='auto';
+
+    image_height='auto';
+
+
+
+    font_formatting='no';
+
+
+
+    output_start='
+
+    <section class="related-prod-list xxl-padding-top-d xxl-padding-top-m xxl-padding-btm-d xxl-padding-btm-m">
+
+        <div class="container">
+
+            [ekm:element]
+
+            show='yes';
+
+            allowed_types='text';
+
+
+
+            element_reference='related-products-title';
+
+            edit_button='YES';
+
+            output_start='<h2
+                class="flex-display flex-justify-left section-title figtree xl-margin-btm-m l-margin-btm-d">
+
+                <span>';
+
+                    output_end='</span>
+
+            </h2>
+
+            <!-- /.flex-display .flex-justify-center .section-title .l-margin-btm-m .l-margin-btm-d -->';
+
+            element_name_default='Related Products Title';
+
+            output_default='Related Products';
+
+            [/ekm:element]
+
+
+
+            <div class="flex-justify-left prod-list splide related-products-slider">
+
+                <div class="splide__track">
+
+                    <div class="splide__list">
+
+                        ';
+
+                        output_item='
+
+                        <div
+                            class="prod-item splide__slide [ekm:if] iftype='FEATURE_ACTIVE'; ifvalue='FEATURE-QUICKVIEW'; ifthen='quickview-parent'; ifelse=''; [/ekm:if]">
+
+                            <div class="prod-item-wrapper">
+
+                                <div class="prod-item-upper">
+
+                                    <div class="prod-item-image">
+
+                                        {image}
+
+                                        [image]
+
+                                        {/image}
+
+                                    </div><!-- /.prod-item-image -->
+
+
+
+                                    {customer_reviews_average_stars}
+
+                                    <div class="prod-stars m-margin-top-m m-margin-top-d">
+
+                                        [ekm:nested_if]
+
+                                        iftype="EQUALS";
+
+                                        ifvalue="[customer_reviews_total]";
+
+                                        ifvalue2="";
+
+                                        ifthen="";
+
+                                        ifelse="
+
+                                        <div class="prod-review-stars-wrapper flex-display flex-wrap-wrap center">
+
+                                            <div
+                                                class="prod-review-stars prod-review-stars-[customer_reviews_average_star_value]">
+
+                                                <i class="fa fa-star" aria-hidden="true"></i><!-- /.fa .fa-star -->
+
+                                                <i class="fa fa-star" aria-hidden="true"></i><!-- /.fa .fa-star -->
+
+                                                <i class="fa fa-star" aria-hidden="true"></i><!-- /.fa .fa-star -->
+
+                                                <i class="fa fa-star" aria-hidden="true"></i><!-- /.fa .fa-star -->
+
+                                                <i class="fa fa-star" aria-hidden="true"></i><!-- /.fa .fa-star -->
+
+                                            </div>
+
+                                            <!-- /.prod-review-stars prod-review-stars-[customer_reviews_average_star_value] -->
+
+                                            <span class="customer-review-count review-count-d">[customer_reviews_total]
+
+                                                Review(s)</span><!-- /.product-item-count-desktop -->
+
+                                            <span
+                                                class="customer-review-count review-count-m">([customer_reviews_total])</span><!-- /.product-item-count-mobile -->
+
+                                        </div>
+
+                                        ";
+
+                                        [/ekm:nested_if]
+
+                                    </div><!-- /.prod-stars .m-margin-top-m .m-margin-top-d -->
+
+                                    {/customer_reviews_average_stars}
+
+
+
+                                    {name}
+
+                                    <div class="prod-item-name m-margin-top-m s-margin-top-d s-padding-btm-d">
+
+                                        <div class="prod-item-name-ellipsis">
+
+                                            [name]
+
+                                        </div><!-- /.prod-item-name-ellipsis -->
+
+                                    </div><!-- /.prod-item-name .m-margin-top-m s-margin-top-d s-padding-btm-d -->
+
+                                    {/name}
+
+
+
+                                    {price}
+
+                                    <div
+                                        class="flex-display flex-align-baseline prod-price-wrapper s-margin-top-m trade-login-hide">
+
+                                        <div class="prod-item-price">
+
+                                            [price]
+
+                                        </div><!-- /.prod-item-price -->
+
+
+
+                                        <div class="prod-item-rrp s-margin-left-m s-margin-left-d">
+
+                                            [rrp]
+
+                                        </div><!-- /.prod-item-rrp .s-margin-left-m .s-margin-left-d -->
+
+                                    </div>
+
+                                    <!-- /.flex-display .flex-align-baseline .prod-price-wrapper .s-margin-top-m .s-margin-top-d -->
+
+                                    {/price}
+
+
+
+                                    [ekm:if]
+
+                                    iftype='PRICES_HIDDEN';
+
+                                    ifthen='
+
+                                    <div class="ekm-trade-discount-wrapper">
+
+                                        <p class="trade-account"><a href="/account/login">Login</a> to view prices</p>
+
+                                    </div>
+
+                                    ';
+
+                                    ifelse='';
+
+                                    [/ekm:if]
+
+                                </div><!-- .prod-item-upper -->
+
+
+
+                                {quickview}
+
+                                <div class="quickview-btn-wrapper trade-login-hide">
+
+                                    [ekm:nested_if]
+
+                                    iftype="EQUALS";
+
+                                    ifvalue="[has-options]";
+
+                                    ifvalue2="yes";
+
+                                    ifthen="
+
+                                    [ekm:nested_element]
+
+                                    element_reference="more_details_qv";
+
+                                    output_start="<a href="[url]" class="quickview-btn options_cta">";
+
+                                        output_end="</a>";
+
+                                    output_default="More details";
+
+                                    [/ekm:nested_element]
+
+                                    ";
+
+                                    ifelse="
+
+                                    [ekm:nested_element]
+
+                                    element_reference="add_to_cart_qv";
+
+                                    output_start="<a href="[add_to_cart_link-url]" class="quickview-btn options_cta">";
+
+                                        output_end="</a>";
+
+                                    output_default="Add to cart";
+
+                                    [/ekm:nested_element]
+
+                                    ";
+
+                                    [/ekm:nested_if]
+
+
+
+                                    <div class="qv-btn">[quickview]</div>
+
+                                </div>
+
+                                {/quickview}
+
+                                {!quickview}
+
+
+
+                                [ekm:if]
+
+                                iftype='FEATURE_ACTIVE';
+
+                                ifvalue='FEATURE-QUICKVIEW';
+
+                                ifthen='
+
+                                <div class="quickview-btn-wrapper quickview-btn-wrapper_zero-left trade-login-hide"
+                                    [ekm:nested_if] iftype="EQUALS" ; ifvalue="[can_be_added_to_cart]" ; ifvalue2="no" ;
+                                    ifthen="style=" display:none""; ifelse="" ; [/ekm:nested_if]>
+
+                                    {stock-variants}
+
+                                    [ekm:nested_if]
+
+
+
+                                    iftype="GREATERTHAN";
+
+                                    ifvalue="[stock-variants]";
+
+                                    ifvalue2="0";
+
+                                    ifthen="
+
+                                    [ekm:nested_element]
+
+                                    element_reference="add_to_cart_qv";
+
+                                    output_start="<a href="[add_to_cart_link-url]" class="quickview-btn stock_cta">";
+
+                                        output_end="</a>";
+
+                                    output_default="Add to cart";
+
+                                    [/ekm:nested_element]
+
+                                    ";
+
+                                    ifelse="
+
+                                    [ekm:nested_element]
+
+                                    element_reference="out-of-stock-element";
+
+                                    output_start="<a href="[url]" class="quickview-btn oos-btn">";
+
+                                        output_end="</a><!--/.quickview-btn oos-btn-->";
+
+                                    output_default="Out of stock";
+
+                                    [/ekm:nested_element]
+
+                                    ";
+
+                                    [/ekm:nested_if]
+
+                                    {/stock-variants}
+
+                                </div>
+
+                                ';
+
+                                ifelse='';
+
+                                [/ekm:if]
+
+                                {/!quickview}
+
+                            </div><!-- /.prod-item-wrapper -->
+
+                        </div><!--  /.prod-item -->
+
+                        ';
+
+                        output_end='
+
+                    </div>
+
+                </div>
+
+            </div><!-- /.flex-grid .flex-justify-center .flex-wrap-wrap .prod-list -->
+
+        </div><!-- .container -->
+
+    </section><!-- /.related-prod-list .container .xxl-margin-top-d .xxl-margin-top-m -->
+
+    ';
+
+    output_column_blank='';
+
+    [/ekm:showdata]
+
+
+
+    [ekm:productend][/ekm:productend]
+
+    <!-- Related Products Splide Slider Script Start -->
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+
+            new Splide('.related-products-slider', {
+
+                type: 'slide',
+
+                perPage: 4,
+
+                perMove: 1,
+
+                gap: 20,
+
+                pagination: false,
+
+                trimSpace: false,
+
+                rewind: true, // Enable rewind
+
+                breakpoints: {
+
+                    1200: {
+
+                        perPage: 4,
+
+                    },
+
+                    992: {
+
+                        perPage: 3,
+
+                    },
+
+                    768: {
+
+                        perPage: 2,
+
+                    },
+
+                },
+
+            }).mount();
+
+        });
+
+    </script>
+
+    <!-- Related Products Splide Slider Script End -->
+
+
+
+    <script>
+
+        // Quantity Spinner 
+
+        var $j = jQuery;
+
+
+
+        $j(document).ready(function () {
+
+            $j('.prod-page-qty').each(function () {
+
+                var spinner = $j(this),
+
+                    input = spinner.find('input[type="number"]'),
+
+                    btnUp = spinner.find('.prod-page-qty-up-btn'),
+
+                    btnDown = spinner.find('.prod-page-qty-down-btn'),
+
+                    min = input.attr('min'),
+
+                    max = input.attr('max');
+
+
+
+                btnDown.click(function () {
+
+                    var oldValue = parseFloat(input.val());
+
+                    if (oldValue <= min) {
+
+                        var newVal = oldValue;
+
+                    } else {
+
+                        var newVal = oldValue - 1;
+
+                    }
+
+                    spinner.find('input').val(newVal);
+
+                    spinner.find('input').trigger('change');
+
+                });
+
+
+
+                btnUp.click(function () {
+
+                    var oldValue = parseFloat(input.val());
+
+                    if (oldValue >= max) {
+
+                        var newVal = oldValue;
+
+                    } else {
+
+                        var newVal = oldValue + 1;
+
+                    }
+
+                    spinner.find('input').val(newVal);
+
+                    spinner.find('input').trigger('change');
+
+                });
+
+            });
+
+        });
+
+    </script>
+
+
+
+    <script>
+
+        const pageURL = window.location.href;
+
+        const url = new URL(pageURL);
+
+        const params = new URLSearchParams(url.search);
+
+
+
+        // Check if the "page" parameter exists in the URL
+
+        if (params.has('page')) {
+
+            const pageValue = parseInt(params.get('page')); // Convert to an integer
+
+
+
+            // Check if the "pageValue" is greater than or equal to 2 and less than or equal to 5
+
+            if (pageValue >= 2 && pageValue <= 5) {
+
+                const reviews_tabs = document.querySelectorAll(".tab-header-wrapper > label");
+
+                reviews_tabs.forEach(reviews_tab => {
+
+                    if (reviews_tab.htmlFor.includes("REVIEW")) {
+
+                        document.querySelector(".tab-header-wrapper").scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
+
+                        reviews_tab.click();
+
+                    }
+
+                });
+
+            }
+
+        }
+
+    </script>
+
+
+
+</article><!-- /.main-content -->

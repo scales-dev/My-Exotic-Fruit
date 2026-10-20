@@ -1,0 +1,140 @@
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+<script>
+  function markSoldOutOptions() {
+    const select = document.getElementById('variant_Option');
+    if (!select || !window.ekmProductVariantData) return;
+
+    const soldOutMap = new Map();
+
+    ekmProductVariantData.forEach(group => {
+      group.items.forEach(item => {
+        const value = item.selector?.[0]?.value;
+        const html = item.properties?.item0?.innerHTML || '';
+        const availability = item.properties?.availability?.value || '';
+        const isSoldOut =
+          html.includes('oo-stock') ||
+          html.includes('out-of-stock') ||
+          availability.toLowerCase().includes('out of stock');
+
+        if (value) {
+          soldOutMap.set(value, soldOutMap.get(value) || isSoldOut);
+        }
+      });
+    });
+
+    const currentValue = select.value;
+    const currentIsSoldOut = soldOutMap.get(currentValue);
+
+    // If current selection is sold out, try to auto-select a valid one
+    if (currentIsSoldOut) {
+      const fallback = [...select.options].find(opt => !soldOutMap.get(opt.value));
+      if (fallback) select.value = fallback.value;
+    }
+
+    [...select.options].forEach(option => {
+      const isSoldOut = soldOutMap.get(option.value);
+
+      if (option.value !== select.value && isSoldOut) {
+        option.disabled = true;
+        option.style.color = '#888';
+        if (!option.textContent.includes('(Sold Out)')) {
+          option.textContent += ' (Sold Out)';
+        }
+      } else {
+        option.disabled = false;
+        option.style.color = '';
+        option.textContent = option.textContent.replace(/\s*\(Sold Out\)/, '');
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+      markSoldOutOptions();
+
+      const select = document.getElementById('variant_Option');
+      if (select) {
+        select.addEventListener('change', markSoldOutOptions);
+      }
+    }, 500);
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const messageEl = document.getElementById('_EKM_PRODUCTADDCARTMESSAGE');
+    const qtyEl = document.querySelector('.prod-page-qty');
+
+    if (!messageEl || !qtyEl) return;
+
+    const checkAndHideQty = () => {
+      if (messageEl.textContent.includes('Sorry, this item is out of stock')) {
+        qtyEl.style.display = 'none';
+      } else {
+        qtyEl.style.display = '';
+      }
+    };
+
+    // Initial check
+    checkAndHideQty();
+
+    // Watch for changes in the message element
+    const observer = new MutationObserver(checkAndHideQty);
+
+    observer.observe(messageEl, {
+      childList: true,
+      subtree: true,
+      characterData: true,
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const descriptionEl = document.querySelector('[itemprop="description"]');
+    const wordLimit = 50; // Set your desired word limit here
+
+    if (!descriptionEl) return;
+
+    const fullText = descriptionEl.textContent.trim();
+    const words = fullText.split(/\s+/);
+
+    if (words.length <= wordLimit) return; // No need for Read More
+
+    const visibleText = words.slice(0, wordLimit).join(" ");
+    // originally this was ONLY the hiddenText, hence the name, but I thought it looked weird showing only the remaining text after clicking "read more"
+    const hiddenText = words.join(" ");
+
+    // Clear existing text and build the truncated + hidden + button
+    descriptionEl.innerHTML = `
+      <span class="visible-part">${visibleText}...</span>
+      <span class="hidden-part" style="display: none;"> ${hiddenText}</span>
+      <button class="read-more-btn" style="display: inline-block; background: none; border: none; color: #222; text-decoration: underline; cursor: pointer; padding: 0; font: inherit;">Read More</button>
+    `;
+
+    // Add toggle functionality
+    const btn = descriptionEl.querySelector(".read-more-btn");
+    btn.addEventListener("click", function () {
+      descriptionEl.querySelector(".hidden-part").style.display = "inline";
+      descriptionEl.querySelector(".visible-part").style.display = "none";
+      btn.style.display = "none";
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+
+    var path = window.location.pathname.toLowerCase();
+    var mainContent = document.querySelector(".main-content-webpage");
+
+    if (!mainContent) return;
+
+    if (path.includes("shop") || path.includes("trade")) {
+      mainContent.classList.add("full-width");
+    }
+
+  });
+</script>

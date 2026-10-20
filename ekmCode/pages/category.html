@@ -1,0 +1,645 @@
+<article class="main-content">
+	
+	[ekm:location]
+		output_start='
+			<section class="category-heading">
+				<div class="breadcrumbs-bg">
+					<div class="flex-display flex-wrap-wrap breadcrumbs container m-padding-top-d m-padding-top-m m-padding-btm-d m-padding-btm-m">
+		';
+		output_item='<a href="[url]" class="[is_current]">[name]</a>';
+		output_separator='&nbsp;/&nbsp;';
+		output_end='
+					</div><!-- /.flex-display .breadcrumbs .container .m-padding-top-d .m-padding-top-m .m-padding-btm-d .m-padding-btm-m -->
+				</div><!-- /.container -->
+			</section><!-- /.category-heading -->
+		';
+	[/ekm:location]
+	
+	<div class="category-description">
+		<div class="category-description-wrapper container">
+			<h1 class="category-title">
+				[ekm:categorypagename]categorypageid='[ekm:categoryid][/ekm:categoryid]';[/ekm:categorypagename]
+			</h1><!-- /.flex-display .flex-justify-center .container .l-margin-btm-m .xl-margin-top-m .l-margin-btm-d .xl-margin-top-d -->
+			
+			[ekm:if]
+			    iftype='EQUALS';
+			    ifvalue='[ekm:incategorydescription][/ekm:incategorydescription]';
+			    ifvalue2='';
+			    ifthen='';
+			    ifelse='
+			    	<div class="incategory-description content s-margin-top-m m-margin-top-d">
+			    		[ekm:incategorydescription][/ekm:incategorydescription]
+			    	</div><!-- /.incategory-desc .d-col-6 .t-col-12 .s-margin-top-m .m-margin-top-d -->
+			    	<div class="read-more-btn s-margin-top-d s-margin-top-m">Read More</div>';
+			[/ekm:if]
+			[ekm:element]
+				show='yes';
+				allowed_types='text,html';
+				element_reference='[ekm:categoryid][/ekm:categoryid]_banner-sale';
+				edit_button='YES';
+				output_start='<div class="category-promo-box">';
+				output_end='</div>';
+				element_name_default='';
+				output_default='';
+			[/ekm:element]	
+
+			</div><!-- /.category-description-wrapper -->
+					<div class="category-banner-image-wrapper">
+			[ekm:element]
+				show='yes';
+				allowed_types='image';
+				element_reference='[ekm:categoryid][/ekm:categoryid]_banner-img';
+				edit_button='YES';
+				output_start='<div class="category-banner-image">';
+				output_end='</div>';
+				element_name_default='';
+				output_default='';
+			[/ekm:element]	
+		</div>
+		</div><!-- /.category-description .xxl-padding-top-d .xxl-padding-btm-d .xl-padding-top-m .xl-padding-btm-m -->
+
+<script>
+		  const content = document.querySelector('.content');
+		  const readMoreBtn = document.querySelector('.read-more-btn');
+		  let isExpanded = false;
+		 function toggleReadMoreButton() {
+		// Check if content exceeds max-height of 6em
+		    if (content.scrollHeight > 6 * parseFloat(getComputedStyle(content).fontSize) * 2) {
+		      readMoreBtn.style.display = 'block'; // Show button if needed
+		    } else {
+		      readMoreBtn.style.display = 'none'; // Hide button if not needed
+		    }
+		  }
+		  // Initial check
+		  toggleReadMoreButton();
+		  // Check on window resize
+		  window.addEventListener('resize', toggleReadMoreButton);
+		  readMoreBtn.addEventListener('click', function() {
+		    if (isExpanded) {
+		      content.classList.remove('expanded');
+		      readMoreBtn.textContent = 'Read More';
+		    } else {
+		      content.classList.add('expanded');
+		      readMoreBtn.textContent = 'Read Less';
+		    }
+		    isExpanded = !isExpanded;
+		  });
+		</script>
+	
+	[ekm:showdata]
+		tag_hide_toggle='yes';
+		data='categories';
+		location='auto';
+		cols='1';
+		rows='96';
+		page_navigation='yes';
+		orderby='orderlocation, name';
+		editbuttons='YES';
+		image_ratio='550';
+		image_width='auto';
+		image_height='auto';
+		font_formatting='no';
+		' Output Format
+		header_title_text='';
+		output_start='
+			<section class="sub-categories ekm-section-category-categories container xl-margin-top-m xl-margin-top-d">
+				<ul class="flex-grid flex-wrap-wrap flex-justify-center ul-reset sub-categories-list">';
+		output_row_start='';
+		output_column_start='';
+		output_item='
+                    <li class="flex-col d-col-2 t-col-3 m-col-6 sub-category-col sub-category-item sub-category-item-[counter]">
+						{image}
+							[editbuttons]
+					        <a href="[url]">	
+					        	<div class="sub-category-image ekm-subcategory-image m-margin-btm-m m-margin-btm-d">
+						        	<img itemprop="image" src="[image-url]" alt="[name-NOEDIT-NOLINK]" [image-badge_attributes]>
+						        </div><!-- /.sub-category-image .ekm-subcategory-image .m-margin-btm-m .s-margin-btm-d -->
+						        
+						        <div class="sub-category-name">
+						        	[name-NOEDIT-NOLINK]
+						        </div><!-- /.sub-category-name -->
+						    </a>
+					    {/image}
+					    
+				        {!image}
+				        	[editbuttons]
+					        <a href="[url]">
+					            <div class="sub-category-name">
+					            	[name-NOEDIT-NOLINK]
+					            </div><!-- /.sub-category-name .s-padding-top-m .s-padding-top-d -->
+					        </a>
+				        {/!image}
+                    </li><!-- /.flex-col .m-col-6 .d-col-2 .t-col-3 .sub-category-col .sub-category-item .sub-category-item-[counter] -->
+		';
+		output_column_end='';
+		output_row_end='';
+		output_end='
+				</ul><!-- /.flex-grid .flex-wrap-wrap .flex-justify-center .flex-align-center .ul-reset .sub-categories-list -->
+			</section><!-- /.sub-categories .ekm-section-category-categories .container .xl-margin-top-m .xl-margin-top-d -->';
+	show_hover_thumbnail='yes';
+	    hover_thumbnail_fade='no';
+			[/ekm:showdata]	
+
+			[ekm:element]
+					show='yes';
+					allowed_types='html';
+					element_reference='[ekm:categoryid][/ekm:categoryid]_top-10';
+					edit_button='YES';
+					output_start='';
+					output_end='';
+					element_name_default='';
+					output_default='';
+			[/ekm:element]	
+
+	
+	<section class="filter-section-m l-margin-top-m container">
+		<div class="flex-grid flex-justify-center filter-sortby-wrapper-m">	
+			[ekm:if]
+				iftype='EQUALS';
+				ifvalue='[ekm:filter_by][/ekm:filter_by]';
+				ifvalue2='';
+				ifthen='';
+				ifelse='
+					<div class="flex-col filter-m">
+						<div class="filter-section-btn-m filter-btn-m">
+							<span>Filter</span>
+						</div><!-- /.filter-section-btn-m .filter-btn-m -->
+						
+						<div class="filter-content-m container">
+							[ekm:filter_by]
+								target_tag_id='category-products';
+								output_start='<div class="flex-grid flex-wrap-wrap filter-sidebar">';
+								output_attribute_start='
+									<div class="flex-col m-col-6 filter-content filter-item-m">
+										<h3 class="filter-item-heading l-padding-top-m l-padding-btm-m filter-plus">
+											[name]
+										</h3><!-- /.filter-item-heading .l-padding-top-m .l-padding-btm-m .filter-plus -->
+						                    
+										<ul class="filter-item-list ul-reset l-padding-btm-m">
+								';
+								output_attribute_item='
+											<li class="filter-item-check s-padding-btm-d s-padding-btm-m">
+												<input type="checkbox" name="[input-name]" value="[input-value]" id="_[input-name]-[input-value]">
+												<label for="_[input-name]-[input-value]" class="filter-content-attribute-item-value">[name]</label><!-- /.filter-content-attribute-item-value -->
+											</li><!-- /.filter-item-check .s-padding-btm-d .s-padding-btm-m -->
+								';
+								output_attribute_end='
+										</ul><!-- /.filter-item-list .ul-reset .l-padding-btm-m -->
+									</div><!-- /.flex-col .m-col-6 .filter-content .filter-item -->
+								';
+								output_price='
+									<div class="flex-col m-col-6 filter-content filter-item-price-m">
+										<h3 class="filter-item-heading l-padding-top-m l-padding-btm-m filter-plus">
+											Price
+										</h3><!-- /.filter-item-heading .l-padding-top-m .l-padding-btm-m .filter-plus -->
+									
+										<ul class="filter-item-list ul-reset l-padding-btm-m">
+											<li class="filter-item-attribute filter-price-slider">
+												[min-input][max-input]
+											</li><!-- /.filter-item-attribute .filter-price-slider -->
+										</ul><!-- /.filter-item-list .ul-reset .l-padding-btm-m -->
+									</div><!-- /.flex-col .m-col-6 .filter-content -->
+								';
+								output_end='[clear-button]</div><!-- /.flex-grid .flex-wrap-wrap .filter-sidebar -->';
+							[/ekm:filter_by]	
+						</div><!-- /.filter-content-m .container -->
+					</div><!-- /.flex-col .filter-m -->
+				';
+			[/ekm:if]
+		
+			<div class="flex-col sortby-m">
+				<div class="filter-section-btn-m sortby-btn-m">
+					<span>Sort</span>
+				</div><!-- /.filter-section-btn-m .sortby-btn-m -->
+				
+				<div class="sortby-content-m container l-padding-top-m l-padding-btm-m">
+					<div class="sortby-dd-m">
+						[ekm:sort_by]target_tag_id='category-products';[/ekm:sort_by]
+					</div><!-- /.sortby-dd-m -->
+				</div><!-- /.sortby-content-m .container .l-padding-top-m .l-padding-btm-m -->
+			</div><!-- /.flex-col .sortby-m -->
+		</div><!-- /.flex-grid .flex-justify-center .filter-sortby-wrapper-m -->
+	</section><!-- /.filter-section-m .xxl-margin-top-m .container -->
+	
+	
+	<section class="flex-display flex-align-start category-prod-section l-margin-top-d">
+		[ekm:filter_by]
+			target_tag_id='category-products';
+			output_start='<aside class="filter-sidebar filter-sidebar-d xl-padding-right-d">';
+			output_attribute_start='
+				<div class="filter-content filter-item-d l-padding-btm-d">
+					<h3 class="filter-item-heading filter-plus">
+						[name]
+					</h3><!-- /.filter-item-heading .filter-plus -->
+	                    
+					<ul class="ul-reset filter-item-list m-padding-top-d">
+			';
+			output_attribute_item='
+						<li class="filter-item-check s-padding-btm-d">
+							<input type="checkbox" name="[input-name]" value="[input-value]" id="[input-name]-[input-value]">
+							<label for="[input-name]-[input-value]" class="filter-content-attribute-item-value">[name]</label><!-- /.filter-content-attribute-item-value -->
+						</li><!-- /.filter-item-check .s-padding-btm-d -->
+			';
+			output_attribute_end='
+					</ul><!-- /.ul-reset .filter-item-list .m-padding-top-d -->
+				</div><!-- /.filter-content .filter-item-d .l-padding-btm-d -->
+			';
+			output_price='
+				<div class="filter-content filter-price-d l-padding-btm-d">
+					<h3 class="filter-item-heading filter-plus">
+						Price
+					</h3><!-- /.filter-item-heading .filter-plus -->
+				
+					<ul class="ul-reset filter-item-list m-padding-top-d">
+						<li class="filter-item-attribute filter-price-slider">
+							[min-input][max-input]
+						</li><!-- /.filter-item-attribute .filter-price-slider -->
+					</ul><!-- /.ul-reset .filter-item-list .m-padding-top-d -->
+				</div><!-- /.filter-content .filter-price-d .l-padding-btm-d -->
+			';
+			output_end='[clear-button]</aside><!-- /.filter-sidebar .filter-sidebar-d .xl-padding-right-d -->';
+		[/ekm:filter_by]
+		
+		<section class="category-prod-heading-m m-col-12 l-margin-top-m">
+			<div class="container">
+				<div class="flex-grid flex-align-center m-padding-top-m m-padding-btm-m m-padding-top-d m-padding-btm-d">
+					[ekm:showdata]
+					    tag_hide_toggle='yes';
+					    data='products';
+					    location='auto';
+								
+					    cols='1';
+					    rows='96';
+					    page_navigation='no';
+					    counterreset='1';
+							
+					    editbuttons='YES';
+						
+					    font_formatting='no';
+							
+					    output_start='
+						    <div class="flex-col category-prod-results-m">
+								<span>Showing <strong>[result-count]</strong> of <strong>[result-count]</strong> Products</span>
+							</div><!-- /.flex-col .category-prod-results-m -->
+					    ';
+					    output_item='';
+					    output_end='';
+						show_hover_thumbnail='yes';
+	    hover_thumbnail_fade='no';
+					[/ekm:showdata]
+					
+					<div class="flex-col category-name-m">
+						<span class="flex-display flex-justify-end">
+							[ekm:categorypagename]categorypageid='[ekm:categoryid][/ekm:categoryid]';[/ekm:categorypagename]
+						</span><!-- /.flex-display .flex-justify-end -->
+					</div><!-- /.flex-col .category-name-m -->
+				</div><!-- /.flex-grid .flex-align-center .m-padding-top-m .m-padding-btm-m .m-padding-top-d .m-padding-btm-d -->
+			</div><!-- /.container -->
+		</section><!-- /.category-prod-heading-m .m-col-12 .l-margin-top-m -->
+		
+		[ekm:showdata]
+		    tag_hide_toggle='yes';
+		    data='products';
+		    id='category-products';
+		    location='auto';
+					
+		    cols='1';
+		    rows='96';
+		    page_navigation='yes';
+		    counterreset='1';
+					
+		    orderby='orderlocation, name';
+		    skiprecords='0';
+		    excludelist='';
+		    includelist='';
+					
+		    editbuttons='YES';
+					
+		    image_ratio='auto';
+		    image_width='500';
+		    image_height='500';
+			
+		    font_formatting='no';
+				
+		    output_start='
+		    <div class="category-products" id="category-products">
+				<div class="flex-display flex-align-start sortby-d l-margin-btm-d l-margin-top-m xl-margin-btm-m">
+					<div class="sortby-results d-col-7">
+						Showing products <strong>[results-start]</strong> to <strong>[results-end]</strong> of <strong>[result-count]</strong>
+					</div><!-- /.sortby-results .d-col-7 -->
+								                    
+					<div class="sortby-dd-d d-col-5">
+						[ekm:sort_by]target_tag_id='category-products';[/ekm:sort_by]
+					</div><!-- /.sortby-dd-d d-col-5-->
+				</div><!-- /.flex-display .flex-align-start .sortby .l-margin-btm-d .l-margin-top-m .xl-margin-btm-m -->
+	
+				<div class="flex-grid prod-list flex-align-start flex-wrap-wrap category-prod-list l-padding-top-d l-padding-top-m">
+		    ';
+		    output_item='
+					<div class="flex-col m-col-6 t-col-6 d-col-3 prod-item [ekm:if] iftype='FEATURE_ACTIVE'; ifvalue='FEATURE-QUICKVIEW'; ifthen='quickview-parent'; ifelse=''; [/ekm:if]">
+					<div class="prod-item-wrapper">
+					<div class="prod-item-upper">
+					<div class="prod-item-image">
+					    {image}
+					        [image]
+					    {/image}
+					</div><!-- /.prod-item-image -->
+						
+						{customer_reviews_average_stars}
+						<div class="prod-review-stars-wrapper flex-display flex-wrap-wrap flex-align-center">
+									<div class="prod-review-stars prod-review-stars-[customer_reviews_average_star_value]">
+										<i class="fa fa-star" aria-hidden="true"></i><!-- /.fa .fa-star -->
+										<i class="fa fa-star" aria-hidden="true"></i><!-- /.fa .fa-star -->
+										<i class="fa fa-star" aria-hidden="true"></i><!-- /.fa .fa-star -->
+										<i class="fa fa-star" aria-hidden="true"></i><!-- /.fa .fa-star -->
+										<i class="fa fa-star" aria-hidden="true"></i><!-- /.fa .fa-star -->
+									</div><!-- /.prod-review-stars prod-review-stars-[customer_reviews_average_star_value] -->
+									<span class="customer-review-count review-count-d">[customer_reviews_total] Review(s)</span><!-- /.product-item-count-desktop -->
+									<span class="customer-review-count review-count-m">([customer_reviews_total])</span><!-- /.product-item-count-mobile -->
+								</div>
+						{/customer_reviews_average_stars}
+						
+						{name}
+							<div class="prod-item-name m-margin-top-m s-margin-top-d">
+								<div class="prod-item-name-ellipsis">
+									[name]
+								</div><!-- /.prod-item-name-ellipsis -->
+							</div><!-- /.prod-item-name .m-margin-top-m s-margin-top-d s-padding-btm-d -->
+						{/name}
+	
+						
+						{price}	
+							<div class="flex-display flex-align-baseline prod-price-wrapper s-margin-top-m s-margin-top-d trade-login-hide">
+								<div class="prod-item-price">
+									[price]
+								</div><!-- /.prod-item-price -->
+								
+								<div class="prod-item-rrp s-margin-left-m s-margin-left-d">
+									[rrp]
+								</div><!-- /.prod-item-rrp .s-margin-left-m .s-margin-left-d -->
+							</div><!-- /.flex-display .flex-align-baseline .prod-price-wrapper .s-margin-top-m .s-margin-top-d -->
+						{/price}
+						
+						[ekm:if]
+								iftype='PRICES_HIDDEN';
+								ifthen='
+											<div class="ekm-trade-discount-wrapper">
+											<p class="trade-account"><a href="/account/login">Login</a> to view prices</p>
+											</div>
+											';
+								ifelse='';
+						[/ekm:if]
+						</div> <!-- /.prod-item-upper -->
+						
+						<div class="short-desc s-margin-top-m s-margin-top-d">[shortdescription]</div>
+						
+						<div class="s-margin-top-m s-margin-top-d">[options]</div>
+					{quickview}
+				    <div class="quickview-btn-wrapper trade-login-hide">
+				    [ekm:nested_if]
+				            iftype="EQUALS";
+				            ifvalue="[has-options]";
+				            ifvalue2="yes";
+				            ifthen="
+				            [ekm:nested_element]
+				                element_reference="more_details_qv";
+				                output_start="<a href="[url]" class="quickview-btn options_cta" >";
+				                output_end="</a>";
+				                output_default="More details";
+				            [/ekm:nested_element]
+				            ";
+				            ifelse="
+				            [ekm:nested_element]
+				                element_reference="add_to_cart_qv";
+				                output_start="<a href="[add_to_cart_link-url]" class="quickview-btn options_cta" >";
+				                output_end="</a>";
+				                output_default="Add to cart";
+				            [/ekm:nested_element]
+				            ";
+				    [/ekm:nested_if]
+				        
+				    <div class="qv-btn">[quickview]</div>
+				    </div>
+				    {/quickview}
+					{!quickview}
+					
+					[ekm:if]
+					    iftype='FEATURE_ACTIVE';
+					    ifvalue='FEATURE-QUICKVIEW';
+					    ifthen='
+					    <div class="quickview-btn-wrapper quickview-btn-wrapper_zero-left trade-login-hide" 
+					    [ekm:nested_if]
+					        iftype="EQUALS";
+					        ifvalue="[can_be_added_to_cart]";
+					        ifvalue2="no";
+					        ifthen="style="display:none"";
+					        ifelse="";
+					    [/ekm:nested_if]
+					    >
+					    {stock-variants}
+					        [ekm:nested_if]
+					        
+					            iftype="GREATERTHAN";
+					            ifvalue="[stock-variants]";
+					            ifvalue2="0";
+					            ifthen="
+					                [ekm:nested_element]
+					                    element_reference="add_to_cart_qv";
+					                    output_start="<a href="[add_to_cart_link-url]" class="quickview-btn stock_cta">";
+					                    output_end="</a>";
+					                    output_default="Add to cart";
+					                [/ekm:nested_element]
+					            ";
+					            ifelse="
+					                [ekm:nested_element]
+					                    element_reference="out-of-stock-element";
+					                    output_start="<a href="[url]" class="quickview-btn oos-btn" >";
+					                    output_end="</a><!--/.quickview-btn oos-btn-->";
+					                    output_default="Out of stock";
+					                [/ekm:nested_element]
+					            ";
+					        [/ekm:nested_if]
+					    {/stock-variants}
+					    </div>
+					    ';
+					    ifelse='';
+					    [/ekm:if]
+					{/!quickview}
+					</div><!-- /.prod-item-wrapper -->
+				</div><!-- /.flex-col .m-col-6 .t-col-6 .d-col-4 .prod-item -->
+		    ';
+		    output_end='
+		    
+				</div><!-- /.flex-grid .prod-list .flex-align-start .flex-wrap-wrap .category-prod-list .l-margin-top-d .l-margin-top-m -->
+			</div><!-- /.category-products .container #category-products -->
+		    ';
+		    output_options_start='
+			    <div class="shopui-product-variant-preview">
+			';
+			output_option_item='
+			        <div class="shopui-product-variant-preview__item">
+			            <div class="shopui-product-variant-preview__name">[name]</div>
+			            <div class="shopui-product-variant-preview__choices">
+			                [choices]
+			            </div><!-- .shopui-product-variant-preview__choices -->
+			        </div><!-- .shopui-product-variant-preview__item -->
+			';
+			
+			output_option_choice_item='
+			
+			    {pattern_choice}
+			        <div class="shopui-product-variant-preview__choice shopui-product-variant-preview__choice--pattern" title="[name]" style="background-image:url('[value]')"></div>
+			    {/pattern_choice}
+			
+			    {colour_choice}
+			        <div class="shopui-product-variant-preview__choice shopui-product-variant-preview__choice--colour" title="[name]" style="background-color:[value]"></div>
+			    {/colour_choice}
+			
+			    {size_choice}
+			        <div class="shopui-product-variant-preview__choice shopui-product-variant-preview__choice--size" title="[name]">
+			            [value]
+			        </div><!-- .shopui-product-variant-preview__choice -->
+			    {/size_choice}
+			';
+			
+			output_options_end='
+
+			    </div><!-- .shopui-product-variant-preview -->
+			';
+			
+			show_hover_thumbnail='yes';
+		    hover_thumbnail_fade='no';
+			
+		    pagination='
+		    	<div class="flex-col pagination xl-margin-top-d xl-margin-top-m s-margin-btm-d s-margin-btm-m">
+		    		[previous][pagenumbers][next]
+		    	</div><!-- /.flex-col .pagination .xl-margin-top-d .xl-margin-top-m .s-margin-btm-d .s-margin-btm-m -->
+		    ';
+		    pagination_previous='
+		    	<a href="[url]" class="pagination-link prev-page"><i class="fas fa-chevron-left"></i></a><!-- /.pagination-link .prev-page -->
+		    ';
+		    pagination_pagenumber='[link]';
+		    pagination_next='
+		    	<a href="[url]" class="pagination-link next-page m-margin-top-m"><i class="fas fa-chevron-right"></i></a><!-- /.pagination-link .next-page .m-margin-top-m -->
+		    ';
+		    pagination_seperator='';
+		    pagination_ellipsis='...';
+		    pagination_limit='3';
+		    pagination_ellipsis_trail='3';
+		    pagination_current_page=' class="pagination-link pagination-current-page" ';
+		    pagination_other_page=' class="pagination-link" ';
+					
+		    output_column_blank='';
+			show_hover_thumbnail='yes';
+	    hover_thumbnail_fade='no';
+		[/ekm:showdata]
+	</section><!-- /.flex-display .flex-wrap-wrap .flex-align-start .category-prod-section .xxl-margin-top-d -->
+<section class="two-promo-grid-section container">
+		
+	<div class="promo-grid-item">
+				
+				[ekm:element]
+				  show='yes';
+				  allowed_types='image';
+				  image_recommended_width='470';
+				  image_recommended_height='300';
+				  element_reference='[ekm:categoryid][/ekm:categoryid]_promo-grid-item-1-image';
+				  edit_button='YES';
+				  output_start='<div class="promo-grid-item-image">';
+				  output_end='</div>';
+				  element_name_default='Promo Grid Image';
+				  output_default='<img src="">';
+				[/ekm:element]
+				
+		<div class="promo-grid-item-content">
+				
+				[ekm:element]
+                    show='yes';
+                    allowed_types='text,html';
+                    element_reference='[ekm:categoryid][/ekm:categoryid]_promo-grid-item-1-heading';
+                    edit_button='yes';
+                    output_start='<div class="section-title light-text">';
+                    output_end='</div>';
+                    element_name_default='Promo Grid Item Heading';
+                    output_default='Promo One';
+                [/ekm:element]
+               
+                [ekm:element]
+                    show='yes';
+                    allowed_types='text,html';
+                    element_reference='[ekm:categoryid][/ekm:categoryid]_promo-grid-item-1-paragraph';
+                    edit_button='yes';
+                    output_start='<p>';
+                    output_end='</p>';
+                    element_name_default='Promo Grid Item Paragraph';
+                    output_default='Promotional text goes here';
+                [/ekm:element]
+
+                [ekm:element]
+                    show='yes';
+                    allowed_types='text,html';
+                    element_reference='[ekm:categoryid][/ekm:categoryid]_promo-grid-item-1-cta-button';
+                    edit_button='yes';
+                    output_start='<div class="btn light">';
+                    output_end='</div>';
+                    element_name_default='cta-btn';
+                    output_default='<a href="#">Shop Now</a>';
+                [/ekm:element]
+			
+			</div>
+	</div>
+
+		<div class="promo-grid-item">
+				
+				[ekm:element]
+				  show='yes';
+				  allowed_types='image';
+				  image_recommended_width='600';
+				  image_recommended_height='400';
+				  element_reference='[ekm:categoryid][/ekm:categoryid]_promo-grid-item-2-image';
+				  edit_button='YES';
+				  output_start='<div class="promo-grid-item-image">';
+				  output_end='</div>';
+				  element_name_default='Promo Grid Image';
+				  output_default='<img src="">';
+				[/ekm:element]
+		
+		<div class="promo-grid-item-content">
+				[ekm:element]
+                    show='yes';
+                    allowed_types='text,html';
+                    element_reference='[ekm:categoryid][/ekm:categoryid]_promo-grid-item-2-heading';
+                    edit_button='yes';
+                    output_start='<div class="section-title light-text">';
+                    output_end='</div>';
+                    element_name_default='Promo Two';
+                    output_default='Heading Example';
+                [/ekm:element]
+               
+                [ekm:element]
+                    show='yes';
+                    allowed_types='text,html';
+                    element_reference='[ekm:categoryid][/ekm:categoryid]_promo-grid-item-2-paragraph';
+                    edit_button='yes';
+                    output_start='<p>';
+                    output_end='</p>';
+                    element_name_default='Promo Grid Item Paragraph';
+                    output_default='Promotional text goes here';
+                [/ekm:element]
+
+                [ekm:element]
+                    show='yes';
+                    allowed_types='text,html';
+                    element_reference='[ekm:categoryid][/ekm:categoryid]_promo-grid-item-2-cta-button';
+                    edit_button='yes';
+                    output_start='<div class="btn light">';
+                    output_end='</div>';
+                    element_name_default='cta-btn';
+                    output_default='<a href="#">Shop Now</a>';
+                [/ekm:element]
+			</div>
+		
+		</div>
+
+</section>
+</article><!-- /.main-content -->
