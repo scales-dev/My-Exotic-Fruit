@@ -207,138 +207,49 @@
     <div class="category-splider splide">
       <div class="splide__track">
         <ul class="splide__list mid-category-container">
-          <li class="splide__slide hp-category-1 hp-category">
-            [ekm:element]
-            show='yes';
-            allowed_types='image';
-            element_reference='hp-category-img-1';
-            edit_button='YES';
-            output_start='<div class="hp-category-img-1 hp-category-img">';
-              output_end='</div><!-- /.hp-category-img-1 .hp-category-img -->';
-            element_name_default='HP Category Image 1';
-            output_default='';
-            [/ekm:element]
-            [ekm:element]
-            show='yes';
-            allowed_types='html';
-            element_reference='hp-category-title-1';
-            edit_button='YES';
-            output_start='<div class="body-text dark-text center-text s-margin-top-d s-margin-top-m">';
-              output_end='</div><!-- /.hp-category-title-1 .hp-category-title -->';
-            element_name_default='HP Category Title 1';
-            output_default='Category Title Here';
-            [/ekm:element]
-          </li>
-          <li class="splide__slide hp-category-2 hp-category">
-            [ekm:element]
-            show='yes';
-            allowed_types='image';
-            element_reference='hp-category-img-2';
-            edit_button='YES';
-            output_start='<div class="hp-category-img-2 hp-category-img">';
-              output_end='</div><!-- /.hp-category-img-2 .hp-category-img -->';
-            element_name_default='HP Category Image 2';
-            output_default='';
-            [/ekm:element]
-            [ekm:element]
-            show='yes';
-            allowed_types='html';
-            element_reference='hp-category-title-2';
-            edit_button='YES';
-            output_start='<div class="body-text dark-text center-text s-margin-top-d s-margin-top-m">';
-              output_end='</div><!-- /.hp-category-title-2 .hp-category-title -->';
-            element_name_default='HP Category Title 2';
-            output_default='Category Title Here';
-            [/ekm:element]
-          </li>
-          <li class="splide__slide hp-category-3 hp-category">
-            [ekm:element]
-            show='yes';
-            allowed_types='image';
-            element_reference='hp-category-img-3';
-            edit_button='YES';
-            output_start='<div class="hp-category-img-3 hp-category-img">';
-              output_end='</div><!-- /.hp-category-img-3 .hp-category-img -->';
-            element_name_default='HP Category Image 3';
-            output_default='';
-            [/ekm:element]
-            [ekm:element]
-            show='yes';
-            allowed_types='html';
-            element_reference='hp-category-title-3';
-            edit_button='YES';
-            output_start='<div class="body-text dark-text center-text s-margin-top-d s-margin-top-m">';
-              output_end='</div><!-- /.hp-category-title-3 .hp-category-title -->';
-            element_name_default='HP Category Title 3';
-            output_default='Category Title Here';
-            [/ekm:element]
-          </li>
-          <li class="splide__slide hp-category-4 hp-category">
-            [ekm:element]
-            show='yes';
-            allowed_types='image';
-            element_reference='hp-category-img-4';
-            edit_button='YES';
-            output_start='<div class="hp-category-img-4 hp-category-img">';
-              output_end='</div><!-- /.hp-category-img-4 .hp-category-img -->';
-            element_name_default='HP Category Image 4';
-            output_default='';
-            [/ekm:element]
-            [ekm:element]
-            show='yes';
-            allowed_types='html';
-            element_reference='hp-category-title-4';
-            edit_button='YES';
-            output_start='<div class="body-text dark-text center-text s-margin-top-d s-margin-top-m">';
-              output_end='</div><!-- /.hp-category-title-4 .hp-category-title -->';
-            element_name_default='HP Category Title 4';
-            output_default='Category Title Here';
-            [/ekm:element]
-          </li>
-          <li class="splide__slide hp-category-5 hp-category">
-            [ekm:element]
-            show='yes';
-            allowed_types='image';
-            element_reference='hp-category-img-5';
-            edit_button='YES';
-            output_start='<div class="hp-category-img-5 hp-category-img">';
-              output_end='</div><!-- /.hp-category-img-5 .hp-category-img -->';
-            element_name_default='HP Category Image 5';
-            output_default='';
-            [/ekm:element]
-            [ekm:element]
-            show='yes';
-            allowed_types='html';
-            element_reference='hp-category-title-5';
-            edit_button='YES';
-            output_start='<div class="body-text dark-text center-text s-margin-top-d s-margin-top-m">';
-              output_end='</div><!-- /.hp-category-title-5 .hp-category-title -->';
-            element_name_default='HP Category Title 5';
-            output_default='Category Title Here';
-            [/ekm:element]
-          </li>
-          <li class="splide__slide hp-category-6 hp-category">
-            [ekm:element]
-            show='yes';
-            allowed_types='image';
-            element_reference='hp-category-img-6';
-            edit_button='YES';
-            output_start='<div class="hp-category-img-6 hp-category-img">';
-              output_end='</div><!-- /.hp-category-img-1 .hp-category-img -->';
-            element_name_default='HP Category Image 6';
-            output_default='';
-            [/ekm:element]
-            [ekm:element]
-            show='yes';
-            allowed_types='html';
-            element_reference='hp-category-title-6';
-            edit_button='YES';
-            output_start='<div class="body-text dark-text center-text s-margin-top-d s-margin-top-m">';
-              output_end='</div><!-- /.hp-category-title-6 .hp-category-title -->';
-            element_name_default='HP Category Title 1';
-            output_default='Category Title Here';
-            [/ekm:element]
-          </li>
+          [ekm:showdata]
+
+          data='categories';
+          location='36';
+
+          cols='1';
+          rows='100';
+          counterreset='';
+          page_navigation='no';
+
+          orderby='id ASC';
+          skiprecords='0';
+          excludelist='';
+          includelist='';
+
+          editbuttons='YES';
+
+          image_ratio='500';
+          image_width='auto';
+          image_height='auto';
+
+          font_formatting='no';
+
+          output_start='';
+          output_row_start='';
+          output_column_start='';
+          output_item='
+          <li class="splide__slide hp-category-[counter] hp-category">
+            <div class="hp-category-img-[counter] hp-category-img">
+              [image]
+            </div>
+
+            <div class="body-text dark-text center-text s-margin-top-d s-margin-top-m">
+              [name]
+            </div>
+          </li>';
+          output_column_end='';
+          output_row_end='';
+          output_end='';
+
+          output_column_blank='';
+
+          [/ekm:showdata]
         </ul>
       </div><!-- /.splide__track -->
     </div><!-- /.splide -->
@@ -1149,7 +1060,8 @@
             edit_button='yes';
             output_start='<h2 class="flex-display flex-justify-center section-title l-margin-btm-d l-margin-btm-m">
               <span>';
-                output_end='</span></h2>
+                output_end='</span>
+            </h2>
             <!-- /.flex-display .flex-justify-center .section-title .l-margin-btm-m .l-margin-btm-d -->';
             element_name_default='Testimonial Title';
             output_default='Reviews';
@@ -1197,7 +1109,8 @@
             edit_button='yes';
             output_start='<h2 class="flex-display flex-justify-center section-title l-margin-btm-d l-margin-btm-m">
               <span>';
-                output_end='</span></h2>
+                output_end='</span>
+            </h2>
             <!-- /.flex-display .flex-justify-center .section-title .l-margin-btm-m .l-margin-btm-d -->';
             element_name_default='Testimonial Title';
             output_default='Reviews';
@@ -1245,7 +1158,8 @@
             edit_button='yes';
             output_start='<h2 class="flex-display flex-justify-center section-title l-margin-btm-d l-margin-btm-m">
               <span>';
-                output_end='</span></h2>
+                output_end='</span>
+            </h2>
             <!-- /.flex-display .flex-justify-center .section-title .l-margin-btm-m .l-margin-btm-d -->';
             element_name_default='Testimonial Title';
             output_default='Reviews';
@@ -1293,7 +1207,8 @@
             edit_button='yes';
             output_start='<h2 class="flex-display flex-justify-center section-title l-margin-btm-d l-margin-btm-m">
               <span>';
-                output_end='</span></h2>
+                output_end='</span>
+            </h2>
             <!-- /.flex-display .flex-justify-center .section-title .l-margin-btm-m .l-margin-btm-d -->';
             element_name_default='Testimonial Title';
             output_default='Reviews';
@@ -1341,7 +1256,8 @@
             edit_button='yes';
             output_start='<h2 class="flex-display flex-justify-center section-title l-margin-btm-d l-margin-btm-m">
               <span>';
-                output_end='</span></h2>
+                output_end='</span>
+            </h2>
             <!-- /.flex-display .flex-justify-center .section-title .l-margin-btm-m .l-margin-btm-d -->';
             element_name_default='Testimonial Title';
             output_default='Reviews';

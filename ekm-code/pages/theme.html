@@ -3,1016 +3,1057 @@
 <html lang="en-GB">
 
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<meta name="keywords" content="[ekm:metakeywords][/ekm:metakeywords]">
-	<meta name="description" content="[ekm:metadescription][/ekm:metadescription]">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="[ekm:metakeywords][/ekm:metakeywords]">
+  <meta name="description" content="[ekm:metadescription][/ekm:metadescription]">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	[ekm:favicon][/ekm:favicon]
+  [ekm:favicon][/ekm:favicon]
 
-	<title>[ekm:pagetitle][/ekm:pagetitle]</title>
-	
-	<script src="https://cdn.ekmsecure.com/js/jquery/latest/jquery.min.js"></script>
+  <title>[ekm:pagetitle][/ekm:pagetitle]</title>
 
-	[ekm:if]
-		iftype='EQUALS';
-		ifvalue='Food and Drink';
-		ifvalue2='Food and Drink';
-		ifthen='<link href="https://fonts.googleapis.com/css?family=Montserrat:300,500,700" rel="stylesheet">';
-		ifelse='';
-	[/ekm:if]
-	
-	[ekm:if]
-		iftype='EQUALS';
-		ifvalue='Food and Drink';
-		ifvalue2='Lingerie';
-		ifthen='<link href="https://fonts.googleapis.com/css?family=Playfair+Display:600|Source+Sans+Pro:400,600,700" rel="stylesheet">';
-		ifelse='';
-	[/ekm:if]
-	
-	[ekm:if]
-		iftype='EQUALS';
-		ifvalue='Food and Drink';
-		ifvalue2='DIY-and-Construction';
-		ifthen='<link href="https://fonts.googleapis.com/css?family=Merriweather:400|Roboto:400,500,700" rel="stylesheet">';
-		ifelse='';
-	[/ekm:if]
+  <script src="https://cdn.ekmsecure.com/js/jquery/latest/jquery.min.js"></script>
 
-	<link href="https://cdn.ekmsecure.com/font-awesome/latest/fa.css" rel="stylesheet">
-	
-	<link href="//themes.cdn.ekm.net/themes/master/1601/css/responsive-grid.css?v=A8000E37-94FF-42FE-A8E2-4B7790647396" rel="stylesheet">
-    <link href="/ekmps/designs/assets/master/1601/css/styles.dymc.css?v=A8000E37-94FF-42FE-A8E2-4B7790647396" rel="stylesheet">
-    
-    [ekm:cart_custom_css]<link rel="stylesheet" href="//themes.cdn.ekm.net/themes/master/1601/css/cart-page.css?v=A8000E37-94FF-42FE-A8E2-4B7790647396">[/ekm:cart_custom_css]
-    
-    <style>
-    	body {
-    		background: #fff [ekm:background][/ekm:background];
-    	}
-    	
-			[ekm:if]
-                iftype='PRICES_HIDDEN';
-                ifthen='
-                        .trade-login-hide{
-                            display: none !important;
-                        }
-                        .ekm-search-page-item__price{
-                            display: none !important;
-                        }
-                    ';
-                ifelse='';
-            [/ekm:if]
-		
-		/*TRADE LOGIN*/
+  [ekm:if]
+  iftype='EQUALS';
+  ifvalue='Food and Drink';
+  ifvalue2='Food and Drink';
+  ifthen='
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,500,700" rel="stylesheet">';
+  ifelse='';
+  [/ekm:if]
 
-		.trade-account a {
-		    font-weight: 600;
-			color: [ekm:colour]colour_reference='link_colour';[/ekm:colour];
-		}
-		
-		p.trade-account {
-		    font-size: 1.5rem;
-		    font-weight: 600;
-		}
-    </style>
+  [ekm:if]
+  iftype='EQUALS';
+  ifvalue='Food and Drink';
+  ifvalue2='Lingerie';
+  ifthen='
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:600|Source+Sans+Pro:400,600,700"
+    rel="stylesheet">';
+  ifelse='';
+  [/ekm:if]
+
+  [ekm:if]
+  iftype='EQUALS';
+  ifvalue='Food and Drink';
+  ifvalue2='DIY-and-Construction';
+  ifthen='
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:400|Roboto:400,500,700" rel="stylesheet">';
+  ifelse='';
+  [/ekm:if]
+
+  <link href="https://cdn.ekmsecure.com/font-awesome/latest/fa.css" rel="stylesheet">
+
+  <link href="//themes.cdn.ekm.net/themes/master/1601/css/responsive-grid.css?v=A8000E37-94FF-42FE-A8E2-4B7790647396"
+    rel="stylesheet">
+  <link href="/ekmps/designs/assets/master/1601/css/styles.dymc.css?v=A8000E37-94FF-42FE-A8E2-4B7790647396"
+    rel="stylesheet">
+
+  [ekm:cart_custom_css]
+  <link rel="stylesheet"
+    href="//themes.cdn.ekm.net/themes/master/1601/css/cart-page.css?v=A8000E37-94FF-42FE-A8E2-4B7790647396">
+  [/ekm:cart_custom_css]
+
+  <style>
+    body {
+      background: #fff [ekm:background][/ekm:background];
+    }
+
+    [ekm:if] iftype='PRICES_HIDDEN';
+
+    ifthen='
+ .trade-login-hide {
+      display: none !important;
+    }
+
+    .ekm-search-page-item__price {
+      display: none !important;
+    }
+
+    ';
+ ifelse='';
+    [/ekm:if]
+    /*TRADE LOGIN*/
+
+    .trade-account a {
+      font-weight: 600;
+      color: [ekm:colour]colour_reference='link_colour';
+      [/ekm: colour];
+    }
+
+    p.trade-account {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+  </style>
 </head>
 
-    
-<body class="i-Food-and-Drink" data-theme-name="Zestbox" >
 
-<header class="sticky-header">
-	
-	[ekm:announcement_bar]
-		height_change_callback='fixFixedHeader';
-		output_start='<div class="announcement-holiday-wrapper">';
-		output_end='
-		</div>
-		';
-    [/ekm:announcement_bar] 	
+<body class="i-Food-and-Drink" data-theme-name="Zestbox">
+
+  <header class="sticky-header">
+
+    [ekm:announcement_bar]
+    height_change_callback='fixFixedHeader';
+    output_start='<div class="announcement-holiday-wrapper">';
+      output_end='
+    </div>
+    ';
+    [/ekm:announcement_bar]
     <section class="header-section">
-        <div class="flex-display flex-justify-space-between flex-wrap-wrap header-bar m-padding-top-d m-padding-btm-d">
-			<div class="nav-btn header-btn flex-display flex-align-center flex-justify-center">	
-				<svg version="1.1" class="nav-icon-m" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-					 width="21.6px" height="18px" viewBox="0 0 21.6 18" enable-background="new 0 0 21.6 18" xml:space="preserve">
-				    
-				    <path d="M20.363,0H1.237C0.554,0,0,0.554,0,1.237s0.554,1.237,1.237,1.237h19.126c0.683,0,1.237-0.554,1.237-1.237
-				        C21.6,0.554,21.046,0,20.363,0z"/>
-				    <path d="M20.356,15.526l-19.119,0C0.554,15.526,0,16.08,0,16.763C0,17.446,0.554,18,1.237,18h19.119
-				        c0.683,0,1.237-0.554,1.237-1.237C21.593,16.08,21.039,15.526,20.356,15.526z"/>
-				    <path d="M16.949,7.763H1.237C0.554,7.763,0,8.317,0,9c0,0.683,0.554,1.237,1.237,1.237h15.712
-				        c0.683,0,1.237-0.554,1.237-1.237C18.186,8.317,17.632,7.763,16.949,7.763z"/>
-				</svg><!-- /.nav-icon-m -->
-			</div><!-- /.nav-btn .header-btn .flex-display .flex-align-center .flex-justify-center -->
-			
-			
-			<div class="nav-wrapper-m">
-				<div class="nav-overlay-m"></div><!-- /.nav-overlay-m -->
-				
-				<div class="nav-drawer-m">
-					<div class="nav-close-btn-m">
-						<svg version="1.1" class="nav-close-icon-m" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-							 width="16px" height="16px" viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
-							
-							<path fill="#ffffff" d="M9.69,8l5.91-5.91c0.504-0.504,0.536-1.297,0.072-1.761C15.207-0.136,14.414-0.104,13.91,0.4L8,6.31
+      <div class="flex-display flex-justify-space-between flex-wrap-wrap header-bar m-padding-top-d m-padding-btm-d">
+        <div class="nav-btn header-btn flex-display flex-align-center flex-justify-center">
+          <svg version="1.1" class="nav-icon-m" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="21.6px" height="18px"
+            viewBox="0 0 21.6 18" enable-background="new 0 0 21.6 18" xml:space="preserve">
+
+            <path d="M20.363,0H1.237C0.554,0,0,0.554,0,1.237s0.554,1.237,1.237,1.237h19.126c0.683,0,1.237-0.554,1.237-1.237
+				        C21.6,0.554,21.046,0,20.363,0z" />
+            <path d="M20.356,15.526l-19.119,0C0.554,15.526,0,16.08,0,16.763C0,17.446,0.554,18,1.237,18h19.119
+				        c0.683,0,1.237-0.554,1.237-1.237C21.593,16.08,21.039,15.526,20.356,15.526z" />
+            <path d="M16.949,7.763H1.237C0.554,7.763,0,8.317,0,9c0,0.683,0.554,1.237,1.237,1.237h15.712
+				        c0.683,0,1.237-0.554,1.237-1.237C18.186,8.317,17.632,7.763,16.949,7.763z" />
+          </svg><!-- /.nav-icon-m -->
+        </div><!-- /.nav-btn .header-btn .flex-display .flex-align-center .flex-justify-center -->
+
+
+        <div class="nav-wrapper-m">
+          <div class="nav-overlay-m"></div><!-- /.nav-overlay-m -->
+
+          <div class="nav-drawer-m">
+            <div class="nav-close-btn-m">
+              <svg version="1.1" class="nav-close-icon-m" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px"
+                viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+
+                <path fill="#ffffff" d="M9.69,8l5.91-5.91c0.504-0.504,0.536-1.297,0.072-1.761C15.207-0.136,14.414-0.104,13.91,0.4L8,6.31
 							L2.09,0.4C1.586-0.104,0.793-0.136,0.329,0.329C-0.136,0.793-0.104,1.586,0.4,2.09L6.31,8L0.4,13.91
 							c-0.504,0.504-0.536,1.297-0.072,1.761c0.465,0.465,1.257,0.432,1.761-0.072L8,9.69l5.91,5.91c0.504,0.504,1.297,0.536,1.761,0.072
-							c0.465-0.465,0.432-1.257-0.072-1.761L9.69,8z"/>
-						</svg><!-- /.nav-close-icon-m -->
-					</div><!-- /.nav-close-btnm -->
-					
-					[ekm:searchbox]
-						show_search_term='yes';
-						search_field_placeholder='Search for products...';
-						search_button_value='';
-						output_start='
-							<div class="search-wrapper-m">
-						';
-						layout='
-		                        [search-field]
-		                        
-		                        <button class="flex-display flex-justify-center ekmps-search-button-m" src="" value="" alt="" type="submit">
-		                            <svg version="1.1" class="search-icon-m" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-										 width="20px" height="20px" viewBox="3.252 0 20 20" enable-background="new 3.252 0 20 20" xml:space="preserve">
-									
-										<path d="M11.601,16.697c-4.604,0-8.349-3.745-8.349-8.348C3.252,3.746,6.998,0,11.601,0s8.349,3.746,8.349,8.349
+							c0.465-0.465,0.432-1.257-0.072-1.761L9.69,8z" />
+              </svg><!-- /.nav-close-icon-m -->
+            </div><!-- /.nav-close-btnm -->
+
+            [ekm:searchbox]
+            show_search_term='yes';
+            search_field_placeholder='Search for products...';
+            search_button_value='';
+            output_start='
+            <div class="search-wrapper-m">
+              ';
+              layout='
+              [search-field]
+
+              <button class="flex-display flex-justify-center ekmps-search-button-m" src="" value="" alt=""
+                type="submit">
+                <svg version="1.1" class="search-icon-m" xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20px" height="20px"
+                  viewBox="3.252 0 20 20" enable-background="new 3.252 0 20 20" xml:space="preserve">
+
+                  <path d="M11.601,16.697c-4.604,0-8.349-3.745-8.349-8.348C3.252,3.746,6.998,0,11.601,0s8.349,3.746,8.349,8.349
 											C19.95,12.952,16.205,16.697,11.601,16.697z M11.601,1.7c-3.667,0-6.649,2.982-6.649,6.649c0,3.666,2.982,6.649,6.649,6.649
-											c3.666,0,6.649-2.983,6.649-6.649C18.251,4.683,15.267,1.7,11.601,1.7z"/>
-									
-									    <path d="M23.003,18.55l-5.758-5.758l-1.153,1.249l5.71,5.709C21.967,19.917,22.185,20,22.402,20
-									        s0.436-0.083,0.601-0.249C23.335,19.42,23.335,18.881,23.003,18.55z"/>
-									</svg><!-- /.search-icon-m -->
-		                        </button><!-- /.flex-display .flex-justify-center .ekmps-search-button-m -->
-						';
-						output_end='
-							</div><!-- /.search-wrapper-m -->
-			            ';
-			        [/ekm:searchbox]
-					
-					<div class="nav-content-wrapper-m">
-						[ekm:category_menu]
-                            levels='3';
-                            location='0';
-                            order_by='orderlocation, name';
-                            edit_buttons='yes';
-                            limit='99';
-                            level_1_limit='98';
-                            level_2_limit='97';
-                            image_width='100';
-                            image_height='100';
-                            output_start='<ul class="menu">';
-                            output_item='<li>[link][children]</li>';
-                            output_end='</ul>';
-                            output_level_1_start='<ul class="submenu">';
-                            output_level_1_item='<li>[link][children]</li>';
-                            output_level_1_end='<li><a href="[parent_url]">View All</a></li></ul>';
-                            output_level_2_start='<ul class="subsubmenu">';
-                            output_level_2_item='<li>[link]</li>';
-                            output_level_2_end='</ul>';
-                            exclude_list='';
-                        [/ekm:category_menu]
-					
-					</div><!-- /.nav-content-wrapper-m -->
-				</div><!-- /.nav-drawer-m -->
-    		</div><!-- /.nav-wrapper-m -->
-    		
-            <div class="d-col-4 flex-display header-logo-section">
-                [ekm:element]
-                    element_reference='logo';
-                    edit_button='YES';
-                    output_start='
-                        <div class="logo">
-                            <a href="index.asp">
-                    ';
-                    output_end='
-                            </a>
-                        </div><!-- /.logo -->
-                    ';
-                    element_name_default='Your Logo';
-                    output_default='
-                    		<img class="theme-logo" src="//themes.cdn.ekm.net/themes/master/1601/food%2520and%2520drink/images/logo.svg?v=A8000E37-94FF-42FE-A8E2-4B7790647396">
-                    ';
-                [/ekm:element]
-            </div><!-- /.d-col-3 .flex-display .flex-align-center .header-logo-section -->
-    		[ekm:searchbox]
-			    show_search_term='yes';
-			    search_field_placeholder='Search for products...';
-			    search_button_value='';
-			    output_start='
-			        <div class="flex-display flex-justify-left d-col-4 m-col-12 header-elements-1 searchbar-d">
-			    ';
-			    layout='
-			                <button class="ekmps-search-button-d" src="" value="" alt="" type="submit">
-			                    <svg version="1.1" class="search-icon-d" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-									 width="19.55px" height="21px" viewBox="0 0 19.55 21" enable-background="new 0 0 19.55 21" xml:space="preserve">
-								    
-								    <path d="M18.85,19.181l-3.901-4.511l0.202-0.228c1.236-1.396,1.957-3.116,2.085-4.973
+											c3.666,0,6.649-2.983,6.649-6.649C18.251,4.683,15.267,1.7,11.601,1.7z" />
+
+                  <path d="M23.003,18.55l-5.758-5.758l-1.153,1.249l5.71,5.709C21.967,19.917,22.185,20,22.402,20
+									        s0.436-0.083,0.601-0.249C23.335,19.42,23.335,18.881,23.003,18.55z" />
+                </svg><!-- /.search-icon-m -->
+              </button><!-- /.flex-display .flex-justify-center .ekmps-search-button-m -->
+              ';
+              output_end='
+            </div><!-- /.search-wrapper-m -->
+            ';
+            [/ekm:searchbox]
+
+            <div class="nav-content-wrapper-m">
+              [ekm:category_menu]
+              levels='3';
+              location='0';
+              order_by='orderlocation, name';
+              edit_buttons='yes';
+              limit='99';
+              level_1_limit='98';
+              level_2_limit='97';
+              image_width='100';
+              image_height='100';
+              output_start='<ul class="menu">';
+                output_item='<li>[link][children]</li>';
+                output_end='</ul>';
+              output_level_1_start='<ul class="submenu">';
+                output_level_1_item='<li>[link][children]</li>';
+                output_level_1_end='<li><a href="[parent_url]">View All</a></li>
+              </ul>';
+              output_level_2_start='<ul class="subsubmenu">';
+                output_level_2_item='<li>[link]</li>';
+                output_level_2_end='</ul>';
+              exclude_list='';
+              [/ekm:category_menu]
+
+            </div><!-- /.nav-content-wrapper-m -->
+          </div><!-- /.nav-drawer-m -->
+        </div><!-- /.nav-wrapper-m -->
+
+        <div class="d-col-4 flex-display header-logo-section">
+          [ekm:element]
+          element_reference='logo';
+          edit_button='YES';
+          output_start='
+          <div class="logo">
+            <a href="index.asp">
+              ';
+              output_end='
+            </a>
+          </div><!-- /.logo -->
+          ';
+          element_name_default='Your Logo';
+          output_default='
+          <img class="theme-logo"
+            src="//themes.cdn.ekm.net/themes/master/1601/food%2520and%2520drink/images/logo.svg?v=A8000E37-94FF-42FE-A8E2-4B7790647396">
+          ';
+          [/ekm:element]
+        </div><!-- /.d-col-3 .flex-display .flex-align-center .header-logo-section -->
+        [ekm:searchbox]
+        show_search_term='yes';
+        search_field_placeholder='Search for products...';
+        search_button_value='';
+        output_start='
+        <div class="flex-display flex-justify-left d-col-4 m-col-12 header-elements-1 searchbar-d">
+          ';
+          layout='
+          <button class="ekmps-search-button-d" src="" value="" alt="" type="submit">
+            <svg version="1.1" class="search-icon-d" xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="19.55px" height="21px"
+              viewBox="0 0 19.55 21" enable-background="new 0 0 19.55 21" xml:space="preserve">
+
+              <path
+                d="M18.85,19.181l-3.901-4.511l0.202-0.228c1.236-1.396,1.957-3.116,2.085-4.973
 								        c0.318-4.616-3.178-8.63-7.794-8.948C7.204,0.366,5.046,1.096,3.363,2.574C1.684,4.05,0.673,6.1,0.519,8.345
 								        c-0.318,4.616,3.178,8.63,7.794,8.948c1.857,0.128,3.659-0.35,5.212-1.382l0.254-0.17l3.905,4.483
 								        c0.142,0.163,0.33,0.261,0.528,0.274c0.198,0.014,0.398-0.057,0.561-0.199c0.165-0.143,0.266-0.35,0.277-0.566
 								        C19.061,19.528,18.992,19.334,18.85,19.181z M8.393,15.728c-3.739-0.258-6.57-3.522-6.311-7.276
-								        c0.259-3.754,3.524-6.598,7.278-6.339c3.739,0.258,6.57,3.522,6.311,7.276C15.411,13.143,12.147,15.987,8.393,15.728z"/>
-								</svg><!-- /.search-icon-d -->
-			                </button><!-- /.ekmps-search-button-d -->
-			                
-			                [search-field]
-			    ';
-			    output_end='
-					</div><!-- .flex-col .flex-display .flex-justify-center .d-col-6 .header-elements .searchbar-d -->
-			    ';
-			[/ekm:searchbox]
-    		
-			
-            
-	        
-	        <div class="d-col-4 flex-display header-elements">
-	        	[ekm:if]
-				    iftype='FEATURE_ACTIVE';
-				    ifvalue='FEATURE-CUSTOMERLOGIN';
-				    ifthen='
-						<div class="flex-display flex-align-center acc-wrapper-d s-margin-right-d">
-							<div class="acc-btn-d header-btn">
-								<a href="[ekm:login_page_link] url_only='yes'; [/ekm:login_page_link]"><svg version="1.1" class="acc-icon-d" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-									 width="18.509px" height="20px" viewBox="0 0 18.509 20" enable-background="new 0 0 18.509 20" xml:space="preserve">
-								
-									<path d="M13.354,10.885c1.296-1.139,2.118-2.806,2.118-4.667C15.472,2.784,12.688,0,9.254,0S3.036,2.784,3.036,6.218
+								        c0.259-3.754,3.524-6.598,7.278-6.339c3.739,0.258,6.57,3.522,6.311,7.276C15.411,13.143,12.147,15.987,8.393,15.728z" />
+            </svg><!-- /.search-icon-d -->
+          </button><!-- /.ekmps-search-button-d -->
+
+          [search-field]
+          ';
+          output_end='
+        </div><!-- .flex-col .flex-display .flex-justify-center .d-col-6 .header-elements .searchbar-d -->
+        ';
+        [/ekm:searchbox]
+
+
+
+
+        <div class="d-col-4 flex-display header-elements">
+          [ekm:if]
+          iftype='FEATURE_ACTIVE';
+          ifvalue='FEATURE-CUSTOMERLOGIN';
+          ifthen='
+          <div class="flex-display flex-align-center acc-wrapper-d s-margin-right-d">
+            <div class="acc-btn-d header-btn">
+              <a href="[ekm:login_page_link] url_only='yes'; [/ekm:login_page_link]"><svg version="1.1"
+                  class="acc-icon-d" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                  x="0px" y="0px" width="18.509px" height="20px" viewBox="0 0 18.509 20"
+                  enable-background="new 0 0 18.509 20" xml:space="preserve">
+
+                  <path d="M13.354,10.885c1.296-1.139,2.118-2.806,2.118-4.667C15.472,2.784,12.688,0,9.254,0S3.036,2.784,3.036,6.218
 									c0,1.861,0.822,3.527,2.118,4.667C2.102,12.397,0,15.539,0,19.177l0,0C0,19.631,0.373,20,0.834,20s0.834-0.369,0.834-0.823l0,0
 									c0-3.36,2.198-6.211,5.229-7.206c0.728,0.299,1.524,0.466,2.358,0.466c0.837,0,1.634-0.168,2.363-0.468
 									c3.03,0.996,5.225,3.849,5.225,7.208l0,0c0,0.454,0.373,0.823,0.834,0.823c0.46,0,0.834-0.369,0.834-0.823l0,0
 									C18.509,15.539,16.407,12.397,13.354,10.885z M4.703,6.218c0-2.51,2.042-4.551,4.551-4.551s4.551,2.042,4.551,4.551
-									s-2.042,4.551-4.551,4.551S4.703,8.728,4.703,6.218z"/>
-								</svg></a><!-- /.acc-icon-d -->
-							</div><!-- /.acc-btn-d .header-btn -->
-						</div><!-- /.flex-display .flex-align-center .acc-wrapper-d .s-margin-right-d -->
-				    ';
-				    ifelse='';
-				[/ekm:if]
-				
-	        	[ekm:if]
-				    iftype='FEATURE_ACTIVE';
-				    ifvalue='FEATURE-CUSTOMERLOGIN';
-				    ifthen='
-				    	<style>	
-				    		.nav-btn {
-    							width: 10rem;
-							}
-						</style>
-						<a href="[ekm:login_page_link] url_only='yes'; [/ekm:login_page_link]" class="flex-display flex-align-center flex-justify-center header-btn acc-btn-m">
-							<div class="header-icons">	
-								<svg version="1.1" class="acc-icon-m" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-								 width="18.509px" height="20px" viewBox="0 0 18.509 20" enable-background="new 0 0 18.509 20" xml:space="preserve">
-							
-									<path d="M13.354,10.885c1.296-1.139,2.118-2.806,2.118-4.667C15.472,2.784,12.688,0,9.254,0S3.036,2.784,3.036,6.218
+									s-2.042,4.551-4.551,4.551S4.703,8.728,4.703,6.218z" />
+                </svg></a><!-- /.acc-icon-d -->
+            </div><!-- /.acc-btn-d .header-btn -->
+          </div><!-- /.flex-display .flex-align-center .acc-wrapper-d .s-margin-right-d -->
+          ';
+          ifelse='';
+          [/ekm:if]
+
+          [ekm:if]
+          iftype='FEATURE_ACTIVE';
+          ifvalue='FEATURE-CUSTOMERLOGIN';
+          ifthen='
+          <style>
+            .nav-btn {
+              width: 10rem;
+            }
+          </style>
+          <a href="[ekm:login_page_link] url_only='yes'; [/ekm:login_page_link]"
+            class="flex-display flex-align-center flex-justify-center header-btn acc-btn-m">
+            <div class="header-icons">
+              <svg version="1.1" class="acc-icon-m" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="18.509px" height="20px"
+                viewBox="0 0 18.509 20" enable-background="new 0 0 18.509 20" xml:space="preserve">
+
+                <path d="M13.354,10.885c1.296-1.139,2.118-2.806,2.118-4.667C15.472,2.784,12.688,0,9.254,0S3.036,2.784,3.036,6.218
 									c0,1.861,0.822,3.527,2.118,4.667C2.102,12.397,0,15.539,0,19.177l0,0C0,19.631,0.373,20,0.834,20s0.834-0.369,0.834-0.823l0,0
 									c0-3.36,2.198-6.211,5.229-7.206c0.728,0.299,1.524,0.466,2.358,0.466c0.837,0,1.634-0.168,2.363-0.468
 									c3.03,0.996,5.225,3.849,5.225,7.208l0,0c0,0.454,0.373,0.823,0.834,0.823c0.46,0,0.834-0.369,0.834-0.823l0,0
 									C18.509,15.539,16.407,12.397,13.354,10.885z M4.703,6.218c0-2.51,2.042-4.551,4.551-4.551s4.551,2.042,4.551,4.551
-									s-2.042,4.551-4.551,4.551S4.703,8.728,4.703,6.218z"/>
-								</svg><!-- /.acc-icon-m -->
-							</div><!-- /.header-icons -->
-						</a>
-				    ';
-				    ifelse='';
-				[/ekm:if]				
-				
-            	<a href="index.asp?function=CART" class="flex-display flex-align-center flex-justify-center cart-btn header-btn">
-		            <div class="header-icons">
-						<svg version="1.1" class="cart-icon-m" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-							 width="26.504px" height="20px" viewBox="0 0 26.504 20" enable-background="new 0 0 26.504 20" xml:space="preserve">
-							<path d="M8.198,17.643c0.661,0,1.179,0.517,1.179,1.179C9.376,19.483,8.859,20,8.198,20
-								c-0.661,0-1.179-0.517-1.179-1.179C7.019,18.16,7.537,17.643,8.198,17.643z"/>
-							<path d="M22.089,17.643c0.661,0,1.179,0.517,1.179,1.179c0,0.661-0.517,1.179-1.179,1.179s-1.179-0.517-1.179-1.179
-								C20.911,18.16,21.428,17.643,22.089,17.643z"/>
-							<path d="M25.877,3.034c-0.44-0.106-0.882,0.165-0.987,0.604l-1.715,7.126L9.756,11.848L5.309,0.694
+									s-2.042,4.551-4.551,4.551S4.703,8.728,4.703,6.218z" />
+              </svg><!-- /.acc-icon-m -->
+            </div><!-- /.header-icons -->
+          </a>
+          ';
+          ifelse='';
+          [/ekm:if]
+
+          <a href="index.asp?function=CART"
+            class="flex-display flex-align-center flex-justify-center cart-btn header-btn">
+            <div class="header-icons">
+              <svg version="1.1" class="cart-icon-m" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="26.504px" height="20px"
+                viewBox="0 0 26.504 20" enable-background="new 0 0 26.504 20" xml:space="preserve">
+                <path d="M8.198,17.643c0.661,0,1.179,0.517,1.179,1.179C9.376,19.483,8.859,20,8.198,20
+								c-0.661,0-1.179-0.517-1.179-1.179C7.019,18.16,7.537,17.643,8.198,17.643z" />
+                <path d="M22.089,17.643c0.661,0,1.179,0.517,1.179,1.179c0,0.661-0.517,1.179-1.179,1.179s-1.179-0.517-1.179-1.179
+								C20.911,18.16,21.428,17.643,22.089,17.643z" />
+                <path d="M25.877,3.034c-0.44-0.106-0.882,0.165-0.987,0.604l-1.715,7.126L9.756,11.848L5.309,0.694
 								C5.146,0.285,4.725,0,4.285,0H0.818C0.366,0,0,0.367,0,0.819s0.366,0.819,0.818,0.819h3.104l4.362,10.94l-1.271,3.188
 								c-0.119,0.299-0.086,0.631,0.089,0.889c0.175,0.258,0.471,0.412,0.792,0.412h14.556c0.452,0,0.819-0.367,0.819-0.819
 								c0-0.452-0.367-0.818-0.819-0.818H8.91l0.77-1.931l14.025-1.132c0.461-0.037,0.859-0.377,0.967-0.827l1.808-7.516
-								C26.587,3.582,26.316,3.14,25.877,3.034z"/>
-						</svg><!-- /.cart-icon-m -->
-						
-		                [ekm:minicart]
-		                    style='custom';
-		                    nocartmessage='neverhide';
-		                    maxcharacters='15';
-		                    imagewidth='50';
-		                    imageheight='50';
-		                    output_start='';
-		                    output_end='';
-		                    output_contents_start='';
-		                    output_contents_end='';
-		                    output_cart_contents='';
-		                    output_totals='[total_message]';
-		                    cart_totals_message_empty='';
-		                    cart_totals_message_single_item='<span class="cart-btn-item-count">[item_count]</span><!-- /.cart-btn-item-count -->';
-		                    cart_totals_message_multiple_items='<span class="cart-btn-item-count">[item_count]</span><!-- /.cart-btn-item-count -->';
-		                [/ekm:minicart]
-		            </div><!-- /.header-icons -->
-		        </a><!-- /.flex-display .flex-align-center .flex-justify-center .cart-btn .header-btn -->
-            </div><!-- /.d-col-3 .flex-display .header-elements -->
-        </div><!-- /.flex-display .header-bar -->
-   
-		[ekm:category_menu]
-				levels='3';
-				editbuttons='YES';
-				location='0';
-				orderby='orderlocation';
-				limit='999';
-				level_1_limit='999';
-				level_2_limit='10';
-			    output_start='<nav class="nav-d">
-			               <ul class="flex-display flex-justify-center flex-wrap-wrap ul-reset nav-items container d-grid-gap-3">
-			   ';
-			   output_item='
-			    <li class="flex-display nav-item">[link]
-			    <section class="mega-menu">[children]</section><!--/.mega-menu -->
-			    </li><!--/.flex-col flex-display l-padding-btm-d-->
-			   ';
-			   output_end='
-			               </ul><!-- /.flex-grid .flex-justify-center .flex-wrap-wrap ul-reset nav-items -->
-			       </nav><!-- .nav-d .nav-slide -->
-			   ';
-			   output_level_1_start='
-			           <div class="flex-display flex-wrap-wrap container">
-			               <ul class="ul-reset flex-display flex-wrap-wrap d-col-8">';
-							   output_level_1_item='<div class="mega-menu-item d-col-4"><li class="mega-menu-item-heading">[link]</li>[children]</div><!--/.mega-menu-item -->';
-							   output_level_1_end='<div class="mega-menu-item"></li></div>
-							   <!-- todo: maybe add view full product list.. -->
-							   <!-- output_level_1_end='<div class="mega-menu-item"><a href="[parent_url]">View All [parent_name]</a></li></div> -->
-							</ul><!--/.ul-reset .flex-grid .flex-wrap-wrap -->
-						   <div class="mega-menu-image-promo d-col-4">
-  <div class="header-promo-area" style="position: relative; overflow: hidden;">
+								C26.587,3.582,26.316,3.14,25.877,3.034z" />
+              </svg><!-- /.cart-icon-m -->
 
-    <!-- Promo Image -->
-    [ekm:nested_element]
-      show="yes";
-      allowed_types="image, html";
-      element_reference="id=[parent_name]_img";
-      edit_button="yes";
-      output_start="";
-      output_end="";
-      element_name_default="mega-menu-promo-image";
-      output_default="<img src=''>";
-    [/ekm:nested_element]
+              [ekm:minicart]
+              style='custom';
+              nocartmessage='neverhide';
+              maxcharacters='15';
+              imagewidth='50';
+              imageheight='50';
+              output_start='';
+              output_end='';
+              output_contents_start='';
+              output_contents_end='';
+              output_cart_contents='';
+              output_totals='[total_message]';
+              cart_totals_message_empty='';
+              cart_totals_message_single_item='<span
+                class="cart-btn-item-count">[item_count]</span><!-- /.cart-btn-item-count -->';
+              cart_totals_message_multiple_items='<span
+                class="cart-btn-item-count">[item_count]</span><!-- /.cart-btn-item-count -->';
+              [/ekm:minicart]
+            </div><!-- /.header-icons -->
+          </a><!-- /.flex-display .flex-align-center .flex-justify-center .cart-btn .header-btn -->
+        </div><!-- /.d-col-3 .flex-display .header-elements -->
+      </div><!-- /.flex-display .header-bar -->
 
-    <!-- Overlay Content Wrapper -->
-    <div class="header-promo-overlay" style="position: absolute; bottom: 10%; left: 10%; z-index: 2; color: #fff;">
-      
-      <!-- Title -->
-      [ekm:nested_element]
-        show="yes";
-        allowed_types="html";
-        element_reference="id=[parent_name]_title";
-        edit_button="yes";
-        output_start="<div class='section-title light-text'>";
-        output_end="</div>";
-        element_name_default="Promo Title";
-        output_default="Your Promo Title";
-      [/ekm:nested_element]
+      [ekm:category_menu]
+      levels='3';
+      editbuttons='YES';
+      location='0';
+      orderby='orderlocation';
+      limit='999';
+      level_1_limit='999';
+      level_2_limit='10';
+      output_start='<nav class="nav-d">
+        <ul class="flex-display flex-justify-center flex-wrap-wrap ul-reset nav-items container d-grid-gap-3">
+          ';
+          output_item='
+          <li class="flex-display nav-item">[link]
+            <section class="mega-menu">[children]</section><!--/.mega-menu -->
+          </li><!--/.flex-col flex-display l-padding-btm-d-->
+          ';
+          output_end='
+        </ul><!-- /.flex-grid .flex-justify-center .flex-wrap-wrap ul-reset nav-items -->
+      </nav><!-- .nav-d .nav-slide -->
+      ';
+      output_level_1_start='
+      <div class="flex-display flex-wrap-wrap container">
+        <ul class="ul-reset flex-display flex-wrap-wrap d-col-8">';
+          output_level_1_item='<div class="mega-menu-item d-col-4">
+            <li class="mega-menu-item-heading">[link]</li>[children]
+          </div><!--/.mega-menu-item -->';
+          output_level_1_end='<div class="mega-menu-item">
+            </li>
+          </div>
+          <!-- todo: maybe add view full product list.. -->
+          <!-- output_level_1_end='<div class="mega-menu-item"><a href="[parent_url]">View All [parent_name]</a></li></div> -->
+        </ul><!--/.ul-reset .flex-grid .flex-wrap-wrap -->
+        <div class="mega-menu-image-promo d-col-4">
+          <div class="header-promo-area" style="position: relative; overflow: hidden;">
 
-      <!-- Subtitle -->
-      [ekm:nested_element]
-        show="yes";
-        allowed_types="html";
-        element_reference="id=[parent_name]_subtitle";
-        edit_button="yes";
-        output_start="<div class='body-text light-text'>";
-        output_end="</div>";
-        element_name_default="Promo Subtitle";
-        output_default="Optional subtitle text here.";
-      [/ekm:nested_element]
+            <!-- Promo Image -->
+            [ekm:nested_element]
+            show="yes";
+            allowed_types="image, html";
+            element_reference="id=[parent_name]_img";
+            edit_button="yes";
+            output_start="";
+            output_end="";
+            element_name_default="mega-menu-promo-image";
+            output_default="<img src=''>";
+            [/ekm:nested_element]
 
-      <!-- Button -->
-      [ekm:nested_element]
-        show="yes";
-        allowed_types="html";
-        element_reference="id=[parent_name]_button";
-        edit_button="yes";
-        output_start="<div class="btn light">";
-        output_end="</siv>";
-        element_name_default="Promo Button";
-        output_default="Shop Now";
-      [/ekm:nested_element]
+            <!-- Overlay Content Wrapper -->
+            <div class="header-promo-overlay"
+              style="position: absolute; bottom: 10%; left: 10%; z-index: 2; color: #fff;">
 
-    </div> <!--/.header-promo-overlay-->
+              <!-- Title -->
+              [ekm:nested_element]
+              show="yes";
+              allowed_types="html";
+              element_reference="id=[parent_name]_title";
+              edit_button="yes";
+              output_start="<div class='section-title light-text'>";
+                output_end="</div>";
+              element_name_default="Promo Title";
+              output_default="Your Promo Title";
+              [/ekm:nested_element]
 
-  </div> <!--/.header-promo-area-->
-</div> <!--/.mega-menu-image-promo-->
-			           </div><!-- /.flex-display flex-wrap-wrap container -->
-			   ';
-			   output_level_2_start='<ul class="sub-menu ul-reset">';
-			   output_level_2_item='<li class="sub-menu-item ">[link]</li>';
-			   output_level_2_end='<li class="sub-menu-item"><a href="[parent_url]">View All</a></li></ul>';
-			[/ekm:category_menu]
+              <!-- Subtitle -->
+              [ekm:nested_element]
+              show="yes";
+              allowed_types="html";
+              element_reference="id=[parent_name]_subtitle";
+              edit_button="yes";
+              output_start="<div class='body-text light-text'>";
+                output_end="</div>";
+              element_name_default="Promo Subtitle";
+              output_default="Optional subtitle text here.";
+              [/ekm:nested_element]
+
+              <!-- Button -->
+              [ekm:nested_element]
+              show="yes";
+              allowed_types="html";
+              element_reference="id=[parent_name]_button";
+              edit_button="yes";
+              output_start="<div class="btn light">";
+                output_end="</siv>";
+                element_name_default="Promo Button";
+                output_default="Shop Now";
+                [/ekm:nested_element]
+
+              </div> <!--/.header-promo-overlay-->
+
+            </div> <!--/.header-promo-area-->
+          </div> <!--/.mega-menu-image-promo-->
+        </div><!-- /.flex-display flex-wrap-wrap container -->
+        ';
+        output_level_2_start='<ul class="sub-menu ul-reset">';
+          output_level_2_item='<li class="sub-menu-item ">[link]</li>';
+          output_level_2_end='<li class="sub-menu-item"><a href="[parent_url]">View All</a></li>
+        </ul>';
+        [/ekm:category_menu]
     </section><!-- /.header-section .nav-btns-section-m -->
-</header><!-- /.sticky-header -->
-<!-- Mobile Navigation JavaScript Start -->
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    const menuItems = document.querySelectorAll('.menu > li > a');
-    const submenuItems = document.querySelectorAll('.submenu > li > a');
-    const nav = document.querySelector('.mob-nav');
-    const navToggle = document.querySelector('.nav-toggle');
-    const navClose = document.querySelector('.nav-close');
+  </header><!-- /.sticky-header -->
+  <!-- Mobile Navigation JavaScript Start -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuItems = document.querySelectorAll('.menu > li > a');
+      const submenuItems = document.querySelectorAll('.submenu > li > a');
+      const nav = document.querySelector('.mob-nav');
+      const navToggle = document.querySelector('.nav-toggle');
+      const navClose = document.querySelector('.nav-close');
 
-    function addHasNext(items) {
+      function addHasNext(items) {
         items.forEach(item => {
-            if (item.nextElementSibling && item.nextElementSibling.tagName === "UL") {
-                const hasNextEl = document.createElement('span');
-                hasNextEl.classList.add('has-next');
-                item.appendChild(hasNextEl);
-            }
+          if (item.nextElementSibling && item.nextElementSibling.tagName === "UL") {
+            const hasNextEl = document.createElement('span');
+            hasNextEl.classList.add('has-next');
+            item.appendChild(hasNextEl);
+          }
         });
-    }
+      }
 
-    function adjustNavHeight() {
+      function adjustNavHeight() {
         const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
         nav.style.height = `${vh}px`;
-    }
+      }
 
-    addHasNext(menuItems);
-    addHasNext(submenuItems);
+      addHasNext(menuItems);
+      addHasNext(submenuItems);
 
-    function handleClick(event, subClass, activeClass) {
+      function handleClick(event, subClass, activeClass) {
         const target = event.target.classList.contains('has-next') ? event.target.parentElement : event.target;
         const submenu = target.nextElementSibling;
 
         if (submenu && submenu.tagName === "UL") {
-            event.preventDefault(); // Prevent only if there’s a dropdown
-            submenu.classList.toggle(subClass);
-            target.classList.toggle(activeClass);
+          event.preventDefault(); // Prevent only if there’s a dropdown
+          submenu.classList.toggle(subClass);
+          target.classList.toggle(activeClass);
 
-            // Close other open submenus
-            document.querySelectorAll(`.${subClass}`).forEach(openSubmenu => {
-                if (openSubmenu !== submenu) {
-                    openSubmenu.classList.remove(subClass);
-                    openSubmenu.previousElementSibling.classList.remove(activeClass);
-                }
-            });
+          // Close other open submenus
+          document.querySelectorAll(`.${subClass}`).forEach(openSubmenu => {
+            if (openSubmenu !== submenu) {
+              openSubmenu.classList.remove(subClass);
+              openSubmenu.previousElementSibling.classList.remove(activeClass);
+            }
+          });
         }
-    }
+      }
 
-    menuItems.forEach(item => {
+      menuItems.forEach(item => {
         item.addEventListener('click', event => handleClick(event, 'menuactive', 'active'));
-    });
+      });
 
-    submenuItems.forEach(item => {
+      submenuItems.forEach(item => {
         item.addEventListener('click', event => handleClick(event, 'submenuactive', 'active'));
-    });
+      });
 
-    navToggle.addEventListener('click', () => {
+      navToggle.addEventListener('click', () => {
         nav.classList.add('navactive');
         document.body.classList.add('no-scroll');
         adjustNavHeight();
-    });
+      });
 
-    navClose.addEventListener('click', () => {
+      navClose.addEventListener('click', () => {
         nav.classList.remove('navactive');
         document.body.classList.remove('no-scroll');
         adjustNavHeight();
+      });
+
+      adjustNavHeight();
+      window.addEventListener('resize', adjustNavHeight);
     });
+  </script>
+  <!-- Mobile Navigation JavaScript End -->
 
-    adjustNavHeight();
-    window.addEventListener('resize', adjustNavHeight);
-});
-</script>
-<!-- Mobile Navigation JavaScript End -->
-
-<main role="main" class="main-content-[ekm:page_type][/ekm:page_type] main-content">
-	[ekm:content]
-</main><!-- /.main-content-[ekm:page_type][/ekm:page_type] .main-content -->
+  <main role="main" class="main-content-[ekm:page_type][/ekm:page_type] main-content">
+    [ekm:content]
+  </main><!-- /.main-content-[ekm:page_type][/ekm:page_type] .main-content -->
 
 
-[ekm:showdata]
-    data='recentlyviewedproducts';
-    location='auto';
+  [ekm:showdata]
+  data='recentlyviewedproducts';
+  location='auto';
 
-    cols='1';
-    rows='6';
-    page_navigation='no';
+  cols='1';
+  rows='6';
+  page_navigation='no';
 
-    orderby='viewdate';
-    skiprecords='0';
-    excludelist='';
-    includelist='';
+  orderby='viewdate';
+  skiprecords='0';
+  excludelist='';
+  includelist='';
 
-    editbuttons='YES';
+  editbuttons='YES';
 
-    image_ratio='500';
-    image_width='auto';
-    image_height='auto';
+  image_ratio='500';
+  image_width='auto';
+  image_height='auto';
 
-    font_formatting='no';
+  font_formatting='no';
 
+  output_start='
+  <section class="rvp-products container xxl-margin-top-m xxl-margin-top-d">
+    [ekm:element]
+    show='yes';
+    allowed_types='text';
+
+    element_reference='recently-viewed-products-title';
+    edit_button='YES';
+    output_start='<h2 class="flex-display flex-justify-center section-title l-margin-btm-m l-margin-btm-d"><span>';
+        output_end='</span></h2>
+    <!-- /.flex-display .flex-justify-center .section-title .l-margin-btm-m .l-margin-btm-d -->';
+    element_name_default='Recently Viewed Products Title';
+    output_default='Recently Viewed';
+    [/ekm:element]
+
+    <div class="flex-grid flex-justify-center flex-wrap-wrap prod-list rvp-prod-list">
+      ';
+      output_item='
+      <div
+        class="flex-col d-col-2 t-col-2 m-col-6 prod-item [ekm:if] iftype='FEATURE_ACTIVE'; ifvalue='FEATURE-QUICKVIEW'; ifthen='quickview-parent'; ifelse=''; [/ekm:if]">
+        <div class="prod-item-image m-margin-btm-m m-margin-btm-d">
+          {image}[image]{/image}
+        </div><!-- /.prod-item-image .m-margin-btm-m m-margin-btm-d -->
+
+        {name}
+        <div class="prod-item-name m-margin-top-m s-margin-top-d s-padding-btm-d">
+          <div class="prod-item-name-ellipsis">
+            [name]
+          </div><!-- /.prod-item-name-ellipsis -->
+        </div><!-- /.prod-item-name .m-margin-top-m s-margin-top-d s-padding-btm-d -->
+        {/name}
+
+
+        {price}
+        <div class="flex-display flex-align-baseline prod-price-wrapper s-margin-top-m s-margin-top-d trade-login-hide">
+          <div class="prod-item-price">
+            [price]
+          </div><!-- /.prod-item-price -->
+        </div><!-- /.flex-display .flex-align-baseline .prod-price-wrapper .s-margin-top-m .s-margin-top-d -->
+        {/price}
+
+        [ekm:if]
+        iftype='PRICES_HIDDEN';
+        ifthen='
+        <div class="ekm-trade-discount-wrapper">
+          <p class="trade-account"><a href="/account/login">Login</a> to view prices</p>
+        </div>
+        ';
+        ifelse='';
+        [/ekm:if]
+
+        {quickview}
+        <div class="quickview-btn-wrapper quickview-btn-wrapper_large-col trade-login-hide">
+          [ekm:nested_if]
+          iftype="EQUALS";
+          ifvalue="[has-options]";
+          ifvalue2="yes";
+          ifthen="
+          [ekm:nested_element]
+          element_reference="more_details_qv";
+          output_start="<a href="[url]" class="quickview-btn options_cta">";
+            output_end="</a>";
+          output_default="More details";
+          [/ekm:nested_element]
+          ";
+          ifelse="
+          [ekm:nested_element]
+          element_reference="add_to_cart_qv";
+          output_start="<a href="[add_to_cart_link-url]" class="quickview-btn options_cta">";
+            output_end="</a>";
+          output_default="Add to cart";
+          [/ekm:nested_element]
+          ";
+          [/ekm:nested_if]
+
+          <div class="qv-btn">[quickview]</div>
+        </div>
+        {/quickview}
+        {!quickview}
+
+        [ekm:if]
+        iftype='FEATURE_ACTIVE';
+        ifvalue='FEATURE-QUICKVIEW';
+        ifthen='
+        <div class="quickview-btn-wrapper quickview-btn-wrapper_large-col trade-login-hide" [ekm:nested_if]
+          iftype="EQUALS" ; ifvalue="[can_be_added_to_cart]" ; ifvalue2="no" ; ifthen="style=" display:none""; ifelse=""
+          ; [/ekm:nested_if]>
+          {stock-variants}
+          [ekm:nested_if]
+
+          iftype="GREATERTHAN";
+          ifvalue="[stock-variants]";
+          ifvalue2="0";
+          ifthen="
+          [ekm:nested_element]
+          element_reference="add_to_cart_qv";
+          output_start="<a href="[add_to_cart_link-url]" class="quickview-btn stock_cta">";
+            output_end="</a>";
+          output_default="Add to cart";
+          [/ekm:nested_element]
+          ";
+          ifelse="
+          [ekm:nested_element]
+          element_reference="out-of-stock-element";
+          output_start="<a href="[url]" class="quickview-btn oos-btn">";
+            output_end="</a><!--/.quickview-btn oos-btn-->";
+          output_default="Out of stock";
+          [/ekm:nested_element]
+          ";
+          [/ekm:nested_if]
+          {/stock-variants}
+        </div>
+        ';
+        ifelse='';
+        [/ekm:if]
+        {/!quickview}
+      </div><!-- /.flex-col .d-col-2 .t-col-2 .m-col-6 .prod-item -->
+      ';
+      output_end='
+    </div><!-- /.flex-grid .flex-justify-center .flex-wrap-wrap .prod-list .rvp-prod-list -->
+  </section><!-- /.rvp-products .container .xxl-margin-top-m .xxl-margin-top-d -->
+  ';
+  output_column_blank='';
+  show_hover_thumbnail='yes';
+  hover_thumbnail_fade='no';
+  [/ekm:showdata]
+
+
+  <footer class="footer-wrapper xl-margin-top-m xxl-margin-top-d">
+
+    [ekm:newsletter]
     output_start='
-        <section class="rvp-products container xxl-margin-top-m xxl-margin-top-d">	
-            [ekm:element]
-                show='yes';
-                allowed_types='text';
+    <section class="newsletter-signup container xl-padding-top-m xl-padding-btm-m xxl-padding-top-d">
+      <div class="newsletter-inner">
+        [ekm:nested_element]
+        show="yes";
+        allowed_types="text";
 
-                element_reference='recently-viewed-products-title';
-                edit_button='YES';
-                output_start='<h2 class="flex-display flex-justify-center section-title l-margin-btm-m l-margin-btm-d"><span>';
-                output_end='</span></h2><!-- /.flex-display .flex-justify-center .section-title .l-margin-btm-m .l-margin-btm-d -->';
-                element_name_default='Recently Viewed Products Title';
-                output_default='Recently Viewed';
-            [/ekm:element]
+        element_reference="newsletter-title";
+        edit_button="YES";
+        output_start="<h2 class="flex-display flex-justify-center newsletter-title">";
+          output_end="</h2><!-- /.flex-display .flex-justify-center .newsletter-title -->";
+        element_name_default="Newsletter Title";
+        output_default="Sign Up For Exclusive News &amp; Offers";
+        [/ekm:nested_element]
 
-            <div class="flex-grid flex-justify-center flex-wrap-wrap prod-list rvp-prod-list">
-    ';
-    output_item='
-                <div class="flex-col d-col-2 t-col-2 m-col-6 prod-item [ekm:if] iftype='FEATURE_ACTIVE'; ifvalue='FEATURE-QUICKVIEW'; ifthen='quickview-parent'; ifelse=''; [/ekm:if]">
-                    <div class="prod-item-image m-margin-btm-m m-margin-btm-d">
-                        {image}[image]{/image}
-                    </div><!-- /.prod-item-image .m-margin-btm-m m-margin-btm-d -->
+        [ekm:nested_element]
+        show="yes";
+        allowed_types="text";
 
-                    {name}
-						<div class="prod-item-name m-margin-top-m s-margin-top-d s-padding-btm-d">
-							<div class="prod-item-name-ellipsis">
-								[name]
-							</div><!-- /.prod-item-name-ellipsis -->
-						</div><!-- /.prod-item-name .m-margin-top-m s-margin-top-d s-padding-btm-d -->
-					{/name}
-
-
-                    {price}	
-						<div class="flex-display flex-align-baseline prod-price-wrapper s-margin-top-m s-margin-top-d trade-login-hide">
-							<div class="prod-item-price">
-								[price]
-							</div><!-- /.prod-item-price -->
-						</div><!-- /.flex-display .flex-align-baseline .prod-price-wrapper .s-margin-top-m .s-margin-top-d -->
-					{/price}
-					
-					[ekm:if]
-						iftype='PRICES_HIDDEN';
-						ifthen='
-							<div class="ekm-trade-discount-wrapper">
-								<p class="trade-account"><a href="/account/login">Login</a> to view prices</p>
-							</div>
-							';
-						ifelse='';
-					[/ekm:if]
-					
-					{quickview}
-				    <div class="quickview-btn-wrapper quickview-btn-wrapper_large-col trade-login-hide" >
-				    [ekm:nested_if]
-				            iftype="EQUALS";
-				            ifvalue="[has-options]";
-				            ifvalue2="yes";
-				            ifthen="
-				            [ekm:nested_element]
-				                element_reference="more_details_qv";
-				                output_start="<a href="[url]" class="quickview-btn options_cta" >";
-				                output_end="</a>";
-				                output_default="More details";
-				            [/ekm:nested_element]
-				            ";
-				            ifelse="
-				            [ekm:nested_element]
-				                element_reference="add_to_cart_qv";
-				                output_start="<a href="[add_to_cart_link-url]" class="quickview-btn options_cta" >";
-				                output_end="</a>";
-				                output_default="Add to cart";
-				            [/ekm:nested_element]
-				            ";
-				    [/ekm:nested_if]
-				        
-				    <div class="qv-btn">[quickview]</div>
-				    </div>
-				    {/quickview}
-					{!quickview}
-					
-					[ekm:if]
-					    iftype='FEATURE_ACTIVE';
-					    ifvalue='FEATURE-QUICKVIEW';
-					    ifthen='
-					    <div class="quickview-btn-wrapper quickview-btn-wrapper_large-col trade-login-hide" 
-					    [ekm:nested_if]
-					        iftype="EQUALS";
-					        ifvalue="[can_be_added_to_cart]";
-					        ifvalue2="no";
-					        ifthen="style="display:none"";
-					        ifelse="";
-					    [/ekm:nested_if]
-					    >
-					    {stock-variants}
-					        [ekm:nested_if]
-					        
-					            iftype="GREATERTHAN";
-					            ifvalue="[stock-variants]";
-					            ifvalue2="0";
-					            ifthen="
-					                [ekm:nested_element]
-					                    element_reference="add_to_cart_qv";
-					                    output_start="<a href="[add_to_cart_link-url]" class="quickview-btn stock_cta">";
-					                    output_end="</a>";
-					                    output_default="Add to cart";
-					                [/ekm:nested_element]
-					            ";
-					            ifelse="
-					                [ekm:nested_element]
-					                    element_reference="out-of-stock-element";
-					                    output_start="<a href="[url]" class="quickview-btn oos-btn" >";
-					                    output_end="</a><!--/.quickview-btn oos-btn-->";
-					                    output_default="Out of stock";
-					                [/ekm:nested_element]
-					            ";
-					        [/ekm:nested_if]
-					    {/stock-variants}
-					    </div>
-					    ';
-					    ifelse='';
-					    [/ekm:if]
-					{/!quickview}
-                </div><!-- /.flex-col .d-col-2 .t-col-2 .m-col-6 .prod-item -->
-	    ';
-    output_end='
-            </div><!-- /.flex-grid .flex-justify-center .flex-wrap-wrap .prod-list .rvp-prod-list -->
-        </section><!-- /.rvp-products .container .xxl-margin-top-m .xxl-margin-top-d -->
-    ';
-    output_column_blank='';
-	show_hover_thumbnail='yes';
-	    hover_thumbnail_fade='no';
-[/ekm:showdata]
+        element_reference="newsletter-text";
+        edit_button="YES";
+        output_start="<div class="flex-display flex-justify-center newsletter-text s-margin-top-m s-margin-top-d">";
+          output_end="</div>
+        <!-- /.flex-display .flex-justify-center .newsletter-text .s-margin-top-m .s-margin-top-d -->";
+        element_name_default="Newsletter Text";
+        output_default="Get the latest news on our products and more!";
+        [/ekm:nested_element]
+        ';
+        output_item='
 
 
-<footer class="footer-wrapper xl-margin-top-m xxl-margin-top-d">
+        <div class="newsletter-form l-margin-top-m m-margin-top-d">
+          <div class="flex-display newsletter-wrapper">
+            [email]
+            [signup_button]
+          </div><!-- /.flex-display .newsletter-wrapper -->
+        </div><!-- /.newsletter-form .l-margin-top-m -->
 
-	[ekm:newsletter]
-	    output_start='
-	    <section class="newsletter-signup container xl-padding-top-m xl-padding-btm-m xxl-padding-top-d">
-	    <div class="newsletter-inner">
-		[ekm:nested_element]
-			show="yes";
-			allowed_types="text";
-											
-			element_reference="newsletter-title";
-			edit_button="YES";
-			output_start="<h2 class="flex-display flex-justify-center newsletter-title">";
-			output_end="</h2><!-- /.flex-display .flex-justify-center .newsletter-title -->";
-			element_name_default="Newsletter Title";
-			output_default="Sign Up For Exclusive News &amp; Offers";
-		[/ekm:nested_element]
-		
-		[ekm:nested_element]
-			show="yes";
-			allowed_types="text";
-											
-			element_reference="newsletter-text";
-			edit_button="YES";
-			output_start="<div class="flex-display flex-justify-center newsletter-text s-margin-top-m s-margin-top-d">";
-			output_end="</div><!-- /.flex-display .flex-justify-center .newsletter-text .s-margin-top-m .s-margin-top-d -->";
-			element_name_default="Newsletter Text";
-			output_default="Get the latest news on our products and more!";
-		[/ekm:nested_element]
-	    	';
-	    output_item='
-	    
-	    
-		<div class="newsletter-form l-margin-top-m m-margin-top-d">
-			<div class="flex-display newsletter-wrapper">
-				[email]
-				[signup_button]	
-			</div><!-- /.flex-display .newsletter-wrapper -->
-		</div><!-- /.newsletter-form .l-margin-top-m -->
-	    
-	    ';
-	    output_end='
-			<p class="js-newsletterAlert"></p>
-			
-			<script>
-			    function newsletterSubmit( email ){
-			        var ELEMENT = document.querySelector( ".js-newsletterAlert" ),
-			            MESSAGE_SUCCESS = "Please check your inbox to confirm your subscription to our newsletter.",
-			            MESSAGE_FAILED  = "Please enter a valid email address";
-			            
-			        if ( !(/.+@.+\..+/).test( email ) ) {
-			            ELEMENT.textContent = MESSAGE_FAILED;
-			            return false;
-			        }
-			    
-			        ELEMENT.textContent = MESSAGE_SUCCESS;
-			    }
-			</script>	    
-	    </div></section>';
-	    textbox_attribute='maxlength="200"';
-	    email_textbox_attribute='placeholder="Example: example@email.com"';
-	    signupbutton_attribute='';
-	    signupbutton_image='';
-	    on_submit='newsletterSubmit'; 
-	[/ekm:newsletter]
+        ';
+        output_end='
+        <p class="js-newsletterAlert"></p>
 
-	<section class="footer-d flex-display flex-justify-center container xxl-padding-top-d">
-		<div class="flex-grid flex-justify-center flex-align-baseline d-col-10">
-			[ekm:show_webpages]
-				orderby='auto';
-				counterstart='auto';
-				groups='auto';
-				counterreset='auto';
-				output_start='
-					<div class="flex-col webpages-section d-col-4">
-						[ekm:nested_element]
-							show="yes";
-							allowed_types="plaintext";
-						
-							element_reference="webpages-title";
-							edit_button="YES";
-							output_start="<h2 class="m-margin-btm-d">";
-							output_end="</h2><!-- /.m-margin-btm-d -->";
-							element_name_default="Webpages Title";
-							output_default="Information";
-						[/ekm:nested_element]
-						
-						<ul class="flex-grid flex-wrap-wrap ul-reset webpages-list">
-							<li class="flex-col d-col-6 webpages-item s-padding-top-d">
-								<a href="index.asp">Home</a>
-							</li><!-- /.flex-col .d-col-6 .webpages-item .s-padding-top-d -->
-				';
-				output_item='
-							<li class="flex-col d-col-6 webpages-item s-padding-top-d">
-								[link]
-							</li><!-- /.flex-col .d-col-6 .webpages-item .s-padding-top-d -->
-		        ';
-				output_item_alternate='';
-				output_item_current='';
-				output_item_blank='';
-				output_end='
-							<li class="flex-col d-col-6 webpages-item s-padding-top-d"><a href="terms.asp">Terms</a></li><!-- /.flex-col .d-col-6 .webpages-item .s-padding-top-d -->
-							<li class="flex-col d-col-6 webpages-item s-padding-top-d"><a href="sitemap.asp">Sitemap</a></li><!-- /.flex-col .d-col-6 .webpages-item .s-padding-top-d -->
-							<li class="flex-col d-col-6 webpages-item s-padding-top-d"><a href="privacy.asp">Privacy</a></li><!-- /.flex-col .d-col-6 .webpages-item .s-padding-top-d -->
-						</ul><!-- /.flex-grid .flex-wrap-wrap .ul-reset .webpages-list -->
-					</div><!-- /.flex-col .webpages-section .d-col-4 -->
-				';
-			[/ekm:show_webpages]
-			
-			[ekm:element]
-				show='yes';
-				allowed_types='text,html';
-			
-				element_reference='store-info-area';
-				edit_button='YES';
-				output_start='
-					<div class="flex-col d-col-4 welcome-area">
-						[ekm:nested_element]
-							show="yes";
-							allowed_types="plaintext";
-						
-							element_reference="store-info-title";
-							edit_button="YES";
-							output_start="<h2 class="m-margin-btm-d">";
-							output_end="</h2><!-- /.m-margin-btm-d -->";
-							element_name_default="Store Information Title";
-							output_default="Store Information";
-						[/ekm:nested_element]
-				';
-				output_end='
-					</div><!-- /.flex-col .d-col-4 .welcome-area -->
-				';
-				element_name_default='Store Information Section';
-				output_default='Here is some text about my store such as delivery, returns and more.';
-			[/ekm:element]
-			
-			[ekm:element]
-				show='yes';
-				allowed_types='text,html';
-			
-				element_reference='contact-section';
-				edit_button='YES';
-				output_start='
-					<div class="flex-col d-col-4 contact-section">
-						[ekm:nested_element]
-							show="yes";
-							allowed_types="plaintext";
-						
-							element_reference="contact-section-title";
-							edit_button="YES";
-							output_start="<h2 class="m-margin-btm-d">";
-							output_end="</h2><!-- /.m-margin-btm-d -->";
-							element_name_default="Contact Section Title";
-							output_default="Get In Touch";
-						[/ekm:nested_element]
-				';
-				output_end='
-					</div><!-- /.flex-col .d-col-4 .contact-section -->
-				';
-				element_name_default='Get In Touch Section';
-				output_default='
-						<p>Your Business, 123 Your Address, Town, AB12 3CD</p>
-					
-						<p>01234 567890 - <a href="mailto:info@email.com">info@email.com</a></p>
-				';
-			[/ekm:element]
+        <script>
+          function newsletterSubmit(email) {
+            var ELEMENT = document.querySelector(".js-newsletterAlert"),
+              MESSAGE_SUCCESS = "Please check your inbox to confirm your subscription to our newsletter.",
+              MESSAGE_FAILED = "Please enter a valid email address";
 
-					[ekm:element]
-			show='yes';
-			allowed_types='image';
-		
-			element_reference='food-rating-section';
-			edit_button='YES';
-			output_start='
-				<div class="flex-col d-col-3 food-section">
-			';
-			output_end='
-					</div>
-			';
-			element_name_default='';
-			output_default='';
-		[/ekm:element]
+            if (!(/.+@.+\..+/).test(email)) {
+              ELEMENT.textContent = MESSAGE_FAILED;
+              return false;
+            }
+
+            ELEMENT.textContent = MESSAGE_SUCCESS;
+          }
+        </script>
+      </div>
+    </section>';
+    textbox_attribute='maxlength="200"';
+    email_textbox_attribute='placeholder="Example: example@email.com"';
+    signupbutton_attribute='';
+    signupbutton_image='';
+    on_submit='newsletterSubmit';
+    [/ekm:newsletter]
+
+    <section class="footer-d flex-display flex-justify-center container xxl-padding-top-d">
+      <div class="flex-grid flex-justify-center flex-align-baseline d-col-10">
+        [ekm:show_webpages]
+        orderby='auto';
+        counterstart='auto';
+        groups='auto';
+        counterreset='auto';
+        output_start='
+        <div class="flex-col webpages-section d-col-4">
+          [ekm:nested_element]
+          show="yes";
+          allowed_types="plaintext";
+
+          element_reference="webpages-title";
+          edit_button="YES";
+          output_start="<h2 class="m-margin-btm-d">";
+            output_end="</h2><!-- /.m-margin-btm-d -->";
+          element_name_default="Webpages Title";
+          output_default="Information";
+          [/ekm:nested_element]
+
+          <ul class="flex-grid flex-wrap-wrap ul-reset webpages-list">
+            <li class="flex-col d-col-6 webpages-item s-padding-top-d">
+              <a href="index.asp">Home</a>
+            </li><!-- /.flex-col .d-col-6 .webpages-item .s-padding-top-d -->
+            ';
+            output_item='
+            <li class="flex-col d-col-6 webpages-item s-padding-top-d">
+              [link]
+            </li><!-- /.flex-col .d-col-6 .webpages-item .s-padding-top-d -->
+            ';
+            output_item_alternate='';
+            output_item_current='';
+            output_item_blank='';
+            output_end='
+            <li class="flex-col d-col-6 webpages-item s-padding-top-d"><a href="terms.asp">Terms</a></li>
+            <!-- /.flex-col .d-col-6 .webpages-item .s-padding-top-d -->
+            <li class="flex-col d-col-6 webpages-item s-padding-top-d"><a href="sitemap.asp">Sitemap</a></li>
+            <!-- /.flex-col .d-col-6 .webpages-item .s-padding-top-d -->
+            <li class="flex-col d-col-6 webpages-item s-padding-top-d"><a href="privacy.asp">Privacy</a></li>
+            <!-- /.flex-col .d-col-6 .webpages-item .s-padding-top-d -->
+          </ul><!-- /.flex-grid .flex-wrap-wrap .ul-reset .webpages-list -->
+        </div><!-- /.flex-col .webpages-section .d-col-4 -->
+        ';
+        [/ekm:show_webpages]
+
+        [ekm:element]
+        show='yes';
+        allowed_types='text,html';
+
+        element_reference='store-info-area';
+        edit_button='YES';
+        output_start='
+        <div class="flex-col d-col-4 welcome-area">
+          [ekm:nested_element]
+          show="yes";
+          allowed_types="plaintext";
+
+          element_reference="store-info-title";
+          edit_button="YES";
+          output_start="<h2 class="m-margin-btm-d">";
+            output_end="</h2><!-- /.m-margin-btm-d -->";
+          element_name_default="Store Information Title";
+          output_default="Store Information";
+          [/ekm:nested_element]
+          ';
+          output_end='
+        </div><!-- /.flex-col .d-col-4 .welcome-area -->
+        ';
+        element_name_default='Store Information Section';
+        output_default='Here is some text about my store such as delivery, returns and more.';
+        [/ekm:element]
+
+        [ekm:element]
+        show='yes';
+        allowed_types='text,html';
+
+        element_reference='contact-section';
+        edit_button='YES';
+        output_start='
+        <div class="flex-col d-col-4 contact-section">
+          [ekm:nested_element]
+          show="yes";
+          allowed_types="plaintext";
+
+          element_reference="contact-section-title";
+          edit_button="YES";
+          output_start="<h2 class="m-margin-btm-d">";
+            output_end="</h2><!-- /.m-margin-btm-d -->";
+          element_name_default="Contact Section Title";
+          output_default="Get In Touch";
+          [/ekm:nested_element]
+          ';
+          output_end='
+        </div><!-- /.flex-col .d-col-4 .contact-section -->
+        ';
+        element_name_default='Get In Touch Section';
+        output_default='
+        <p>Your Business, 123 Your Address, Town, AB12 3CD</p>
+
+        <p>01234 567890 - <a href="mailto:info@email.com">info@email.com</a></p>
+        ';
+        [/ekm:element]
+
+        [ekm:element]
+        show='yes';
+        allowed_types='image';
+
+        element_reference='food-rating-section';
+        edit_button='YES';
+        output_start='
+        <div class="flex-col d-col-3 food-section">
+          ';
+          output_end='
+        </div>
+        ';
+        element_name_default='';
+        output_default='';
+        [/ekm:element]
 
 
-		</div><!-- /.flex-grid .flex-justify-center .flex-align-baseline .d-col-10 -->
-	</section><!-- /.footer-d .flex-display .flex-justify-center .container .xxl-padding-top-d -->
-	
-	
-	<section class="footer-m">
-		[ekm:show_webpages]
-			orderby='auto';
-			counterstart='auto';
-			groups='auto';
-			counterreset='auto';
-			output_start='
-				<div class="global-acdn-wrapper footer-acdn-wrapper">
-					[ekm:nested_element]
-						show="yes";
-						allowed_types="plaintext";
-					
-						element_reference="webpages-title";
-						edit_button="YES";
-						output_start="<a class="global-acdn-header footer-acdn-header" href="#">";
-						output_end="</a><!-- /.global-acdn-header .footer-acdn-header -->";
-						element_name_default="Webpages Title";
-						output_default="Information";
-					[/ekm:nested_element]
+      </div><!-- /.flex-grid .flex-justify-center .flex-align-baseline .d-col-10 -->
+    </section><!-- /.footer-d .flex-display .flex-justify-center .container .xxl-padding-top-d -->
 
-					<div class="global-acdn-content footer-acdn-content prod-desc xl-padding-btm-m">
-						<ul class="flex-grid flex-align-center flex-wrap-wrap ul-reset webpages-list">
-							<li class="flex-col m-col-6 webpages-item">
-		                        <a href="index.asp">Home</a>
-		                    </li><!-- /.flex-col .m-col-6 .webpages-item -->
-			';
-			output_item='
-		                    <li class="flex-col m-col-6 webpages-item">
-		                        [link]
-		                    </li><!-- /.flex-col .m-col-6 .webpages-item -->
-	        ';
-			output_item_alternate='';
-			output_item_current='';
-			output_item_blank='';
-			output_end='
-							<li class="flex-col m-col-6 webpages-item"><a href="terms.asp">Terms</a></li><!-- /.flex-col .m-col-6 .webpages-item -->
-						    <li class="flex-col m-col-6 webpages-item"><a href="sitemap.asp">Sitemap</a></li><!-- /.flex-col .m-col-6 .webpages-item -->
-						    <li class="flex-col m-col-6 webpages-item"><a href="privacy.asp">Privacy</a></li><!-- /.flex-col .m-col-6 .webpages-item -->
-						</ul><!-- /.flex-grid .flex-align-center .flex-wrap-wrap .ul-reset .webpages-list -->
-					</div><!-- /.global-acdn-content .footer-acdn-content .prod-desc .xl-padding-btm-m -->
-				</div><!-- /.global-acdn-wrapper .footer-acdn-wrapper -->
-			';
-		[/ekm:show_webpages]
-		
-		[ekm:element]
-			show='yes';
-			allowed_types='text,html';
-		
-			element_reference='store-info-area';
-			edit_button='YES';
-			output_start='
-				<div class="global-acdn-wrapper footer-acdn-wrapper">
-					[ekm:nested_element]
-						show="yes";
-						allowed_types="plaintext";
-					
-						element_reference="store-info-title";
-						edit_button="YES";
-						output_start="<a class="global-acdn-header footer-acdn-header" href="#">";
-						output_end="</a><!-- /.global-acdn-header .footer-acdn-header -->";
-						element_name_default="Store Information Title";
-						output_default="Store Information";
-					[/ekm:nested_element]
-					
-					<div class="global-acdn-content footer-acdn-content prod-desc xl-padding-btm-m">
-			';
-			output_end='
-					</div><!-- /.global-acdn-content .footer-acdn-content .prod-desc .xl-padding-btm-m -->
-				</div><!-- /.global-acdn-wrapper .footer-acdn-wrapper -->		
-			';
-			element_name_default='Store Information Section';
-			output_default='Here is some text about my store such as delivery, returns and more.';
-		[/ekm:element]
-		
-		[ekm:element]
-			show='yes';
-			allowed_types='text,html';
-		
-			element_reference='contact-section';
-			edit_button='YES';
-			output_start='
-				<div class="global-acdn-wrapper footer-acdn-wrapper">
-					[ekm:nested_element]
-						show="yes";
-						allowed_types="plaintext";
-					
-						element_reference="contact-section-title";
-						edit_button="YES";
-						output_start="<a class="global-acdn-header footer-acdn-header" href="#">";
-						output_end="</a><!-- /.global-acdn-header .footer-acdn-header -->";
-						element_name_default="Contact Section Title";
-						output_default="Get In Touch";
-					[/ekm:nested_element]
-					
-					<div class="global-acdn-content footer-acdn-content prod-desc xl-padding-btm-m">
-			
-			';
-			output_end='
-					</div><!-- /.global-acdn-content .footer-acdn-content .prod-desc .xl-padding-btm-m -->
-				</div><!-- /.global-acdn-wrapper .footer-acdn-wrapper -->		
-			';
-			element_name_default='Get In Touch Section';
-			output_default='
-				<p>Your Business, 123 Your Address, Town, AB12 3CD</p>
-				
-				<p>01234 567890 - <a href="mailto:info@email.com">info@email.com</a></p>
-			';
-		[/ekm:element]
 
-		[ekm:element]
-			show='yes';
-			allowed_types='image';
-		
-			element_reference='food-rating-section';
-			edit_button='YES';
-			output_start='
-				<div class="global-acdn-wrapper footer-acdn-wrapper">
-					<div class="global-acdn-content footer-acdn-content prod-desc xl-padding-btm-m">
-			
-			';
-			output_end='
-					</div><!-- /.global-acdn-content .footer-acdn-content .prod-desc .xl-padding-btm-m -->
-				</div><!-- /.global-acdn-wrapper .footer-acdn-wrapper -->		
-			';
-			element_name_default='';
-			output_default='';
-		[/ekm:element]
-	</section><!-- /.footer-m -->
+    <section class="footer-m">
+      [ekm:show_webpages]
+      orderby='auto';
+      counterstart='auto';
+      groups='auto';
+      counterreset='auto';
+      output_start='
+      <div class="global-acdn-wrapper footer-acdn-wrapper">
+        [ekm:nested_element]
+        show="yes";
+        allowed_types="plaintext";
 
-    
-	<section class="copyright-section container xl-padding-btm-m xl-padding-btm-d xxl-margin-top-d xxl-margin-top-m">
-		[ekm:social]
-			name='default';
-			output_start='<div class="social-icons xl-margin-top-m xl-margin-btm-d">';
-			widget_start='<div>';
-			widget_end='</div>';
-			output_end='</div><!-- /.social-icons .xl-margin-top-m .xl-margin-btm-d -->';
-		[/ekm:social]
-		
-		[ekm:card_logos]
-			output_start='<div class="card-logos container xl-margin-top-m xl-margin-btm-d">';
-			output_end='</div><!-- /.card-logos .container .xl-margin-top-m .xl-margin-btm-d -->';
-		[/ekm:card_logos]
-		      
-            <!-- TrustBox widget - Review Collector --> <div class="trustpilot-widget" style="margin-bottom:4rem;" data-locale="en-GB" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="5b185e17152db30001e7812a" data-style-height="52px" data-style-width="100%"> <a href="https://uk.trustpilot.com/review/myexoticfruit.com" target="_blank" rel="noopener">Trustpilot</a> </div> <!-- End TrustBox widget -->
-		<div class="copyright container xl-margin-top-m xl-margin-btm-d">
+        element_reference="webpages-title";
+        edit_button="YES";
+        output_start="<a class="global-acdn-header footer-acdn-header" href="#">";
+          output_end="</a><!-- /.global-acdn-header .footer-acdn-header -->";
+        element_name_default="Webpages Title";
+        output_default="Information";
+        [/ekm:nested_element]
 
-			[ekm:element]
-				element_reference='copyright';
-				edit_button='YES';
-				output_start='';
-				output_end='';
-				element_name_default='copyright';
-				output_default='
-					[ekm:nested_if]
-						iftype="EQUALS";
-						ifvalue="[ekm:shop_contact_details]output_item='{copyright}[copyright]{/copyright}';[/ekm:shop_contact_details]";
-						ifvalue2="";
-						ifthen="&copy; [ekm:sitename][/ekm:sitename]. All Rights Reserved.";
-						ifelse="
-							[ekm:shop_contact_details]
-								output_start='<span class="ekmps-copyright">';
-								output_item='
-									{copyright}
-										[copyright]
-									{/copyright}
-								';
-								output_end='</span><!-- /.ekmps-copyright -->';
-							[/ekm:shop_contact_details]
-						";
-					[/ekm:nested_if]
-				';
-			[/ekm:element]
-							
-			[ekm:poweredby]
-				output_start='&nbsp;/&nbsp;&nbsp;';
-				output_end='';
-			[/ekm:poweredby]
-		</div><!-- /.copyright .container .xl-margin-top-m .xl-margin-btm-d -->
-		
-		[ekm:multicurrency]
-			output_start='<div class="currency-dropdown xl-margin-top-m">';
-			output_end='</div><!-- /.currency-dropdown .xl-margin-top-m -->';
-			displaytype='dropdown';
-		[/ekm:multicurrency]
-	</section><!-- /.copyright-section .container .xl-padding-btm-m xl-padding-btm-d .xxl-margin-top-d -->
-</footer><!-- /.footer-wrapper .xl-margin-top-m .xxl-margin-top-d -->
+        <div class="global-acdn-content footer-acdn-content prod-desc xl-padding-btm-m">
+          <ul class="flex-grid flex-align-center flex-wrap-wrap ul-reset webpages-list">
+            <li class="flex-col m-col-6 webpages-item">
+              <a href="index.asp">Home</a>
+            </li><!-- /.flex-col .m-col-6 .webpages-item -->
+            ';
+            output_item='
+            <li class="flex-col m-col-6 webpages-item">
+              [link]
+            </li><!-- /.flex-col .m-col-6 .webpages-item -->
+            ';
+            output_item_alternate='';
+            output_item_current='';
+            output_item_blank='';
+            output_end='
+            <li class="flex-col m-col-6 webpages-item"><a href="terms.asp">Terms</a></li>
+            <!-- /.flex-col .m-col-6 .webpages-item -->
+            <li class="flex-col m-col-6 webpages-item"><a href="sitemap.asp">Sitemap</a></li>
+            <!-- /.flex-col .m-col-6 .webpages-item -->
+            <li class="flex-col m-col-6 webpages-item"><a href="privacy.asp">Privacy</a></li>
+            <!-- /.flex-col .m-col-6 .webpages-item -->
+          </ul><!-- /.flex-grid .flex-align-center .flex-wrap-wrap .ul-reset .webpages-list -->
+        </div><!-- /.global-acdn-content .footer-acdn-content .prod-desc .xl-padding-btm-m -->
+      </div><!-- /.global-acdn-wrapper .footer-acdn-wrapper -->
+      ';
+      [/ekm:show_webpages]
 
-    
+      [ekm:element]
+      show='yes';
+      allowed_types='text,html';
+
+      element_reference='store-info-area';
+      edit_button='YES';
+      output_start='
+      <div class="global-acdn-wrapper footer-acdn-wrapper">
+        [ekm:nested_element]
+        show="yes";
+        allowed_types="plaintext";
+
+        element_reference="store-info-title";
+        edit_button="YES";
+        output_start="<a class="global-acdn-header footer-acdn-header" href="#">";
+          output_end="</a><!-- /.global-acdn-header .footer-acdn-header -->";
+        element_name_default="Store Information Title";
+        output_default="Store Information";
+        [/ekm:nested_element]
+
+        <div class="global-acdn-content footer-acdn-content prod-desc xl-padding-btm-m">
+          ';
+          output_end='
+        </div><!-- /.global-acdn-content .footer-acdn-content .prod-desc .xl-padding-btm-m -->
+      </div><!-- /.global-acdn-wrapper .footer-acdn-wrapper -->
+      ';
+      element_name_default='Store Information Section';
+      output_default='Here is some text about my store such as delivery, returns and more.';
+      [/ekm:element]
+
+      [ekm:element]
+      show='yes';
+      allowed_types='text,html';
+
+      element_reference='contact-section';
+      edit_button='YES';
+      output_start='
+      <div class="global-acdn-wrapper footer-acdn-wrapper">
+        [ekm:nested_element]
+        show="yes";
+        allowed_types="plaintext";
+
+        element_reference="contact-section-title";
+        edit_button="YES";
+        output_start="<a class="global-acdn-header footer-acdn-header" href="#">";
+          output_end="</a><!-- /.global-acdn-header .footer-acdn-header -->";
+        element_name_default="Contact Section Title";
+        output_default="Get In Touch";
+        [/ekm:nested_element]
+
+        <div class="global-acdn-content footer-acdn-content prod-desc xl-padding-btm-m">
+
+          ';
+          output_end='
+        </div><!-- /.global-acdn-content .footer-acdn-content .prod-desc .xl-padding-btm-m -->
+      </div><!-- /.global-acdn-wrapper .footer-acdn-wrapper -->
+      ';
+      element_name_default='Get In Touch Section';
+      output_default='
+      <p>Your Business, 123 Your Address, Town, AB12 3CD</p>
+
+      <p>01234 567890 - <a href="mailto:info@email.com">info@email.com</a></p>
+      ';
+      [/ekm:element]
+
+      [ekm:element]
+      show='yes';
+      allowed_types='image';
+
+      element_reference='food-rating-section';
+      edit_button='YES';
+      output_start='
+      <div class="global-acdn-wrapper footer-acdn-wrapper">
+        <div class="global-acdn-content footer-acdn-content prod-desc xl-padding-btm-m">
+
+          ';
+          output_end='
+        </div><!-- /.global-acdn-content .footer-acdn-content .prod-desc .xl-padding-btm-m -->
+      </div><!-- /.global-acdn-wrapper .footer-acdn-wrapper -->
+      ';
+      element_name_default='';
+      output_default='';
+      [/ekm:element]
+    </section><!-- /.footer-m -->
+
+
+    <section class="copyright-section container xl-padding-btm-m xl-padding-btm-d xxl-margin-top-d xxl-margin-top-m">
+      [ekm:social]
+      name='default';
+      output_start='<div class="social-icons xl-margin-top-m xl-margin-btm-d">';
+        widget_start='<div>';
+          widget_end='</div>';
+        output_end='</div><!-- /.social-icons .xl-margin-top-m .xl-margin-btm-d -->';
+      [/ekm:social]
+
+      [ekm:card_logos]
+      output_start='<div class="card-logos container xl-margin-top-m xl-margin-btm-d">';
+        output_end='</div><!-- /.card-logos .container .xl-margin-top-m .xl-margin-btm-d -->';
+      [/ekm:card_logos]
+
+      <!-- TrustBox widget - Review Collector -->
+      <div class="trustpilot-widget" style="margin-bottom:4rem;" data-locale="en-GB"
+        data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="5b185e17152db30001e7812a"
+        data-style-height="52px" data-style-width="100%"> <a href="https://uk.trustpilot.com/review/myexoticfruit.com"
+          target="_blank" rel="noopener">Trustpilot</a> </div> <!-- End TrustBox widget -->
+      <div class="copyright container xl-margin-top-m xl-margin-btm-d">
+
+        [ekm:element]
+        element_reference='copyright';
+        edit_button='YES';
+        output_start='';
+        output_end='';
+        element_name_default='copyright';
+        output_default='
+        [ekm:nested_if]
+        iftype="EQUALS";
+        ifvalue="[ekm:shop_contact_details]output_item='{copyright}[copyright]{/copyright}';[/ekm:shop_contact_details]";
+        ifvalue2="";
+        ifthen="&copy; [ekm:sitename][/ekm:sitename]. All Rights Reserved.";
+        ifelse="
+        [ekm:shop_contact_details]
+        output_start='<span class="ekmps-copyright">';
+          output_item='
+          {copyright}
+          [copyright]
+          {/copyright}
+          ';
+          output_end='</span><!-- /.ekmps-copyright -->';
+        [/ekm:shop_contact_details]
+        ";
+        [/ekm:nested_if]
+        ';
+        [/ekm:element]
+
+        [ekm:poweredby]
+        output_start='&nbsp;/&nbsp;&nbsp;';
+        output_end='';
+        [/ekm:poweredby]
+      </div><!-- /.copyright .container .xl-margin-top-m .xl-margin-btm-d -->
+
+      [ekm:multicurrency]
+      output_start='<div class="currency-dropdown xl-margin-top-m">';
+        output_end='</div><!-- /.currency-dropdown .xl-margin-top-m -->';
+      displaytype='dropdown';
+      [/ekm:multicurrency]
+    </section><!-- /.copyright-section .container .xl-padding-btm-m xl-padding-btm-d .xxl-margin-top-d -->
+  </footer><!-- /.footer-wrapper .xl-margin-top-m .xxl-margin-top-d -->
+
+
 </body><!-- /.i-[ekm:industry_variant_name] -->
 
 
