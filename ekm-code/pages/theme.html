@@ -167,25 +167,16 @@
 
             <div class="nav-content-wrapper-m">
               [ekm:category_menu]
-              levels='3';
+              levels='1';
               location='0';
               order_by='orderlocation, name';
               edit_buttons='yes';
               limit='99';
-              level_1_limit='98';
-              level_2_limit='97';
               image_width='100';
               image_height='100';
               output_start='<ul class="menu">';
                 output_item='<li>[link][children]</li>';
                 output_end='</ul>';
-              output_level_1_start='<ul class="submenu">';
-                output_level_1_item='<li>[link][children]</li>';
-                output_level_1_end='<li><a href="[parent_url]">View All</a></li>
-              </ul>';
-              output_level_2_start='<ul class="subsubmenu">';
-                output_level_2_item='<li>[link]</li>';
-                output_level_2_end='</ul>';
               exclude_list='';
               [/ekm:category_menu]
 
@@ -340,13 +331,11 @@
       </div><!-- /.flex-display .header-bar -->
 
       [ekm:category_menu]
-      levels='3';
+      levels='1';
       editbuttons='YES';
       location='0';
       orderby='orderlocation';
       limit='999';
-      level_1_limit='999';
-      level_2_limit='10';
       output_start='<nav class="nav-d">
         <ul class="flex-display flex-justify-center flex-wrap-wrap ul-reset nav-items container d-grid-gap-3">
           ';
@@ -359,80 +348,7 @@
         </ul><!-- /.flex-grid .flex-justify-center .flex-wrap-wrap ul-reset nav-items -->
       </nav><!-- .nav-d .nav-slide -->
       ';
-      output_level_1_start='
-      <div class="flex-display flex-wrap-wrap container">
-        <ul class="ul-reset flex-display flex-wrap-wrap d-col-8">';
-          output_level_1_item='<div class="mega-menu-item d-col-4">
-            <li class="mega-menu-item-heading">[link]</li>[children]
-          </div><!--/.mega-menu-item -->';
-          output_level_1_end='<div class="mega-menu-item"><a href="[parent_url]">View All</a></li></div>
-        </ul><!--/.ul-reset .flex-grid .flex-wrap-wrap -->
-        <div class="mega-menu-image-promo d-col-4">
-          <div class="header-promo-area" style="position: relative; overflow: hidden;">
-
-            <!-- Promo Image -->
-            [ekm:nested_element]
-            show="yes";
-            allowed_types="image, html";
-            element_reference="id=[parent_name]_img";
-            edit_button="yes";
-            output_start="";
-            output_end="";
-            element_name_default="mega-menu-promo-image";
-            output_default="<img src=''>";
-            [/ekm:nested_element]
-
-            <!-- Overlay Content Wrapper -->
-            <div class="header-promo-overlay"
-              style="position: absolute; bottom: 10%; left: 10%; z-index: 2; color: #fff;">
-
-              <!-- Title -->
-              [ekm:nested_element]
-              show="yes";
-              allowed_types="html";
-              element_reference="id=[parent_name]_title";
-              edit_button="yes";
-              output_start="<div class='section-title light-text'>";
-                output_end="</div>";
-              element_name_default="Promo Title";
-              output_default="Your Promo Title";
-              [/ekm:nested_element]
-
-              <!-- Subtitle -->
-              [ekm:nested_element]
-              show="yes";
-              allowed_types="html";
-              element_reference="id=[parent_name]_subtitle";
-              edit_button="yes";
-              output_start="<div class='body-text light-text'>";
-                output_end="</div>";
-              element_name_default="Promo Subtitle";
-              output_default="Optional subtitle text here.";
-              [/ekm:nested_element]
-
-              <!-- Button -->
-              [ekm:nested_element]
-              show="yes";
-              allowed_types="html";
-              element_reference="id=[parent_name]_button";
-              edit_button="yes";
-              output_start="<div class="btn light">";
-                output_end="</div>";
-                element_name_default="Promo Button";
-                output_default="Shop Now";
-                [/ekm:nested_element]
-
-              </div> <!--/.header-promo-overlay-->
-
-            </div> <!--/.header-promo-area-->
-          </div> <!--/.mega-menu-image-promo-->
-        </div><!-- /.flex-display flex-wrap-wrap container -->
-        ';
-        output_level_2_start='<ul class="sub-menu ul-reset">';
-          output_level_2_item='<li class="sub-menu-item ">[link]</li>';
-          output_level_2_end='<li class="sub-menu-item"><a href="[parent_url]">View All</a></li>
-        </ul>';
-        [/ekm:category_menu]
+      [/ekm:category_menu]
     </section><!-- /.header-section .nav-btns-section-m -->
   </header><!-- /.sticky-header -->
   <!-- Mobile Navigation JavaScript Start -->
@@ -507,7 +423,7 @@
   </script>
   <!-- Mobile Navigation JavaScript End -->
 
-  <main role="main" class="main-content-[ekm:page_type][/ekm:page_type] main-content">
+  <main class="main-content-[ekm:page_type][/ekm:page_type] main-content">
     [ekm:content]
   </main><!-- /.main-content-[ekm:page_type][/ekm:page_type] .main-content -->
 
