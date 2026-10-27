@@ -115,7 +115,8 @@
         output_row_start='';
         output_column_start='';
         output_item='
-        <li class="visible flex-col d-col-2 t-col-3 m-col-6 sub-category-col sub-category-item sub-category-item-[counter]">
+        <li
+          class="visible flex-col d-col-2 t-col-3 m-col-6 sub-category-col sub-category-item sub-category-item-[counter]">
           {image}
           [editbuttons]
           <a href="[url]">
@@ -307,7 +308,7 @@
     location='auto';
 
     cols='1';
-    rows='96';
+    rows='16';
     page_navigation='yes';
     counterreset='';
 
@@ -668,6 +669,71 @@
     [/ekm:showdata]
   </section><!-- /.flex-display .flex-wrap-wrap .flex-align-start .category-prod-section .xxl-margin-top-d -->
 
+  <section class="mid-category-wrapper xxl-padding-top-m xxl-padding-top-d container">
+    [ekm:element]
+    show='yes';
+    allowed_types='text';
+    element_reference='hp-category-title';
+    edit_button='YES';
+    output_start='<h2
+      class="flex-display flex-justify-left section-title l-padding-right l-margin-btm-m l-margin-btm-d"><span>';
+        output_end='</span></h2>
+    <!-- /.flex-display .flex-justify-left .section-title .l-margin-btm-m .l-margin-btm-d -->';
+    element_name_default='HP Category Title';
+    output_default='Popular Categories';
+    [/ekm:element]
+
+    <div class="category-splider splide">
+      <div class="splide__track">
+        <ul class="splide__list mid-category-container">
+          [ekm:showdata]
+
+          data='categories';
+          location='36';
+
+          cols='1';
+          rows='100';
+          counterreset='';
+          page_navigation='no';
+
+          orderby='id ASC';
+          skiprecords='0';
+          excludelist='';
+          includelist='';
+
+          editbuttons='YES';
+
+          image_ratio='500';
+          image_width='auto';
+          image_height='auto';
+
+          font_formatting='no';
+
+          output_start='';
+          output_row_start='';
+          output_column_start='';
+          output_item='
+          <li class="splide__slide hp-category-[counter] hp-category">
+            <div class="hp-category-img-[counter] hp-category-img">
+              [image]
+            </div>
+
+            <div class="body-text dark-text center-text s-margin-top-d s-margin-top-m">
+              [name]
+            </div>
+          </li>';
+          output_column_end='';
+          output_row_end='';
+          output_end='';
+
+          output_column_blank='';
+
+          [/ekm:showdata]
+        </ul>
+      </div><!-- /.splide__track -->
+    </div><!-- /.splide -->
+  </section><!-- /.promo-banner-wrapper .xxl-padding-top-m .xxl-padding-top-d -->
+
   [ekm:showdata]
   data='recentlyviewedproducts';
   location='auto';
@@ -815,4 +881,52 @@
   show_hover_thumbnail='yes';
   hover_thumbnail_fade='no';
   [/ekm:showdata]
+
+
+<script>
+
+  document.addEventListener('DOMContentLoaded', function () {
+    // Initialises the category promo slider
+    new Splide('.category-splider', {
+      type: 'loop',
+      perPage: 6,
+      gap: 20,
+      pagination: false,
+      breakpoints: {
+        768: {
+          perPage: 3,
+        },
+        480: {
+          perPage: 1,
+        }
+      },
+    }).mount();
+
+    // Initialises the category splider boxes
+    new Splide('.category-splider-boxes', {
+      type: 'slide',
+      perPage: 3,
+      perMove: 1,
+      gap: 20,
+      pagination: false,
+      arrows: true,
+      trimSpace: false,
+      rewind: true,
+      autoplay: false,
+      interval: 4000,
+      drag: true,
+      breakpoints: {
+        1200: {
+          perPage: 3,
+        },
+        992: {
+          perPage: 2,
+        },
+        768: {
+          perPage: 1,
+        },
+      },
+    }).mount();
+  });
+</script>
 </article><!-- /.main-content -->
