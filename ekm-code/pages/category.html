@@ -89,17 +89,65 @@
     });
   </script>
 
+  <!-- 
+  for whatever reason, EKM decides that when they "fail to find a category" they tell you in BOLD TEXT 
+  you'd assume this is helpful, but in actuality it is finding all the categories it should AND printing an error for each.
+  -->
+  <div class="hide-errors">
+    [ekm:showdata]
+    tag_hide_toggle='yes';
+    data='categories';
+    location='auto';
+    cols='1';
+    rows='96';
+    page_navigation='yes';
+    orderby='orderlocation, name';
+    editbuttons='YES';
+    image_ratio='550';
+    image_width='auto';
+    image_height='auto';
+    font_formatting='no';
+    ' Output Format
+    header_title_text='';
+    output_start='
+    <section class="sub-categories ekm-section-category-categories container xl-margin-top-m xl-margin-top-d">
+      <ul class="flex-grid flex-wrap-wrap flex-justify-center ul-reset sub-categories-list">';
+        output_row_start='';
+        output_column_start='';
+        output_item='
+        <li class="visible flex-col d-col-2 t-col-3 m-col-6 sub-category-col sub-category-item sub-category-item-[counter]">
+          {image}
+          [editbuttons]
+          <a href="[url]">
+            <div class="sub-category-image ekm-subcategory-image m-margin-btm-m m-margin-btm-d">
+              <img itemprop="image" src="[image-url]" alt="[name-NOEDIT-NOLINK]" [image-badge_attributes]>
+            </div><!-- /.sub-category-image .ekm-subcategory-image .m-margin-btm-m .s-margin-btm-d -->
+            <div class="sub-category-name">
+              [name-NOEDIT-NOLINK]
+            </div><!-- /.sub-category-name -->
+          </a>
+          {/image}
 
-  [ekm:element]
-  show='yes';
-  allowed_types='html';
-  element_reference='[ekm:categoryid][/ekm:categoryid]_top-10';
-  edit_button='YES';
-  output_start='';
-  output_end='';
-  element_name_default='';
-  output_default='';
-  [/ekm:element]
+          {!image}
+          [editbuttons]
+          <a href="[url]">
+            <div class="sub-category-name">
+              [name-NOEDIT-NOLINK]
+            </div><!-- /.sub-category-name .s-padding-top-m .s-padding-top-d -->
+          </a>
+          {/!image}
+        </li>
+        <!-- /.flex-col .m-col-6 .d-col-2 .t-col-3 .sub-category-col .sub-category-item .sub-category-item-[counter] -->
+        ';
+        output_column_end='';
+        output_row_end='';
+        output_end='
+      </ul><!-- /.flex-grid .flex-wrap-wrap .flex-justify-center .flex-align-center .ul-reset .sub-categories-list -->
+    </section><!-- /.sub-categories .ekm-section-category-categories .container .xl-margin-top-m .xl-margin-top-d -->';
+    show_hover_thumbnail='yes';
+    hover_thumbnail_fade='no';
+    [/ekm:showdata]
+  </div>
 
 
   <section class="filter-section-m l-margin-top-m container">
