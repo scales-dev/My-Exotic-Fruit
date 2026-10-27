@@ -667,4 +667,152 @@
     hover_thumbnail_fade='no';
     [/ekm:showdata]
   </section><!-- /.flex-display .flex-wrap-wrap .flex-align-start .category-prod-section .xxl-margin-top-d -->
+
+  [ekm:showdata]
+  data='recentlyviewedproducts';
+  location='auto';
+
+  cols='1';
+  rows='6';
+  page_navigation='no';
+
+  orderby='viewdate';
+  skiprecords='0';
+  excludelist='';
+  includelist='';
+
+  editbuttons='YES';
+
+  image_ratio='500';
+  image_width='auto';
+  image_height='auto';
+
+  font_formatting='no';
+
+  output_start='
+  <section class="rvp-products container xxl-margin-top-m xxl-margin-top-d">
+    [ekm:element]
+    show='yes';
+    allowed_types='text';
+
+    element_reference='recently-viewed-products-title';
+    edit_button='YES';
+    output_start='<h2 class="flex-display flex-justify-center section-title l-margin-btm-m l-margin-btm-d"><span>';
+        output_end='</span></h2>
+    <!-- /.flex-display .flex-justify-center .section-title .l-margin-btm-m .l-margin-btm-d -->';
+    element_name_default='Recently Viewed Products Title';
+    output_default='Recently Viewed';
+    [/ekm:element]
+
+    <div class="flex-grid flex-justify-center flex-wrap-wrap prod-list rvp-prod-list">
+      ';
+      output_item='
+      <div
+        class="flex-col d-col-2 t-col-2 m-col-6 prod-item [ekm:if] iftype='FEATURE_ACTIVE'; ifvalue='FEATURE-QUICKVIEW'; ifthen='quickview-parent'; ifelse=''; [/ekm:if]">
+        <div class="prod-item-image m-margin-btm-m m-margin-btm-d">
+          {image}[image]{/image}
+        </div><!-- /.prod-item-image .m-margin-btm-m m-margin-btm-d -->
+
+        {name}
+        <div class="prod-item-name m-margin-top-m s-margin-top-d s-padding-btm-d">
+          <div class="prod-item-name-ellipsis">
+            [name]
+          </div><!-- /.prod-item-name-ellipsis -->
+        </div><!-- /.prod-item-name .m-margin-top-m s-margin-top-d s-padding-btm-d -->
+        {/name}
+
+
+        {price}
+        <div class="flex-display flex-align-baseline prod-price-wrapper s-margin-top-m s-margin-top-d trade-login-hide">
+          <div class="prod-item-price">
+            [price]
+          </div><!-- /.prod-item-price -->
+        </div><!-- /.flex-display .flex-align-baseline .prod-price-wrapper .s-margin-top-m .s-margin-top-d -->
+        {/price}
+
+        [ekm:if]
+        iftype='PRICES_HIDDEN';
+        ifthen='
+        <div class="ekm-trade-discount-wrapper">
+          <p class="trade-account"><a href="/account/login">Login</a> to view prices</p>
+        </div>
+        ';
+        ifelse='';
+        [/ekm:if]
+
+        {quickview}
+        <div class="quickview-btn-wrapper quickview-btn-wrapper_large-col trade-login-hide">
+          [ekm:nested_if]
+          iftype="EQUALS";
+          ifvalue="[has-options]";
+          ifvalue2="yes";
+          ifthen="
+          [ekm:nested_element]
+          element_reference="more_details_qv";
+          output_start="<a href="[url]" class="quickview-btn options_cta">";
+            output_end="</a>";
+          output_default="More details";
+          [/ekm:nested_element]
+          ";
+          ifelse="
+          [ekm:nested_element]
+          element_reference="add_to_cart_qv";
+          output_start="<a href="[add_to_cart_link-url]" class="quickview-btn options_cta">";
+            output_end="</a>";
+          output_default="Add to cart";
+          [/ekm:nested_element]
+          ";
+          [/ekm:nested_if]
+
+          <div class="qv-btn">[quickview]</div>
+        </div>
+        {/quickview}
+        {!quickview}
+
+        [ekm:if]
+        iftype='FEATURE_ACTIVE';
+        ifvalue='FEATURE-QUICKVIEW';
+        ifthen='
+        <div class="quickview-btn-wrapper quickview-btn-wrapper_large-col trade-login-hide" [ekm:nested_if]
+          iftype="EQUALS" ; ifvalue="[can_be_added_to_cart]" ; ifvalue2="no" ; ifthen="style=" display:none""; ifelse=""
+          ; [/ekm:nested_if]>
+          {stock-variants}
+          [ekm:nested_if]
+
+          iftype="GREATERTHAN";
+          ifvalue="[stock-variants]";
+          ifvalue2="0";
+          ifthen="
+          [ekm:nested_element]
+          element_reference="add_to_cart_qv";
+          output_start="<a href="[add_to_cart_link-url]" class="quickview-btn stock_cta">";
+            output_end="</a>";
+          output_default="Add to cart";
+          [/ekm:nested_element]
+          ";
+          ifelse="
+          [ekm:nested_element]
+          element_reference="out-of-stock-element";
+          output_start="<a href="[url]" class="quickview-btn oos-btn">";
+            output_end="</a><!--/.quickview-btn oos-btn-->";
+          output_default="Out of stock";
+          [/ekm:nested_element]
+          ";
+          [/ekm:nested_if]
+          {/stock-variants}
+        </div>
+        ';
+        ifelse='';
+        [/ekm:if]
+        {/!quickview}
+      </div><!-- /.flex-col .d-col-2 .t-col-2 .m-col-6 .prod-item -->
+      ';
+      output_end='
+    </div><!-- /.flex-grid .flex-justify-center .flex-wrap-wrap .prod-list .rvp-prod-list -->
+  </section><!-- /.rvp-products .container .xxl-margin-top-m .xxl-margin-top-d -->
+  ';
+  output_column_blank='';
+  show_hover_thumbnail='yes';
+  hover_thumbnail_fade='no';
+  [/ekm:showdata]
 </article><!-- /.main-content -->
