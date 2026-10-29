@@ -480,6 +480,11 @@
       </div><!-- /.flex-grid .prod-list -->
     </div><!-- /.category-products -->
 
+
+    [ekm:if]
+    iftype='ELEMENT_NOT_EMPTY';
+    ifvalue='[ekm:categoryid][/ekm:categoryid]_promo-grid-item-1-heading';
+    ifthen='
     <section class='two-promo-grid-section container'>
 
       <div class='promo-grid-item'>
@@ -589,6 +594,9 @@
       </div>
 
     </section>
+    ';
+    ifelse='';
+    [/ekm:if]
 
     <div class='category-products'>
       <div
@@ -883,50 +891,50 @@
   [/ekm:showdata]
 
 
-<script>
+  <script>
 
-  document.addEventListener('DOMContentLoaded', function () {
-    // Initialises the category promo slider
-    new Splide('.category-splider', {
-      type: 'loop',
-      perPage: 6,
-      gap: 20,
-      pagination: false,
-      breakpoints: {
-        768: {
-          perPage: 3,
+    document.addEventListener('DOMContentLoaded', function () {
+      // Initialises the category promo slider
+      new Splide('.category-splider', {
+        type: 'loop',
+        perPage: 6,
+        gap: 20,
+        pagination: false,
+        breakpoints: {
+          768: {
+            perPage: 3,
+          },
+          480: {
+            perPage: 1,
+          }
         },
-        480: {
-          perPage: 1,
-        }
-      },
-    }).mount();
+      }).mount();
 
-    // Initialises the category splider boxes
-    new Splide('.category-splider-boxes', {
-      type: 'slide',
-      perPage: 3,
-      perMove: 1,
-      gap: 20,
-      pagination: false,
-      arrows: true,
-      trimSpace: false,
-      rewind: true,
-      autoplay: false,
-      interval: 4000,
-      drag: true,
-      breakpoints: {
-        1200: {
-          perPage: 3,
+      // Initialises the category splider boxes
+      new Splide('.category-splider-boxes', {
+        type: 'slide',
+        perPage: 3,
+        perMove: 1,
+        gap: 20,
+        pagination: false,
+        arrows: true,
+        trimSpace: false,
+        rewind: true,
+        autoplay: false,
+        interval: 4000,
+        drag: true,
+        breakpoints: {
+          1200: {
+            perPage: 3,
+          },
+          992: {
+            perPage: 2,
+          },
+          768: {
+            perPage: 1,
+          },
         },
-        992: {
-          perPage: 2,
-        },
-        768: {
-          perPage: 1,
-        },
-      },
-    }).mount();
-  });
-</script>
+      }).mount();
+    });
+  </script>
 </article><!-- /.main-content -->
