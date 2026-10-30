@@ -78,66 +78,53 @@
     });
   </script>
 
-  <!-- 
-  for whatever reason, EKM decides that when they "fail to find a category" they tell you in BOLD TEXT 
-  you'd assume this is helpful, but in actuality it is finding all the categories it should AND printing an error for each.
-  -->
-  <div class="hide-errors">
-    [ekm:showdata]
-    tag_hide_toggle='yes';
-    data='categories';
-    location='auto';
-    cols='1';
-    rows='96';
-    page_navigation='yes';
-    orderby='name';
-    editbuttons='YES';
-    image_ratio='550';
-    image_width='auto';
-    image_height='auto';
-    font_formatting='no';
-    ' Output Format
-    header_title_text='';
-    output_start='
-    <section class="sub-categories ekm-section-category-categories container xl-margin-top-m xl-margin-top-d">
-      <ul class="flex-grid flex-wrap-wrap flex-justify-center ul-reset sub-categories-list">';
+  [ekm:showdata]
+  tag_hide_toggle='yes';
+  data='categories';
+  location='auto';
+  cols='1';
+  rows='96';
+  page_navigation='yes';
+  orderby='name';
+  editbuttons='YES';
+  image_ratio='550';
+  image_width='auto';
+  image_height='auto';
+  font_formatting='no';
+  ' Output Format
+  header_title_text='';
+  output_start='
+  <section class="sub-categories ekm-section-category-categories container xl-margin-top-m xl-margin-top-d">
+    <ul class="flex-grid flex-wrap-wrap flex-justify-center ul-reset sub-categories-list">
+      <li class="hide-errors">';
         output_row_start='';
         output_column_start='';
         output_item='
-        <li
-          class="visible flex-col d-col-2 t-col-3 m-col-6 sub-category-col sub-category-item sub-category-item-[counter]">
-          {image}
-          [editbuttons]
-          <a href="[url]">
-            <div class="sub-category-image ekm-subcategory-image m-margin-btm-m m-margin-btm-d">
-              <img itemprop="image" src="[image-url]" alt="[name-NOEDIT-NOLINK]" [image-badge_attributes]>
-            </div><!-- /.sub-category-image .ekm-subcategory-image .m-margin-btm-m .s-margin-btm-d -->
-            <div class="sub-category-name">
-              [name-NOEDIT-NOLINK]
-            </div><!-- /.sub-category-name -->
-          </a>
-          {/image}
-
-          {!image}
-          [editbuttons]
-          <a href="[url]">
-            <div class="sub-category-name">
-              [name-NOEDIT-NOLINK]
-            </div><!-- /.sub-category-name .s-padding-top-m .s-padding-top-d -->
-          </a>
-          {/!image}
-        </li>
-        <!-- /.flex-col .m-col-6 .d-col-2 .t-col-3 .sub-category-col .sub-category-item .sub-category-item-[counter] -->
-        ';
+      </li>
+      <li
+        class="flex-col d-col-2 t-col-3 m-col-6 sub-category-col sub-category-item sub-category-item-[counter]">
+        {image}
+        [editbuttons]
+        <a href="[url]">
+          <div class="sub-category-image ekm-subcategory-image m-margin-btm-m m-margin-btm-d">
+            <img itemprop="image" src="[image-url]" alt="[name-NOEDIT-NOLINK]" [image-badge_attributes]>
+          </div><!-- /.sub-category-image .ekm-subcategory-image .m-margin-btm-m .s-margin-btm-d -->
+          <div class="sub-category-name">
+            <h2>[name-NOEDIT-NOLINK]</h2>
+          </div><!-- /.sub-category-name -->
+        </a>
+        {/image}
+      </li>
+      <!-- /.flex-col .m-col-6 .d-col-2 .t-col-3 .sub-category-col .sub-category-item .sub-category-item-[counter] -->
+      <li class="hide-errors">';
         output_column_end='';
         output_row_end='';
-        output_end='
-      </ul><!-- /.flex-grid .flex-wrap-wrap .flex-justify-center .flex-align-center .ul-reset .sub-categories-list -->
-    </section><!-- /.sub-categories .ekm-section-category-categories .container .xl-margin-top-m .xl-margin-top-d -->';
-    show_hover_thumbnail='yes';
-    hover_thumbnail_fade='no';
-    [/ekm:showdata]
-  </div>
+        output_end='</li>
+    </ul><!-- /.flex-grid .flex-wrap-wrap .flex-justify-center .flex-align-center .ul-reset .sub-categories-list -->
+  </section><!-- /.sub-categories .ekm-section-category-categories .container .xl-margin-top-m .xl-margin-top-d -->';
+  show_hover_thumbnail='yes';
+  hover_thumbnail_fade='no';
+  [/ekm:showdata]
 
 
   <section class="filter-section-m l-margin-top-m container">
@@ -426,9 +413,7 @@
             iftype='FEATURE_ACTIVE';
             ifvalue='FEATURE-QUICKVIEW';
             ifthen='
-            <div class="quickview-btn-wrapper quickview-btn-wrapper_zero-left trade-login-hide" [ekm:nested_if]
-              iftype="EQUALS" ; ifvalue="[can_be_added_to_cart]" ; ifvalue2="no" ; ifthen="style=" display:none"";
-              ifelse="" ; [/ekm:nested_if]>
+            <div class="quickview-btn-wrapper quickview-btn-wrapper_zero-left trade-login-hide">
               {stock-variants}
               [ekm:nested_if]
 
@@ -474,9 +459,9 @@
     iftype='ELEMENT_NOT_EMPTY';
     ifvalue='[ekm:categoryid][/ekm:categoryid]_promo-grid-item-1-head';
     ifthen='
-    <section class='two-promo-grid-section container'>
+    <section class="two-promo-grid-section container">
 
-      <div class='promo-grid-item'>
+      <div class="promo-grid-item">
 
         [ekm:nested_element]
         show="yes";
@@ -485,20 +470,20 @@
         image_recommended_height="300";
         element_reference="[ekm:categoryid][/ekm:categoryid]_promo-grid-item-1-image";
         edit_button="YES";
-        output_start="<div class='promo-grid-item-image'>";
+        output_start="<div class="promo-grid-item-image">";
           output_end="</div>";
         element_name_default="Promo Grid Image";
-        output_default="<img src=''>";
+        output_default="<img src="#" alt>";
         [/ekm:nested_element]
 
-        <div class='promo-grid-item-content'>
+        <div class="promo-grid-item-content">
 
           [ekm:nested_element]
           show="yes";
           allowed_types="text,html";
           element_reference="[ekm:categoryid][/ekm:categoryid]_promo-grid-item-1-head";
           edit_button="yes";
-          output_start="<div class='section-title light-text'>";
+          output_start="<div class="section-title light-text">";
             output_end="</div>";
           element_name_default="";
           output_default="";
@@ -520,16 +505,16 @@
           allowed_types="text,html";
           element_reference="[ekm:categoryid][/ekm:categoryid]_promo-grid-item-1-cta-button";
           edit_button="yes";
-          output_start="<div class='btn light'>";
+          output_start="<div class="btn light">";
             output_end="</div>";
           element_name_default="cta-btn";
-          output_default="<a href='#'>Shop Now</a>";
+          output_default="<a href="#">Shop Now</a>";
           [/ekm:nested_element]
 
         </div>
       </div>
 
-      <div class='promo-grid-item'>
+      <div class="promo-grid-item">
 
         [ekm:nested_element]
         show="yes";
@@ -538,20 +523,20 @@
         image_recommended_height="400";
         element_reference="[ekm:categoryid][/ekm:categoryid]_promo-grid-item-2-image";
         edit_button="YES";
-        output_start="<div class='promo-grid-item-image'>";
+        output_start="<div class="promo-grid-item-image">";
           output_end="</div>";
         element_name_default="Promo Grid Image";
-        output_default="<img src=''>";
+        output_default="<img src="#" alt>";
         [/ekm:nested_element]
 
-        <div class='promo-grid-item-content'>
+        <div class="promo-grid-item-content">
 
           [ekm:nested_element]
           show="yes";
           allowed_types="text,html";
           element_reference="[ekm:categoryid][/ekm:categoryid]_promo-grid-item-2-head";
           edit_button="yes";
-          output_start="<div class='section-title light-text'>";
+          output_start="<div class="section-title light-text">";
             output_end="</div>";
           element_name_default="Promo Two";
           output_default="";
@@ -573,10 +558,10 @@
           allowed_types="text,html";
           element_reference="[ekm:categoryid][/ekm:categoryid]_promo-grid-item-2-cta-button";
           edit_button="yes";
-          output_start="<div class='btn light'>";
+          output_start="<div class="btn light">";
             output_end="</div>";
           element_name_default="cta-btn";
-          output_default="<a href='#'>Shop Now</a>";
+          output_default="<a href="#">Shop Now</a>";
           [/ekm:nested_element]
 
         </div>
@@ -587,9 +572,9 @@
     ifelse='';
     [/ekm:if]
 
-    <div class='category-products'>
+    <div class="category-products">
       <div
-        class='flex-grid prod-list flex-align-start flex-wrap-wrap category-prod-list l-padding-top-d l-padding-top-m'>
+        class="flex-grid prod-list flex-align-start flex-wrap-wrap category-prod-list l-padding-top-d l-padding-top-m">
         ";
         ifelse="";
         [/ekm:nested_if]
@@ -645,12 +630,12 @@
     </div><!-- /.flex-col .pagination .xl-margin-top-d .xl-margin-top-m .s-margin-btm-d .s-margin-btm-m -->
     ';
     pagination_previous='
-    <a href="[url]" class="pagination-link prev-page"><i
+    <a aria-label="previous page" href="[url]" class="pagination-link prev-page"><i
         class="fas fa-chevron-left"></i></a><!-- /.pagination-link .prev-page -->
     ';
     pagination_pagenumber='[link]';
     pagination_next='
-    <a href="[url]" class="pagination-link next-page m-margin-top-m"><i
+    <a aria-label="next page" href="[url]" class="pagination-link next-page m-margin-top-m"><i
         class="fas fa-chevron-right"></i></a><!-- /.pagination-link .next-page .m-margin-top-m -->
     ';
     pagination_seperator='';
@@ -682,7 +667,7 @@
 
     <div class="category-splider splide">
       <div class="splide__track">
-        <ul class="hide-errors splide__list mid-category-container">
+        <ul class="splide__list mid-category-container">
           [ekm:showdata]
 
           data='categories';
@@ -706,10 +691,11 @@
 
           font_formatting='no';
 
-          output_start='';
-          output_row_start='';
-          output_column_start='';
-          output_item='
+          output_start='<li class="hide-errors">';
+            output_row_start='';
+            output_column_start='';
+            output_item='
+          </li>
           <li class="visible splide__slide hp-category-[counter] hp-category">
             <div class="hp-category-img-[counter] hp-category-img">
               [image]
@@ -718,10 +704,11 @@
             <div class="body-text dark-text center-text s-margin-top-d s-margin-top-m">
               [name]
             </div>
-          </li>';
-          output_column_end='';
-          output_row_end='';
-          output_end='';
+          </li>
+          <li class="hide-errors">';
+            output_column_end='';
+            output_row_end='';
+            output_end='</li>';
 
           output_column_blank='';
 
@@ -836,9 +823,7 @@
         iftype='FEATURE_ACTIVE';
         ifvalue='FEATURE-QUICKVIEW';
         ifthen='
-        <div class="quickview-btn-wrapper quickview-btn-wrapper_large-col trade-login-hide" [ekm:nested_if]
-          iftype="EQUALS" ; ifvalue="[can_be_added_to_cart]" ; ifvalue2="no" ; ifthen="style=" display:none""; ifelse=""
-          ; [/ekm:nested_if]>
+        <div class="quickview-btn-wrapper quickview-btn-wrapper_large-col trade-login-hide">
           {stock-variants}
           [ekm:nested_if]
 

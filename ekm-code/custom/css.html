@@ -2651,11 +2651,18 @@
     paint-order: stroke fill;
   }
 
+  /*   
+  for whatever reason, EKM decides that when they "fail to find a category" they tell you in BOLD TEXT 
+  you'd assume this is helpful, but in actuality it is finding all the categories it should AND printing an error for each.
+  */
   .hide-errors {
-    font-size: 0;
+    display: none;
+  }
 
-    .visible {
-      font-size: initial;
+  .product-tabs-section {
+    a {
+      color: #126112;
+      text-decoration: underline;
     }
   }
 </style>
