@@ -13,10 +13,11 @@
   - Update product display
     - Give each product USPs... (ollama save me)
     - Make descriptions allow new lines...?
+    - Link related products
+    - Fix weird display of tabs on right
   - Make each tab not actually a category, instead redirect to a non category page
   - Make product summaries shorter (120 characters)
   - Figure out why style doesn't load for some people (maybe fixed)
-  - Banner pictures for all categories
   - Pick 2 promos for every category
   - Make payment work on site
   - Negotiate cost of higher tier

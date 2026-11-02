@@ -98,19 +98,16 @@
 
     if (!descriptionEl) return;
 
-    const fullText = descriptionEl.textContent.trim();
-    const words = fullText.split(/\s+/);
+    const words = descriptionEl.textContent.trim().split(/\s+/);
 
     if (words.length <= wordLimit) return; // No need for Read More
 
     const visibleText = words.slice(0, wordLimit).join(" ");
-    // originally this was ONLY the hiddenText, hence the name, but I thought it looked weird showing only the remaining text after clicking "read more"
-    const hiddenText = words.join(" ");
 
     // Clear existing text and build the truncated + hidden + button
     descriptionEl.innerHTML = `
       <span class="visible-part">${visibleText}...</span>
-      <span class="hidden-part" style="display: none;"> ${hiddenText}</span>
+      <span class="hidden-part" style="display: none;">${descriptionEl.innerHTML}</span>
       <button class="read-more-btn" style="display: inline-block; background: none; border: none; color: #222; text-decoration: underline; cursor: pointer; padding: 0; font: inherit;">Read More</button>
     `;
 

@@ -101,8 +101,7 @@
         output_column_start='';
         output_item='
       </li>
-      <li
-        class="flex-col d-col-2 t-col-3 m-col-6 sub-category-col sub-category-item sub-category-item-[counter]">
+      <li class="flex-col d-col-2 t-col-3 m-col-6 sub-category-col sub-category-item sub-category-item-[counter]">
         {image}
         [editbuttons]
         <a href="[url]">
@@ -284,7 +283,15 @@
     location='auto';
 
     cols='1';
-    rows='40';
+    rows='
+    [ekm:if]
+    iftype='EQUALS';
+    ifvalue='[ekm:categoryid][/ekm:categoryid]';
+    ifvalue2='137';
+    ifthen='100';
+    ifelse='40';
+    [/ekm:if]
+    ';
     page_navigation='yes';
     counterreset='';
 
