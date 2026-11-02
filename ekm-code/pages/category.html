@@ -153,7 +153,7 @@
                 ';
                 output_attribute_item='
                 <li class="filter-item-check s-padding-btm-d s-padding-btm-m">
-                  <input type="checkbox" name="[input-name]" value="[input-value]" id="_[input-name]-[input-value]">
+                  <input type="checkbox" name="[input-name]" value="[input-value]" id="[input-name]-[input-value]">
                   <label for="_[input-name]-[input-value]"
                     class="filter-content-attribute-item-value">[name]</label><!-- /.filter-content-attribute-item-value -->
                 </li><!-- /.filter-item-check .s-padding-btm-d .s-padding-btm-m -->
@@ -884,36 +884,7 @@
         breakpoints: {
           768: {
             perPage: 3,
-          },
-          480: {
-            perPage: 1,
           }
-        },
-      }).mount();
-
-      // Initialises the category splider boxes
-      new Splide('.category-splider-boxes', {
-        type: 'slide',
-        perPage: 3,
-        perMove: 1,
-        gap: 20,
-        pagination: false,
-        arrows: true,
-        trimSpace: false,
-        rewind: true,
-        autoplay: false,
-        interval: 4000,
-        drag: true,
-        breakpoints: {
-          1200: {
-            perPage: 3,
-          },
-          992: {
-            perPage: 2,
-          },
-          768: {
-            perPage: 1,
-          },
         },
       }).mount();
     });
