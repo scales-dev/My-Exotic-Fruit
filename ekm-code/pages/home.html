@@ -992,54 +992,16 @@
       },
     }).mount();
 
-    //   new Splide('.ig-splider', {
-    //     type: 'slide',
-    //     perPage: 4,
-    //     perMove: 1,
-    //     gap: 20,
-    //     pagination: false,
-    //     arrows: true,
-    //     trimSpace: false,
-    //     rewind: false,
-    //     autoplay: false,
-    //     interval: 4000,
-    //     drag: true,
-    // 	loop: false,
-    //     breakpoints: {
-    //       1200: {
-    //         perPage: 3,
-    //       },
-    //       992: {
-    //         perPage: 2,
-    //       },
-    //       768: {
-    //         perPage: 2,
-    //       },
-    //     },
-    //   }).mount();
-
     new Splide('.testimonials-slider', {
       type: 'slide',
       perPage: 1,
       perMove: 1,
       gap: 0,
       pagination: true,
-      arrows: false,
+      arrows: true,
       trimSpace: false,
       rewind: true, // Enable rewind
-      autoplay: true,
-      interval: 5000,
-      breakpoints: {
-        1200: {
-          perPage: 1,
-        },
-        992: {
-          perPage: 1,
-        },
-        768: {
-          perPage: 1,
-        },
-      },
+      autoplay: false
     }).mount();
 
   });
