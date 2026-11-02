@@ -8,8 +8,8 @@
 - Update the EKM site:
   - Redesign home page
     - Start by advertising best categories
+    - Advertise best sellers and discounts
     - Fill in "your weekly seasonal update"
-    - Banner video for footer
   - Update product display
     - Give each product USPs... (ollama save me)
     - Make descriptions allow new lines...?
