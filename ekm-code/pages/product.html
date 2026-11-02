@@ -2618,10 +2618,10 @@
           let count = 0;
 
           svg.querySelectorAll('path[title]').forEach(path => {
-            if (!origin.includes(path.getAttribute('title').toLowerCase())) {
-              path.classList.add('highlighted');
-              count++;
-            }
+            if (!origin.includes(path.getAttribute('title').toLowerCase())) return;
+
+            path.classList.add('highlighted');
+            count++;
           });
 
           if (count == 0) return;
@@ -2633,14 +2633,14 @@
 
           map.replaceChildren(document.importNode(svg, true));
 
-          document.querySelector('origin-info-section').style.display = '';
+          document.querySelector('.origin-info-section').style.display = 'block';
         } catch (error) {
           console.error('Origin map error:', error);
         }
       });
     </script>
 
-    <div class="origin-info-section" display="none">
+    <div class="origin-info-section">
       <div class="section-title figtree">Originated From</div>
 
       <div class="origin-map">
