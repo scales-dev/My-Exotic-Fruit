@@ -930,13 +930,12 @@
       perPage: 3,
       perMove: 1,
       gap: 20,
-      pagination: true,
+      pagination: false,
       arrows: true,
       trimSpace: false,
-      rewind: true,
       autoplay: true,
       interval: 4000,
-      drag: Splide.isTouch ? true : false,
+      drag: true,
       breakpoints: {
         1200: {
           perPage: 3,
@@ -977,8 +976,14 @@
       interval: 4000,
       drag: true,
       breakpoints: {
-        768: {
+        1200: {
+          perPage: 3,
+        },
+        992: {
           perPage: 2,
+        },
+        768: {
+          perPage: 1,
         },
       },
     }).mount();
