@@ -272,7 +272,7 @@
     element_name_default='Category Slider Title';
     output_default='A taste of everything';
     [/ekm:element]
-    <div class="category-splider-boxes splide">
+    <div class="selection-boxes-slider splide">
       <div class="splide__track">
         <ul class="splide__list category-slider-container">
           <li class="splide__slide category-slide-1">
@@ -959,15 +959,12 @@
       breakpoints: {
         768: {
           perPage: 3,
-        },
-        480: {
-          perPage: 1,
         }
       },
     }).mount();
 
     // Initialises the category splider boxes
-    new Splide('.category-splider-boxes', {
+    new Splide('.selection-boxes-slider', {
       type: 'slide',
       perPage: 3,
       perMove: 1,
@@ -980,14 +977,8 @@
       interval: 4000,
       drag: true,
       breakpoints: {
-        1200: {
-          perPage: 3,
-        },
-        992: {
-          perPage: 2,
-        },
         768: {
-          perPage: 1,
+          perPage: 2,
         },
       },
     }).mount();
