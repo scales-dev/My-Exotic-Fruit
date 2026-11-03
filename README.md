@@ -1,22 +1,17 @@
 # TODO:
 - Make the following pages:
   - Japanese Fruits
-  - Working with Brands
+  - Finish Working with Brands
   - Trade buyers
   - Guest amenity
   - Seasonal products page?
 - Update the EKM site:
-  - Redesign home page
-    - Start by advertising best categories
-    - Advertise best sellers and discounts
-    - Fill in "your weekly seasonal update"
+  - Finish home page
   - Update product display
     - Give each product USPs... (ollama save me)
-    - Make descriptions allow new lines...?
-    - Link related products
-    - Fix weird display of tabs on right
-  - Make each tab not actually a category, instead redirect to a non category page
-  - Make product summaries shorter (120 characters)
+    - Put the origin map on the left with the season map
+  - Make each tab not actually a category, instead redirect to a non category page for non ekm pages
+  - Make product summaries shorter (~100 chars)
   - Figure out why style doesn't load for some people (maybe fixed)
   - Pick 2 promos for every category
   - Make payment work on site

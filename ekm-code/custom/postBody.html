@@ -93,32 +93,6 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    const description = document.querySelector('[itemprop="description"]');
-
-    if (!description) return;
-
-    description.classList.add("collapsed");
-
-    if (description.scrollHeight <= description.clientHeight) {
-      description.classList.remove("collapsed");
-      return;
-    }
-
-    const button = document.createElement("button");
-    button.className = "read-more-btn";
-    button.textContent = "Read More";
-
-    button.addEventListener("click", function () {
-      description.classList.remove("collapsed");
-      button.remove();
-    });
-
-    description.after(button);
-  });
-</script>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
 
     var path = window.location.pathname.toLowerCase();
     var mainContent = document.querySelector(".main-content-webpage");
