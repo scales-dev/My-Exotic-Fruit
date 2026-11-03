@@ -2,6 +2,7 @@
 - Make the following pages:
   - Japanese Fruits
   - Finish Working with Brands
+  - Fill in text in about us
   - Trade buyers
   - Guest amenity
   - Seasonal products page?

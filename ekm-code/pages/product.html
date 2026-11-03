@@ -1519,6 +1519,9 @@
       </script>
 
       <div class="season-info-section">
+        <div class="prod-extra-description-title">
+          Unique Selling Points
+        </div>
         <div class="prod-page-usp-area flex-display flex-direction-column">
           <div class="prod-page-usp-item flex-display">
             <div class="prod-page-usp-icon">
@@ -1572,188 +1575,145 @@
       </div>
 
       <div class="season-info-section season-image-div">
-
-        [ekm:element]
-
-        element_reference='season-description-heading[ekm:pageid][/ekm:pageid]';
-
-        edit_button='yes';
-
-        output_start='<div class="prod-extra-description-title">';
-
-          output_end='</div>';
-
-        element_name_default='';
-
-        output_default='Product Season';
-
-        allowed_types="text,html";
-
-        [/ekm:element]
-
-        <ul class="season-image">
-
-          <li>
-
-            <div>Jan</div>
-
-            <div class="outer">
-
-              <div class="inner jan" style="display: none;"></div>
-
-            </div>
-
-          </li>
-
-          <li>
-
-            <div>Feb</div>
-
-            <div class="outer">
-
-              <div class="inner feb" style="display: none;"></div>
-
-            </div>
-
-          </li>
-
-          <li>
-
-            <div>Mar</div>
-
-            <div class="outer">
-
-              <div class="inner mar" style="display: none;"></div>
-
-            </div>
-
-          </li>
-
-          <li>
-
-            <div>Apr</div>
-
-            <div class="outer">
-
-              <div class="inner apr" style="display: none;"></div>
-
-            </div>
-
-          </li>
-
-          <li>
-
-            <div>May</div>
-
-            <div class="outer">
-
-              <div class="inner may" style="display: none;"></div>
-
-            </div>
-
-          </li>
-
-          <li>
-
-            <div>Jun</div>
-
-            <div class="outer">
-
-              <div class="inner jun" style="display: none;"></div>
-
-            </div>
-
-          </li>
-
-          <li>
-
-            <div>Jul</div>
-
-            <div class="outer">
-
-              <div class="inner jul" style="display: none;"></div>
-
-            </div>
-
-          </li>
-
-          <li>
-
-            <div>Aug</div>
-
-            <div class="outer">
-
-              <div class="inner aug" style="display: none;"></div>
-
-            </div>
-
-          </li>
-
-          <li>
-
-            <div>Sep</div>
-
-            <div class="outer">
-
-              <div class="inner sep" style="display: none;"></div>
-
-            </div>
-
-          </li>
-
-          <li>
-
-            <div>Oct</div>
-
-            <div class="outer">
-
-              <div class="inner oct" style="display: none;"></div>
-
-            </div>
-
-          </li>
-
-          <li>
-
-            <div>Nov</div>
-
-            <div class="outer">
-
-              <div class="inner nov" style="display: none;"></div>
-
-            </div>
-
-          </li>
-
-          <li>
-
-            <div>Dec</div>
-
-            <div class="outer">
-
-              <div class="inner dec" style="display: none;"></div>
-
-            </div>
-
-          </li>
-
-        </ul>
-
-        <!-- This is only required once per page -->
-
-        <div class="check-attributes" style="display:none">
-
-          [ekm:productattributes][/ekm:productattributes]
-
+        <div class="prod-extra-description-title">
+          Seasonality
         </div>
 
+        <ul class="season-image">
+          <li>
+            <div>Jan</div>
+            <div class="outer">
+              <div class="inner jan" style="display: none;"></div>
+            </div>
+          </li>
+          <li>
+            <div>Feb</div>
+            <div class="outer">
+              <div class="inner feb" style="display: none;"></div>
+            </div>
+          </li>
+          <li>
+            <div>Mar</div>
+            <div class="outer">
+              <div class="inner mar" style="display: none;"></div>
+            </div>
+          </li>
+          <li>
+            <div>Apr</div>
+            <div class="outer">
+              <div class="inner apr" style="display: none;"></div>
+            </div>
+          </li>
+          <li>
+            <div>May</div>
+            <div class="outer">
+              <div class="inner may" style="display: none;"></div>
+            </div>
+          </li>
+          <li>
+            <div>Jun</div>
+            <div class="outer">
+              <div class="inner jun" style="display: none;"></div>
+            </div>
+          </li>
+          <li>
+            <div>Jul</div>
+            <div class="outer">
+              <div class="inner jul" style="display: none;"></div>
+            </div>
+          </li>
+          <li>
+            <div>Aug</div>
+            <div class="outer">
+              <div class="inner aug" style="display: none;"></div>
+            </div>
+          </li>
+          <li>
+            <div>Sep</div>
+            <div class="outer">
+              <div class="inner sep" style="display: none;"></div>
+            </div>
+          </li>
+          <li>
+            <div>Oct</div>
+            <div class="outer">
+              <div class="inner oct" style="display: none;"></div>
+            </div>
+          </li>
+          <li>
+            <div>Nov</div>
+            <div class="outer">
+              <div class="inner nov" style="display: none;"></div>
+            </div>
+          </li>
+          <li>
+            <div>Dec</div>
+            <div class="outer">
+              <div class="inner dec" style="display: none;"></div>
+            </div>
+          </li>
+        </ul>
+        <!-- This is only required once per page -->
+        <div class="check-attributes" style="display:none">
+          [ekm:productattributes][/ekm:productattributes]
+        </div>
       </div>
 
+      <div class="season-info-section" id="origin-map-section">
+        <div class="prod-extra-description-title">
+          Origin
+        </div>
 
+        <script>
+          window.addEventListener('load', async () => {
+            const map = document.querySelector('.origin-map');
+            const label = [...document.querySelectorAll('.tab-header-wrapper label')]
+              .find(el => el.querySelector('span')?.textContent.trim() === 'Origin');
 
+            if (!map || !label) {
+              console.error('Origin map: elements not found.');
+              return;
+            }
 
+            try {
+              const response = await fetch(
+                'https://files.ekmcdn.com/b940b1/resources/design/world.svg'
+              );
 
-    </div><!--product-season-section d-col-6 m-col-12 xl-margin-top-d xl-margin-top-m -->
+              if (!response.ok) throw new Error('Failed to load SVG');
+
+              const svg = new DOMParser()
+                .parseFromString(await response.text(), 'image/svg+xml')
+                .documentElement;
+
+              const origin = label.nextElementSibling.textContent.toLowerCase();
+              let count = 0;
+
+              svg.querySelectorAll('path[title]').forEach(path => {
+                if (!origin.includes(path.getAttribute('title').toLowerCase())) return;
+
+                path.classList.add('highlighted');
+                count++;
+              });
+
+              if (count == 0) return;
+
+              svg.setAttribute('viewBox', '0 0 1009.6727 665.96301');
+              svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+              svg.style.width = '100%';
+              svg.style.height = 'auto';
+
+              map.replaceChildren(document.importNode(svg, true));
+            } catch (error) {
+              console.error('Origin map error:', error);
+            }
+          });
+        </script>
+
+        <div class="origin-map"></div>
+      </div>
+    </div>
+
     <div
       class="product-tabs-section d-col-6 m-col-12 flex-display flex-justify-center xl-padding-btm-d xl-padding-btm-m">
 
@@ -2001,15 +1961,6 @@
           [ekm:nested_product_review_summary]
 
           output_start="
-
-          <style>
-
-
-
-          </style>
-
-
-
           <div>
 
             ";
@@ -2334,79 +2285,8 @@
 
 
       </div>
-
-    </div>
-
-
-
-  </div>
-
-
-
-  <div class="product-origin-section d-col-12 m-col-12">
-
-    <!-- JavaScript that checks for custom attributes assigned to each month -->
-
-    <script>
-      window.addEventListener('load', async () => {
-        const map = document.querySelector('.origin-map');
-        const label = [...document.querySelectorAll('.tab-header-wrapper label')]
-          .find(el => el.querySelector('span')?.textContent.trim() === 'Origin');
-
-        if (!map || !label) {
-          console.error('Origin map: elements not found.');
-          return;
-        }
-
-        try {
-          const response = await fetch(
-            'https://files.ekmcdn.com/b940b1/resources/design/world.svg'
-          );
-
-          if (!response.ok) throw new Error('Failed to load SVG');
-
-          const svg = new DOMParser()
-            .parseFromString(await response.text(), 'image/svg+xml')
-            .documentElement;
-
-          const origin = label.nextElementSibling.textContent.toLowerCase();
-          let count = 0;
-
-          svg.querySelectorAll('path[title]').forEach(path => {
-            if (!origin.includes(path.getAttribute('title').toLowerCase())) return;
-
-            path.classList.add('highlighted');
-            count++;
-          });
-
-          if (count == 0) return;
-
-          svg.setAttribute('viewBox', '0 0 1009.6727 665.96301');
-          svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
-          svg.style.width = '100%';
-          svg.style.height = 'auto';
-
-          map.replaceChildren(document.importNode(svg, true));
-
-          document.querySelector('.origin-info-section').style.display = 'block';
-        } catch (error) {
-          console.error('Origin map error:', error);
-        }
-      });
-    </script>
-
-    <div class="origin-info-section">
-      <div class="section-title figtree">Originated From</div>
-
-      <div class="origin-map">
-        <object id="origin-world-map" type="image/svg+xml"
-          data="https://files.ekmcdn.com/b940b1/resources/design/world.svg"
-          aria-label="World map showing countries of origin">
-        </object>
-      </div>
     </div>
   </div>
-
 
   [ekm:element]
   show='yes';
@@ -2638,10 +2518,6 @@
 
 
         [ekm:nested_product_review_summary] output_start="
-
-        <style></style>
-
-
 
         <div>
 
