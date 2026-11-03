@@ -1762,6 +1762,8 @@
       <script>
 
         document.addEventListener('DOMContentLoaded', function () {
+          var seasonSection = document.querySelector(".season-image-div")
+          if (!seasonSection) return;
 
           var months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
           let found = false;
@@ -1780,14 +1782,8 @@
 
           });
 
-          if (found) return;
-
-          var seasonSection = document.querySelector(".season-image")
-          if (!seasonSection) return;
-
-          // it makes more sense to have it hidden by default but wtv.
-          seasonSection.style.display = 'none';
-
+          if (!found) return;
+          seasonSection.style.display = 'block';
         });
 
       </script>
@@ -1820,7 +1816,7 @@
 
       </div>
 
-      <div class="season-info-section">
+      <div class="season-info-section season-image-div">
 
         [ekm:element]
 

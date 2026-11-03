@@ -1548,6 +1548,15 @@
     display: none;
     color: var(--link-color);
     text-decoration: underline;
+
+    display: inline-block; 
+    background: none; 
+    border: none; 
+    color: #222; 
+    text-decoration: underline; 
+    cursor: pointer; 
+    padding: 0; 
+    font: inherit;
   }
 
   .incategory-description .content p {
@@ -2663,8 +2672,20 @@
     display: none;
   }
 
+  .season-image-div {
+    display: none;
+  }
+
   .product-tabs-section a {
     color: #126112;
     text-decoration: underline;
+  }
+
+  [itemprop="description"].collapsed {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    overflow: hidden;
   }
 </style>

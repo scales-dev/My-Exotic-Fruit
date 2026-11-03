@@ -93,31 +93,27 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    const descriptionEl = document.querySelector('[itemprop="description"]');
-    const wordLimit = 50; // Set your desired word limit here
+    const description = document.querySelector('[itemprop="description"]');
 
-    if (!descriptionEl) return;
+    if (!description) return;
 
-    const words = descriptionEl.textContent.trim().split(/\s+/);
+    description.classList.add("collapsed");
 
-    if (words.length <= wordLimit) return; // No need for Read More
+    if (description.scrollHeight <= description.clientHeight) {
+      description.classList.remove("collapsed");
+      return;
+    }
 
-    const visibleText = words.slice(0, wordLimit).join(" ");
+    const button = document.createElement("button");
+    button.className = "read-more-btn";
+    button.textContent = "Read More";
 
-    // Clear existing text and build the truncated + hidden + button
-    descriptionEl.innerHTML = `
-      <span class="visible-part">${visibleText}...</span>
-      <span class="hidden-part" style="display: none;">${descriptionEl.innerHTML}</span>
-      <button class="read-more-btn" style="display: inline-block; background: none; border: none; color: #222; text-decoration: underline; cursor: pointer; padding: 0; font: inherit;">Read More</button>
-    `;
-
-    // Add toggle functionality
-    const btn = descriptionEl.querySelector(".read-more-btn");
-    btn.addEventListener("click", function () {
-      descriptionEl.querySelector(".hidden-part").style.display = "inline";
-      descriptionEl.querySelector(".visible-part").style.display = "none";
-      btn.style.display = "none";
+    button.addEventListener("click", function () {
+      description.classList.remove("collapsed");
+      button.remove();
     });
+
+    description.after(button);
   });
 </script>
 
