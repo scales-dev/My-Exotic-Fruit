@@ -165,21 +165,31 @@
             ';
             [/ekm:searchbox]
 
+            <!-- todo: desktop category code and mobile category code are SEPARATE -->
             <div class="nav-content-wrapper-m">
-              [ekm:category_menu]
-              levels='1';
-              location='0';
-              order_by='orderlocation, name';
-              edit_buttons='yes';
-              limit='99';
-              image_width='100';
-              image_height='100';
-              output_start='<ul class="menu">';
-                output_item='<li>[link][children]</li>';
-                output_end='</ul>';
-              exclude_list='';
-              [/ekm:category_menu]
-
+              <ul class="menu">
+                <li>
+                  <a href="https://my-exotic-fruit.28.ekm.shop/shop-online-137-c.asp">Shop Online</a>
+                </li>
+                <li>
+                  <a href="https://my-exotic-fruit.28.ekm.shop/shop-in-person-30-w.asp">Shop In Person</a>
+                </li>
+                <li>
+                  <a href="https://my-exotic-fruit.28.ekm.shop/japanese-fruits-25-w.asp">Japanese Fruits</a>
+                </li>
+                <li>
+                  <a href="https://my-exotic-fruit.28.ekm.shop/trade-buyers-26-w.asp">Trade Buyers</a>
+                </li>
+                <li>
+                  <a href="https://my-exotic-fruit.28.ekm.shop/working-with-brands-28-w.asp">Working With Brands</a>
+                </li>
+                <li>
+                  <a href="https://my-exotic-fruit.28.ekm.shop/about-us-31-w.asp">About Us</a>
+                </li>
+                <li>
+                  <a href="https://my-exotic-fruit.28.ekm.shop/guest-amenity-32-w.asp">Guest Amenity</a>
+                </li>
+              </ul>
             </div><!-- /.nav-content-wrapper-m -->
           </div><!-- /.nav-drawer-m -->
         </div><!-- /.nav-wrapper-m -->
@@ -330,25 +340,32 @@
         </div><!-- /.d-col-3 .flex-display .header-elements -->
       </div><!-- /.flex-display .header-bar -->
 
-      [ekm:category_menu]
-      levels='1';
-      editbuttons='YES';
-      location='0';
-      orderby='orderlocation';
-      limit='999';
-      output_start='<nav class="nav-d">
+      <!-- todo: remember, we have the category code TWICE, one for mobile, one not -->
+      <nav class="nav-d">
         <ul class="flex-display flex-justify-center flex-wrap-wrap ul-reset nav-items container d-grid-gap-3">
-          ';
-          output_item='
-          <li class="flex-display nav-item">[link]
-            <section class="mega-menu">[children]</section><!--/.mega-menu -->
-          </li><!--/.flex-col flex-display l-padding-btm-d-->
-          ';
-          output_end='
+          <li class="flex-display nav-item">
+            <a href="https://my-exotic-fruit.28.ekm.shop/shop-online-137-c.asp">Shop Online</a>
+          </li>
+          <li class="flex-display nav-item">
+            <a href="https://my-exotic-fruit.28.ekm.shop/shop-in-person-30-w.asp">Shop In Person</a>
+          </li>
+          <li class="flex-display nav-item">
+            <a href="https://my-exotic-fruit.28.ekm.shop/japanese-fruits-25-w.asp">Japanese Fruits</a>
+          </li>
+          <li class="flex-display nav-item">
+            <a href="https://my-exotic-fruit.28.ekm.shop/trade-buyers-26-w.asp">Trade Buyers</a>
+          </li>
+          <li class="flex-display nav-item">
+            <a href="https://my-exotic-fruit.28.ekm.shop/working-with-brands-28-w.asp">Working With Brands</a>
+          </li>
+          <li class="flex-display nav-item">
+            <a href="https://my-exotic-fruit.28.ekm.shop/about-us-31-w.asp">About Us</a>
+          </li>
+          <li class="flex-display nav-item">
+            <a href="https://my-exotic-fruit.28.ekm.shop/guest-amenity-32-w.asp">Guest Amenity</a>
+          </li>
         </ul><!-- /.flex-grid .flex-justify-center .flex-wrap-wrap ul-reset nav-items -->
       </nav><!-- .nav-d .nav-slide -->
-      ';
-      [/ekm:category_menu]
     </section><!-- /.header-section .nav-btns-section-m -->
   </header><!-- /.sticky-header -->
   <!-- Mobile Navigation JavaScript Start -->
