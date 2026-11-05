@@ -15,7 +15,7 @@
 
         ';
 
-        output_item='<a href="[url]">[name]</a>';
+        output_item='<a class="product-breadcrumbs" href="[url]">[name]</a>';
 
         output_separator='&nbsp;/&nbsp;';
 
@@ -1214,7 +1214,7 @@
                   for (const child of [...selector.children]) {
                     if (!markOutOfStock(child)) continue;
 
-                    selector.removeChild(child);
+                    // this moves the child to the end, how cool
                     selector.appendChild(child);
                   }
                 });
