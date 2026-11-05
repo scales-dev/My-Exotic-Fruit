@@ -2,11 +2,290 @@ $is-category^
 
 $end-head^
 
-<!-- todo: run the buildEkm script on site, then figure out how to do the redirects -->
-<div class="$iframe-page">
-    <iframe 
-        src="https://thegreengrocerbymef.com/"
-        title="The Greengrocer"
-    >
-    </iframe>
-</div>
+<!-- https://github.com/scales-dev/The-Greengrocer run node build-embed with header/footer deleted and hrefs targeting blank-->
+<style-blocker css-files="https://thegreengrocerbymef.com/global-style/base.css,https://thegreengrocerbymef.com/global-style/header.css,https://thegreengrocerbymef.com/global-style/footer.css,https://thegreengrocerbymef.com/home/title.css,https://thegreengrocerbymef.com/home/summary.css,https://thegreengrocerbymef.com/home/instagram.css,https://thegreengrocerbymef.com/home/contact.css,https://thegreengrocerbymef.com/home/contact.css,https://thegreengrocerbymef.com/exotic-fruits/promo.css,https://thegreengrocerbymef.com/events/events.css">
+
+  <main>
+    <section class="title">
+      <!-- some stackoverflow guy said capitalizing the P fixes autoplay, and i think it actually worked, i didnt think it would so i didnt save the link. -->
+      <video autoPlay muted disablepictureinpicture playsinline loop poster="home/images/greengrocerinterior.webp">
+        <source src="https://thegreengrocerbymef.com/home/images/greengrocer.webm" type="video/webm">
+        Your browser does not support the video tag.
+      </video>
+
+      <div class="title-content">
+        <h1>
+          The Greengrocer
+          <br><i class="reimagined">by My Exotic Fruit.</i>
+        </h1>
+
+        <h3>
+          <a href="https://thegreengrocerbymef.com/exotic-fruits" target="_blank">Exotic fruits</a>,
+          premium <a href="https://thegreengrocerbymef.com/japanese-fruits" target="_blank">Japanese fruits</a>,
+          <a href="https://thegreengrocerbymef.com/organic-produce" target="_blank">organic produce</a>
+          and soon a
+          <a href="https://thegreengrocerbymef.com/chocolate" target="_blank">chocolate room</a>,
+          all in a friendly local shop.
+        </h3>
+
+        <a href="https://thegreengrocerbymef.com/events" target="_blank">
+          <button class="a">Events</button>
+        </a>
+
+        <a href="https://thegreengrocerbymef.com/questions" target="_blank">
+          <button class="b">Questions</button>
+        </a>
+      </div>
+    </section>
+
+    <section class="banner-text center-div">
+      <h2><a href="https://thegreengrocerbymef.com/chocolate" target="_blank" class="clickable invert">Chocolate room</a> coming soon!</h2>
+    </section>
+    <section class="summary">
+      <h2>Quality you can taste</h2>
+      <h1>More than just a greengrocer</h1>
+
+      <div class="grid">
+        <div>
+          <img loading="lazy" src="https://thegreengrocerbymef.com/home/images/globe.svg" alt="global">
+          <h2>Sourced globally</h2>
+          <p>
+            Our extensive network of trusted growers allows us to source the world’s finest organic exotic fruits from
+            their origins.
+            We carefully select each variety for its exceptional flavour, freshness, and rarity, delivering
+            a collection of remarkable produce that celebrates the diversity of nature’s finest offerings.
+          </p>
+        </div>
+
+        <div>
+          <img loading="lazy" src="https://thegreengrocerbymef.com/home/images/leaves.svg" alt="hand picked">
+          <h2>Hand-picked</h2>
+          <p>
+            We believe exceptional fruit deserves exceptional attention.
+            Each delivery is meticulously reviewed, with only the finest pieces selected for our shelves.
+            Our dedication to quality ensures that every fruit we offer meets our exacting
+            standards for taste, freshness, and presentation.
+          </p>
+        </div>
+
+        <div>
+          <img loading="lazy" src="https://thegreengrocerbymef.com/home/images/heart.svg" alt="personal">
+          <h2>Personal service</h2>
+          <p>
+            Every customer receives a warm and personal experience from the moment they visit.
+            We take the time to understand your preferences, offer expert advice,
+            and share our passion for exceptional fruit,
+            creating a level of service that goes beyond the ordinary greengrocer.
+          </p>
+        </div>
+
+        <div>
+          <img loading="lazy" src="https://thegreengrocerbymef.com/home/images/shop.svg" alt="shop">
+          <h2>Trusted business</h2>
+          <p>
+            By the same team behind <a href="https://myexoticfruit.com" class="clickable">My Exotic Fruit</a>,
+            we bring years of experience sourcing exceptional exotic fruit for
+            discerning customers and prestigious retailers, including Harrods.
+            Our knowledge, relationships, and commitment to quality allow us
+            to offer the same outstanding standards directly to you.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact">
+      <img loading="lazy" class="side-image" src="https://thegreengrocerbymef.com/home/images/mural.webp" alt="mural">
+
+      <div class="contact-content">
+        <h2>Visit our shop</h2>
+        <h1>Come and experience<br>the <i>difference</i></h1>
+
+        <p>
+          Visit The Greengrocer in Stock, Essex, to discover produce
+          packed with flavour. From everyday essentials and traditional favourites
+          to rare exotic fruit and seasonal finds, we hope you'll rediscover
+          something old and experience something new.
+
+          <br><br>
+          We try our best to source produce our local community will love
+          in the highest quality available!
+          If you have spare time please pay us a visit, you will not regret it.
+          We supply unforgetable produce you will not find anywhere else nearby.
+        </p>
+
+        <div class="contact-detail">
+          <img loading="lazy" src="https://thegreengrocerbymef.com/home/images/map-point.svg" alt="map">
+          <p>
+            The Greengrocer Unit 20 Oaklands Farm Estate
+            <br>Goatsmoor Lane, Stock Ingatestone CM4 9RS
+          </p>
+        </div>
+
+        <div class="contact-detail">
+          <img loading="lazy" src="https://thegreengrocerbymef.com/home/images/clock-4pm.svg" alt="clock">
+          <p>
+            Wednesday – Saturday
+            <br>10am – 4pm
+          </p>
+        </div>
+
+        <a href="https://www.google.com/maps?cid=353630396139914046" target="_blank">
+          <button>
+            Get Directions
+          </button>
+        </a>
+      </div>
+    </section>
+
+    <section class="promo events-grid">
+      <h1>Too far to travel?</h1>
+      <div class="promo-grid">
+        <div class="box exotic-fruits-button-bg">
+          <h1>Explore our online shop</h1>
+          <p>
+            We also sell a wide variety of exotic fruits online,
+            with many fruits you cannot find in the greengrocer!
+            Enter a whole new world of flavour, with our online shop.
+          </p>
+          <a href="https://myexoticfruit.com/">
+            <button>Here</button>
+          </a>
+        </div>
+        <div class="box blog">
+          <h1>Keep up to date with us</h1>
+          <p>
+            Discover the world of exotic fruit through
+            our latest stories, guides and inspiration.
+            Learn about unique varieties, where they come from,
+            and the best ways to enjoy them.
+          </p>
+          <a href="https://myexoticfruit.com/blog">
+            <button>Our blog</button>
+          </a>
+          <a href="https://mailchi.mp/myexoticfruit/the-greengrocer-newsletter" target="_blank">
+            <button>Our newsletter</button>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact">
+      <div class="contact-content">
+        <h2>Events</h2>
+        <h1>Fun for the whole family!</h1>
+
+        <h3>
+          Our events feature food and drinks,
+          a fun game or challenge,
+          as well as discounts on our shop items,
+          all free to come down and enjoy!
+        </h3>
+
+        <a href="https://thegreengrocerbymef.com/events" target="_blank">
+          <button>
+            Explore our events
+          </button>
+        </a>
+
+        <a href="https://mailchi.mp/myexoticfruit/the-greengrocer-newsletter" target="_blank">
+          <button>Get notified</button>
+        </a>
+      </div>
+      <img loading="lazy" class="side-image" src="https://thegreengrocerbymef.com/events/images/events%20banner.webp" alt="events banner">
+    </section>
+
+    <section class="promo">
+      <h1>Looking for a gift?</h1>
+      <h2><a href="https://thegreengrocerbymef.com/questions#contact-us" target="_blank" class="clickable">Contact us</a> to arrange a pickup <br>of a fruit platter or
+        basket!</h2>
+
+      <p></p>
+
+      <div class="events-carousel">
+
+        <div class="events-slider">
+          <div class="events-track">
+            <div class="event-slide">
+              <img src="https://thegreengrocerbymef.com/home/images/fruit%20platters.webp" alt="fruit platters">
+
+              <button class="events-arrow events-prev" aria-label="Previous event"></button>
+              <button class="events-arrow events-next" aria-label="Next event"></button>
+            </div>
+
+            <div class="event-slide" data-date="2026-07-31">
+              <img src="https://thegreengrocerbymef.com/home/images/gift%20baskets.webp" alt="gift baskets">
+
+              <button class="events-arrow events-prev" aria-label="Previous event"></button>
+              <button class="events-arrow events-next" aria-label="Next event"></button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="instagram">
+      <!-- Elfsight Instagram Feed | The Greengrocer Website Widget -->
+      <script src="https://elfsightcdn.com/platform.js" async></script>
+      <!-- !WIDGET! -->
+      <div class="elfsight-app-1849cf81-b720-401b-b395-84a1c28e033d" data-elfsight-app-lazy></div>
+    </section>
+  </main>
+
+</style-blocker>
+
+
+<script src="https://thegreengrocerbymef.com/events/index.js"></script><script>
+  class StyleBlocker extends HTMLElement {
+    constructor() {
+      super();
+      this.attachShadow({ mode: "open" });
+    }
+
+    connectedCallback() {
+      const widgetClasses = ["elfsight-app-1849cf81-b720-401b-b395-84a1c28e033d"];
+
+      const widgets = widgetClasses
+        .map(className => this.embedWidget(className))
+        .filter(Boolean);
+
+      // move EVERYTHING (except external widgets) into the shadow realm 
+      // or smth idk https://matthewjamestaylor.com/style-blocker
+      [...this.childNodes].forEach(node => {
+        if (!widgets.includes(node)) {
+          this.shadowRoot.appendChild(node);
+        }
+      });
+
+      // we still want SOME swag
+      const cssFiles = this.getAttribute('css-files');
+      if (cssFiles) {
+          const arrCssFiles = cssFiles.split(',');
+          for(let i = 0; i < arrCssFiles.length; i++){
+              let link = document.createElement('link');
+              link.setAttribute('rel', 'stylesheet');
+              link.setAttribute('href', arrCssFiles[i]);
+              this.shadowRoot.appendChild(link);
+          }
+      }
+    }
+
+    embedWidget(className) {
+      const widget = this.querySelector("." + className);
+
+      if (!widget) return null;
+
+      const slot = document.createElement("slot");
+      slot.name = className;
+
+      widget.parentNode.replaceChild(slot, widget);
+
+      widget.slot = className;
+      this.appendChild(widget);
+
+      return widget;
+    }
+  }
+
+  customElements.define("style-blocker", StyleBlocker);
+</script>
