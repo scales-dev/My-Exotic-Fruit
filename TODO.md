@@ -21,6 +21,7 @@
 - applyPost isnt documented
 - createFiles isnt documented (or even used)
 - Finish build-embed
+  - External css is required for loading fonts.
   - It isnt mentioned yet in the readme
   - Entire site embed in a frame, like iframe, but not scrolling separately
   - Make build embed not require external requests to style sheets/images
