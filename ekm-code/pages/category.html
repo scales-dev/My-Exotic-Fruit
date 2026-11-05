@@ -329,11 +329,23 @@
           class="flex-col m-col-6 t-col-6 d-col-3 prod-item [ekm:if] iftype='FEATURE_ACTIVE'; ifvalue='FEATURE-QUICKVIEW'; ifthen='quickview-parent'; ifelse=''; [/ekm:if]">
           <div class="prod-item-wrapper">
             <div class="prod-item-upper">
+              {image}
+              {stock-variants}
+              [ekm:nested_if]
+              iftype="GREATERTHAN";
+              ifvalue="[stock-variants]";
+              ifvalue2="0";
+              ifthen="
               <div class="prod-item-image">
-                {image}
                 [image]
-                {/image}
-              </div><!-- /.prod-item-image -->
+              </div>";
+              ifelse="
+              <div class="prod-item-image grey-out">
+                [image]
+              </div>";
+              [/ekm:nested_if]
+              {/stock-variants}
+              {/image}
 
               {customer_reviews_average_stars}
               <div class="prod-review-stars-wrapper flex-display flex-wrap-wrap flex-align-center">

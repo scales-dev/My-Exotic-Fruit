@@ -8,14 +8,14 @@
   - Seasonal products page?
 - Finish home page
 - Update product display:
-  - Give each product USPs... (ollama save me)
-  - Put the origin map on the left with the season map
+  - Give each product USPs
 - Make product summaries shorter (~100 chars)
-- Figure out why style doesn't load for some people (maybe fixed)
 - Pick 2 promos for every category
 - Make payment work on site
 - Negotiate cost of higher tier
 - Decide on footer tabs
+- Figure out how to add gift cards
+- Figure out why style doesn't load for some people (maybe fixed)
 
 ### Build Pipeline
 - applyPost isnt documented
