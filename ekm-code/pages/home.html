@@ -659,13 +659,13 @@
       </span>
     </h2>
     <div class="flex-grid flex-wrap-wrap">
-      <div class="gifting-splider splide flex-col d-col-8 m-col-12">
+      <div class="gifting-splider splide flex-col d-col-8 m-col-12 auto-margin">
         <div class="splide__track">
           <ul class="splide__list mid-category-container">
             [ekm:showdata]
 
             data='products';
-            location='158';
+            location='162';
 
             cols='1';
             rows='100';
@@ -691,7 +691,7 @@
               output_item='
             </li>
             <li class="splide__slide hp-category-[counter] hp-category">
-              <div class="hp-category-img-[counter] hp-category-img">
+              <div class="hp-category-img-[counter]">
                 [image]
               </div>
 
@@ -1054,7 +1054,7 @@
     new Splide('.gifting-splider', {
       type: 'slide',
       perPage: 2,
-      perMove: 1,
+      perMove: 2,
       gap: 20,
       pagination: false,
       arrows: true,
