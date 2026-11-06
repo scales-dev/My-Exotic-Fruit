@@ -561,88 +561,95 @@
     </div>
   </section>
 
+  <section class="xxl-padding-top-d xxl-padding-top-m container">
+    <h2 class="flex-display flex-justify-left section-title l-padding-right">
+      <span>
+        Explore our favourites!
+      </span>
+    </h2>
+  </section>
+  <section class="flex-display flex-align-start category-prod-section l-margin-top-d">
 
-  <section class="mid-promo-wrapper container xxl-padding-top-d xxl-padding-top-m">
-    <div class="mid-promo-content flex-display flex-wrap-wrap">
-      [ekm:element]
-      show='yes';
-      allowed_types='image';
+    [ekm:showdata]
+    data='products';
+    id='category-products';
+    location='164';
 
-      element_reference='mid-promo-img';
-      edit_button='YES';
-      output_start='<div class="mid-promo-img d-col-6 m-col-12">';
-        output_end='</div>';
-      element_name_default='Mid Promo Image';
-      output_default='';
-      [/ekm:element]
+    cols='1';
+    rows='100';
+    counterreset='';
 
-      <div class="mid-promo-text-area dark-bg light-text d-col-6 m-col-12">
-        <div class="mid-promo-text-wrapper">
-          <div class="upper-text-wrapper">
-            [ekm:element]
-            show='yes';
-            allowed_types='html';
+    orderby='orderlocation';
+    skiprecords='0';
+    excludelist='';
+    includelist='';
 
-            element_reference='mid-promo-blog-title';
-            edit_button='YES';
-            output_start='<div class="body-text light-text">';
-              output_end='</div>';
-            element_name_default='Mid Promo Blog Title';
-            output_default='Promotional Title Here';
-            [/ekm:element]
+    pagination='';
 
-            [ekm:element]
-            show='yes';
-            allowed_types='html';
+    editbuttons='YES';
 
-            element_reference='mid-promo-btn-blog';
-            edit_button='YES';
-            output_start='<div class="btn light-text blog">';
-              output_end='</div>';
-            element_name_default='Mid Promo Button';
-            output_default='Shop Now';
-            [/ekm:element]
-          </div>
-          <div class="lower-text-wrapper">
-            [ekm:element]
-            show='yes';
-            allowed_types='html';
+    image_ratio='auto';
+    image_width='500';
+    image_height='500';
 
-            element_reference='mid-promo-title';
-            edit_button='YES';
-            output_start='<div class="section-title light-text">';
-              output_end='</div>';
-            element_name_default='Mid Promo Title';
-            output_default='Promotional Title Here';
-            [/ekm:element]
+    font_formatting='no';
 
-            [ekm:element]
-            show='yes';
-            allowed_types='html';
+    output_start='
+    <div class="category-products">
+      <div
+        class="flex-grid prod-list flex-align-start flex-wrap-wrap category-prod-list">
+        ';
+        output_item='
+        {stock-variants}
+        [ekm:nested_if]
+        iftype="GREATERTHAN";
+        ifvalue="[stock-variants]";
+        ifvalue2="0";
+        ifthen="
+        <div class="flex-col m-col-6 t-col-6 d-col-2">
+          <div class="prod-item-wrapper">
+            <div class="prod-item-upper">
+              {image}
+              <div class="prod-item-image">
+                [image]
+              </div>
+              {/image}
 
-            element_reference='mid-promo-text';
-            edit_button='YES';
-            output_start='<div class="body-text light-text">';
-              output_end='</div>';
-            element_name_default='Mid Promo Text';
-            output_default='Promotional Text Here...';
-            [/ekm:element]
+              {name}
+              <div class="prod-item-name m-margin-top-m s-margin-top-d">
+                <div class="prod-item-name-ellipsis">
+                  [name]
+                </div>
+              </div>
+              {/name}
 
-            [ekm:element]
-            show='yes';
-            allowed_types='html';
 
-            element_reference='mid-promo-btn';
-            edit_button='YES';
-            output_start='<div class="btn light">';
-              output_end='</div>';
-            element_name_default='Mid Promo Button';
-            output_default='Shop Now';
-            [/ekm:element]
+              {price}
+              <div
+                class="flex-display flex-align-baseline prod-price-wrapper s-margin-top-m s-margin-top-d trade-login-hide">
+                <div class="prod-item-price">
+                  [price]
+                </div>
+
+                <div class="prod-item-rrp s-margin-left-m s-margin-left-d">
+                  [rrp]
+                </div>
+              </div>
+              {/price}
+            </div>
+
+            <div class="short-desc s-margin-top-m s-margin-top-d">[shortdescription]</div>
           </div>
         </div>
+        ";
+        ifelse="";
+        [/ekm:nested_if]
+        {/stock-variants}';
+
+        output_end='
       </div>
-    </div>
+    </div>';
+    [/ekm:showdata]
   </section>
 
   <!-- Elfsight Instagram Feed | My Exotic Fruit Instagram Feed -->

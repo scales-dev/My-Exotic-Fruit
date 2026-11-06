@@ -1,6 +1,9 @@
 # My Exotic Fruit
 
-A static website with a custom build pipeline for shared components, generated content, SEO, and other reusable functionality.
+Currently hosted on EKM. 
+In future, we plan to switch to being a static website with a custom build pipeline for shared components, generated content, SEO, and other reusable functionality.
+I'm not a huge fan of [EKM's dev docs](https://tags.ekm.com) but they aren't BAD by any means.
+Worse is that I don't particularly like how their custom elements look, and their tags are messy imo.
 
 ## Developing
 
@@ -45,10 +48,10 @@ I was informed about svelte, but I'm sure I didn't overcomplicate this too much.
 | Path       | Use                                 |
 | ---------- | :---------------------------------- |
 | src        | Source HTML and other website files |
-| components | Reusable HTML components            |
-| scripts    | Build scripts                       |
 | build      | Generated website                   |
 | build.js   | Build system                        |
+| components | Reusable HTML components            |
+| scripts    | Build scripts                       |
 
 ### How it works
 
