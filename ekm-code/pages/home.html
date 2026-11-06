@@ -1053,7 +1053,7 @@
 
     new Splide('.gifting-splider', {
       type: 'slide',
-      perPage: 3,
+      perPage: 2,
       perMove: 1,
       gap: 20,
       pagination: false,
@@ -1061,18 +1061,7 @@
       trimSpace: false,
       rewind: true,
       autoplay: false,
-      drag: true,
-      breakpoints: {
-        1200: {
-          perPage: 3,
-        },
-        992: {
-          perPage: 2,
-        },
-        768: {
-          perPage: 1,
-        },
-      },
+      drag: true
     }).mount();
 
     new Splide('.testimonials-slider', {
