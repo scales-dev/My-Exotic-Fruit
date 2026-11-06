@@ -179,7 +179,7 @@
     </div>
   </section>
 
-  <section class="mid-category-wrapper l-padding-top-d container">
+  <section class="mid-category-wrapper container xxl-padding-top-d xxl-padding-top-m">
     [ekm:element]
     show='yes';
     allowed_types='text';
@@ -596,8 +596,7 @@
 
     output_start='
     <div class="category-products">
-      <div
-        class="flex-grid prod-list flex-align-start flex-wrap-wrap category-prod-list first-16-div">
+      <div class="flex-grid prod-list flex-align-start flex-wrap-wrap category-prod-list first-16-div">
         ';
         output_item='
         {stock-variants}
@@ -650,6 +649,74 @@
       </div>
     </div>';
     [/ekm:showdata]
+  </section>
+
+  <!-- selection boxes for gifting section -->
+  <section class="mid-category-wrapper container xxl-padding-top-d xxl-padding-top-m">
+    <h2 class="flex-display flex-justify-left section-title l-padding-right">
+      <span>
+        An amazing gift
+      </span>
+    </h2>
+    <div class="flex-grid flex-wrap-wrap">
+      <div class="gifting-splider splide flex-col d-col-7 m-col-12">
+        <div class="splide__track">
+          <ul class="splide__list mid-category-container">
+            [ekm:showdata]
+
+            data='products';
+            location='158';
+
+            cols='1';
+            rows='100';
+            counterreset='';
+            page_navigation='no';
+
+            orderby='orderlocation;
+            skiprecords='0';
+            excludelist='';
+            includelist='';
+
+            editbuttons='YES';
+
+            image_ratio='500';
+            image_width='auto';
+            image_height='auto';
+
+            font_formatting='no';
+
+            output_start='<li class="hide-errors">';
+              output_row_start='';
+              output_column_start='';
+              output_item='
+            </li>
+            <li class="splide__slide hp-category-[counter] hp-category">
+              <div class="hp-category-img-[counter] hp-category-img">
+                [image]
+              </div>
+
+              <div class="body-text dark-text center-text s-margin-top-d s-margin-top-m">
+                [name]
+              </div>
+            </li>
+            <li class="hide-errors">';
+              output_column_end='';
+              output_row_end='';
+              output_end='</li>';
+
+            output_column_blank='';
+
+            [/ekm:showdata]
+          </ul>
+        </div>
+      </div>
+      <div class="flex-col d-col-7 m-col-12">
+        <video disablepictureinpicture playsinline poster="https://thegreengrocerbymef.com/home/images/greengrocerinterior.webp">
+          <source src="https://thegreengrocerbymef.com/home/images/greengrocer.webm" type="video/webm">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
   </section>
 
   <!-- Elfsight Instagram Feed | My Exotic Fruit Instagram Feed -->
@@ -970,6 +1037,30 @@
       rewind: true,
       autoplay: false,
       interval: 4000,
+      drag: true,
+      breakpoints: {
+        1200: {
+          perPage: 3,
+        },
+        992: {
+          perPage: 2,
+        },
+        768: {
+          perPage: 1,
+        },
+      },
+    }).mount();
+
+    new Splide('.gifting-splider', {
+      type: 'slide',
+      perPage: 3,
+      perMove: 1,
+      gap: 20,
+      pagination: false,
+      arrows: true,
+      trimSpace: false,
+      rewind: true,
+      autoplay: false,
       drag: true,
       breakpoints: {
         1200: {
