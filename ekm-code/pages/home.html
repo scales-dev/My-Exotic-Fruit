@@ -691,11 +691,11 @@
               output_item='
             </li>
             <li class="splide__slide hp-category-[counter] hp-category">
-              <div class="hp-category-img-[counter]">
+              <div class="hp-category-img-[counter] square-splide">
                 [image]
               </div>
 
-              <div class="body-text dark-text center-text s-margin-top-d s-margin-top-m">
+              <div class="body-text dark-text center-text s-margin-top-d s-margin-top-m l-margin-btm-m l-margin-btm-d">
                 [name]
               </div>
             </li>
@@ -1053,15 +1053,26 @@
 
     new Splide('.gifting-splider', {
       type: 'slide',
-      perPage: 2,
-      perMove: 2,
+      perPage: 3,
+      perMove: 1,
       gap: 20,
       pagination: false,
       arrows: true,
       trimSpace: false,
       rewind: true,
       autoplay: false,
-      drag: true
+      drag: true,
+      breakpoints: {
+        1200: {
+          perPage: 3,
+        },
+        992: {
+          perPage: 2,
+        },
+        768: {
+          perPage: 1,
+        },
+      },
     }).mount();
 
     new Splide('.testimonials-slider', {
