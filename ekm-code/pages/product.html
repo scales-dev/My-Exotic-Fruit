@@ -183,7 +183,7 @@
 
             </div>
 
-            
+
 
             ";
 
@@ -264,7 +264,7 @@
 
           </div>
 
-          
+
 
           ";
 
@@ -1208,8 +1208,17 @@
                     .sort((a, b) => a.value.localeCompare(b.value, undefined, { numeric: true }))
                     .forEach(child => selector.appendChild(child));
 
+                  var selectedValid = false;
+
                   for (const child of [...selector.children]) {
-                    if (!markOutOfStock(child)) continue;
+                    if (!markOutOfStock(child)) {
+                      if (!selectedValid) {
+                        child.parentElement.value = child.value;
+                        selectedValid = true;
+                      }
+
+                      continue;
+                    }
 
                     // this moves the child to the end, how cool
                     selector.appendChild(child);
@@ -1226,7 +1235,8 @@
                     break;
                   }
 
-                  variant.innerHTML = `${variant.value} (out of stock)`
+                  variant.disabled = true;
+                  variant.innerHTML = `${variant.value} (Sold Out)`
                   return variant;
                 }
               </script>
@@ -1428,7 +1438,7 @@
 
 					                        C11.6,0.6,13,0,14.5,0s2.9,0.6,3.9,1.7c2.1,2.2,2.1,5.9,0,8.1l-7.6,7.9C10.6,17.9,10.3,18,10,18L10,18z" />
 
-                      
+
 
 
 
@@ -1437,7 +1447,7 @@
 
 					                        s-1.6,0.3-2.2,1l-1.4,1.5l0,0c-0.2,0.2-0.5,0.3-0.8,0.3c-0.3,0-0.6-0.1-0.9-0.4L7.7,3.4C7.1,2.7,6.4,2.4,5.5,2.4z" />
 
-                      
+
 
                     </svg>
 
@@ -1471,7 +1481,7 @@
 
 					                        C11.6,0.6,13,0,14.5,0s2.9,0.6,3.9,1.7c2.1,2.2,2.1,5.9,0,8.1l-7.6,7.9C10.6,17.9,10.3,18,10,18L10,18z" />
 
-                      
+
 
 
 
@@ -1480,7 +1490,7 @@
 
 					                        s-1.6,0.3-2.2,1l-1.4,1.5l0,0c-0.2,0.2-0.5,0.3-0.8,0.3c-0.3,0-0.6-0.1-0.9-0.4L7.7,3.4C7.1,2.7,6.4,2.4,5.5,2.4z" />
 
-                      
+
 
                     </svg>
 
@@ -1788,11 +1798,12 @@
 
         <script>
           window.addEventListener('load', async () => {
+            const mapSection = document.querySelector('#origin-map-section');
             const map = document.querySelector('.origin-map');
             const label = [...document.querySelectorAll('.tab-header-wrapper label')]
               .find(el => el.querySelector('span')?.textContent.trim() === 'Origin');
 
-            if (!map || !label) {
+            if (!map || !mapSection || !label) {
               console.error('Origin map: elements not found.');
               return;
             }
@@ -1820,6 +1831,7 @@
 
               if (count == 0) return;
 
+              mapSection.style.display = 'block';
               svg.setAttribute('viewBox', '0 0 1009.6727 665.96301');
               svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
               svg.style.width = '100%';
@@ -3065,14 +3077,13 @@
 
                       </div>
 
-                      
+
 
                       <span class="customer-review-count review-count-d">[customer_reviews_total]
 
                         Review(s)</span>
 
-                      <span
-                        class="customer-review-count review-count-m">([customer_reviews_total])</span>
+                      <span class="customer-review-count review-count-m">([customer_reviews_total])</span>
 
                     </div>
 
