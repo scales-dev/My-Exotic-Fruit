@@ -1101,98 +1101,8 @@
 
               [/ekm:productoptions]
 
-              <!--
-              ekm generates an array as so (run through firefox pretiffy):
-
-              ekmProductVariantData.push({
-                "items": [
-                  {
-                    "selector": [
-                      {
-                        "id": "11512",
-                        "option": "Choose your quantity",
-                        "value": "1, France",
-                        "dataValue": "",
-                        "type": "DROPDOWN"
-                      }
-                    ],
-                    "properties": {
-                      "item0": {
-                        "elementId": "_EKM_PRODUCTSTOCK_3",
-                        "innerHTML": "0"
-                      }
-                    }
-                  },
-                  {
-                    "selector": [
-                      {
-                        "id": "11514",
-                        "option": "Choose your quantity",
-                        "value": "10, Chinese",
-                        "dataValue": "",
-                        "type": "DROPDOWN"
-                      }
-                    ],
-                    "properties": {
-                      "item0": {
-                        "elementId": "_EKM_PRODUCTSTOCK_3",
-                        "innerHTML": "1"
-                      }
-                    }
-                  },
-                  {
-                    "selector": [
-                      {
-                        "id": "11513",
-                        "option": "Choose your quantity",
-                        "value": "3, Chinese",
-                        "dataValue": "",
-                        "type": "DROPDOWN"
-                      }
-                    ],
-                    "properties": {
-                      "item0": {
-                        "elementId": "_EKM_PRODUCTSTOCK_3",
-                        "innerHTML": "1"
-                      }
-                    }
-                  },
-                  {
-                    "selector": [
-                      {
-                        "id": "11510",
-                        "option": "Choose your quantity",
-                        "value": "1, Chinese",
-                        "dataValue": "",
-                        "type": "DROPDOWN"
-                      }
-                    ],
-                    "properties": {
-                      "item0": {
-                        "elementId": "_EKM_PRODUCTSTOCK_3",
-                        "innerHTML": "1"
-                      }
-                    }
-                  }
-                ]
-              });
-
-              so we can read that and edit the displayed drop down options, which are generated as:
-              <div class="options-select options-select-dropdown">
-                <select class="ekm-productoptions-dropdown-option" name="variant_Choose your quantity" id="variant_Choose your quantity" maxlength="5" onchange="javascript:Variants_ProductsOptions(event);">
-                  <option class="ekm-productoptions-dropdown-option-withoutborder" value="10, France">10, France</option>
-                  <option class="ekm-productoptions-dropdown-option-withoutborder" value="10, large, Spain">10, large, Spain</option>
-                  <option class="ekm-productoptions-dropdown-option-withoutborder" value="1, large, Spain">1, large, Spain</option>
-                  <option class="ekm-productoptions-dropdown-option-withoutborder" value="3, large, Spain">3, large, Spain</option>
-                  <option class="ekm-productoptions-dropdown-option-withoutborder" value="1, Chinese">1, Chinese</option>
-                  <option class="ekm-productoptions-dropdown-option-withoutborder" value="3, France">3, France</option>
-                  <option class="ekm-productoptions-dropdown-option-withoutborder" selected="selected" value="1, France">1, France</option>
-                  <option class="ekm-productoptions-dropdown-option-withoutborder" value="3, Chinese">3, Chinese</option>
-                  <option class="ekm-productoptions-dropdown-option-withoutborder" value="10, Chinese">10, Chinese</option>
-                </select>
-              </div>
-
-              because afaik they dont offer a way to do it without js, 
+              <!-- 
+              afaik they dont have a way to mark sold out variants w/o js.
               https://tags.ekm.com/productoptions.asp and https://tags.ekm.com/productstock.asp didnt help
               -->
               <script>
@@ -1210,8 +1120,12 @@
 
                   var selectedValid = false;
 
+                  // they put data about every variant at the top of the page, how handy.
+                  const jsonElement = document.querySelector('script[type="application/ld+json"]');
+                  const variants = JSON.parse(jsonElement.textContent);
+
                   for (const child of [...selector.children]) {
-                    if (!markOutOfStock(child)) {
+                    if (!markOutOfStock(child, variants)) {
                       if (!selectedValid) {
                         child.parentElement.value = child.value;
                         selectedValid = true;
@@ -1220,24 +1134,22 @@
                       continue;
                     }
 
+                    child.disabled = true;
+                    child.innerHTML = `${child.value} (Sold Out)`
+
                     // this moves the child to the end, how cool
                     selector.appendChild(child);
                   }
                 });
 
-                function markOutOfStock(variant) {
-                  for (const data of ekmProductVariantData) {
-                    for (const item of data.items) {
-                      if (item.selector[0].value !== variant.value) continue;
+                function markOutOfStock(variant, variants) {
+                  for (const variantData of variants) {
+                    if (variantData.name.endsWith(` - ${variant.value}`)) continue;
 
-                      // this isnt guarenteed to work, afaik they only consistently fetch if its out of stock, upon click...
-                      const outOfStock = item.properties?.item0?.innerHTML?.contains("oo-stock");
-                      if (outOfStock) {
-                        variant.disabled = true;
-                        variant.innerHTML = `${variant.value} (Sold Out)`
-                        return variant;
-                      }
-                    }
+                    const outOfStock = variantData.offers.availability.endsWith("OutOfStock");
+                    if (outOfStock) return variant;
+
+                    break;
                   }
 
                   return null;
