@@ -1226,18 +1226,21 @@
                 });
 
                 function markOutOfStock(variant) {
-                  for (const item of ekmProductVariantData[0].items) {
-                    if (item.selector[0].value !== variant.value) continue;
+                  for (const data of ekmProductVariantData) {
+                    for (const item of data.items) {
+                      if (item.selector[0].value !== variant.value) continue;
 
-                    // i do NOT know how it becomes item1, its pushed as item0, shrug.
-                    const inStock = item.properties.item1?.value === "True";
-                    if (inStock) return null;
-                    break;
+                      // this isnt guarenteed to work, afaik they only consistently fetch if its out of stock, upon click...
+                      const outOfStock = item.properties?.item0?.innerHTML?.contains("oo-stock");
+                      if (outOfStock) {
+                        variant.disabled = true;
+                        variant.innerHTML = `${variant.value} (Sold Out)`
+                        return variant;
+                      }
+                    }
                   }
 
-                  variant.disabled = true;
-                  variant.innerHTML = `${variant.value} (Sold Out)`
-                  return variant;
+                  return null;
                 }
               </script>
 
