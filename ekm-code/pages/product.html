@@ -1144,7 +1144,7 @@
 
                 function markOutOfStock(variant, variants) {
                   for (const variantData of variants) {
-                    if (variantData.name.endsWith(` - ${variant.value}`)) continue;
+                    if (!variantData.name.endsWith(` - ${variant.value}`)) continue;
 
                     const outOfStock = variantData.offers.availability.endsWith("OutOfStock");
                     if (outOfStock) return variant;
