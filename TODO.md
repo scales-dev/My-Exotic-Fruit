@@ -1,4 +1,9 @@
-### My Exotic Fruit
+### TODO
+- Figure out why style doesn't load for some people (maybe fixed)
+- Maybe better sorting in categories? manual perhaps
+- Searching for product by month/continent/country
+- Nicer way to display all categories
+- Cut down category count?
 - Make the following pages:
   - Japanese Fruits
   - Finish Working with Brands
@@ -6,16 +11,16 @@
   - Trade buyers
   - Guest amenity
   - Seasonal products page?
-- Finish home page
-- Update product display:
-  - Give each product USPs
-- Make product summaries shorter (~100 chars)
-- Pick 2 promos for every category
-- Make payment work on site
-- Negotiate cost of higher tier
-- Decide on footer tabs
-- Figure out how to add gift cards
-- Figure out why style doesn't load for some people (maybe fixed)
+- Chores:
+  - Update products:
+    - New pictures with transparent backgrounds...
+    - Give each product USPs
+    - Make product summaries shorter (~100 chars)
+  - Pick 2 promos for every category
+- Finishing touches:
+  - Decide on footer tabs
+  - Make payment work on site
+  - Negotiate cost of higher tier
 
 ### Build Pipeline
 - applyPost isnt documented
