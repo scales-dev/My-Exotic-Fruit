@@ -134,10 +134,12 @@ body {
   font-weight: 300;
   line-height: 1.2;
 
-  a {
+  /* todo: this isnt real */
+  a:not(.button) {
     text-decoration: none;
 
     color: var(--green);
+    text-decoration: underline;
   }
 
   img {
