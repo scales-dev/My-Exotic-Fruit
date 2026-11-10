@@ -48,8 +48,6 @@ body {
 }
 
 .mef {
-  overflow-x: hidden;
-
   --light-green: rgb(214, 248, 208);
   --light-green-tint: rgba(214, 248, 208, 0.4);
   --green: #142f07;
@@ -97,6 +95,9 @@ body {
     --promo-icon-z: inherit;
   }
 
+  margin: auto;
+  max-width: 1500px;
+
   h1 {
     font-size: 26px;
     font-family: "Figtree", sans-serif;
@@ -141,6 +142,10 @@ body {
 
   img {
     max-width: 100%;
+  }
+
+  section {
+    padding-block: 8px;
   }
 
   summary:hover {

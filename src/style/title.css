@@ -1,15 +1,18 @@
 .\$title {
   position: relative;
   padding-block: 24px;
-  overflow: hidden;
+  overflow-y: clip;
 
   img {
     position: absolute;
 
-    width: 100%;
+    width: 100vw;
+    max-width: none;
+
+    left: 50%;
+    transform: translateX(-50%);
 
     top: 0;
-    left: 0;
     height: 100%;
 
     object-fit: cover;
@@ -26,6 +29,9 @@
     content: "";
     position: absolute;
     inset: 0;
+    left: calc((100% - 100vw) / 2);
+    width: 100vw;
+
     background: var(--grey-tint);
     z-index: -1;
   }

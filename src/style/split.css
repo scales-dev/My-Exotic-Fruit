@@ -7,9 +7,4 @@
     padding-inline: 5%;
     padding-block: var(--split-padding);
   }
-
-  >div+div {
-    border-left: var(--split-left);
-    border-top: var(--split-top);
-  }
 }

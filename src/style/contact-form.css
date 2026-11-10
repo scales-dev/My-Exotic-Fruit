@@ -11,7 +11,7 @@
   textarea {
     display: block;
 
-    padding: 10px;
+    padding-block: 10px;
     margin-block: 16px;
 
     border: 1px solid var(--grey-tint);
@@ -27,7 +27,8 @@
   textarea,
   #contact-form-submit,
   .g-recaptcha {
-    width: 100%;
+    max-width: 100%;
+    width: 90%;
     margin-inline: auto;
   }
 }
