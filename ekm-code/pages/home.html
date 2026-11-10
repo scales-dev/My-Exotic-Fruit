@@ -562,93 +562,93 @@
   </section>
 
   <section class="xxl-padding-top-d xxl-padding-top-m container">
-    <h2 class="flex-display flex-justify-left section-title l-padding-right">
-      <span>
-        Explore our favourites!
-      </span>
-    </h2>
-  </section>
-  <section class="flex-display flex-align-start category-prod-section l-margin-top-d">
+    <div class="l-padding-top-m l-padding-top-d category-prod-section scroll-container-div">
+      <h2 class="section-title">
+        <span>
+          Explore our favourites!
+        </span>
+      </h2>
 
-    [ekm:showdata]
-    data='products';
-    id='category-products';
-    location='164';
+      [ekm:showdata]
+      data='products';
+      id='category-products';
+      location='164';
 
-    cols='1';
-    rows='100';
-    counterreset='';
+      cols='1';
+      rows='100';
+      counterreset='';
 
-    orderby='orderlocation';
-    skiprecords='0';
-    excludelist='';
-    includelist='';
+      orderby='orderlocation';
+      skiprecords='0';
+      excludelist='';
+      includelist='';
 
-    pagination='';
+      pagination='';
 
-    editbuttons='YES';
+      editbuttons='YES';
 
-    image_ratio='auto';
-    image_width='500';
-    image_height='500';
+      image_ratio='auto';
+      image_width='500';
+      image_height='500';
 
-    font_formatting='no';
+      font_formatting='no';
 
-    output_start='
-    <div class="category-products">
-      <div class="flex-grid prod-list flex-align-start flex-wrap-wrap category-prod-list scroll-container-div">
-        ';
-        output_item='
-        {stock-variants}
-        [ekm:nested_if]
-        iftype="GREATERTHAN";
-        ifvalue="[stock-variants]";
-        ifvalue2="0";
-        ifthen="
-        <div class="flex-col m-col-6 t-col-6 d-col-2">
-          <div class="prod-item-wrapper">
-            <div class="prod-item-upper">
-              {image}
-              <div class="prod-item-image">
-                [image]
-              </div>
-              {/image}
-
-              {name}
-              <div class="prod-item-name m-margin-top-m s-margin-top-d">
-                <div class="prod-item-name-ellipsis">
-                  [name]
+      output_start='
+      <div class="category-products">
+        <div class="flex-grid prod-list flex-align-start flex-wrap-wrap category-prod-list">
+          ';
+          output_item='
+          {stock-variants}
+          [ekm:nested_if]
+          iftype="GREATERTHAN";
+          ifvalue="[stock-variants]";
+          ifvalue2="0";
+          ifthen="
+          <div class="flex-col m-col-6 t-col-6 d-col-2">
+            <div class="prod-item-wrapper">
+              <div class="prod-item-upper">
+                {image}
+                <div class="prod-item-image">
+                  [image]
                 </div>
-              </div>
-              {/name}
+                {/image}
 
-
-              {price}
-              <div
-                class="flex-display flex-align-baseline prod-price-wrapper s-margin-top-m s-margin-top-d trade-login-hide">
-                <div class="prod-item-price">
-                  [price]
+                {name}
+                <div class="prod-item-name m-margin-top-m s-margin-top-d">
+                  <div class="prod-item-name-ellipsis">
+                    [name]
+                  </div>
                 </div>
+                {/name}
 
-                <div class="prod-item-rrp s-margin-left-m s-margin-left-d">
-                  [rrp]
+
+                {price}
+                <div
+                  class="flex-display flex-align-baseline prod-price-wrapper s-margin-top-m s-margin-top-d trade-login-hide">
+                  <div class="prod-item-price">
+                    [price]
+                  </div>
+
+                  <div class="prod-item-rrp s-margin-left-m s-margin-left-d">
+                    [rrp]
+                  </div>
                 </div>
+                {/price}
               </div>
-              {/price}
+
+              <div class="short-desc s-margin-top-m s-margin-top-d">[shortdescription]</div>
             </div>
-
-            <div class="short-desc s-margin-top-m s-margin-top-d">[shortdescription]</div>
           </div>
-        </div>
-        ";
-        ifelse="";
-        [/ekm:nested_if]
-        {/stock-variants}';
+          ";
+          ifelse="";
+          [/ekm:nested_if]
+          {/stock-variants}';
 
-        output_end='
-      </div>
-    </div>';
-    [/ekm:showdata]
+          output_end='
+        </div>
+      </div>';
+      [/ekm:showdata]
+    </div>
   </section>
 
   <!-- selection boxes for gifting section -->
@@ -711,8 +711,10 @@
         </div>
       </div>
       <div class="flex-col d-col-4 m-col-12">
-        <video class="max-width-100" disablepictureinpicture playsinline controls poster="https://my-exotic-fruit.myexoticfruit.workers.dev/images/home/gift-basket-thumbnail.webp">
-          <source src="https://my-exotic-fruit.myexoticfruit.workers.dev/images/home/gift-basket.webm" type="video/webm">
+        <video class="max-width-100" disablepictureinpicture playsinline controls
+          poster="https://my-exotic-fruit.myexoticfruit.workers.dev/images/home/gift-basket-thumbnail.webp">
+          <source src="https://my-exotic-fruit.myexoticfruit.workers.dev/images/home/gift-basket.webm"
+            type="video/webm">
           Your browser does not support the video tag.
         </video>
       </div>
