@@ -7,7 +7,14 @@
 - Make the following pages:
   - Japanese Fruits
   - Finish Working with Brands
-  - Fill in text in about us
+  - About us
+    - Replace lorem ipsum
+    - Still missing people on meet the team:
+      - les (never touch another mans rhubarb)
+      - colin,
+      - sharon,
+      - eren,
+      - rosemary
   - Trade buyers
   - Guest amenity
   - Seasonal products page?
