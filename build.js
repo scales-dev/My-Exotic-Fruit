@@ -27,6 +27,9 @@ const SCRIPTS = fs.readdirSync("./scripts")
     };
   });
 
+
+const BASE = fs.readFileSync("./components/base.html").toString();
+
 function recompileProject() {
   fs.rmSync("build", { recursive: true, force: true });
   for (const scriptFile of SCRIPTS) {
@@ -47,8 +50,6 @@ function recompileFile(file) {
     return;
   }
 
-  let head = "";
-
   // fix the body
   for (const scriptFile of SCRIPTS) {
     if (!scriptFile.script.fixBody) continue;
@@ -60,7 +61,7 @@ function recompileFile(file) {
   for (const scriptFile of SCRIPTS) {
     if (!scriptFile.script.applyHead) continue;
 
-    head += scriptFile.script.applyHead(file, scriptFile, FILES) + "\n";
+    file.head += scriptFile.script.applyHead(file, scriptFile, FILES) + "\n";
   }
 
   // lastly, we might want to do other stuff, go do that.
@@ -70,15 +71,26 @@ function recompileFile(file) {
     scriptFile.script.applyPost(file, scriptFile, FILES);
   }
 
-  // todo: automate opening/closing these tags in head.html component
-  head += "\n</head>\n<body>\n"
-  file.body += "\n</body>\n</html>"
-
-  const fileContent = (head + file.body + file.scripts)
-    .replaceAll(/^\$[^^]*\^$/gm, "")
+  const fileContent = applyClean(
+    BASE
+      .replace(/\s*\$head\^/g, file.head)
+      .replace(/\s*\$body\^/g, file.body)
+      .replace(/\s*\$scripts\^/g, file.scripts),
+    file);
 
   fs.mkdirSync(path.dirname(file.outputPath), { recursive: true });
   fs.writeFileSync(file.outputPath, fileContent);
+}
+
+function applyClean(fileContent, file) {
+  for (const scriptFile of SCRIPTS) {
+    if (!scriptFile.script.clean) continue;
+
+    fileContent = scriptFile.script.clean(fileContent, file);
+  }
+
+  // removes all tags eg. $text here^
+  return fileContent.replaceAll(/[\s]*\$[^^]*\^[\s]/gm, "");
 }
 
 if (!changedFile) {

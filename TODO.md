@@ -23,7 +23,7 @@
   - Negotiate cost of higher tier
 
 ### Build Pipeline
-- applyPost isnt documented
+- applyPost and clean arent documented
 - createFiles isnt documented (or even used)
 - Finish build-embed
   - External css is required for loading fonts.
