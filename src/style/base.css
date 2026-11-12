@@ -215,21 +215,19 @@ body {
 
     margin-bottom: 16px;
 
+
     img {
-      height: 48px;
+      max-height: 90px;
+      max-width: 90px;
+
+      &.small {
+        max-height: 48px;
+        max-width: 48px;
+      }
 
       &:hover {
         animation: shake 0.4s;
       }
-    }
-
-    .wide {
-      height: 80px;
-    }
-
-    .tall {
-      width: 80px;
-      height: auto;
     }
   }
 
