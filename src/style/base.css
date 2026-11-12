@@ -134,10 +134,7 @@ body {
   font-weight: 300;
   line-height: 1.2;
 
-  /* todo: this isnt real */
-  a:not(.button) {
-    text-decoration: none;
-
+  a {
     color: var(--green);
     text-decoration: underline;
   }
@@ -156,6 +153,8 @@ body {
 
   .button,
   button {
+    text-decoration: none;
+
     border-radius: 30px;
     background-color: var(--green);
     color: white;
